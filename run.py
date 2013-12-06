@@ -258,11 +258,11 @@ def run_simulation(proj, sim_report={}, prefix=''):
         if failed:
             sim_report[proj] = [failed]
             # save ouptut / error
-            print pr('failed %s saving: \n   %s/log.txt' %(proj,proj_dir))
+            print pr('failed %s saving: \n   %s/fail_log.txt' %(proj,proj_dir))
             with open('log.txt', 'w') as myFile:
                 myFile.write(command.out)
 
-            print pr('failed %s saving: \n   %s/error.txt' %(proj,proj_dir))
+            print pr('failed %s saving: \n   %s/fail_error.txt' %(proj,proj_dir))
             with open('error.txt', 'w') as myFile:
                 myFile.write(command.err)
 
