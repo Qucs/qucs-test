@@ -1,2 +1,6 @@
 *.pyc
 .DS_Store
+test_*.dat
+fail_log.txt
+fail_error.txt
+
