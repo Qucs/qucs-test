@@ -2,6 +2,7 @@
 
 import os
 import subprocess
+import threading
 import difflib
 import pprint
 import sys
@@ -39,6 +40,35 @@ def pr(message):
     else:
         return message
 
+
+#http://stackoverflow.com/questions/1191374/subprocess-with-timeout
+class Command(object):
+    def __init__(self, cmd):
+        self.cmd = cmd
+        self.process = None
+        self.timeout = False
+
+    def run(self, timeout):
+        def target():
+            print pb('Thread started')
+            #self.process = subprocess.Popen(self.cmd, shell=True)
+            self.process = subprocess.Popen(self.cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+            out, err = self.process.communicate()
+
+            self.out = out
+            self.err = err
+            print pb('Thread finished')
+
+        thread = threading.Thread(target=target)
+        thread.start()
+
+        thread.join(timeout)
+        if thread.is_alive():
+            print pr('Terminating process, timed out %i s' %timeout)
+            self.process.terminate()
+            thread.join()
+            self.timeout = True
+        print self.process.returncode
 
 
 
@@ -180,8 +210,10 @@ def run_simulation(proj, sim_report={}, prefix=''):
 
         # TODO run a few times, record average, add to report
         tic = time.clock()
-        p = subprocess.Popen(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-        out, err = p.communicate()
+        #p = subprocess.Popen(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+        #out, err = p.communicate()
+        command = Command(cmd)
+        command.run(timeout=5)
         toc = time.clock()
 
         runtime = toc - tic
@@ -216,7 +248,7 @@ def run_simulation(proj, sim_report={}, prefix=''):
                 ref_trace  = ref_data[name]
                 test_trace = test_data[name]
 
-                if not np.allclose(ref_trace, test_trace):
+                if not np.allclose(ref_trace, test_trace, rtol=1.00001e10, atol=1e-8):
                     print pr('  Failed %s' %(name))
                     failed.append(name)
                 else:
@@ -224,7 +256,18 @@ def run_simulation(proj, sim_report={}, prefix=''):
 
         # keep failed comparison
         if failed:
-            sim_report[proj] = failed
+            sim_report[proj] = [failed]
+            # save ouptut / error
+            print pr('failed %s saving: \n   %s/log.txt' %(proj,proj_dir))
+            with open('log.txt', 'w') as myFile:
+                myFile.write(command.out)
+
+            print pr('failed %s saving: \n   %s/error.txt' %(proj,proj_dir))
+            with open('error.txt', 'w') as myFile:
+                myFile.write(command.err)
+
+        if command.timeout:
+            sim_report[proj] = ['timed out']
 
         # TODO add timestamp into qucsator. Or time the call.
         # qucs creates the log.txt with time start and time end.
@@ -242,6 +285,14 @@ if __name__ == '__main__':
 
     parser.add_argument('--prefix',type=str,
                        help='prefix of installed Qucs (default: /usr/local/)')
+
+    parser.add_argument('--qucs',
+                       action='store_true',
+                       help='run qucs tests')
+
+    parser.add_argument('--qucsator',
+                       action='store_true',
+                       help='run qucsator tests')
 
     args = parser.parse_args()
     #print(args)
@@ -265,47 +316,49 @@ if __name__ == '__main__':
     pprint.pprint(testsuite)
 
 
-    print '\n'
-    print pb('******************************************')
-    print pb('** Test schematic to netlist conversion **')
-    print pb('******************************************')
+    if args.qucs:
+        print '\n'
+        print pb('******************************************')
+        print pb('** Test schematic to netlist conversion **')
+        print pb('******************************************')
 
-    # loop over testsuite
-    # messages are added to the dict, project as key
-    net_report = {}
-    for test in testsuite:
-        net_report =  run_schematic_to_netlist(test, net_report)
-
-
-    print '\n'
-    print pb('############################################')
-    print pb('#  Report schematic to netlist conversion  #')
-    if net_report.keys():
-        print pr('--> Found differences (!)')
-        pprint.pprint(net_report)
-    else:
-        print pg('--> No differences found.')
+        # loop over testsuite
+        # messages are added to the dict, project as key
+        net_report = {}
+        for test in testsuite:
+            net_report =  run_schematic_to_netlist(test, net_report)
 
 
-    print '\n'
-    print pb('********************************')
-    print pb('** Test simulation and output **')
-    print pb('********************************')
+        print '\n'
+        print pb('############################################')
+        print pb('#  Report schematic to netlist conversion  #')
+        if net_report.keys():
+            print pr('--> Found differences (!)')
+            pprint.pprint(net_report)
+        else:
+            print pg('--> No differences found.')
 
-    # loop over testsuite
-    # messages are added to the dict, project as key
-    sim_report = {}
-    for test in testsuite:
-        sim_report = run_simulation(test, sim_report, prefix)
+    if args.qucsator:
+        print '\n'
+        print pb('********************************')
+        print pb('** Test simulation and output **')
+        print pb('********************************')
 
-    print '\n'
-    print pb('############################################')
-    print pb('#  Report simulation result comparison     #')
-    if sim_report.keys():
-        print pr('--> Found numerical differences (!)')
-        pprint.pprint(sim_report)
-    else:
-        print pg('--> No significant numerical differences found.')
+        # loop over testsuite
+        # messages are added to the dict, project as key
+        sim_report = {}
+        for test in testsuite:
+            sim_report = run_simulation(test, sim_report, prefix)
+
+
+        print '\n'
+        print pb('############################################')
+        print pb('#  Report simulation result comparison     #')
+        if sim_report.keys():
+            print pr('--> Found numerical differences (!)')
+            pprint.pprint(sim_report)
+        else:
+            print pg('--> No significant numerical differences found.')
 
 
     print '\n'
