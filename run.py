@@ -303,11 +303,11 @@ if __name__ == '__main__':
     #print(args)
 
     if args.prefix:
-        prefix = os.path.join(args.prefix, 'bin/')
+        prefix = os.path.join(args.prefix, 'bin' + os.sep)
     else:
         prefix = os.path.join('/usr/local/bin/')
 
-    if os.path.isfile(os.path.join(prefix, 'qucs')):
+    if os.path.isfile(os.path.join(prefix, 'qucsator')):
         print pb('Found Qucs in: %s' %(prefix))
     else:
         sys.exit(pr('Oh dear, Qucs not found in: %s' %(prefix)))
