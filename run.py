@@ -1,13 +1,14 @@
 
 
-import os
-import subprocess
-import threading
+import argparse
 import difflib
-import pprint
-import sys
-import time
 import numpy as np
+import os
+import pprint
+import subprocess
+import sys
+import threading
+import time
 
 import parse_result as parse
 
@@ -51,10 +52,9 @@ class Command(object):
     def run(self, timeout):
         def target():
             print pb('Thread started')
-            #self.process = subprocess.Popen(self.cmd, shell=True)
             self.process = subprocess.Popen(self.cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
             out, err = self.process.communicate()
-
+            # keep the stdout and stderr
             self.out = out
             self.err = err
             print pb('Thread finished')
@@ -64,10 +64,10 @@ class Command(object):
 
         thread.join(timeout)
         if thread.is_alive():
+            self.timeout = True
             print pr('Terminating process, timed out %i s' %timeout)
             self.process.terminate()
             thread.join()
-            self.timeout = True
         print self.process.returncode
 
 
@@ -210,8 +210,8 @@ def run_simulation(proj, sim_report={}, prefix=''):
 
         # TODO run a few times, record average, add to report
         tic = time.clock()
-        #p = subprocess.Popen(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-        #out, err = p.communicate()
+
+        # call the solver in a subprocess, set the timeout
         command = Command(cmd)
         command.run(timeout=5)
         toc = time.clock()
@@ -220,14 +220,13 @@ def run_simulation(proj, sim_report={}, prefix=''):
 
         print pb('Runtime: %f' %runtime)
 
-        # TODO use the outputs for something...
-        #print out
-        #print err
-
         if not os.path.isfile(ref_dataset):
             os.exit(pr('bad, missing ref output'))
 
-        #all fine, lets compare results
+        # TODO failed also catches if the solver didn't run, output_dataset will be empty,
+        # it will fail the comparison
+
+        # let's compare results
 
         # list of failed variable comparisons
         failed=[]
@@ -254,16 +253,19 @@ def run_simulation(proj, sim_report={}, prefix=''):
                     else:
                         print pg('  Passed %s' %(name))
 
-        # keep failed comparison
+
+        # keep list of variables that failed comparison
         if failed:
             sim_report[proj] = [failed]
 
+        # mark project as timed out
         if command.timeout:
             sim_report[proj] = ['timed out']
 
 
+        # In case of failure or timeout, save the log and error ouputs
         if (failed or command.timeout):
-            # save ouptut / error
+
             logout = 'fail_log.txt'
             print pr('failed %s saving: \n   %s/%s' %(proj, proj_dir, logout))
             with open(logout, 'w') as myFile:
@@ -284,9 +286,8 @@ def run_simulation(proj, sim_report={}, prefix=''):
 
 
 if __name__ == '__main__':
-    import argparse
 
-    parser = argparse.ArgumentParser(description='Process some integers.')
+    parser = argparse.ArgumentParser(description='Qucs testing script.')
 
     parser.add_argument('--prefix',type=str,
                        help='prefix of installed Qucs (default: /usr/local/)')
@@ -305,6 +306,7 @@ if __name__ == '__main__':
     if args.prefix:
         prefix = os.path.join(args.prefix, 'bin' + os.sep)
     else:
+        # TODO add default paths, build location, system locations
         prefix = os.path.join('/usr/local/bin/')
 
     if os.path.isfile(os.path.join(prefix, 'qucsator')):
