@@ -226,48 +226,53 @@ def run_simulation(proj, sim_report={}, prefix=''):
 
         if not os.path.isfile(ref_dataset):
             os.exit(pr('bad, missing ref output'))
-        if not os.path.isfile(output_dataset):
-            os.exit(pr('bad, missing test output'))
 
         #all fine, lets compare results
 
-        print pb('load data %s' %(ref_dataset))
-        ref_data = parse.parse_file(ref_dataset)
-
-        print pb('load data %s' %(output_dataset))
-        test_data = parse.parse_file(output_dataset)
-
-        #print ref_data['variables']
-
-        print pb('Comparing dependent variables')
-
+        # list of failed variable comparisons
         failed=[]
-        for name, kind in ref_data['variables'].items():
-            if kind == 'dep':
-                #print name
-                ref_trace  = ref_data[name]
-                test_trace = test_data[name]
+        if not command.timeout:
+            print pb('load data %s' %(ref_dataset))
+            ref_data = parse.parse_file(ref_dataset)
 
-                if not np.allclose(ref_trace, test_trace, rtol=1.00001e10, atol=1e-8):
-                    print pr('  Failed %s' %(name))
-                    failed.append(name)
-                else:
-                    print pg('  Passed %s' %(name))
+            print pb('load data %s' %(output_dataset))
+            test_data = parse.parse_file(output_dataset)
+
+            #print ref_data['variables']
+
+            print pb('Comparing dependent variables')
+
+            for name, kind in ref_data['variables'].items():
+                if kind == 'dep':
+                    #print name
+                    ref_trace  = ref_data[name]
+                    test_trace = test_data[name]
+
+                    if not np.allclose(ref_trace, test_trace, rtol=1.00001e10, atol=1e-8):
+                        print pr('  Failed %s' %(name))
+                        failed.append(name)
+                    else:
+                        print pg('  Passed %s' %(name))
 
         # keep failed comparison
         if failed:
             sim_report[proj] = [failed]
-            # save ouptut / error
-            print pr('failed %s saving: \n   %s/fail_log.txt' %(proj,proj_dir))
-            with open('log.txt', 'w') as myFile:
-                myFile.write(command.out)
-
-            print pr('failed %s saving: \n   %s/fail_error.txt' %(proj,proj_dir))
-            with open('error.txt', 'w') as myFile:
-                myFile.write(command.err)
 
         if command.timeout:
             sim_report[proj] = ['timed out']
+
+
+        if (failed or command.timeout):
+            # save ouptut / error
+            logout = 'fail_log.txt'
+            print pr('failed %s saving: \n   %s/%s' %(proj, proj_dir, logout))
+            with open(logout, 'w') as myFile:
+                myFile.write(command.out)
+
+            errout = 'fail_error.txt'
+            print pr('failed %s saving: \n   %s/%s' %(proj, proj_dir, errout))
+            with open(errout, 'w') as myFile:
+                myFile.write(command.err)
 
         # TODO add timestamp into qucsator. Or time the call.
         # qucs creates the log.txt with time start and time end.
