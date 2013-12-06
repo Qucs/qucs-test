@@ -8,8 +8,12 @@ Objective: test the frond and back ends.
 ## Running the test suite
 
 ```
-$python run.py --prefix [qucs/installed/prefix]
+$python run.py --prefix [qucs/installed/prefix] [--qucs, --qucsator]
 ```
+
+The option `--qucs` runs the schematic to netlist conversion.
+
+The option `--qucsator` runs the simulator.
 
 ## Output
 
