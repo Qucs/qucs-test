@@ -55,6 +55,7 @@ class Command(object):
         self.cmd = cmd
         self.process = None
         self.timeout = False
+        self.retcode = 0
 
     def run(self, timeout):
         def target():
@@ -75,11 +76,11 @@ class Command(object):
             print pr('Terminating process, timed out %i s' %timeout)
             self.process.terminate()
             thread.join()
-        retcode =  self.process.returncode
-        if retcode:
-            print pr('  Return code: %i' %self.process.returncode)
+        self.retcode =  self.process.returncode
+        if self.retcode:
+            print pr('  Return code: %i' %self.retcode)
         else:
-            print pb('  Return code: %i' %self.process.returncode)
+            print pb('  Return code: %i' %self.retcode)
 
 
 
@@ -136,8 +137,19 @@ def run_schematic_to_netlist(proj, net_report={}, prefix='', init_test=False):
     output : dictionary reporting/updating issues
     '''
 
-    name = proj.split('_')[-2]
-    #print name
+    #project dir
+    name = proj.split(os.sep)[-1]
+
+    print name
+
+    # FIXME fail if the project name has underscore
+    sim_types= ['DC_', 'AC_', 'TR_', 'SP_', 'SW_']
+    for sim in sim_types:
+        if sim in name:
+            name=name[3:]
+
+    name = name[:-4]
+    print name
 
     tests_dir = os.getcwd()
     #print tests_dir
@@ -149,6 +161,8 @@ def run_schematic_to_netlist(proj, net_report={}, prefix='', init_test=False):
     os.chdir(proj_dir)
 
     input_sch = name+".sch"
+
+    print 'Input: ', input_sch
 
     # have schematic to convert
     if os.path.isfile(input_sch):
@@ -206,7 +220,20 @@ def run_simulation(proj, sim_report={}, prefix='', init_test=False):
     Run simulation from reference netlist and compare outputs (dat, log)
     '''
 
-    name = proj.split('_')[-2]
+    #name = proj.split('_')[-2]
+    #project dir
+    name = proj.split(os.sep)[-1]
+
+    print name
+
+    # FIXME fail if the project name has underscore
+    sim_types= ['DC_', 'AC_', 'TR_', 'SP_', 'SW_']
+    for sim in sim_types:
+        if sim in name:
+            name=name[3:]
+
+    name = name[:-4]
+    print name
 
     tests_dir = os.getcwd()
 
@@ -262,6 +289,13 @@ def run_simulation(proj, sim_report={}, prefix='', init_test=False):
             print pb('Initializing %s saving: \n   %s/%s' %(proj, proj_dir, logout))
             with open(logout, 'w') as myFile:
                 myFile.write(command.out)
+
+            if (command.timeout or command.retcode):
+                errout = 'error.txt'
+                print pr('Failed initializaton of %s saving: \n   %s/%s' %(proj, proj_dir, errout))
+                with open(errout, 'w') as myFile:
+                    myFile.write(command.err)
+
 
         # perform comparison
         else:
@@ -361,7 +395,7 @@ def add_test_project(sch):
     sub_files=[]
     with open(sch) as fp:
         for line in fp:
-            if 'Sub' in line:
+            if '<Sub ' in line:
                 # subcircuit filename, no quotes
                 sub_file = line.split(' ')[-2][1:-1]
                 if sub_file not in sub_files:
