@@ -1,0 +1,35 @@
+## Project dir              ## Comment
+DC_SP_opamp_gyrator_prj, Qucs error:: Format Error: Wrong 'component' line format!
+DC_SW_bridge_prj, error_code.txt
+DC_SW_charac_prj, error_code.txt
+DC_SW_diff1_prj, error_code.txt
+DC_TR_active_mixer_prj, error_code.txt
+TR_boostconverter_prj, error_code.txt
+TR_buckboost_prj, error_code.txt
+TR_buckconverter_prj, error_code.txt
+TR_chargepump_prj, error_code.txt
+TR_classic_osci_prj, error_code.txt
+TR_colpitts_base_prj, error_code.txt
+TR_colpitts_prj, error_code.txt
+TR_diode_hb_prj, error_code.txt
+TR_diode_hb_prj, error_timeout.txt
+TR_fullwaverectifier_1_prj, error_code.txt
+TR_fullwaverectifier_2_prj, error_code.txt
+TR_fullwaverectifier_2_prj, error_timeout.txt
+TR_gilbert_prj, error_code.txt
+TR_lc_osc_prj, error_code.txt
+TR_lf_osci_prj, error_code.txt
+TR_lf_osci_prj, error_timeout.txt
+TR_mixer_prj, error_code.txt
+TR_multiplier_prj, error_code.txt
+TR_Puls3b_prj, error_code.txt
+TR_rf_osci_prj, error_code.txt
+TR_sawtooth-1_prj, error_code.txt
+TR_sawtooth-2_prj, error_code.txt
+TR_sawtooth-3_prj, error_code.txt
+TR_sawtooth-discreet_prj, error_code.txt
+TR_schmitt_prj, error_code.txt
+TR_single_balanced_prj, error_code.txt
+TR_supply_prj, error_code.txt
+TR_sym_osci_prj, error_code.txt
+
