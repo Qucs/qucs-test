@@ -8,12 +8,18 @@ Objective: test the frond and back ends.
 ## Running the test suite
 
 ```
-$python run.py --prefix [qucs/installed/prefix] [--qucs, --qucsator]
+$python run.py --prefix [qucs/installed/prefix] [--qucs, --qucsator, --add-test [file].sch]
 ```
 
-The option `--qucs` runs the schematic to netlist conversion.
+Options:
 
-The option `--qucsator` runs the simulator.
+ * `--qucs` runs the schematic to netlist conversion.
+
+ * `--qucsator` runs the simulator.
+
+ * `--add-test [schematic].sch` adds a schematic as a test-project into the test-set.
+
+    * it will attempt to initialize/create the reference netlist, reference results and log files.
 
 ## Output
 
@@ -28,14 +34,14 @@ It considers every directory under `testsuite` as a project to be run. Then,
  * It run tests to check the schematic to netlist conversion, using the Qucs-GUI code.
 
  * It compares (diff) a reference netlist with the generated netlist on the step above.
- 
- * A simulation is run for each project
- 
- * Results are for the dependent variables are compared with reference results
- 
- * It collects : failed netlist diffs, simulation runtime, failed variable comparison, output and warnings (not used currently).  
 
- 
+ * A simulation is run for each project
+
+ * Results are for the dependent variables are compared with reference results
+
+ * It collects : failed netlist diffs, simulation runtime, failed variable comparison, output and warnings (not used currently).
+
+
 ---
 
 ## Running Qucs on the command line:
@@ -86,7 +92,7 @@ Suggested contents:
  * Optional
    * reference log file (.txt)
    * PDF dump of schematic/data display
-   
+
 _What about asco, verilog, vhdl?_
 
 # Run a test-case
@@ -113,7 +119,7 @@ output: result.dat | result_test.txt
 ```
 
 ```
-compare: 
+compare:
   - netlist X netlist_test
   - result  X result_test
 ```
@@ -161,14 +167,14 @@ qucs-test/
 
 Notes:
 
- * Need to identify the test schematic among the subcircuits 
+ * Need to identify the test schematic among the subcircuits
    * directory name, and the name of the schematic to be netlisted/simulated.
-   
+
 Whish-list
-   
+
  * what about verilog, vhdl, asco?
  * pack/unpack tarballs/examples?
- 
+
 
 # Helper Scripts
 

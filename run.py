@@ -250,7 +250,7 @@ def run_simulation(proj, sim_report={}, prefix='', init_test=False):
         #TODO get the DataSet field from the schematic file
         schematic = os.path.join(proj_dir,name+'.sch')
         #print 'schematic', schematic
-        with open(sch) as fp:
+        with open(schematic) as fp:
             for line in fp:
                 if 'DataSet' in line:
                     # DataSet filename, no quotes
