@@ -21,6 +21,11 @@ Options:
 
     * it will attempt to initialize/create the reference netlist, reference results and log files.
 
+ * `--skip [file]` will skip the projects listed in the [file].
+
+    * current format: PROJECT_NAME, Any comment (project name should end with a ',')
+
+
 ## Output
 
 [Output without errors](output_normal.txt)

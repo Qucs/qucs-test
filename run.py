@@ -455,6 +455,9 @@ if __name__ == '__main__':
     parser.add_argument('--add-test', type=str,
                        help='add schematic to the testsuite')
 
+    parser.add_argument('--skip', type=str,
+                       help='file listing skipped test projects')
+
     args = parser.parse_args()
     print(args)
 
@@ -473,15 +476,30 @@ if __name__ == '__main__':
     else:
         sys.exit(pr('Oh dear, Qucs not found in: %s' %(prefix)))
 
+    # get list of test-projects
+    testsuite = get_subdirs('./testsuite/')
+
+    # TODO read list of: skip, testshort, testlong
+
+    if args.skip:
+        skip = args.skip
+        with open(skip) as fp:
+            for line in fp:
+                skip_proj = line.split(',')[0]
+                if skip_proj in testsuite:
+                    print py('Skipping %s' %skip_proj)
+                    testsuite.remove(skip_proj)
+
 
     print '\n'
     print pb('******************************************')
-    print pb('** Test suite - Projects to be run      **')
+    print pb('** Test suite - Selected Test Projects  **')
     print pb('******************************************')
-    testsuite = get_subdirs('./testsuite/')
+
+    # Print list of selected tests
     pprint.pprint(testsuite)
 
-
+    # Run Qucs GUI
     if args.qucs:
         print '\n'
         print pb('******************************************')
@@ -504,6 +522,7 @@ if __name__ == '__main__':
         else:
             print pg('--> No differences found.')
 
+    # Run Qucs simulator
     if args.qucsator:
         print '\n'
         print pb('********************************')
@@ -526,6 +545,7 @@ if __name__ == '__main__':
         else:
             print pg('--> No significant numerical differences found.')
 
+    # Add schematic as test-project and initialize its netlist, result and log files
     if args.add_test:
         print '\n'
         print py('********************************')
