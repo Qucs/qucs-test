@@ -1,0 +1,26 @@
+parsing netlist...
+checking netlist...
+subcircuit root
+  Switch:S1 _net0 _net1 init="on" time="9e-09s" Ron="0" Roff="1e+12" Temp="26.85"
+  Switch:S2 _net1 _net2 init="off" time="1e-08s" Ron="0" Roff="1e+12" Temp="26.85"
+  R:RD _net2 _net3 R="0.2" Temp="26.85" Tc1="0" Tc2="0" Tnom="26.85"
+  Vdc:VDC _net4 gnd U="13.5V"
+  Vdc:VGEN _net0 _net4 U="200V"
+  C:CS _net4 _net1 C="4e-08F"
+  R:RE _net4 _net2 R="0.4" Temp="26.85" Tc1="0" Tc2="0" Tnom="26.85"
+  C:CL _net4 _net3 C="4e-08F"
+  TR:TR1 Type="lin" Start="0" Stop="2e-07" Points="401" IntegrationMethod="Trapezoidal" Order="2" InitialStep="1e-09s" MinStep="1e-16" MaxIter="150" reltol="0.001" abstol="1e-12A" vntol="1e-06V" Temp="26.85" LTEreltol="0.001" LTEabstol="1e-06" LTEfactor="1" Solver="CroutLU" relaxTSR="no" initialDC="yes" MaxStep="0"
+  R:RI _net3 Puls3b R="50" Temp="26.85" Tc1="0" Tc2="0" Tnom="26.85"
+netlist content
+      2 Switch instances
+      2 C instances
+      3 R instances
+      2 Vdc instances
+      1 TR instances
+creating netlist...
+NOTIFY: TR1: creating node list for initial DC analysis
+NOTIFY: TR1: solving initial DC netlist
+NOTIFY: TR1: creating node list for transient analysis
+NOTIFY: TR1: solving transient netlist
+NOTIFY: TR1: average time-step 1.64609e-10, 403 rejections
+NOTIFY: TR1: average NR-iterations 2.66337, 0 non-convergences

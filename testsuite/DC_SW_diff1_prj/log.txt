@@ -1,0 +1,2466 @@
+parsing netlist...
+checking netlist...
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+subcircuit root
+  BJT:Q2N3904_1 in1 out1 _net0 out1 Type="npn" Is="6.734e-15" Nf="1" Nr="1" Ikf="0.06678" Ikr="0" Vaf="74.03" Var="0" Ise="6.734e-15" Ne="1.259" Isc="0" Nc="2" Bf="416.4" Br="0.7371" Rbm="0" Irb="0" Rc="1" Re="0" Rb="10" Cje="4.493e-12" Vje="0.75" Mje="0.2593" Cjc="3.638e-12" Vjc="0.75" Mjc="0.3085" Xcjc="1" Cjs="0" Vjs="0.75" Mjs="0" Fc="0.5" Tf="3.012e-10" Xtf="2" Vtf="4" Itf="0.4" Tr="2.395e-07" Temp="26.85" Kf="0" Af="1" Ffe="1" Kb="0" Ab="1" Fb="1" Ptf="0" Xtb="0" Xti="3" Eg="1.11" Tnom="26.85" Area="1"
+  BJT:Q2N3904_2 in2 out2 _net1 out2 Type="npn" Is="6.734e-15" Nf="1" Nr="1" Ikf="0.06678" Ikr="0" Vaf="74.03" Var="0" Ise="6.734e-15" Ne="1.259" Isc="0" Nc="2" Bf="416.4" Br="0.7371" Rbm="0" Irb="0" Rc="1" Re="0" Rb="10" Cje="4.493e-12" Vje="0.75" Mje="0.2593" Cjc="3.638e-12" Vjc="0.75" Mjc="0.3085" Xcjc="1" Cjs="0" Vjs="0.75" Mjs="0" Fc="0.5" Tf="3.012e-10" Xtf="2" Vtf="4" Itf="0.4" Tr="2.395e-07" Temp="26.85" Kf="0" Af="1" Ffe="1" Kb="0" Ab="1" Fb="1" Ptf="0" Xtb="0" Xti="3" Eg="1.11" Tnom="26.85" Area="1"
+  R:RC1 out1 _net2 R="2000" Temp="26.85" Tc1="0" Tc2="0" Tnom="26.85"
+  R:RC2 out2 _net2 R="2000" Temp="26.85" Tc1="0" Tc2="0" Tnom="26.85"
+  Vdc:VCC _net2 gnd U="12"
+  R:RE1 _net3 _net0 R="Re" Temp="26.85" Tc1="0" Tc2="0" Tnom="26.85"
+  R:RE2 _net3 _net1 R="Re" Temp="26.85" Tc1="0" Tc2="0" Tnom="26.85"
+  Vdc:VIN in1 gnd U="Vin"
+  Vdc:VIN1 gnd in2 U="Vin"
+  DC:DC1 Temp="26.85" reltol="0.001" abstol="1e-12A" vntol="1e-12V" saveOPs="no" MaxIter="150" saveAll="no" convHelper="none" Solver="CroutLU"
+  SW:SW1 Sim="SW2" Type="list" Param="Re" Values="[0;10;30;80]"
+  SW:SW2 Sim="DC1" Type="lin" Param="Vin" Start="-0.1" Stop="0.1" Points="101"
+  Idc:IEE _net3 _net4 I="0"
+  R:REE _net4 _net3 R="1500" Temp="26.85" Tc1="0" Tc2="0" Tnom="26.85"
+  Vdc:VEE _net4 gnd U="-12"
+netlist content
+      1 Idc instances
+      2 BJT instances
+      1 DC instances
+      5 R instances
+      2 SW instances
+      4 Vdc instances
+creating netlist...
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW1: running netlist for Re = 0
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = -0.1
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 11 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = -0.098
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 11 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = -0.096
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 11 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = -0.094
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 11 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = -0.092
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 11 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = -0.09
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 11 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = -0.088
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 11 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = -0.086
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 11 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = -0.084
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 11 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = -0.082
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 11 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = -0.08
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 11 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = -0.078
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 11 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = -0.076
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 11 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = -0.074
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 11 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = -0.072
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 11 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = -0.07
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 11 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = -0.068
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 11 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = -0.066
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 11 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = -0.064
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 11 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = -0.062
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 11 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = -0.06
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 11 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = -0.058
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 11 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = -0.056
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 11 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = -0.054
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 11 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = -0.052
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 10 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = -0.05
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 10 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = -0.048
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 10 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = -0.046
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 10 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = -0.044
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 10 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = -0.042
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 10 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = -0.04
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 10 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = -0.038
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 9 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = -0.036
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 9 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = -0.034
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 9 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = -0.032
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 10 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = -0.03
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 11 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = -0.028
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 12 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = -0.026
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 13 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = -0.024
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 10 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = -0.022
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 7 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = -0.02
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 7 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = -0.018
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 7 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = -0.016
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 7 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = -0.014
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 7 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = -0.012
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 7 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = -0.01
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 7 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = -0.008
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 7 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = -0.006
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 7 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = -0.004
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 7 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = -0.002
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 7 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = 0
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 7 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = 0.002
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 7 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = 0.004
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 7 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = 0.006
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 7 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = 0.008
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 7 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = 0.01
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 7 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = 0.012
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 7 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = 0.014
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 7 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = 0.016
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 7 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = 0.018
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 7 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = 0.02
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 7 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = 0.022
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 7 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = 0.024
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 10 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = 0.026
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 13 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = 0.028
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 12 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = 0.03
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 11 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = 0.032
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 10 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = 0.034
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 9 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = 0.036
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 9 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = 0.038
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 9 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = 0.04
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 10 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = 0.042
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 10 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = 0.044
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 10 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = 0.046
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 10 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = 0.048
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 10 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = 0.05
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 10 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = 0.052
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 10 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = 0.054
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 11 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = 0.056
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 11 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = 0.058
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 11 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = 0.06
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 11 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = 0.062
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 11 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = 0.064
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 11 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = 0.066
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 11 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = 0.068
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 11 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = 0.07
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 11 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = 0.072
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 11 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = 0.074
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 11 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = 0.076
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 11 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = 0.078
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 11 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = 0.08
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 11 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = 0.082
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 11 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = 0.084
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 11 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = 0.086
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 11 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = 0.088
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 11 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = 0.09
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 11 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = 0.092
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 11 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = 0.094
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 11 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = 0.096
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 11 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = 0.098
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 11 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = 0.1
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 11 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW1: running netlist for Re = 10
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = -0.1
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 11 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = -0.098
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 11 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = -0.096
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 10 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = -0.094
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 10 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = -0.092
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 10 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = -0.09
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 10 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = -0.088
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 10 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = -0.086
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 10 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = -0.084
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 10 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = -0.082
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 10 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = -0.08
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 10 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = -0.078
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 9 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = -0.076
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 9 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = -0.074
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 9 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = -0.072
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 9 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = -0.07
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 9 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = -0.068
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 10 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = -0.066
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 10 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = -0.064
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 11 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = -0.062
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 11 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = -0.06
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 11 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = -0.058
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 12 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = -0.056
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 13 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = -0.054
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 14 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = -0.052
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 13 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = -0.05
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 14 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = -0.048
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 8 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = -0.046
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 7 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = -0.044
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 7 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = -0.042
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 7 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = -0.04
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 7 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = -0.038
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 7 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = -0.036
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 7 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = -0.034
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 11 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = -0.032
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 7 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = -0.03
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 7 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = -0.028
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 7 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = -0.026
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 7 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = -0.024
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 7 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = -0.022
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 7 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = -0.02
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 7 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = -0.018
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 7 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = -0.016
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 7 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = -0.014
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 7 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = -0.012
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 7 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = -0.01
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 7 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = -0.008
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 7 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = -0.006
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 7 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = -0.004
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 7 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = -0.002
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 7 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = 0
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 7 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = 0.002
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 7 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = 0.004
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 7 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = 0.006
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 7 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = 0.008
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 7 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = 0.01
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 7 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = 0.012
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 7 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = 0.014
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 7 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = 0.016
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 7 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = 0.018
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 7 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = 0.02
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 7 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = 0.022
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 7 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = 0.024
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 7 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = 0.026
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 7 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = 0.028
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 7 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = 0.03
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 7 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = 0.032
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 7 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = 0.034
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 11 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = 0.036
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 7 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = 0.038
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 7 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = 0.04
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 7 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = 0.042
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 7 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = 0.044
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 7 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = 0.046
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 7 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = 0.048
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 8 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = 0.05
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 14 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = 0.052
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 13 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = 0.054
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 14 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = 0.056
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 13 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = 0.058
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 12 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = 0.06
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 11 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = 0.062
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 11 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = 0.064
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 11 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = 0.066
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 10 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = 0.068
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 10 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = 0.07
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 9 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = 0.072
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 9 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = 0.074
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 9 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = 0.076
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 9 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = 0.078
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 9 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = 0.08
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 10 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = 0.082
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 10 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = 0.084
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 10 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = 0.086
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 10 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = 0.088
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 10 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = 0.09
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 10 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = 0.092
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 10 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = 0.094
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 10 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = 0.096
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 10 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = 0.098
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 11 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = 0.1
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 11 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW1: running netlist for Re = 30
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = -0.1
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 11 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = -0.098
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 8 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = -0.096
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 8 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = -0.094
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 10 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = -0.092
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 8 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = -0.09
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 8 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = -0.088
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 8 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = -0.086
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 9 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = -0.084
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 8 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = -0.082
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 8 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = -0.08
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 8 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = -0.078
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 8 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = -0.076
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 8 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = -0.074
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 7 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = -0.072
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 7 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = -0.07
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 7 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = -0.068
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 7 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = -0.066
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 7 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = -0.064
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 7 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = -0.062
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 7 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = -0.06
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 7 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = -0.058
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 7 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = -0.056
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 7 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = -0.054
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 7 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = -0.052
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 7 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = -0.05
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 7 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = -0.048
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 7 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = -0.046
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 7 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = -0.044
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 7 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = -0.042
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 7 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = -0.04
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 7 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = -0.038
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 7 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = -0.036
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 7 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = -0.034
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 7 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = -0.032
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 7 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = -0.03
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 7 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = -0.028
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 7 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = -0.026
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 7 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = -0.024
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 7 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = -0.022
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 7 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = -0.02
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 7 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = -0.018
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 7 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = -0.016
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 7 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = -0.014
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 7 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = -0.012
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 7 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = -0.01
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 7 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = -0.008
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 7 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = -0.006
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 7 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = -0.004
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 7 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = -0.002
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 7 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = 0
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 7 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = 0.002
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 7 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = 0.004
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 7 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = 0.006
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 7 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = 0.008
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 7 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = 0.01
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 7 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = 0.012
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 7 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = 0.014
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 7 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = 0.016
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 7 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = 0.018
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 7 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = 0.02
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 7 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = 0.022
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 7 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = 0.024
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 7 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = 0.026
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 7 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = 0.028
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 7 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = 0.03
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 7 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = 0.032
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 7 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = 0.034
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 7 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = 0.036
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 7 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = 0.038
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 7 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = 0.04
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 7 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = 0.042
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 7 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = 0.044
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 7 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = 0.046
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 7 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = 0.048
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 7 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = 0.05
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 7 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = 0.052
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 7 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = 0.054
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 7 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = 0.056
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 7 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = 0.058
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 7 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = 0.06
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 7 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = 0.062
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 7 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = 0.064
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 7 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = 0.066
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 7 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = 0.068
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 7 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = 0.07
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 7 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = 0.072
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 7 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = 0.074
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 7 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = 0.076
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 8 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = 0.078
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 8 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = 0.08
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 8 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = 0.082
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 8 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = 0.084
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 8 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = 0.086
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 9 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = 0.088
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 8 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = 0.09
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 8 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = 0.092
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 8 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = 0.094
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 10 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = 0.096
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 8 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = 0.098
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 8 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = 0.1
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 11 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW1: running netlist for Re = 80
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = -0.1
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 7 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = -0.098
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 7 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = -0.096
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 7 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = -0.094
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 7 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = -0.092
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 7 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = -0.09
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 7 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = -0.088
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 7 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = -0.086
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 7 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = -0.084
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 7 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = -0.082
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 7 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = -0.08
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 7 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = -0.078
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 7 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = -0.076
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 7 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = -0.074
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 7 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = -0.072
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 7 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = -0.07
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 7 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = -0.068
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 7 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = -0.066
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 7 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = -0.064
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 7 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = -0.062
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 7 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = -0.06
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 7 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = -0.058
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 7 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = -0.056
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 7 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = -0.054
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 7 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = -0.052
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 7 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = -0.05
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 7 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = -0.048
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 7 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = -0.046
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 7 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = -0.044
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 7 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = -0.042
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 7 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = -0.04
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 7 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = -0.038
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 7 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = -0.036
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 7 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = -0.034
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 7 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = -0.032
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 7 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = -0.03
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 7 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = -0.028
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 7 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = -0.026
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 7 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = -0.024
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 7 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = -0.022
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 7 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = -0.02
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 7 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = -0.018
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 7 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = -0.016
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 7 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = -0.014
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 7 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = -0.012
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 7 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = -0.01
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 7 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = -0.008
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 7 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = -0.006
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 7 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = -0.004
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 7 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = -0.002
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 7 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = 0
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 7 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = 0.002
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 7 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = 0.004
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 7 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = 0.006
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 7 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = 0.008
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 7 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = 0.01
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 7 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = 0.012
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 7 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = 0.014
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 7 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = 0.016
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 7 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = 0.018
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 7 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = 0.02
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 7 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = 0.022
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 7 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = 0.024
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 7 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = 0.026
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 7 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = 0.028
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 7 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = 0.03
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 7 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = 0.032
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 7 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = 0.034
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 7 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = 0.036
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 7 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = 0.038
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 7 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = 0.04
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 7 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = 0.042
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 7 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = 0.044
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 7 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = 0.046
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 7 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = 0.048
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 7 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = 0.05
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 7 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = 0.052
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 7 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = 0.054
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 7 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = 0.056
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 7 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = 0.058
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 7 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = 0.06
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 7 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = 0.062
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 7 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = 0.064
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 7 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = 0.066
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 7 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = 0.068
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 7 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = 0.07
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 7 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = 0.072
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 7 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = 0.074
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 7 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = 0.076
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 7 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = 0.078
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 7 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = 0.08
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 7 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = 0.082
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 7 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = 0.084
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 7 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = 0.086
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 7 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = 0.088
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 7 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = 0.09
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 7 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = 0.092
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 7 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = 0.094
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 7 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = 0.096
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 7 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = 0.098
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 7 iterations
+checker notice, variable `out2.V' in equation `Out' not yet defined
+checker notice, variable `out1.V' in equation `Out' not yet defined
+NOTIFY: SW2: running netlist for Vin = 0.1
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 7 iterations

@@ -1,0 +1,27 @@
+parsing netlist...
+checking netlist...
+subcircuit root
+  Diode:D2 dc_voltage _net0 Is="1e-15A" N="1" Cj0="1e-14F" M="0.5" Vj="0.7V" Fc="0.5" Cp="0F" Isr="0" Nr="2" Rs="0Ohm" Tt="0s" Ikf="0" Kf="0" Af="1" Ffe="1" Bv="0" Ibv="0.001A" Temp="26.85" Xti="3" Eg="1.11" Tbv="0" Trs="0" Ttt1="0" Ttt2="0" Tm1="0" Tm2="0" Tnom="26.85" Area="1"
+  Diode:D4 _net1 gnd Is="1e-15A" N="1" Cj0="1e-14F" M="0.5" Vj="0.7V" Fc="0.5" Cp="0F" Isr="0" Nr="2" Rs="0Ohm" Tt="0s" Ikf="0" Kf="0" Af="1" Ffe="1" Bv="0" Ibv="0.001A" Temp="26.85" Xti="3" Eg="1.11" Tbv="0" Trs="0" Ttt1="0" Ttt2="0" Tm1="0" Tm2="0" Tnom="26.85" Area="1"
+  Diode:D1 dc_voltage _net1 Is="1e-15A" N="1" Cj0="1e-14F" M="0.5" Vj="0.7V" Fc="0.5" Cp="0F" Isr="0" Nr="2" Rs="0Ohm" Tt="0s" Ikf="0" Kf="0" Af="1" Ffe="1" Bv="0" Ibv="0.001A" Temp="26.85" Xti="3" Eg="1.11" Tbv="0" Trs="0" Ttt1="0" Ttt2="0" Tm1="0" Tm2="0" Tnom="26.85" Area="1"
+  R:Load gnd dc_voltage R="100Ohm" Temp="26.85" Tc1="0" Tc2="0" Tnom="26.85"
+  Diode:D3 _net0 gnd Is="1e-15A" N="1" Cj0="1e-14F" M="0.5" Vj="0.7V" Fc="0.5" Cp="0F" Isr="0" Nr="2" Rs="0Ohm" Tt="0s" Ikf="0" Kf="0" Af="1" Ffe="1" Bv="0" Ibv="0.001A" Temp="26.85" Xti="3" Eg="1.11" Tbv="0" Trs="0" Ttt1="0" Ttt2="0" Tm1="0" Tm2="0" Tnom="26.85" Area="1"
+  Tr:Tr1 _net2 _net1 _net0 gnd T="20"
+  Vac:V1 _net3 gnd U="230V" f="50Hz" Phase="0" Theta="0"
+  TR:TR1 Type="lin" Start="0" Stop="0.05s" Points="200" IntegrationMethod="Trapezoidal" Order="2" InitialStep="1e-09s" MinStep="1e-16" MaxIter="150" reltol="0.001" abstol="1e-12A" vntol="1e-06V" Temp="26.85" LTEreltol="0.001" LTEabstol="1e-06" LTEfactor="1" Solver="CroutLU" relaxTSR="no" initialDC="yes" MaxStep="0"
+  R:R1 _net3 _net2 R="0.5Ohm" Temp="26.85" Tc1="0" Tc2="0" Tnom="26.85"
+  C:C1 gnd dc_voltage C="0.001F"
+netlist content
+      4 Diode instances
+      1 C instances
+      2 R instances
+      1 Tr instances
+      1 Vac instances
+      1 TR instances
+creating netlist...
+NOTIFY: TR1: creating node list for initial DC analysis
+NOTIFY: TR1: solving initial DC netlist
+NOTIFY: TR1: creating node list for transient analysis
+NOTIFY: TR1: solving transient netlist
+NOTIFY: TR1: average time-step 4.4405e-05, 140 rejections
+NOTIFY: TR1: average NR-iterations 2.82149, 0 non-convergences

@@ -1,0 +1,32 @@
+parsing netlist...
+checking netlist...
+checker notice, value of `TH' (variable `Ton') could be out of range `[0,0.' in `Vrect:V2'
+checker notice, value of `TL' (variable `Toff') could be out of range `[0,0.' in `Vrect:V2'
+checker notice, value of `Stop' (variable `Tmax') could be out of range `[0,0.' in `TR:TR1'
+checker notice, value of `MinStep' (variable `Tstep') could be out of range `[0,0.' in `TR:TR1'
+checker notice, value of `MaxStep' (variable `Tstep') could be out of range `[0,0.' in `TR:TR1'
+subcircuit root
+  Vrect:V2 ctrl gnd U="1V" TH="Ton" TL="Toff" Tr="1e-09s" Tf="1e-09s" Td="0s"
+  Vdc:V1 _net0 gnd U="12V"
+  Relais:S1 ctrl _net0 dio gnd Vt="0.5V" Vh="0.1V" Ron="1" Roff="1e+12" Temp="26.85"
+  C:C1 out gnd C="0.0001" V="0"
+  TR:TR1 Type="lin" Start="0" Stop="Tmax" Points="2001" IntegrationMethod="Trapezoidal" Order="2" InitialStep="1e-09s" MinStep="Tstep" MaxIter="150" reltol="0.001" abstol="1e-12A" vntol="1e-06V" Temp="26.85" LTEreltol="0.001" LTEabstol="1e-06" LTEfactor="1" Solver="CroutLU" relaxTSR="no" initialDC="yes" MaxStep="Tstep"
+  L:L1 gnd dio L="4.7e-05H" I="0"
+  Diode:D1 dio out Is="1e-12A" N="1" Cj0="1e-14F" M="0.5" Vj="0.7V" Fc="0.5" Cp="0F" Isr="0" Nr="2" Rs="0Ohm" Tt="0s" Ikf="0" Kf="0" Af="1" Ffe="1" Bv="0" Ibv="0.001A" Temp="26.85" Xti="3" Eg="1.11" Tbv="0" Trs="0" Ttt1="0" Ttt2="0" Tm1="0" Tm2="0" Tnom="26.85" Area="1"
+  R:R1 gnd out R="10" Temp="26.85" Tc1="0" Tc2="0" Tnom="26.85"
+netlist content
+      1 Diode instances
+      1 C instances
+      1 L instances
+      1 R instances
+      1 Relais instances
+      1 Vrect instances
+      1 Vdc instances
+      1 TR instances
+creating netlist...
+NOTIFY: TR1: creating node list for initial DC analysis
+NOTIFY: TR1: solving initial DC netlist
+NOTIFY: TR1: creating node list for transient analysis
+NOTIFY: TR1: solving transient netlist
+NOTIFY: TR1: average time-step 2.49965e-08, 0 rejections
+NOTIFY: TR1: average NR-iterations 2.15568, 0 non-convergences

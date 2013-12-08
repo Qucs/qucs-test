@@ -1,0 +1,69 @@
+parsing netlist...
+checking netlist...
+checker notice, variable `Input.v' in equation `Gain' not yet defined
+checker notice, variable `Output.v' in equation `Gain' not yet defined
+checker notice, variable `Input.v' in equation `Phase' not yet defined
+checker notice, variable `Output.v' in equation `Phase' not yet defined
+subcircuit root
+  Idc:singleOPV.OPV1.I1 singleOPV.OPV1._net6 _net1 I="5e-06A"
+  MOSFET:singleOPV.OPV1.T7 singleOPV.OPV1._net1 Output _net1 _net1 Type="pfet" Vt0="-1V" Kp="2e-05" Gamma="0" Phi="0.6V" Lambda="0" Rd="0Ohm" Rs="0Ohm" Rg="0Ohm" Is="1e-14A" N="1" W="8e-05m" L="1.2e-06m" Ld="0" Tox="1e-07m" Cgso="0" Cgdo="0" Cgbo="0" Cbd="0F" Cbs="0F" Pb="0.8V" Mj="0.5" Fc="0.5" Cjsw="0" Mjsw="0.33" Tt="0s" Nsub="0" Nss="0" Tpg="1" Uo="600" Rsh="0" Nrd="1" Nrs="1" Cj="0" Js="0" Ad="0" As="0" Pd="0" Ps="0" Kf="0" Af="1" Ffe="1" Temp="26.85" Tnom="26.85"
+  MOSFET:singleOPV.OPV1.T2 singleOPV.OPV1._net5 singleOPV.OPV1._net1 _net1 _net1 Type="pfet" Vt0="-1V" Kp="2e-05" Gamma="0" Phi="0.6V" Lambda="0" Rd="0Ohm" Rs="0Ohm" Rg="0Ohm" Is="1e-14A" N="1" W="0.0002m" L="5e-06m" Ld="0" Tox="1e-07m" Cgso="0" Cgdo="0" Cgbo="0" Cbd="0F" Cbs="0F" Pb="0.8V" Mj="0.5" Fc="0.5" Cjsw="0" Mjsw="0.33" Tt="0s" Nsub="0" Nss="0" Tpg="1" Uo="600" Rsh="0" Nrd="1" Nrs="1" Cj="0" Js="0" Ad="0" As="0" Pd="0" Ps="0" Kf="0" Af="1" Ffe="1" Temp="26.85" Tnom="26.85"
+  MOSFET:singleOPV.OPV1.T1 singleOPV.OPV1._net5 singleOPV.OPV1._net5 _net1 _net1 Type="pfet" Vt0="-1V" Kp="2e-05" Gamma="0" Phi="0.6V" Lambda="0" Rd="0Ohm" Rs="0Ohm" Rg="0Ohm" Is="1e-14A" N="1" W="0.0002m" L="5e-06m" Ld="0" Tox="1e-07m" Cgso="0" Cgdo="0" Cgbo="0" Cbd="0F" Cbs="0F" Pb="0.8V" Mj="0.5" Fc="0.5" Cjsw="0" Mjsw="0.33" Tt="0s" Nsub="0" Nss="0" Tpg="1" Uo="600" Rsh="0" Nrd="1" Nrs="1" Cj="0" Js="0" Ad="0" As="0" Pd="0" Ps="0" Kf="0" Af="1" Ffe="1" Temp="26.85" Tnom="26.85"
+  C:singleOPV.OPV1.C1 singleOPV.OPV1._net8 Output C="4e-12"
+  R:singleOPV.OPV1.R1 singleOPV.OPV1._net1 singleOPV.OPV1._net8 R="4000" Temp="26.85" Tc1="0" Tc2="0" Tnom="26.85"
+  MOSFET:singleOPV.OPV1.T8 singleOPV.OPV1._net6 Output _net2 _net2 Type="nfet" Vt0="1V" Kp="2e-05" Gamma="0" Phi="0.6V" Lambda="0" Rd="0Ohm" Rs="0Ohm" Rg="0Ohm" Is="1e-14A" N="1" W="6e-05m" L="5e-06m" Ld="0" Tox="1e-07m" Cgso="0" Cgdo="0" Cgbo="0" Cbd="0F" Cbs="0F" Pb="0.8V" Mj="0.5" Fc="0.5" Cjsw="0" Mjsw="0.33" Tt="0s" Nsub="0" Nss="0" Tpg="1" Uo="600" Rsh="0" Nrd="1" Nrs="1" Cj="0" Js="0" Ad="0" As="0" Pd="0" Ps="0" Kf="0" Af="1" Ffe="1" Temp="26.85" Tnom="26.85"
+  MOSFET:singleOPV.OPV1.T5 singleOPV.OPV1._net6 singleOPV.OPV1._net2 _net2 _net2 Type="nfet" Vt0="1V" Kp="2e-05" Gamma="0" Phi="0.6V" Lambda="0" Rd="0Ohm" Rs="0Ohm" Rg="0Ohm" Is="1e-14A" N="1" W="1.5e-05m" L="5e-06m" Ld="0" Tox="1e-07m" Cgso="0" Cgdo="0" Cgbo="0" Cbd="0F" Cbs="0F" Pb="0.8V" Mj="0.5" Fc="0.5" Cjsw="0" Mjsw="0.33" Tt="0s" Nsub="0" Nss="0" Tpg="1" Uo="600" Rsh="0" Nrd="1" Nrs="1" Cj="0" Js="0" Ad="0" As="0" Pd="0" Ps="0" Kf="0" Af="1" Ffe="1" Temp="26.85" Tnom="26.85"
+  MOSFET:singleOPV.OPV1.T6 singleOPV.OPV1._net6 singleOPV.OPV1._net6 _net2 _net2 Type="nfet" Vt0="1V" Kp="2e-05" Gamma="0" Phi="0.6V" Lambda="0" Rd="0Ohm" Rs="0Ohm" Rg="0Ohm" Is="1e-14A" N="1" W="1.5e-05m" L="5e-06m" Ld="0" Tox="1e-07m" Cgso="0" Cgdo="0" Cgbo="0" Cbd="0F" Cbs="0F" Pb="0.8V" Mj="0.5" Fc="0.5" Cjsw="0" Mjsw="0.33" Tt="0s" Nsub="0" Nss="0" Tpg="1" Uo="600" Rsh="0" Nrd="1" Nrs="1" Cj="0" Js="0" Ad="0" As="0" Pd="0" Ps="0" Kf="0" Af="1" Ffe="1" Temp="26.85" Tnom="26.85"
+  MOSFET:singleOPV.OPV1.T4 _net0 singleOPV.OPV1._net5 singleOPV.OPV1._net2 _net2 Type="nfet" Vt0="1V" Kp="2e-05" Gamma="0" Phi="0.6V" Lambda="0" Rd="0Ohm" Rs="0Ohm" Rg="0Ohm" Is="1e-14A" N="1" W="0.00012m" L="8e-07m" Ld="0" Tox="1e-07m" Cgso="0" Cgdo="0" Cgbo="0" Cbd="0F" Cbs="0F" Pb="0.8V" Mj="0.5" Fc="0.5" Cjsw="0" Mjsw="0.33" Tt="0s" Nsub="0" Nss="0" Tpg="1" Uo="600" Rsh="0" Nrd="1" Nrs="1" Cj="0" Js="0" Ad="0" As="0" Pd="0" Ps="0" Kf="0" Af="1" Ffe="1" Temp="26.85" Tnom="26.85"
+  MOSFET:singleOPV.OPV1.T3 Input singleOPV.OPV1._net1 singleOPV.OPV1._net2 _net2 Type="nfet" Vt0="1V" Kp="2e-05" Gamma="0" Phi="0.6V" Lambda="0" Rd="0Ohm" Rs="0Ohm" Rg="0Ohm" Is="1e-14A" N="1" W="0.00012m" L="8e-07m" Ld="0" Tox="1e-07m" Cgso="0" Cgdo="0" Cgbo="0" Cbd="0F" Cbs="0F" Pb="0.8V" Mj="0.5" Fc="0.5" Cjsw="0" Mjsw="0.33" Tt="0s" Nsub="0" Nss="0" Tpg="1" Uo="600" Rsh="0" Nrd="1" Nrs="1" Cj="0" Js="0" Ad="0" As="0" Pd="0" Ps="0" Kf="0" Af="1" Ffe="1" Temp="26.85" Tnom="26.85"
+  Vac:V4 Input gnd U="1e-06V" f="2000Hz" Phase="0" Theta="0"
+  R:R2 Output _net0 R="50000" Temp="26.85" Tc1="0" Tc2="0" Tnom="26.85"
+  R:R1 gnd Output R="100000" Temp="26.85" Tc1="0" Tc2="0" Tnom="26.85"
+  Vdc:V3 _net1 gnd U="2.5V"
+  Vdc:V6 _net2 gnd U="-2.5V"
+  AC:AC1 Type="log" Start="1" Stop="1e+07Hz" Points="200" Noise="no"
+  DC:DC1 Temp="26.85" reltol="0.001" abstol="1e-12A" vntol="1e-06V" saveOPs="no" MaxIter="150" saveAll="no" convHelper="none" Solver="CroutLU"
+  R:R3 _net0 gnd R="1700" Temp="26.85" Tc1="0" Tc2="0" Tnom="26.85"
+subcircuit singleOPV
+  MOSFET:T3 _net0 _net1 _net2 _net3 Type="nfet" Vt0="1V" Kp="2e-05" Gamma="0" Phi="0.6V" Lambda="0" Rd="0Ohm" Rs="0Ohm" Rg="0Ohm" Is="1e-14A" N="1" W="0.00012m" L="8e-07m" Ld="0" Tox="1e-07m" Cgso="0" Cgdo="0" Cgbo="0" Cbd="0F" Cbs="0F" Pb="0.8V" Mj="0.5" Fc="0.5" Cjsw="0" Mjsw="0.33" Tt="0s" Nsub="0" Nss="0" Tpg="1" Uo="600" Rsh="0" Nrd="1" Nrs="1" Cj="0" Js="0" Ad="0" As="0" Pd="0" Ps="0" Kf="0" Af="1" Ffe="1" Temp="26.85" Tnom="26.85"
+  MOSFET:T4 _net4 _net5 _net2 _net3 Type="nfet" Vt0="1V" Kp="2e-05" Gamma="0" Phi="0.6V" Lambda="0" Rd="0Ohm" Rs="0Ohm" Rg="0Ohm" Is="1e-14A" N="1" W="0.00012m" L="8e-07m" Ld="0" Tox="1e-07m" Cgso="0" Cgdo="0" Cgbo="0" Cbd="0F" Cbs="0F" Pb="0.8V" Mj="0.5" Fc="0.5" Cjsw="0" Mjsw="0.33" Tt="0s" Nsub="0" Nss="0" Tpg="1" Uo="600" Rsh="0" Nrd="1" Nrs="1" Cj="0" Js="0" Ad="0" As="0" Pd="0" Ps="0" Kf="0" Af="1" Ffe="1" Temp="26.85" Tnom="26.85"
+  MOSFET:T6 _net6 _net6 _net3 _net3 Type="nfet" Vt0="1V" Kp="2e-05" Gamma="0" Phi="0.6V" Lambda="0" Rd="0Ohm" Rs="0Ohm" Rg="0Ohm" Is="1e-14A" N="1" W="1.5e-05m" L="5e-06m" Ld="0" Tox="1e-07m" Cgso="0" Cgdo="0" Cgbo="0" Cbd="0F" Cbs="0F" Pb="0.8V" Mj="0.5" Fc="0.5" Cjsw="0" Mjsw="0.33" Tt="0s" Nsub="0" Nss="0" Tpg="1" Uo="600" Rsh="0" Nrd="1" Nrs="1" Cj="0" Js="0" Ad="0" As="0" Pd="0" Ps="0" Kf="0" Af="1" Ffe="1" Temp="26.85" Tnom="26.85"
+  MOSFET:T5 _net6 _net2 _net3 _net3 Type="nfet" Vt0="1V" Kp="2e-05" Gamma="0" Phi="0.6V" Lambda="0" Rd="0Ohm" Rs="0Ohm" Rg="0Ohm" Is="1e-14A" N="1" W="1.5e-05m" L="5e-06m" Ld="0" Tox="1e-07m" Cgso="0" Cgdo="0" Cgbo="0" Cbd="0F" Cbs="0F" Pb="0.8V" Mj="0.5" Fc="0.5" Cjsw="0" Mjsw="0.33" Tt="0s" Nsub="0" Nss="0" Tpg="1" Uo="600" Rsh="0" Nrd="1" Nrs="1" Cj="0" Js="0" Ad="0" As="0" Pd="0" Ps="0" Kf="0" Af="1" Ffe="1" Temp="26.85" Tnom="26.85"
+  MOSFET:T8 _net6 _net7 _net3 _net3 Type="nfet" Vt0="1V" Kp="2e-05" Gamma="0" Phi="0.6V" Lambda="0" Rd="0Ohm" Rs="0Ohm" Rg="0Ohm" Is="1e-14A" N="1" W="6e-05m" L="5e-06m" Ld="0" Tox="1e-07m" Cgso="0" Cgdo="0" Cgbo="0" Cbd="0F" Cbs="0F" Pb="0.8V" Mj="0.5" Fc="0.5" Cjsw="0" Mjsw="0.33" Tt="0s" Nsub="0" Nss="0" Tpg="1" Uo="600" Rsh="0" Nrd="1" Nrs="1" Cj="0" Js="0" Ad="0" As="0" Pd="0" Ps="0" Kf="0" Af="1" Ffe="1" Temp="26.85" Tnom="26.85"
+  R:R1 _net1 _net8 R="4000" Temp="26.85" Tc1="0" Tc2="0" Tnom="26.85"
+  C:C1 _net8 _net7 C="4e-12"
+  MOSFET:T1 _net5 _net5 _net9 _net9 Type="pfet" Vt0="-1V" Kp="2e-05" Gamma="0" Phi="0.6V" Lambda="0" Rd="0Ohm" Rs="0Ohm" Rg="0Ohm" Is="1e-14A" N="1" W="0.0002m" L="5e-06m" Ld="0" Tox="1e-07m" Cgso="0" Cgdo="0" Cgbo="0" Cbd="0F" Cbs="0F" Pb="0.8V" Mj="0.5" Fc="0.5" Cjsw="0" Mjsw="0.33" Tt="0s" Nsub="0" Nss="0" Tpg="1" Uo="600" Rsh="0" Nrd="1" Nrs="1" Cj="0" Js="0" Ad="0" As="0" Pd="0" Ps="0" Kf="0" Af="1" Ffe="1" Temp="26.85" Tnom="26.85"
+  MOSFET:T2 _net5 _net1 _net9 _net9 Type="pfet" Vt0="-1V" Kp="2e-05" Gamma="0" Phi="0.6V" Lambda="0" Rd="0Ohm" Rs="0Ohm" Rg="0Ohm" Is="1e-14A" N="1" W="0.0002m" L="5e-06m" Ld="0" Tox="1e-07m" Cgso="0" Cgdo="0" Cgbo="0" Cbd="0F" Cbs="0F" Pb="0.8V" Mj="0.5" Fc="0.5" Cjsw="0" Mjsw="0.33" Tt="0s" Nsub="0" Nss="0" Tpg="1" Uo="600" Rsh="0" Nrd="1" Nrs="1" Cj="0" Js="0" Ad="0" As="0" Pd="0" Ps="0" Kf="0" Af="1" Ffe="1" Temp="26.85" Tnom="26.85"
+  MOSFET:T7 _net1 _net7 _net9 _net9 Type="pfet" Vt0="-1V" Kp="2e-05" Gamma="0" Phi="0.6V" Lambda="0" Rd="0Ohm" Rs="0Ohm" Rg="0Ohm" Is="1e-14A" N="1" W="8e-05m" L="1.2e-06m" Ld="0" Tox="1e-07m" Cgso="0" Cgdo="0" Cgbo="0" Cbd="0F" Cbs="0F" Pb="0.8V" Mj="0.5" Fc="0.5" Cjsw="0" Mjsw="0.33" Tt="0s" Nsub="0" Nss="0" Tpg="1" Uo="600" Rsh="0" Nrd="1" Nrs="1" Cj="0" Js="0" Ad="0" As="0" Pd="0" Ps="0" Kf="0" Af="1" Ffe="1" Temp="26.85" Tnom="26.85"
+  Idc:I1 _net6 _net9 I="5e-06A"
+netlist content
+      8 MOSFET instances
+      1 Idc instances
+      1 AC instances
+      1 C instances
+      1 DC instances
+      4 R instances
+      2 Vdc instances
+      1 Vac instances
+creating netlist...
+checker notice, variable `Input.v' in equation `Gain' not yet defined
+checker notice, variable `Output.v' in equation `Gain' not yet defined
+checker notice, variable `Input.v' in equation `Phase' not yet defined
+checker notice, variable `Output.v' in equation `Phase' not yet defined
+NOTIFY: Cox=3.31501e-14, Beta=0.003 Ga=0, Phi=0.6, Vto=1
+NOTIFY: Cox=3.31501e-14, Beta=0.003 Ga=0, Phi=0.6, Vto=1
+NOTIFY: Cox=2.58985e-14, Beta=6e-05 Ga=0, Phi=0.6, Vto=1
+NOTIFY: Cox=2.58985e-14, Beta=6e-05 Ga=0, Phi=0.6, Vto=1
+NOTIFY: Cox=1.03594e-13, Beta=0.00024 Ga=0, Phi=0.6, Vto=1
+NOTIFY: Cox=3.45313e-13, Beta=0.0008 Ga=0, Phi=0.6, Vto=-1
+NOTIFY: Cox=3.45313e-13, Beta=0.0008 Ga=0, Phi=0.6, Vto=-1
+NOTIFY: Cox=3.31501e-14, Beta=0.00133333 Ga=0, Phi=0.6, Vto=-1
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 9 iterations
+checker notice, variable `Input.v' in equation `Gain' not yet defined
+checker notice, variable `Output.v' in equation `Gain' not yet defined
+checker notice, variable `Input.v' in equation `Phase' not yet defined
+checker notice, variable `Output.v' in equation `Phase' not yet defined
+NOTIFY: AC1: creating node list for AC analysis
+NOTIFY: AC1: solving AC netlist

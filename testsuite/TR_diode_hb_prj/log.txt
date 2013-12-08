@@ -1,0 +1,31 @@
+parsing netlist...
+checking netlist...
+checker notice, variable `time' in equation `Spectrum' not yet defined
+checker notice, variable `Node3.Vt' in equation `Spectrum' not yet defined
+subcircuit root
+  Vac:V1 Node1 gnd U="10V" f="1e+09Hz" Phase="0" Theta="0"
+  Diode:D1 gnd Node3 Is="1e-15A" N="1" Cj0="0F" M="0.5" Vj="0.7V" Fc="0.5" Cp="0F" Isr="0" Nr="2" Rs="0Ohm" Tt="0s" Ikf="0" Kf="0" Af="1" Ffe="1" Bv="0.7" Ibv="0.001A" Temp="26.85" Xti="3" Eg="1.11" Tbv="0" Trs="0" Ttt1="0" Ttt2="0" Tm1="0" Tm2="0" Tnom="26.85" Area="1"
+  R:R1 Node1 Node2 R="100" Temp="26.85" Tc1="0" Tc2="0" Tnom="26.85"
+  R:R2 Node2 Node3 R="100" Temp="26.85" Tc1="0" Tc2="0" Tnom="26.85"
+  HB:HB1 f="1e+09Hz" n="8" iabstol="1e-12A" vabstol="1e-06V" reltol="0.001" MaxIter="150"
+  TR:TR1 Type="lin" Start="0" Stop="4e-09s" Points="256" IntegrationMethod="Trapezoidal" Order="2" InitialStep="1e-09s" MinStep="1e-16" MaxIter="150" reltol="0.001" abstol="1e-12A" vntol="1e-06V" Temp="26.85" LTEreltol="0.001" LTEabstol="1e-06" LTEfactor="1" Solver="CroutLU" relaxTSR="no" initialDC="yes" MaxStep="0"
+netlist content
+      1 Diode instances
+      2 R instances
+      1 HB instances
+      1 Vac instances
+      1 TR instances
+creating netlist...
+checker notice, variable `time' in equation `Spectrum' not yet defined
+checker notice, variable `Node3.Vt' in equation `Spectrum' not yet defined
+NOTIFY: TR1: creating node list for initial DC analysis
+NOTIFY: TR1: solving initial DC netlist
+NOTIFY: TR1: creating node list for transient analysis
+NOTIFY: TR1: solving transient netlist
+NOTIFY: TR1: average time-step 4.41014e-12, 254 rejections
+NOTIFY: TR1: average NR-iterations 3.76295, 0 non-convergences
+checker notice, variable `time' in equation `Spectrum' not yet defined
+checker notice, variable `Node3.Vt' in equation `Spectrum' not yet defined
+NOTIFY: HB1: solving for 9 frequencies
+NOTIFY: HB1: balancing at 1 nodes
+HB1: convergence reached after 11 iterations

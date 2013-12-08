@@ -1,0 +1,525 @@
+parsing netlist...
+checking netlist...
+checker notice, variable `R_load' in equation `r_calc' not yet defined
+checker notice, variable `R_load' in equation `r_calc' not yet defined
+checker notice, variable `forward.v' in equation `r_measure' not yet defined
+checker notice, variable `reflected.v' in equation `r_measure' not yet defined
+subcircuit root
+  R:R1 gnd reflected R="50Ohm" Temp="26.85" Tc1="0" Tc2="0" Tnom="26.85"
+  R:R2 gnd forward R="50Ohm" Temp="26.85" Tc1="0" Tc2="0" Tnom="26.85"
+  R:R4 _net0 _net1 R="50Ohm" Temp="26.85" Tc1="0" Tc2="0" Tnom="26.85"
+  Vac:V1 _net0 gnd U="2V" f="1e+09Hz" Phase="0" Theta="0"
+  Tr:Tr2 gnd reflected forward Output T="25"
+  R:Load gnd Output R="R_load" Temp="26.85" Tc1="0" Tc2="0" Tnom="26.85"
+  Tr:Tr1 reflected _net1 Output gnd T="25"
+  AC:AC1 Type="lin" Start="1e+09Hz" Stop="2e+09Hz" Points="2" Noise="no"
+  SW:SW1 Sim="AC1" Type="lin" Param="R_load" Start="2Ohm" Stop="200Ohm" Points="100"
+netlist content
+      1 AC instances
+      4 R instances
+      2 Tr instances
+      1 SW instances
+      1 Vac instances
+creating netlist...
+checker notice, variable `forward.v' in equation `r_measure' not yet defined
+checker notice, variable `reflected.v' in equation `r_measure' not yet defined
+checker notice, variable `forward.v' in equation `r_measure' not yet defined
+checker notice, variable `reflected.v' in equation `r_measure' not yet defined
+NOTIFY: SW1: running netlist for R_load = 2
+NOTIFY: AC1: creating node list for AC analysis
+NOTIFY: AC1: solving AC netlist
+checker notice, variable `forward.v' in equation `r_measure' not yet defined
+checker notice, variable `reflected.v' in equation `r_measure' not yet defined
+NOTIFY: SW1: running netlist for R_load = 4
+NOTIFY: AC1: creating node list for AC analysis
+NOTIFY: AC1: solving AC netlist
+checker notice, variable `forward.v' in equation `r_measure' not yet defined
+checker notice, variable `reflected.v' in equation `r_measure' not yet defined
+NOTIFY: SW1: running netlist for R_load = 6
+NOTIFY: AC1: creating node list for AC analysis
+NOTIFY: AC1: solving AC netlist
+checker notice, variable `forward.v' in equation `r_measure' not yet defined
+checker notice, variable `reflected.v' in equation `r_measure' not yet defined
+NOTIFY: SW1: running netlist for R_load = 8
+NOTIFY: AC1: creating node list for AC analysis
+NOTIFY: AC1: solving AC netlist
+checker notice, variable `forward.v' in equation `r_measure' not yet defined
+checker notice, variable `reflected.v' in equation `r_measure' not yet defined
+NOTIFY: SW1: running netlist for R_load = 10
+NOTIFY: AC1: creating node list for AC analysis
+NOTIFY: AC1: solving AC netlist
+checker notice, variable `forward.v' in equation `r_measure' not yet defined
+checker notice, variable `reflected.v' in equation `r_measure' not yet defined
+NOTIFY: SW1: running netlist for R_load = 12
+NOTIFY: AC1: creating node list for AC analysis
+NOTIFY: AC1: solving AC netlist
+checker notice, variable `forward.v' in equation `r_measure' not yet defined
+checker notice, variable `reflected.v' in equation `r_measure' not yet defined
+NOTIFY: SW1: running netlist for R_load = 14
+NOTIFY: AC1: creating node list for AC analysis
+NOTIFY: AC1: solving AC netlist
+checker notice, variable `forward.v' in equation `r_measure' not yet defined
+checker notice, variable `reflected.v' in equation `r_measure' not yet defined
+NOTIFY: SW1: running netlist for R_load = 16
+NOTIFY: AC1: creating node list for AC analysis
+NOTIFY: AC1: solving AC netlist
+checker notice, variable `forward.v' in equation `r_measure' not yet defined
+checker notice, variable `reflected.v' in equation `r_measure' not yet defined
+NOTIFY: SW1: running netlist for R_load = 18
+NOTIFY: AC1: creating node list for AC analysis
+NOTIFY: AC1: solving AC netlist
+checker notice, variable `forward.v' in equation `r_measure' not yet defined
+checker notice, variable `reflected.v' in equation `r_measure' not yet defined
+NOTIFY: SW1: running netlist for R_load = 20
+NOTIFY: AC1: creating node list for AC analysis
+NOTIFY: AC1: solving AC netlist
+checker notice, variable `forward.v' in equation `r_measure' not yet defined
+checker notice, variable `reflected.v' in equation `r_measure' not yet defined
+NOTIFY: SW1: running netlist for R_load = 22
+NOTIFY: AC1: creating node list for AC analysis
+NOTIFY: AC1: solving AC netlist
+checker notice, variable `forward.v' in equation `r_measure' not yet defined
+checker notice, variable `reflected.v' in equation `r_measure' not yet defined
+NOTIFY: SW1: running netlist for R_load = 24
+NOTIFY: AC1: creating node list for AC analysis
+NOTIFY: AC1: solving AC netlist
+checker notice, variable `forward.v' in equation `r_measure' not yet defined
+checker notice, variable `reflected.v' in equation `r_measure' not yet defined
+NOTIFY: SW1: running netlist for R_load = 26
+NOTIFY: AC1: creating node list for AC analysis
+NOTIFY: AC1: solving AC netlist
+checker notice, variable `forward.v' in equation `r_measure' not yet defined
+checker notice, variable `reflected.v' in equation `r_measure' not yet defined
+NOTIFY: SW1: running netlist for R_load = 28
+NOTIFY: AC1: creating node list for AC analysis
+NOTIFY: AC1: solving AC netlist
+checker notice, variable `forward.v' in equation `r_measure' not yet defined
+checker notice, variable `reflected.v' in equation `r_measure' not yet defined
+NOTIFY: SW1: running netlist for R_load = 30
+NOTIFY: AC1: creating node list for AC analysis
+NOTIFY: AC1: solving AC netlist
+checker notice, variable `forward.v' in equation `r_measure' not yet defined
+checker notice, variable `reflected.v' in equation `r_measure' not yet defined
+NOTIFY: SW1: running netlist for R_load = 32
+NOTIFY: AC1: creating node list for AC analysis
+NOTIFY: AC1: solving AC netlist
+checker notice, variable `forward.v' in equation `r_measure' not yet defined
+checker notice, variable `reflected.v' in equation `r_measure' not yet defined
+NOTIFY: SW1: running netlist for R_load = 34
+NOTIFY: AC1: creating node list for AC analysis
+NOTIFY: AC1: solving AC netlist
+checker notice, variable `forward.v' in equation `r_measure' not yet defined
+checker notice, variable `reflected.v' in equation `r_measure' not yet defined
+NOTIFY: SW1: running netlist for R_load = 36
+NOTIFY: AC1: creating node list for AC analysis
+NOTIFY: AC1: solving AC netlist
+checker notice, variable `forward.v' in equation `r_measure' not yet defined
+checker notice, variable `reflected.v' in equation `r_measure' not yet defined
+NOTIFY: SW1: running netlist for R_load = 38
+NOTIFY: AC1: creating node list for AC analysis
+NOTIFY: AC1: solving AC netlist
+checker notice, variable `forward.v' in equation `r_measure' not yet defined
+checker notice, variable `reflected.v' in equation `r_measure' not yet defined
+NOTIFY: SW1: running netlist for R_load = 40
+NOTIFY: AC1: creating node list for AC analysis
+NOTIFY: AC1: solving AC netlist
+checker notice, variable `forward.v' in equation `r_measure' not yet defined
+checker notice, variable `reflected.v' in equation `r_measure' not yet defined
+NOTIFY: SW1: running netlist for R_load = 42
+NOTIFY: AC1: creating node list for AC analysis
+NOTIFY: AC1: solving AC netlist
+checker notice, variable `forward.v' in equation `r_measure' not yet defined
+checker notice, variable `reflected.v' in equation `r_measure' not yet defined
+NOTIFY: SW1: running netlist for R_load = 44
+NOTIFY: AC1: creating node list for AC analysis
+NOTIFY: AC1: solving AC netlist
+checker notice, variable `forward.v' in equation `r_measure' not yet defined
+checker notice, variable `reflected.v' in equation `r_measure' not yet defined
+NOTIFY: SW1: running netlist for R_load = 46
+NOTIFY: AC1: creating node list for AC analysis
+NOTIFY: AC1: solving AC netlist
+checker notice, variable `forward.v' in equation `r_measure' not yet defined
+checker notice, variable `reflected.v' in equation `r_measure' not yet defined
+NOTIFY: SW1: running netlist for R_load = 48
+NOTIFY: AC1: creating node list for AC analysis
+NOTIFY: AC1: solving AC netlist
+checker notice, variable `forward.v' in equation `r_measure' not yet defined
+checker notice, variable `reflected.v' in equation `r_measure' not yet defined
+NOTIFY: SW1: running netlist for R_load = 50
+NOTIFY: AC1: creating node list for AC analysis
+NOTIFY: AC1: solving AC netlist
+checker notice, variable `forward.v' in equation `r_measure' not yet defined
+checker notice, variable `reflected.v' in equation `r_measure' not yet defined
+NOTIFY: SW1: running netlist for R_load = 52
+NOTIFY: AC1: creating node list for AC analysis
+NOTIFY: AC1: solving AC netlist
+checker notice, variable `forward.v' in equation `r_measure' not yet defined
+checker notice, variable `reflected.v' in equation `r_measure' not yet defined
+NOTIFY: SW1: running netlist for R_load = 54
+NOTIFY: AC1: creating node list for AC analysis
+NOTIFY: AC1: solving AC netlist
+checker notice, variable `forward.v' in equation `r_measure' not yet defined
+checker notice, variable `reflected.v' in equation `r_measure' not yet defined
+NOTIFY: SW1: running netlist for R_load = 56
+NOTIFY: AC1: creating node list for AC analysis
+NOTIFY: AC1: solving AC netlist
+checker notice, variable `forward.v' in equation `r_measure' not yet defined
+checker notice, variable `reflected.v' in equation `r_measure' not yet defined
+NOTIFY: SW1: running netlist for R_load = 58
+NOTIFY: AC1: creating node list for AC analysis
+NOTIFY: AC1: solving AC netlist
+checker notice, variable `forward.v' in equation `r_measure' not yet defined
+checker notice, variable `reflected.v' in equation `r_measure' not yet defined
+NOTIFY: SW1: running netlist for R_load = 60
+NOTIFY: AC1: creating node list for AC analysis
+NOTIFY: AC1: solving AC netlist
+checker notice, variable `forward.v' in equation `r_measure' not yet defined
+checker notice, variable `reflected.v' in equation `r_measure' not yet defined
+NOTIFY: SW1: running netlist for R_load = 62
+NOTIFY: AC1: creating node list for AC analysis
+NOTIFY: AC1: solving AC netlist
+checker notice, variable `forward.v' in equation `r_measure' not yet defined
+checker notice, variable `reflected.v' in equation `r_measure' not yet defined
+NOTIFY: SW1: running netlist for R_load = 64
+NOTIFY: AC1: creating node list for AC analysis
+NOTIFY: AC1: solving AC netlist
+checker notice, variable `forward.v' in equation `r_measure' not yet defined
+checker notice, variable `reflected.v' in equation `r_measure' not yet defined
+NOTIFY: SW1: running netlist for R_load = 66
+NOTIFY: AC1: creating node list for AC analysis
+NOTIFY: AC1: solving AC netlist
+checker notice, variable `forward.v' in equation `r_measure' not yet defined
+checker notice, variable `reflected.v' in equation `r_measure' not yet defined
+NOTIFY: SW1: running netlist for R_load = 68
+NOTIFY: AC1: creating node list for AC analysis
+NOTIFY: AC1: solving AC netlist
+checker notice, variable `forward.v' in equation `r_measure' not yet defined
+checker notice, variable `reflected.v' in equation `r_measure' not yet defined
+NOTIFY: SW1: running netlist for R_load = 70
+NOTIFY: AC1: creating node list for AC analysis
+NOTIFY: AC1: solving AC netlist
+checker notice, variable `forward.v' in equation `r_measure' not yet defined
+checker notice, variable `reflected.v' in equation `r_measure' not yet defined
+NOTIFY: SW1: running netlist for R_load = 72
+NOTIFY: AC1: creating node list for AC analysis
+NOTIFY: AC1: solving AC netlist
+checker notice, variable `forward.v' in equation `r_measure' not yet defined
+checker notice, variable `reflected.v' in equation `r_measure' not yet defined
+NOTIFY: SW1: running netlist for R_load = 74
+NOTIFY: AC1: creating node list for AC analysis
+NOTIFY: AC1: solving AC netlist
+checker notice, variable `forward.v' in equation `r_measure' not yet defined
+checker notice, variable `reflected.v' in equation `r_measure' not yet defined
+NOTIFY: SW1: running netlist for R_load = 76
+NOTIFY: AC1: creating node list for AC analysis
+NOTIFY: AC1: solving AC netlist
+checker notice, variable `forward.v' in equation `r_measure' not yet defined
+checker notice, variable `reflected.v' in equation `r_measure' not yet defined
+NOTIFY: SW1: running netlist for R_load = 78
+NOTIFY: AC1: creating node list for AC analysis
+NOTIFY: AC1: solving AC netlist
+checker notice, variable `forward.v' in equation `r_measure' not yet defined
+checker notice, variable `reflected.v' in equation `r_measure' not yet defined
+NOTIFY: SW1: running netlist for R_load = 80
+NOTIFY: AC1: creating node list for AC analysis
+NOTIFY: AC1: solving AC netlist
+checker notice, variable `forward.v' in equation `r_measure' not yet defined
+checker notice, variable `reflected.v' in equation `r_measure' not yet defined
+NOTIFY: SW1: running netlist for R_load = 82
+NOTIFY: AC1: creating node list for AC analysis
+NOTIFY: AC1: solving AC netlist
+checker notice, variable `forward.v' in equation `r_measure' not yet defined
+checker notice, variable `reflected.v' in equation `r_measure' not yet defined
+NOTIFY: SW1: running netlist for R_load = 84
+NOTIFY: AC1: creating node list for AC analysis
+NOTIFY: AC1: solving AC netlist
+checker notice, variable `forward.v' in equation `r_measure' not yet defined
+checker notice, variable `reflected.v' in equation `r_measure' not yet defined
+NOTIFY: SW1: running netlist for R_load = 86
+NOTIFY: AC1: creating node list for AC analysis
+NOTIFY: AC1: solving AC netlist
+checker notice, variable `forward.v' in equation `r_measure' not yet defined
+checker notice, variable `reflected.v' in equation `r_measure' not yet defined
+NOTIFY: SW1: running netlist for R_load = 88
+NOTIFY: AC1: creating node list for AC analysis
+NOTIFY: AC1: solving AC netlist
+checker notice, variable `forward.v' in equation `r_measure' not yet defined
+checker notice, variable `reflected.v' in equation `r_measure' not yet defined
+NOTIFY: SW1: running netlist for R_load = 90
+NOTIFY: AC1: creating node list for AC analysis
+NOTIFY: AC1: solving AC netlist
+checker notice, variable `forward.v' in equation `r_measure' not yet defined
+checker notice, variable `reflected.v' in equation `r_measure' not yet defined
+NOTIFY: SW1: running netlist for R_load = 92
+NOTIFY: AC1: creating node list for AC analysis
+NOTIFY: AC1: solving AC netlist
+checker notice, variable `forward.v' in equation `r_measure' not yet defined
+checker notice, variable `reflected.v' in equation `r_measure' not yet defined
+NOTIFY: SW1: running netlist for R_load = 94
+NOTIFY: AC1: creating node list for AC analysis
+NOTIFY: AC1: solving AC netlist
+checker notice, variable `forward.v' in equation `r_measure' not yet defined
+checker notice, variable `reflected.v' in equation `r_measure' not yet defined
+NOTIFY: SW1: running netlist for R_load = 96
+NOTIFY: AC1: creating node list for AC analysis
+NOTIFY: AC1: solving AC netlist
+checker notice, variable `forward.v' in equation `r_measure' not yet defined
+checker notice, variable `reflected.v' in equation `r_measure' not yet defined
+NOTIFY: SW1: running netlist for R_load = 98
+NOTIFY: AC1: creating node list for AC analysis
+NOTIFY: AC1: solving AC netlist
+checker notice, variable `forward.v' in equation `r_measure' not yet defined
+checker notice, variable `reflected.v' in equation `r_measure' not yet defined
+NOTIFY: SW1: running netlist for R_load = 100
+NOTIFY: AC1: creating node list for AC analysis
+NOTIFY: AC1: solving AC netlist
+checker notice, variable `forward.v' in equation `r_measure' not yet defined
+checker notice, variable `reflected.v' in equation `r_measure' not yet defined
+NOTIFY: SW1: running netlist for R_load = 102
+NOTIFY: AC1: creating node list for AC analysis
+NOTIFY: AC1: solving AC netlist
+checker notice, variable `forward.v' in equation `r_measure' not yet defined
+checker notice, variable `reflected.v' in equation `r_measure' not yet defined
+NOTIFY: SW1: running netlist for R_load = 104
+NOTIFY: AC1: creating node list for AC analysis
+NOTIFY: AC1: solving AC netlist
+checker notice, variable `forward.v' in equation `r_measure' not yet defined
+checker notice, variable `reflected.v' in equation `r_measure' not yet defined
+NOTIFY: SW1: running netlist for R_load = 106
+NOTIFY: AC1: creating node list for AC analysis
+NOTIFY: AC1: solving AC netlist
+checker notice, variable `forward.v' in equation `r_measure' not yet defined
+checker notice, variable `reflected.v' in equation `r_measure' not yet defined
+NOTIFY: SW1: running netlist for R_load = 108
+NOTIFY: AC1: creating node list for AC analysis
+NOTIFY: AC1: solving AC netlist
+checker notice, variable `forward.v' in equation `r_measure' not yet defined
+checker notice, variable `reflected.v' in equation `r_measure' not yet defined
+NOTIFY: SW1: running netlist for R_load = 110
+NOTIFY: AC1: creating node list for AC analysis
+NOTIFY: AC1: solving AC netlist
+checker notice, variable `forward.v' in equation `r_measure' not yet defined
+checker notice, variable `reflected.v' in equation `r_measure' not yet defined
+NOTIFY: SW1: running netlist for R_load = 112
+NOTIFY: AC1: creating node list for AC analysis
+NOTIFY: AC1: solving AC netlist
+checker notice, variable `forward.v' in equation `r_measure' not yet defined
+checker notice, variable `reflected.v' in equation `r_measure' not yet defined
+NOTIFY: SW1: running netlist for R_load = 114
+NOTIFY: AC1: creating node list for AC analysis
+NOTIFY: AC1: solving AC netlist
+checker notice, variable `forward.v' in equation `r_measure' not yet defined
+checker notice, variable `reflected.v' in equation `r_measure' not yet defined
+NOTIFY: SW1: running netlist for R_load = 116
+NOTIFY: AC1: creating node list for AC analysis
+NOTIFY: AC1: solving AC netlist
+checker notice, variable `forward.v' in equation `r_measure' not yet defined
+checker notice, variable `reflected.v' in equation `r_measure' not yet defined
+NOTIFY: SW1: running netlist for R_load = 118
+NOTIFY: AC1: creating node list for AC analysis
+NOTIFY: AC1: solving AC netlist
+checker notice, variable `forward.v' in equation `r_measure' not yet defined
+checker notice, variable `reflected.v' in equation `r_measure' not yet defined
+NOTIFY: SW1: running netlist for R_load = 120
+NOTIFY: AC1: creating node list for AC analysis
+NOTIFY: AC1: solving AC netlist
+checker notice, variable `forward.v' in equation `r_measure' not yet defined
+checker notice, variable `reflected.v' in equation `r_measure' not yet defined
+NOTIFY: SW1: running netlist for R_load = 122
+NOTIFY: AC1: creating node list for AC analysis
+NOTIFY: AC1: solving AC netlist
+checker notice, variable `forward.v' in equation `r_measure' not yet defined
+checker notice, variable `reflected.v' in equation `r_measure' not yet defined
+NOTIFY: SW1: running netlist for R_load = 124
+NOTIFY: AC1: creating node list for AC analysis
+NOTIFY: AC1: solving AC netlist
+checker notice, variable `forward.v' in equation `r_measure' not yet defined
+checker notice, variable `reflected.v' in equation `r_measure' not yet defined
+NOTIFY: SW1: running netlist for R_load = 126
+NOTIFY: AC1: creating node list for AC analysis
+NOTIFY: AC1: solving AC netlist
+checker notice, variable `forward.v' in equation `r_measure' not yet defined
+checker notice, variable `reflected.v' in equation `r_measure' not yet defined
+NOTIFY: SW1: running netlist for R_load = 128
+NOTIFY: AC1: creating node list for AC analysis
+NOTIFY: AC1: solving AC netlist
+checker notice, variable `forward.v' in equation `r_measure' not yet defined
+checker notice, variable `reflected.v' in equation `r_measure' not yet defined
+NOTIFY: SW1: running netlist for R_load = 130
+NOTIFY: AC1: creating node list for AC analysis
+NOTIFY: AC1: solving AC netlist
+checker notice, variable `forward.v' in equation `r_measure' not yet defined
+checker notice, variable `reflected.v' in equation `r_measure' not yet defined
+NOTIFY: SW1: running netlist for R_load = 132
+NOTIFY: AC1: creating node list for AC analysis
+NOTIFY: AC1: solving AC netlist
+checker notice, variable `forward.v' in equation `r_measure' not yet defined
+checker notice, variable `reflected.v' in equation `r_measure' not yet defined
+NOTIFY: SW1: running netlist for R_load = 134
+NOTIFY: AC1: creating node list for AC analysis
+NOTIFY: AC1: solving AC netlist
+checker notice, variable `forward.v' in equation `r_measure' not yet defined
+checker notice, variable `reflected.v' in equation `r_measure' not yet defined
+NOTIFY: SW1: running netlist for R_load = 136
+NOTIFY: AC1: creating node list for AC analysis
+NOTIFY: AC1: solving AC netlist
+checker notice, variable `forward.v' in equation `r_measure' not yet defined
+checker notice, variable `reflected.v' in equation `r_measure' not yet defined
+NOTIFY: SW1: running netlist for R_load = 138
+NOTIFY: AC1: creating node list for AC analysis
+NOTIFY: AC1: solving AC netlist
+checker notice, variable `forward.v' in equation `r_measure' not yet defined
+checker notice, variable `reflected.v' in equation `r_measure' not yet defined
+NOTIFY: SW1: running netlist for R_load = 140
+NOTIFY: AC1: creating node list for AC analysis
+NOTIFY: AC1: solving AC netlist
+checker notice, variable `forward.v' in equation `r_measure' not yet defined
+checker notice, variable `reflected.v' in equation `r_measure' not yet defined
+NOTIFY: SW1: running netlist for R_load = 142
+NOTIFY: AC1: creating node list for AC analysis
+NOTIFY: AC1: solving AC netlist
+checker notice, variable `forward.v' in equation `r_measure' not yet defined
+checker notice, variable `reflected.v' in equation `r_measure' not yet defined
+NOTIFY: SW1: running netlist for R_load = 144
+NOTIFY: AC1: creating node list for AC analysis
+NOTIFY: AC1: solving AC netlist
+checker notice, variable `forward.v' in equation `r_measure' not yet defined
+checker notice, variable `reflected.v' in equation `r_measure' not yet defined
+NOTIFY: SW1: running netlist for R_load = 146
+NOTIFY: AC1: creating node list for AC analysis
+NOTIFY: AC1: solving AC netlist
+checker notice, variable `forward.v' in equation `r_measure' not yet defined
+checker notice, variable `reflected.v' in equation `r_measure' not yet defined
+NOTIFY: SW1: running netlist for R_load = 148
+NOTIFY: AC1: creating node list for AC analysis
+NOTIFY: AC1: solving AC netlist
+checker notice, variable `forward.v' in equation `r_measure' not yet defined
+checker notice, variable `reflected.v' in equation `r_measure' not yet defined
+NOTIFY: SW1: running netlist for R_load = 150
+NOTIFY: AC1: creating node list for AC analysis
+NOTIFY: AC1: solving AC netlist
+checker notice, variable `forward.v' in equation `r_measure' not yet defined
+checker notice, variable `reflected.v' in equation `r_measure' not yet defined
+NOTIFY: SW1: running netlist for R_load = 152
+NOTIFY: AC1: creating node list for AC analysis
+NOTIFY: AC1: solving AC netlist
+checker notice, variable `forward.v' in equation `r_measure' not yet defined
+checker notice, variable `reflected.v' in equation `r_measure' not yet defined
+NOTIFY: SW1: running netlist for R_load = 154
+NOTIFY: AC1: creating node list for AC analysis
+NOTIFY: AC1: solving AC netlist
+checker notice, variable `forward.v' in equation `r_measure' not yet defined
+checker notice, variable `reflected.v' in equation `r_measure' not yet defined
+NOTIFY: SW1: running netlist for R_load = 156
+NOTIFY: AC1: creating node list for AC analysis
+NOTIFY: AC1: solving AC netlist
+checker notice, variable `forward.v' in equation `r_measure' not yet defined
+checker notice, variable `reflected.v' in equation `r_measure' not yet defined
+NOTIFY: SW1: running netlist for R_load = 158
+NOTIFY: AC1: creating node list for AC analysis
+NOTIFY: AC1: solving AC netlist
+checker notice, variable `forward.v' in equation `r_measure' not yet defined
+checker notice, variable `reflected.v' in equation `r_measure' not yet defined
+NOTIFY: SW1: running netlist for R_load = 160
+NOTIFY: AC1: creating node list for AC analysis
+NOTIFY: AC1: solving AC netlist
+checker notice, variable `forward.v' in equation `r_measure' not yet defined
+checker notice, variable `reflected.v' in equation `r_measure' not yet defined
+NOTIFY: SW1: running netlist for R_load = 162
+NOTIFY: AC1: creating node list for AC analysis
+NOTIFY: AC1: solving AC netlist
+checker notice, variable `forward.v' in equation `r_measure' not yet defined
+checker notice, variable `reflected.v' in equation `r_measure' not yet defined
+NOTIFY: SW1: running netlist for R_load = 164
+NOTIFY: AC1: creating node list for AC analysis
+NOTIFY: AC1: solving AC netlist
+checker notice, variable `forward.v' in equation `r_measure' not yet defined
+checker notice, variable `reflected.v' in equation `r_measure' not yet defined
+NOTIFY: SW1: running netlist for R_load = 166
+NOTIFY: AC1: creating node list for AC analysis
+NOTIFY: AC1: solving AC netlist
+checker notice, variable `forward.v' in equation `r_measure' not yet defined
+checker notice, variable `reflected.v' in equation `r_measure' not yet defined
+NOTIFY: SW1: running netlist for R_load = 168
+NOTIFY: AC1: creating node list for AC analysis
+NOTIFY: AC1: solving AC netlist
+checker notice, variable `forward.v' in equation `r_measure' not yet defined
+checker notice, variable `reflected.v' in equation `r_measure' not yet defined
+NOTIFY: SW1: running netlist for R_load = 170
+NOTIFY: AC1: creating node list for AC analysis
+NOTIFY: AC1: solving AC netlist
+checker notice, variable `forward.v' in equation `r_measure' not yet defined
+checker notice, variable `reflected.v' in equation `r_measure' not yet defined
+NOTIFY: SW1: running netlist for R_load = 172
+NOTIFY: AC1: creating node list for AC analysis
+NOTIFY: AC1: solving AC netlist
+checker notice, variable `forward.v' in equation `r_measure' not yet defined
+checker notice, variable `reflected.v' in equation `r_measure' not yet defined
+NOTIFY: SW1: running netlist for R_load = 174
+NOTIFY: AC1: creating node list for AC analysis
+NOTIFY: AC1: solving AC netlist
+checker notice, variable `forward.v' in equation `r_measure' not yet defined
+checker notice, variable `reflected.v' in equation `r_measure' not yet defined
+NOTIFY: SW1: running netlist for R_load = 176
+NOTIFY: AC1: creating node list for AC analysis
+NOTIFY: AC1: solving AC netlist
+checker notice, variable `forward.v' in equation `r_measure' not yet defined
+checker notice, variable `reflected.v' in equation `r_measure' not yet defined
+NOTIFY: SW1: running netlist for R_load = 178
+NOTIFY: AC1: creating node list for AC analysis
+NOTIFY: AC1: solving AC netlist
+checker notice, variable `forward.v' in equation `r_measure' not yet defined
+checker notice, variable `reflected.v' in equation `r_measure' not yet defined
+NOTIFY: SW1: running netlist for R_load = 180
+NOTIFY: AC1: creating node list for AC analysis
+NOTIFY: AC1: solving AC netlist
+checker notice, variable `forward.v' in equation `r_measure' not yet defined
+checker notice, variable `reflected.v' in equation `r_measure' not yet defined
+NOTIFY: SW1: running netlist for R_load = 182
+NOTIFY: AC1: creating node list for AC analysis
+NOTIFY: AC1: solving AC netlist
+checker notice, variable `forward.v' in equation `r_measure' not yet defined
+checker notice, variable `reflected.v' in equation `r_measure' not yet defined
+NOTIFY: SW1: running netlist for R_load = 184
+NOTIFY: AC1: creating node list for AC analysis
+NOTIFY: AC1: solving AC netlist
+checker notice, variable `forward.v' in equation `r_measure' not yet defined
+checker notice, variable `reflected.v' in equation `r_measure' not yet defined
+NOTIFY: SW1: running netlist for R_load = 186
+NOTIFY: AC1: creating node list for AC analysis
+NOTIFY: AC1: solving AC netlist
+checker notice, variable `forward.v' in equation `r_measure' not yet defined
+checker notice, variable `reflected.v' in equation `r_measure' not yet defined
+NOTIFY: SW1: running netlist for R_load = 188
+NOTIFY: AC1: creating node list for AC analysis
+NOTIFY: AC1: solving AC netlist
+checker notice, variable `forward.v' in equation `r_measure' not yet defined
+checker notice, variable `reflected.v' in equation `r_measure' not yet defined
+NOTIFY: SW1: running netlist for R_load = 190
+NOTIFY: AC1: creating node list for AC analysis
+NOTIFY: AC1: solving AC netlist
+checker notice, variable `forward.v' in equation `r_measure' not yet defined
+checker notice, variable `reflected.v' in equation `r_measure' not yet defined
+NOTIFY: SW1: running netlist for R_load = 192
+NOTIFY: AC1: creating node list for AC analysis
+NOTIFY: AC1: solving AC netlist
+checker notice, variable `forward.v' in equation `r_measure' not yet defined
+checker notice, variable `reflected.v' in equation `r_measure' not yet defined
+NOTIFY: SW1: running netlist for R_load = 194
+NOTIFY: AC1: creating node list for AC analysis
+NOTIFY: AC1: solving AC netlist
+checker notice, variable `forward.v' in equation `r_measure' not yet defined
+checker notice, variable `reflected.v' in equation `r_measure' not yet defined
+NOTIFY: SW1: running netlist for R_load = 196
+NOTIFY: AC1: creating node list for AC analysis
+NOTIFY: AC1: solving AC netlist
+checker notice, variable `forward.v' in equation `r_measure' not yet defined
+checker notice, variable `reflected.v' in equation `r_measure' not yet defined
+NOTIFY: SW1: running netlist for R_load = 198
+NOTIFY: AC1: creating node list for AC analysis
+NOTIFY: AC1: solving AC netlist
+checker notice, variable `forward.v' in equation `r_measure' not yet defined
+checker notice, variable `reflected.v' in equation `r_measure' not yet defined
+NOTIFY: SW1: running netlist for R_load = 200
+NOTIFY: AC1: creating node list for AC analysis
+NOTIFY: AC1: solving AC netlist

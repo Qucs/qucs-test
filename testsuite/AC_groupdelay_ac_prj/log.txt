@@ -1,0 +1,34 @@
+parsing netlist...
+checking netlist...
+checker notice, variable `V1.i' in equation `a1' not yet defined
+checker notice, variable `P1.v' in equation `a1' not yet defined
+checker notice, variable `V1.i' in equation `b1' not yet defined
+checker notice, variable `P1.v' in equation `b1' not yet defined
+checker notice, variable `V2.i' in equation `b2' not yet defined
+checker notice, variable `P2.v' in equation `b2' not yet defined
+checker notice, variable `acfrequency' in equation `group_delay' not yet defined
+subcircuit root
+  C:C1 gnd P1 C="3.901e-11F"
+  L:L1 P1 P2 L="2.809e-07H"
+  C:C2 gnd P2 C="3.901e-11F"
+  Vac:V1 _net0 gnd U="1V" f="1e+09Hz" Phase="0" Theta="0"
+  Vac:V2 _net1 gnd U="0V" f="1e+09Hz" Phase="0" Theta="0"
+  R:R2 P2 _net1 R="Z0" Temp="26.85" Tc1="0" Tc2="0" Tnom="26.85"
+  AC:AC1 Type="log" Start="1e+06Hz" Stop="2e+08Hz" Points="458" Noise="no"
+  R:R1 _net0 P1 R="Z0" Temp="26.85" Tc1="0" Tc2="0" Tnom="26.85"
+netlist content
+      1 AC instances
+      2 C instances
+      1 L instances
+      2 R instances
+      2 Vac instances
+creating netlist...
+checker notice, variable `V1.i' in equation `a1' not yet defined
+checker notice, variable `P1.v' in equation `a1' not yet defined
+checker notice, variable `V1.i' in equation `b1' not yet defined
+checker notice, variable `P1.v' in equation `b1' not yet defined
+checker notice, variable `V2.i' in equation `b2' not yet defined
+checker notice, variable `P2.v' in equation `b2' not yet defined
+checker notice, variable `acfrequency' in equation `group_delay' not yet defined
+NOTIFY: AC1: creating node list for AC analysis
+NOTIFY: AC1: solving AC netlist

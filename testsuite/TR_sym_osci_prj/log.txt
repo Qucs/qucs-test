@@ -1,0 +1,39 @@
+parsing netlist...
+checking netlist...
+subcircuit root
+  MOSFET:T6 _net0 _net1 _net2 _net2 Type="pfet" Vt0="-0.7V" Kp="0.0005" Gamma="1.15" Phi="0.65V" Lambda="0.02" Rd="1Ohm" Rs="1Ohm" Rg="0Ohm" Is="1e-15A" N="1" W="1e-06m" L="1e-06m" Ld="1e-07" Tox="2e-08" Cgso="4e-11" Cgdo="4e-11" Cgbo="2e-10" Cbd="6e-17F" Cbs="6e-17F" Pb="0.87V" Mj="0.5" Fc="0.5" Cjsw="0" Mjsw="0.33" Tt="0s" Nsub="4e+15" Nss="1e+10" Tpg="1" Uo="400" Rsh="10" Nrd="1" Nrs="1" Cj="0.0002" Js="1e-08" Ad="0" As="0" Pd="0" Ps="0" Kf="0" Af="1" Ffe="1" Temp="26.85" Tnom="26.85"
+  MOSFET:T8 _net1 _net0 _net2 _net2 Type="pfet" Vt0="-0.7V" Kp="0.0005" Gamma="1.15" Phi="0.65V" Lambda="0.02" Rd="1Ohm" Rs="1Ohm" Rg="0Ohm" Is="1e-15A" N="1" W="1e-06m" L="1e-06m" Ld="1e-07" Tox="2e-08" Cgso="4e-11" Cgdo="4e-11" Cgbo="2e-10" Cbd="6e-17F" Cbs="6e-17F" Pb="0.87V" Mj="0.5" Fc="0.5" Cjsw="0" Mjsw="0.33" Tt="0s" Nsub="4e+15" Nss="1e+10" Tpg="1" Uo="400" Rsh="10" Nrd="1" Nrs="1" Cj="0.0002" Js="1e-08" Ad="0" As="0" Pd="0" Ps="0" Kf="0" Af="1" Ffe="1" Temp="26.85" Tnom="26.85"
+  Vdc:V1 _net2 gnd U="5V"
+  MOSFET:T7 _net1 _net0 _net3 _net3 Type="nfet" Vt0="0.7V" Kp="0.0005" Gamma="0.37" Phi="0.65V" Lambda="0.02" Rd="1Ohm" Rs="1Ohm" Rg="0Ohm" Is="1e-15A" N="1" W="1e-06m" L="1e-06m" Ld="1e-07" Tox="2e-08" Cgso="4e-11" Cgdo="4e-11" Cgbo="2e-10" Cbd="6e-17F" Cbs="6e-17F" Pb="0.87V" Mj="0.5" Fc="0.5" Cjsw="0" Mjsw="0.33" Tt="0s" Nsub="4e+15" Nss="1e+10" Tpg="1" Uo="400" Rsh="10" Nrd="1" Nrs="1" Cj="0.0002" Js="1e-08" Ad="0" As="0" Pd="0" Ps="0" Kf="0" Af="1" Ffe="1" Temp="26.85" Tnom="26.85"
+  MOSFET:T5 _net0 _net1 _net3 _net3 Type="nfet" Vt0="0.7V" Kp="0.0005" Gamma="0.37" Phi="0.65V" Lambda="0.02" Rd="1Ohm" Rs="1Ohm" Rg="0Ohm" Is="1e-15A" N="1" W="1e-06m" L="1e-06m" Ld="1e-07" Tox="2e-08" Cgso="4e-11" Cgdo="4e-11" Cgbo="2e-10" Cbd="6e-17F" Cbs="6e-17F" Pb="0.87V" Mj="0.5" Fc="0.5" Cjsw="0" Mjsw="0.33" Tt="0s" Nsub="4e+15" Nss="1e+10" Tpg="1" Uo="400" Rsh="10" Nrd="1" Nrs="1" Cj="0.0002" Js="1e-08" Ad="0" As="0" Pd="0" Ps="0" Kf="0" Af="1" Ffe="1" Temp="26.85" Tnom="26.85"
+  C:C1 _net0 _net1 C="2e-11F"
+  R:R1 _net0 _net1 R="500000" Temp="26.85" Tc1="0" Tc2="0" Tnom="26.85"
+  L:L1 _net0 _net1 L="3e-05H"
+  TR:TR1 Type="lin" Start="0" Stop="3e-06s" Points="200" IntegrationMethod="Trapezoidal" Order="2" InitialStep="1e-09s" MinStep="1e-16" MaxIter="150" reltol="0.001" abstol="1e-12A" vntol="1e-06V" Temp="26.85" LTEreltol="0.001" LTEabstol="1e-06" LTEfactor="1" Solver="CroutLU" relaxTSR="no" initialDC="yes" MaxStep="0"
+  Tr:Tr1 gnd _net0 _net1 Output T="1"
+  R:R4 gnd Output R="1000Ohm" Temp="26.85" Tc1="0" Tc2="0" Tnom="26.85"
+  Idc:I1 gnd _net3 I="0.008A"
+netlist content
+      4 MOSFET instances
+      1 Idc instances
+      1 C instances
+      1 L instances
+      2 R instances
+      1 Tr instances
+      1 Vdc instances
+      1 TR instances
+creating netlist...
+NOTIFY: Cox=1.38125e-15, Beta=0.000625 Ga=0.37, Phi=0.65, Vto=0.7
+NOTIFY: Cox=1.38125e-15, Beta=0.000625 Ga=0.37, Phi=0.65, Vto=0.7
+NOTIFY: Cox=1.38125e-15, Beta=0.000625 Ga=1.15, Phi=0.65, Vto=-0.7
+NOTIFY: Cox=1.38125e-15, Beta=0.000625 Ga=1.15, Phi=0.65, Vto=-0.7
+NOTIFY: TR1: creating node list for initial DC analysis
+NOTIFY: TR1: solving initial DC netlist
+NOTIFY: Cox=1.38125e-15, Beta=0.000625 Ga=0.37, Phi=0.65, Vto=0.7
+NOTIFY: Cox=1.38125e-15, Beta=0.000625 Ga=0.37, Phi=0.65, Vto=0.7
+NOTIFY: Cox=1.38125e-15, Beta=0.000625 Ga=1.15, Phi=0.65, Vto=-0.7
+NOTIFY: Cox=1.38125e-15, Beta=0.000625 Ga=1.15, Phi=0.65, Vto=-0.7
+NOTIFY: TR1: creating node list for transient analysis
+NOTIFY: TR1: solving transient netlist
+NOTIFY: TR1: average time-step 1.06383e-09, 523 rejections
+NOTIFY: TR1: average NR-iterations 3.41454, 0 non-convergences

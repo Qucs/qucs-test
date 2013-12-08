@@ -1,0 +1,1630 @@
+parsing netlist...
+checking netlist...
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+subcircuit root
+  IProbe:Pr1 _net0 _net1
+  R:R2 _net2 _net3 R="500Ohm" Temp="26.85" Tc1="0" Tc2="0" Tnom="26.85"
+  Vdc:V1 _net3 gnd U="1V"
+  R:R5 gnd _net2 R="Rmeasure" Temp="26.85" Tc1="0" Tc2="0" Tnom="26.85"
+  R:R1 _net0 _net3 R="Rbranch" Temp="26.85" Tc1="0" Tc2="0" Tnom="26.85"
+  R:R4 gnd _net0 R="Rbranch" Temp="26.85" Tc1="0" Tc2="0" Tnom="26.85"
+  DC:DC1 Temp="26.85" reltol="0.001" abstol="1e-12A" vntol="1e-06V" saveOPs="no" MaxIter="150" saveAll="no" convHelper="none" Solver="CroutLU"
+  R:R3 _net1 _net2 R="500Ohm" Temp="26.85" Tc1="0" Tc2="0" Tnom="26.85"
+  SW:SW1 Sim="DC1" Type="lin" Param="Rmeasure" Start="10Ohm" Stop="1000Ohm" Points="100"
+  SW:SW2 Sim="SW1" Type="lin" Param="Rbranch" Start="200Ohm" Stop="1000Ohm" Points="4"
+netlist content
+      1 IProbe instances
+      1 DC instances
+      5 R instances
+      2 SW instances
+      1 Vdc instances
+creating netlist...
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW2: running netlist for Rbranch = 200
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 10
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 20
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 30
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 40
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 50
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 60
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 70
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 80
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 90
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 100
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 110
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 120
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 130
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 140
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 150
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 160
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 170
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 180
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 190
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 200
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 210
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 220
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 230
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 240
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 250
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 260
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 270
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 280
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 290
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 300
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 310
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 320
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 330
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 340
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 350
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 360
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 370
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 380
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 390
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 400
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 410
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 420
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 430
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 440
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 450
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 460
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 470
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 480
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 490
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 500
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 510
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 520
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 530
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 540
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 550
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 560
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 570
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 580
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 590
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 600
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 610
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 620
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 630
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 640
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 650
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 660
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 670
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 680
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 690
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 700
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 710
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 720
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 730
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 740
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 750
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 760
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 770
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 780
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 790
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 800
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 810
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 820
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 830
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 840
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 850
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 860
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 870
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 880
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 890
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 900
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 910
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 920
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 930
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 940
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 950
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 960
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 970
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 980
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 990
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 1000
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW2: running netlist for Rbranch = 466.667
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 10
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 20
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 30
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 40
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 50
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 60
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 70
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 80
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 90
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 100
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 110
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 120
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 130
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 140
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 150
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 160
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 170
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 180
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 190
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 200
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 210
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 220
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 230
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 240
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 250
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 260
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 270
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 280
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 290
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 300
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 310
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 320
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 330
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 340
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 350
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 360
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 370
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 380
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 390
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 400
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 410
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 420
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 430
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 440
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 450
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 460
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 470
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 480
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 490
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 500
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 510
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 520
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 530
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 540
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 550
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 560
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 570
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 580
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 590
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 600
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 610
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 620
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 630
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 640
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 650
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 660
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 670
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 680
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 690
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 700
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 710
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 720
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 730
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 740
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 750
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 760
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 770
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 780
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 790
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 800
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 810
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 820
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 830
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 840
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 850
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 860
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 870
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 880
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 890
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 900
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 910
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 920
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 930
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 940
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 950
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 960
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 970
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 980
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 990
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 1000
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW2: running netlist for Rbranch = 733.333
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 10
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 20
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 30
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 40
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 50
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 60
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 70
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 80
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 90
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 100
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 110
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 120
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 130
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 140
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 150
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 160
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 170
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 180
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 190
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 200
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 210
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 220
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 230
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 240
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 250
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 260
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 270
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 280
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 290
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 300
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 310
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 320
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 330
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 340
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 350
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 360
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 370
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 380
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 390
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 400
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 410
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 420
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 430
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 440
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 450
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 460
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 470
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 480
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 490
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 500
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 510
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 520
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 530
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 540
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 550
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 560
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 570
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 580
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 590
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 600
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 610
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 620
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 630
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 640
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 650
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 660
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 670
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 680
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 690
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 700
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 710
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 720
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 730
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 740
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 750
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 760
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 770
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 780
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 790
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 800
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 810
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 820
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 830
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 840
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 850
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 860
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 870
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 880
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 890
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 900
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 910
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 920
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 930
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 940
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 950
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 960
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 970
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 980
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 990
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 1000
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW2: running netlist for Rbranch = 1000
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 10
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 20
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 30
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 40
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 50
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 60
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 70
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 80
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 90
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 100
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 110
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 120
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 130
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 140
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 150
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 160
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 170
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 180
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 190
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 200
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 210
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 220
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 230
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 240
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 250
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 260
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 270
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 280
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 290
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 300
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 310
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 320
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 330
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 340
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 350
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 360
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 370
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 380
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 390
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 400
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 410
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 420
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 430
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 440
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 450
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 460
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 470
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 480
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 490
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 500
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 510
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 520
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 530
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 540
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 550
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 560
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 570
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 580
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 590
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 600
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 610
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 620
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 630
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 640
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 650
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 660
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 670
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 680
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 690
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 700
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 710
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 720
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 730
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 740
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 750
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 760
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 770
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 780
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 790
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 800
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 810
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 820
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 830
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 840
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 850
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 860
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 870
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 880
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 890
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 900
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 910
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 920
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 930
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 940
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 950
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 960
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 970
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 980
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 990
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+checker notice, variable `Pr1.I' in equation `Umeasure' not yet defined
+NOTIFY: SW1: running netlist for Rmeasure = 1000
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist

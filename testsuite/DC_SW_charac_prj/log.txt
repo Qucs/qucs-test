@@ -1,0 +1,2586 @@
+parsing netlist...
+checking netlist...
+subcircuit root
+  IProbe:Collector _net0 _net1
+  DC:DC1 Temp="26.85" reltol="0.001" abstol="1e-12A" vntol="1e-06V" saveOPs="no" MaxIter="150" saveAll="no" convHelper="none" Solver="CroutLU"
+  Vdc:V1 _net0 gnd U="Uce"
+  Idc:Basis _net2 gnd I="Ib"
+  SW:SW2 Sim="SW1" Type="lin" Param="Ib" Start="1e-06A" Stop="0.0001A" Points="8"
+  SW:SW1 Sim="DC1" Type="lin" Param="Uce" Start="0V" Stop="3V" Points="80"
+  BJT:T1 _net2 _net1 gnd _net1 Type="npn" Is="1e-16" Nf="1" Nr="1" Ikf="0" Ikr="0" Vaf="10" Var="0" Ise="0" Ne="1.5" Isc="0" Nc="2" Bf="100" Br="1" Rbm="0" Irb="0" Rc="0" Re="0" Rb="0" Cje="0" Vje="0.75" Mje="0.33" Cjc="0" Vjc="0.75" Mjc="0.33" Xcjc="1" Cjs="0" Vjs="0.75" Mjs="0" Fc="0.5" Tf="0" Xtf="0" Vtf="0" Itf="0" Tr="0" Temp="26.85" Kf="0" Af="1" Ffe="1" Kb="0" Ab="1" Fb="1" Ptf="0" Xtb="0" Xti="3" Eg="1.11" Tnom="26.85" Area="1"
+netlist content
+      1 Idc instances
+      1 IProbe instances
+      1 BJT instances
+      1 DC instances
+      2 SW instances
+      1 Vdc instances
+creating netlist...
+NOTIFY: SW2: running netlist for Ib = 1e-06
+NOTIFY: SW1: running netlist for Uce = 0
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations
+NOTIFY: SW1: running netlist for Uce = 0.0379747
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations
+NOTIFY: SW1: running netlist for Uce = 0.0759494
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations
+NOTIFY: SW1: running netlist for Uce = 0.113924
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations
+NOTIFY: SW1: running netlist for Uce = 0.151899
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations
+NOTIFY: SW1: running netlist for Uce = 0.189873
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 17 iterations
+NOTIFY: SW1: running netlist for Uce = 0.227848
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 18 iterations
+NOTIFY: SW1: running netlist for Uce = 0.265823
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 18 iterations
+NOTIFY: SW1: running netlist for Uce = 0.303797
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 18 iterations
+NOTIFY: SW1: running netlist for Uce = 0.341772
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 19 iterations
+NOTIFY: SW1: running netlist for Uce = 0.379747
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 19 iterations
+NOTIFY: SW1: running netlist for Uce = 0.417722
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 19 iterations
+NOTIFY: SW1: running netlist for Uce = 0.455696
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 19 iterations
+NOTIFY: SW1: running netlist for Uce = 0.493671
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 20 iterations
+NOTIFY: SW1: running netlist for Uce = 0.531646
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 20 iterations
+NOTIFY: SW1: running netlist for Uce = 0.56962
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 20 iterations
+NOTIFY: SW1: running netlist for Uce = 0.607595
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 20 iterations
+NOTIFY: SW1: running netlist for Uce = 0.64557
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 20 iterations
+NOTIFY: SW1: running netlist for Uce = 0.683544
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 20 iterations
+NOTIFY: SW1: running netlist for Uce = 0.721519
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 20 iterations
+NOTIFY: SW1: running netlist for Uce = 0.759494
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 20 iterations
+NOTIFY: SW1: running netlist for Uce = 0.797468
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 20 iterations
+NOTIFY: SW1: running netlist for Uce = 0.835443
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 20 iterations
+NOTIFY: SW1: running netlist for Uce = 0.873418
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 20 iterations
+NOTIFY: SW1: running netlist for Uce = 0.911392
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 20 iterations
+NOTIFY: SW1: running netlist for Uce = 0.949367
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 20 iterations
+NOTIFY: SW1: running netlist for Uce = 0.987342
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 20 iterations
+NOTIFY: SW1: running netlist for Uce = 1.02532
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 20 iterations
+NOTIFY: SW1: running netlist for Uce = 1.06329
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 20 iterations
+NOTIFY: SW1: running netlist for Uce = 1.10127
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 20 iterations
+NOTIFY: SW1: running netlist for Uce = 1.13924
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 21 iterations
+NOTIFY: SW1: running netlist for Uce = 1.17722
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 21 iterations
+NOTIFY: SW1: running netlist for Uce = 1.21519
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 21 iterations
+NOTIFY: SW1: running netlist for Uce = 1.25316
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 21 iterations
+NOTIFY: SW1: running netlist for Uce = 1.29114
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 21 iterations
+NOTIFY: SW1: running netlist for Uce = 1.32911
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 21 iterations
+NOTIFY: SW1: running netlist for Uce = 1.36709
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 21 iterations
+NOTIFY: SW1: running netlist for Uce = 1.40506
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 21 iterations
+NOTIFY: SW1: running netlist for Uce = 1.44304
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 21 iterations
+NOTIFY: SW1: running netlist for Uce = 1.48101
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 21 iterations
+NOTIFY: SW1: running netlist for Uce = 1.51899
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 21 iterations
+NOTIFY: SW1: running netlist for Uce = 1.55696
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 21 iterations
+NOTIFY: SW1: running netlist for Uce = 1.59494
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 21 iterations
+NOTIFY: SW1: running netlist for Uce = 1.63291
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 21 iterations
+NOTIFY: SW1: running netlist for Uce = 1.67089
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 21 iterations
+NOTIFY: SW1: running netlist for Uce = 1.70886
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 21 iterations
+NOTIFY: SW1: running netlist for Uce = 1.74684
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 21 iterations
+NOTIFY: SW1: running netlist for Uce = 1.78481
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 21 iterations
+NOTIFY: SW1: running netlist for Uce = 1.82278
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 21 iterations
+NOTIFY: SW1: running netlist for Uce = 1.86076
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 21 iterations
+NOTIFY: SW1: running netlist for Uce = 1.89873
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 21 iterations
+NOTIFY: SW1: running netlist for Uce = 1.93671
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 21 iterations
+NOTIFY: SW1: running netlist for Uce = 1.97468
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 21 iterations
+NOTIFY: SW1: running netlist for Uce = 2.01266
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 20 iterations
+NOTIFY: SW1: running netlist for Uce = 2.05063
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 20 iterations
+NOTIFY: SW1: running netlist for Uce = 2.08861
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 20 iterations
+NOTIFY: SW1: running netlist for Uce = 2.12658
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 20 iterations
+NOTIFY: SW1: running netlist for Uce = 2.16456
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 20 iterations
+NOTIFY: SW1: running netlist for Uce = 2.20253
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 20 iterations
+NOTIFY: SW1: running netlist for Uce = 2.24051
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 20 iterations
+NOTIFY: SW1: running netlist for Uce = 2.27848
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 20 iterations
+NOTIFY: SW1: running netlist for Uce = 2.31646
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 20 iterations
+NOTIFY: SW1: running netlist for Uce = 2.35443
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 20 iterations
+NOTIFY: SW1: running netlist for Uce = 2.39241
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 20 iterations
+NOTIFY: SW1: running netlist for Uce = 2.43038
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 20 iterations
+NOTIFY: SW1: running netlist for Uce = 2.46835
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 20 iterations
+NOTIFY: SW1: running netlist for Uce = 2.50633
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 20 iterations
+NOTIFY: SW1: running netlist for Uce = 2.5443
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 20 iterations
+NOTIFY: SW1: running netlist for Uce = 2.58228
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 20 iterations
+NOTIFY: SW1: running netlist for Uce = 2.62025
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 20 iterations
+NOTIFY: SW1: running netlist for Uce = 2.65823
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 20 iterations
+NOTIFY: SW1: running netlist for Uce = 2.6962
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 20 iterations
+NOTIFY: SW1: running netlist for Uce = 2.73418
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 20 iterations
+NOTIFY: SW1: running netlist for Uce = 2.77215
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 20 iterations
+NOTIFY: SW1: running netlist for Uce = 2.81013
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 20 iterations
+NOTIFY: SW1: running netlist for Uce = 2.8481
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 20 iterations
+NOTIFY: SW1: running netlist for Uce = 2.88608
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 20 iterations
+NOTIFY: SW1: running netlist for Uce = 2.92405
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 20 iterations
+NOTIFY: SW1: running netlist for Uce = 2.96203
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 20 iterations
+NOTIFY: SW1: running netlist for Uce = 3
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 20 iterations
+NOTIFY: SW2: running netlist for Ib = 1.51429e-05
+NOTIFY: SW1: running netlist for Uce = 0
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 13 iterations
+NOTIFY: SW1: running netlist for Uce = 0.0379747
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 13 iterations
+NOTIFY: SW1: running netlist for Uce = 0.0759494
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 13 iterations
+NOTIFY: SW1: running netlist for Uce = 0.113924
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 13 iterations
+NOTIFY: SW1: running netlist for Uce = 0.151899
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 14 iterations
+NOTIFY: SW1: running netlist for Uce = 0.189873
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 14 iterations
+NOTIFY: SW1: running netlist for Uce = 0.227848
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 15 iterations
+NOTIFY: SW1: running netlist for Uce = 0.265823
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 15 iterations
+NOTIFY: SW1: running netlist for Uce = 0.303797
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations
+NOTIFY: SW1: running netlist for Uce = 0.341772
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations
+NOTIFY: SW1: running netlist for Uce = 0.379747
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations
+NOTIFY: SW1: running netlist for Uce = 0.417722
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 17 iterations
+NOTIFY: SW1: running netlist for Uce = 0.455696
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 17 iterations
+NOTIFY: SW1: running netlist for Uce = 0.493671
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 17 iterations
+NOTIFY: SW1: running netlist for Uce = 0.531646
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 17 iterations
+NOTIFY: SW1: running netlist for Uce = 0.56962
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 17 iterations
+NOTIFY: SW1: running netlist for Uce = 0.607595
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 17 iterations
+NOTIFY: SW1: running netlist for Uce = 0.64557
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 17 iterations
+NOTIFY: SW1: running netlist for Uce = 0.683544
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 17 iterations
+NOTIFY: SW1: running netlist for Uce = 0.721519
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 17 iterations
+NOTIFY: SW1: running netlist for Uce = 0.759494
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 17 iterations
+NOTIFY: SW1: running netlist for Uce = 0.797468
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 18 iterations
+NOTIFY: SW1: running netlist for Uce = 0.835443
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 18 iterations
+NOTIFY: SW1: running netlist for Uce = 0.873418
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 18 iterations
+NOTIFY: SW1: running netlist for Uce = 0.911392
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 18 iterations
+NOTIFY: SW1: running netlist for Uce = 0.949367
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 18 iterations
+NOTIFY: SW1: running netlist for Uce = 0.987342
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 18 iterations
+NOTIFY: SW1: running netlist for Uce = 1.02532
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 18 iterations
+NOTIFY: SW1: running netlist for Uce = 1.06329
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 18 iterations
+NOTIFY: SW1: running netlist for Uce = 1.10127
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 18 iterations
+NOTIFY: SW1: running netlist for Uce = 1.13924
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 18 iterations
+NOTIFY: SW1: running netlist for Uce = 1.17722
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 18 iterations
+NOTIFY: SW1: running netlist for Uce = 1.21519
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 18 iterations
+NOTIFY: SW1: running netlist for Uce = 1.25316
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 18 iterations
+NOTIFY: SW1: running netlist for Uce = 1.29114
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 18 iterations
+NOTIFY: SW1: running netlist for Uce = 1.32911
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 18 iterations
+NOTIFY: SW1: running netlist for Uce = 1.36709
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 18 iterations
+NOTIFY: SW1: running netlist for Uce = 1.40506
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 18 iterations
+NOTIFY: SW1: running netlist for Uce = 1.44304
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 18 iterations
+NOTIFY: SW1: running netlist for Uce = 1.48101
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 18 iterations
+NOTIFY: SW1: running netlist for Uce = 1.51899
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 18 iterations
+NOTIFY: SW1: running netlist for Uce = 1.55696
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 18 iterations
+NOTIFY: SW1: running netlist for Uce = 1.59494
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 18 iterations
+NOTIFY: SW1: running netlist for Uce = 1.63291
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 18 iterations
+NOTIFY: SW1: running netlist for Uce = 1.67089
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 18 iterations
+NOTIFY: SW1: running netlist for Uce = 1.70886
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 18 iterations
+NOTIFY: SW1: running netlist for Uce = 1.74684
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 18 iterations
+NOTIFY: SW1: running netlist for Uce = 1.78481
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 18 iterations
+NOTIFY: SW1: running netlist for Uce = 1.82278
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 18 iterations
+NOTIFY: SW1: running netlist for Uce = 1.86076
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 18 iterations
+NOTIFY: SW1: running netlist for Uce = 1.89873
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 18 iterations
+NOTIFY: SW1: running netlist for Uce = 1.93671
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 18 iterations
+NOTIFY: SW1: running netlist for Uce = 1.97468
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 18 iterations
+NOTIFY: SW1: running netlist for Uce = 2.01266
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 18 iterations
+NOTIFY: SW1: running netlist for Uce = 2.05063
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 18 iterations
+NOTIFY: SW1: running netlist for Uce = 2.08861
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 18 iterations
+NOTIFY: SW1: running netlist for Uce = 2.12658
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 18 iterations
+NOTIFY: SW1: running netlist for Uce = 2.16456
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 18 iterations
+NOTIFY: SW1: running netlist for Uce = 2.20253
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 18 iterations
+NOTIFY: SW1: running netlist for Uce = 2.24051
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 18 iterations
+NOTIFY: SW1: running netlist for Uce = 2.27848
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 18 iterations
+NOTIFY: SW1: running netlist for Uce = 2.31646
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 18 iterations
+NOTIFY: SW1: running netlist for Uce = 2.35443
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 18 iterations
+NOTIFY: SW1: running netlist for Uce = 2.39241
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 18 iterations
+NOTIFY: SW1: running netlist for Uce = 2.43038
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 18 iterations
+NOTIFY: SW1: running netlist for Uce = 2.46835
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 18 iterations
+NOTIFY: SW1: running netlist for Uce = 2.50633
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 18 iterations
+NOTIFY: SW1: running netlist for Uce = 2.5443
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 18 iterations
+NOTIFY: SW1: running netlist for Uce = 2.58228
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 18 iterations
+NOTIFY: SW1: running netlist for Uce = 2.62025
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 18 iterations
+NOTIFY: SW1: running netlist for Uce = 2.65823
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 18 iterations
+NOTIFY: SW1: running netlist for Uce = 2.6962
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 18 iterations
+NOTIFY: SW1: running netlist for Uce = 2.73418
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 18 iterations
+NOTIFY: SW1: running netlist for Uce = 2.77215
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 18 iterations
+NOTIFY: SW1: running netlist for Uce = 2.81013
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 18 iterations
+NOTIFY: SW1: running netlist for Uce = 2.8481
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 18 iterations
+NOTIFY: SW1: running netlist for Uce = 2.88608
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 18 iterations
+NOTIFY: SW1: running netlist for Uce = 2.92405
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 18 iterations
+NOTIFY: SW1: running netlist for Uce = 2.96203
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 18 iterations
+NOTIFY: SW1: running netlist for Uce = 3
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 18 iterations
+NOTIFY: SW2: running netlist for Ib = 2.92857e-05
+NOTIFY: SW1: running netlist for Uce = 0
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 12 iterations
+NOTIFY: SW1: running netlist for Uce = 0.0379747
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 12 iterations
+NOTIFY: SW1: running netlist for Uce = 0.0759494
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 12 iterations
+NOTIFY: SW1: running netlist for Uce = 0.113924
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 13 iterations
+NOTIFY: SW1: running netlist for Uce = 0.151899
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 13 iterations
+NOTIFY: SW1: running netlist for Uce = 0.189873
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 14 iterations
+NOTIFY: SW1: running netlist for Uce = 0.227848
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 14 iterations
+NOTIFY: SW1: running netlist for Uce = 0.265823
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 15 iterations
+NOTIFY: SW1: running netlist for Uce = 0.303797
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 15 iterations
+NOTIFY: SW1: running netlist for Uce = 0.341772
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 15 iterations
+NOTIFY: SW1: running netlist for Uce = 0.379747
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations
+NOTIFY: SW1: running netlist for Uce = 0.417722
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations
+NOTIFY: SW1: running netlist for Uce = 0.455696
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations
+NOTIFY: SW1: running netlist for Uce = 0.493671
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations
+NOTIFY: SW1: running netlist for Uce = 0.531646
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations
+NOTIFY: SW1: running netlist for Uce = 0.56962
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations
+NOTIFY: SW1: running netlist for Uce = 0.607595
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 17 iterations
+NOTIFY: SW1: running netlist for Uce = 0.64557
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 17 iterations
+NOTIFY: SW1: running netlist for Uce = 0.683544
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 17 iterations
+NOTIFY: SW1: running netlist for Uce = 0.721519
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 17 iterations
+NOTIFY: SW1: running netlist for Uce = 0.759494
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 17 iterations
+NOTIFY: SW1: running netlist for Uce = 0.797468
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 17 iterations
+NOTIFY: SW1: running netlist for Uce = 0.835443
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 17 iterations
+NOTIFY: SW1: running netlist for Uce = 0.873418
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 17 iterations
+NOTIFY: SW1: running netlist for Uce = 0.911392
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 17 iterations
+NOTIFY: SW1: running netlist for Uce = 0.949367
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 17 iterations
+NOTIFY: SW1: running netlist for Uce = 0.987342
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 17 iterations
+NOTIFY: SW1: running netlist for Uce = 1.02532
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 17 iterations
+NOTIFY: SW1: running netlist for Uce = 1.06329
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 17 iterations
+NOTIFY: SW1: running netlist for Uce = 1.10127
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 17 iterations
+NOTIFY: SW1: running netlist for Uce = 1.13924
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 17 iterations
+NOTIFY: SW1: running netlist for Uce = 1.17722
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 17 iterations
+NOTIFY: SW1: running netlist for Uce = 1.21519
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 17 iterations
+NOTIFY: SW1: running netlist for Uce = 1.25316
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 17 iterations
+NOTIFY: SW1: running netlist for Uce = 1.29114
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 17 iterations
+NOTIFY: SW1: running netlist for Uce = 1.32911
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 17 iterations
+NOTIFY: SW1: running netlist for Uce = 1.36709
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 17 iterations
+NOTIFY: SW1: running netlist for Uce = 1.40506
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 17 iterations
+NOTIFY: SW1: running netlist for Uce = 1.44304
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 17 iterations
+NOTIFY: SW1: running netlist for Uce = 1.48101
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 17 iterations
+NOTIFY: SW1: running netlist for Uce = 1.51899
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 17 iterations
+NOTIFY: SW1: running netlist for Uce = 1.55696
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 17 iterations
+NOTIFY: SW1: running netlist for Uce = 1.59494
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 17 iterations
+NOTIFY: SW1: running netlist for Uce = 1.63291
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 17 iterations
+NOTIFY: SW1: running netlist for Uce = 1.67089
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 17 iterations
+NOTIFY: SW1: running netlist for Uce = 1.70886
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 17 iterations
+NOTIFY: SW1: running netlist for Uce = 1.74684
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 17 iterations
+NOTIFY: SW1: running netlist for Uce = 1.78481
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 17 iterations
+NOTIFY: SW1: running netlist for Uce = 1.82278
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 17 iterations
+NOTIFY: SW1: running netlist for Uce = 1.86076
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 17 iterations
+NOTIFY: SW1: running netlist for Uce = 1.89873
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 17 iterations
+NOTIFY: SW1: running netlist for Uce = 1.93671
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 17 iterations
+NOTIFY: SW1: running netlist for Uce = 1.97468
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 17 iterations
+NOTIFY: SW1: running netlist for Uce = 2.01266
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 17 iterations
+NOTIFY: SW1: running netlist for Uce = 2.05063
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 17 iterations
+NOTIFY: SW1: running netlist for Uce = 2.08861
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 17 iterations
+NOTIFY: SW1: running netlist for Uce = 2.12658
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 17 iterations
+NOTIFY: SW1: running netlist for Uce = 2.16456
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 17 iterations
+NOTIFY: SW1: running netlist for Uce = 2.20253
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 17 iterations
+NOTIFY: SW1: running netlist for Uce = 2.24051
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 17 iterations
+NOTIFY: SW1: running netlist for Uce = 2.27848
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 17 iterations
+NOTIFY: SW1: running netlist for Uce = 2.31646
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 17 iterations
+NOTIFY: SW1: running netlist for Uce = 2.35443
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 17 iterations
+NOTIFY: SW1: running netlist for Uce = 2.39241
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 17 iterations
+NOTIFY: SW1: running netlist for Uce = 2.43038
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 17 iterations
+NOTIFY: SW1: running netlist for Uce = 2.46835
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 17 iterations
+NOTIFY: SW1: running netlist for Uce = 2.50633
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 17 iterations
+NOTIFY: SW1: running netlist for Uce = 2.5443
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 17 iterations
+NOTIFY: SW1: running netlist for Uce = 2.58228
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 17 iterations
+NOTIFY: SW1: running netlist for Uce = 2.62025
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 17 iterations
+NOTIFY: SW1: running netlist for Uce = 2.65823
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 17 iterations
+NOTIFY: SW1: running netlist for Uce = 2.6962
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 17 iterations
+NOTIFY: SW1: running netlist for Uce = 2.73418
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 17 iterations
+NOTIFY: SW1: running netlist for Uce = 2.77215
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 17 iterations
+NOTIFY: SW1: running netlist for Uce = 2.81013
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 17 iterations
+NOTIFY: SW1: running netlist for Uce = 2.8481
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 17 iterations
+NOTIFY: SW1: running netlist for Uce = 2.88608
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 17 iterations
+NOTIFY: SW1: running netlist for Uce = 2.92405
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 17 iterations
+NOTIFY: SW1: running netlist for Uce = 2.96203
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 17 iterations
+NOTIFY: SW1: running netlist for Uce = 3
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 17 iterations
+NOTIFY: SW2: running netlist for Ib = 4.34286e-05
+NOTIFY: SW1: running netlist for Uce = 0
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 12 iterations
+NOTIFY: SW1: running netlist for Uce = 0.0379747
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 12 iterations
+NOTIFY: SW1: running netlist for Uce = 0.0759494
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 12 iterations
+NOTIFY: SW1: running netlist for Uce = 0.113924
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 12 iterations
+NOTIFY: SW1: running netlist for Uce = 0.151899
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 13 iterations
+NOTIFY: SW1: running netlist for Uce = 0.189873
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 13 iterations
+NOTIFY: SW1: running netlist for Uce = 0.227848
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 14 iterations
+NOTIFY: SW1: running netlist for Uce = 0.265823
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 14 iterations
+NOTIFY: SW1: running netlist for Uce = 0.303797
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 15 iterations
+NOTIFY: SW1: running netlist for Uce = 0.341772
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 15 iterations
+NOTIFY: SW1: running netlist for Uce = 0.379747
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 15 iterations
+NOTIFY: SW1: running netlist for Uce = 0.417722
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 15 iterations
+NOTIFY: SW1: running netlist for Uce = 0.455696
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations
+NOTIFY: SW1: running netlist for Uce = 0.493671
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations
+NOTIFY: SW1: running netlist for Uce = 0.531646
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations
+NOTIFY: SW1: running netlist for Uce = 0.56962
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations
+NOTIFY: SW1: running netlist for Uce = 0.607595
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations
+NOTIFY: SW1: running netlist for Uce = 0.64557
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations
+NOTIFY: SW1: running netlist for Uce = 0.683544
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations
+NOTIFY: SW1: running netlist for Uce = 0.721519
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations
+NOTIFY: SW1: running netlist for Uce = 0.759494
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations
+NOTIFY: SW1: running netlist for Uce = 0.797468
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations
+NOTIFY: SW1: running netlist for Uce = 0.835443
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 17 iterations
+NOTIFY: SW1: running netlist for Uce = 0.873418
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 17 iterations
+NOTIFY: SW1: running netlist for Uce = 0.911392
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 17 iterations
+NOTIFY: SW1: running netlist for Uce = 0.949367
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 17 iterations
+NOTIFY: SW1: running netlist for Uce = 0.987342
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 17 iterations
+NOTIFY: SW1: running netlist for Uce = 1.02532
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 17 iterations
+NOTIFY: SW1: running netlist for Uce = 1.06329
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 17 iterations
+NOTIFY: SW1: running netlist for Uce = 1.10127
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 17 iterations
+NOTIFY: SW1: running netlist for Uce = 1.13924
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 17 iterations
+NOTIFY: SW1: running netlist for Uce = 1.17722
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 17 iterations
+NOTIFY: SW1: running netlist for Uce = 1.21519
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 17 iterations
+NOTIFY: SW1: running netlist for Uce = 1.25316
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 17 iterations
+NOTIFY: SW1: running netlist for Uce = 1.29114
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 17 iterations
+NOTIFY: SW1: running netlist for Uce = 1.32911
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 17 iterations
+NOTIFY: SW1: running netlist for Uce = 1.36709
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 17 iterations
+NOTIFY: SW1: running netlist for Uce = 1.40506
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 17 iterations
+NOTIFY: SW1: running netlist for Uce = 1.44304
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 17 iterations
+NOTIFY: SW1: running netlist for Uce = 1.48101
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 17 iterations
+NOTIFY: SW1: running netlist for Uce = 1.51899
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 17 iterations
+NOTIFY: SW1: running netlist for Uce = 1.55696
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 17 iterations
+NOTIFY: SW1: running netlist for Uce = 1.59494
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 17 iterations
+NOTIFY: SW1: running netlist for Uce = 1.63291
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 17 iterations
+NOTIFY: SW1: running netlist for Uce = 1.67089
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 17 iterations
+NOTIFY: SW1: running netlist for Uce = 1.70886
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 17 iterations
+NOTIFY: SW1: running netlist for Uce = 1.74684
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 17 iterations
+NOTIFY: SW1: running netlist for Uce = 1.78481
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 17 iterations
+NOTIFY: SW1: running netlist for Uce = 1.82278
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 17 iterations
+NOTIFY: SW1: running netlist for Uce = 1.86076
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 17 iterations
+NOTIFY: SW1: running netlist for Uce = 1.89873
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 17 iterations
+NOTIFY: SW1: running netlist for Uce = 1.93671
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 17 iterations
+NOTIFY: SW1: running netlist for Uce = 1.97468
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 17 iterations
+NOTIFY: SW1: running netlist for Uce = 2.01266
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 17 iterations
+NOTIFY: SW1: running netlist for Uce = 2.05063
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 17 iterations
+NOTIFY: SW1: running netlist for Uce = 2.08861
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 17 iterations
+NOTIFY: SW1: running netlist for Uce = 2.12658
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 17 iterations
+NOTIFY: SW1: running netlist for Uce = 2.16456
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 17 iterations
+NOTIFY: SW1: running netlist for Uce = 2.20253
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 17 iterations
+NOTIFY: SW1: running netlist for Uce = 2.24051
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 17 iterations
+NOTIFY: SW1: running netlist for Uce = 2.27848
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 17 iterations
+NOTIFY: SW1: running netlist for Uce = 2.31646
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 17 iterations
+NOTIFY: SW1: running netlist for Uce = 2.35443
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 17 iterations
+NOTIFY: SW1: running netlist for Uce = 2.39241
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 17 iterations
+NOTIFY: SW1: running netlist for Uce = 2.43038
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 17 iterations
+NOTIFY: SW1: running netlist for Uce = 2.46835
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 17 iterations
+NOTIFY: SW1: running netlist for Uce = 2.50633
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 17 iterations
+NOTIFY: SW1: running netlist for Uce = 2.5443
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 17 iterations
+NOTIFY: SW1: running netlist for Uce = 2.58228
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 17 iterations
+NOTIFY: SW1: running netlist for Uce = 2.62025
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 17 iterations
+NOTIFY: SW1: running netlist for Uce = 2.65823
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 17 iterations
+NOTIFY: SW1: running netlist for Uce = 2.6962
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 17 iterations
+NOTIFY: SW1: running netlist for Uce = 2.73418
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 17 iterations
+NOTIFY: SW1: running netlist for Uce = 2.77215
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 17 iterations
+NOTIFY: SW1: running netlist for Uce = 2.81013
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 17 iterations
+NOTIFY: SW1: running netlist for Uce = 2.8481
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 17 iterations
+NOTIFY: SW1: running netlist for Uce = 2.88608
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 17 iterations
+NOTIFY: SW1: running netlist for Uce = 2.92405
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 17 iterations
+NOTIFY: SW1: running netlist for Uce = 2.96203
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 17 iterations
+NOTIFY: SW1: running netlist for Uce = 3
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 17 iterations
+NOTIFY: SW2: running netlist for Ib = 5.75714e-05
+NOTIFY: SW1: running netlist for Uce = 0
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 12 iterations
+NOTIFY: SW1: running netlist for Uce = 0.0379747
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 12 iterations
+NOTIFY: SW1: running netlist for Uce = 0.0759494
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 12 iterations
+NOTIFY: SW1: running netlist for Uce = 0.113924
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 12 iterations
+NOTIFY: SW1: running netlist for Uce = 0.151899
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 12 iterations
+NOTIFY: SW1: running netlist for Uce = 0.189873
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 13 iterations
+NOTIFY: SW1: running netlist for Uce = 0.227848
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 14 iterations
+NOTIFY: SW1: running netlist for Uce = 0.265823
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 14 iterations
+NOTIFY: SW1: running netlist for Uce = 0.303797
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 14 iterations
+NOTIFY: SW1: running netlist for Uce = 0.341772
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 15 iterations
+NOTIFY: SW1: running netlist for Uce = 0.379747
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 15 iterations
+NOTIFY: SW1: running netlist for Uce = 0.417722
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 15 iterations
+NOTIFY: SW1: running netlist for Uce = 0.455696
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 15 iterations
+NOTIFY: SW1: running netlist for Uce = 0.493671
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations
+NOTIFY: SW1: running netlist for Uce = 0.531646
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations
+NOTIFY: SW1: running netlist for Uce = 0.56962
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations
+NOTIFY: SW1: running netlist for Uce = 0.607595
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations
+NOTIFY: SW1: running netlist for Uce = 0.64557
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations
+NOTIFY: SW1: running netlist for Uce = 0.683544
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations
+NOTIFY: SW1: running netlist for Uce = 0.721519
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations
+NOTIFY: SW1: running netlist for Uce = 0.759494
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations
+NOTIFY: SW1: running netlist for Uce = 0.797468
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations
+NOTIFY: SW1: running netlist for Uce = 0.835443
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations
+NOTIFY: SW1: running netlist for Uce = 0.873418
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations
+NOTIFY: SW1: running netlist for Uce = 0.911392
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations
+NOTIFY: SW1: running netlist for Uce = 0.949367
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations
+NOTIFY: SW1: running netlist for Uce = 0.987342
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations
+NOTIFY: SW1: running netlist for Uce = 1.02532
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations
+NOTIFY: SW1: running netlist for Uce = 1.06329
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations
+NOTIFY: SW1: running netlist for Uce = 1.10127
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations
+NOTIFY: SW1: running netlist for Uce = 1.13924
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations
+NOTIFY: SW1: running netlist for Uce = 1.17722
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations
+NOTIFY: SW1: running netlist for Uce = 1.21519
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations
+NOTIFY: SW1: running netlist for Uce = 1.25316
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations
+NOTIFY: SW1: running netlist for Uce = 1.29114
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations
+NOTIFY: SW1: running netlist for Uce = 1.32911
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations
+NOTIFY: SW1: running netlist for Uce = 1.36709
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 17 iterations
+NOTIFY: SW1: running netlist for Uce = 1.40506
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 17 iterations
+NOTIFY: SW1: running netlist for Uce = 1.44304
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 17 iterations
+NOTIFY: SW1: running netlist for Uce = 1.48101
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 17 iterations
+NOTIFY: SW1: running netlist for Uce = 1.51899
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 17 iterations
+NOTIFY: SW1: running netlist for Uce = 1.55696
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 17 iterations
+NOTIFY: SW1: running netlist for Uce = 1.59494
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 17 iterations
+NOTIFY: SW1: running netlist for Uce = 1.63291
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 17 iterations
+NOTIFY: SW1: running netlist for Uce = 1.67089
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations
+NOTIFY: SW1: running netlist for Uce = 1.70886
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations
+NOTIFY: SW1: running netlist for Uce = 1.74684
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations
+NOTIFY: SW1: running netlist for Uce = 1.78481
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations
+NOTIFY: SW1: running netlist for Uce = 1.82278
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations
+NOTIFY: SW1: running netlist for Uce = 1.86076
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations
+NOTIFY: SW1: running netlist for Uce = 1.89873
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations
+NOTIFY: SW1: running netlist for Uce = 1.93671
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations
+NOTIFY: SW1: running netlist for Uce = 1.97468
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations
+NOTIFY: SW1: running netlist for Uce = 2.01266
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations
+NOTIFY: SW1: running netlist for Uce = 2.05063
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations
+NOTIFY: SW1: running netlist for Uce = 2.08861
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations
+NOTIFY: SW1: running netlist for Uce = 2.12658
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations
+NOTIFY: SW1: running netlist for Uce = 2.16456
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations
+NOTIFY: SW1: running netlist for Uce = 2.20253
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations
+NOTIFY: SW1: running netlist for Uce = 2.24051
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations
+NOTIFY: SW1: running netlist for Uce = 2.27848
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations
+NOTIFY: SW1: running netlist for Uce = 2.31646
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations
+NOTIFY: SW1: running netlist for Uce = 2.35443
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations
+NOTIFY: SW1: running netlist for Uce = 2.39241
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations
+NOTIFY: SW1: running netlist for Uce = 2.43038
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations
+NOTIFY: SW1: running netlist for Uce = 2.46835
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations
+NOTIFY: SW1: running netlist for Uce = 2.50633
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations
+NOTIFY: SW1: running netlist for Uce = 2.5443
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations
+NOTIFY: SW1: running netlist for Uce = 2.58228
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations
+NOTIFY: SW1: running netlist for Uce = 2.62025
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations
+NOTIFY: SW1: running netlist for Uce = 2.65823
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations
+NOTIFY: SW1: running netlist for Uce = 2.6962
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations
+NOTIFY: SW1: running netlist for Uce = 2.73418
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations
+NOTIFY: SW1: running netlist for Uce = 2.77215
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations
+NOTIFY: SW1: running netlist for Uce = 2.81013
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations
+NOTIFY: SW1: running netlist for Uce = 2.8481
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations
+NOTIFY: SW1: running netlist for Uce = 2.88608
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations
+NOTIFY: SW1: running netlist for Uce = 2.92405
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations
+NOTIFY: SW1: running netlist for Uce = 2.96203
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations
+NOTIFY: SW1: running netlist for Uce = 3
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations
+NOTIFY: SW2: running netlist for Ib = 7.17143e-05
+NOTIFY: SW1: running netlist for Uce = 0
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 11 iterations
+NOTIFY: SW1: running netlist for Uce = 0.0379747
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 11 iterations
+NOTIFY: SW1: running netlist for Uce = 0.0759494
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 12 iterations
+NOTIFY: SW1: running netlist for Uce = 0.113924
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 12 iterations
+NOTIFY: SW1: running netlist for Uce = 0.151899
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 12 iterations
+NOTIFY: SW1: running netlist for Uce = 0.189873
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 13 iterations
+NOTIFY: SW1: running netlist for Uce = 0.227848
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 13 iterations
+NOTIFY: SW1: running netlist for Uce = 0.265823
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 14 iterations
+NOTIFY: SW1: running netlist for Uce = 0.303797
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 14 iterations
+NOTIFY: SW1: running netlist for Uce = 0.341772
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 14 iterations
+NOTIFY: SW1: running netlist for Uce = 0.379747
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 15 iterations
+NOTIFY: SW1: running netlist for Uce = 0.417722
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 15 iterations
+NOTIFY: SW1: running netlist for Uce = 0.455696
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 15 iterations
+NOTIFY: SW1: running netlist for Uce = 0.493671
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 15 iterations
+NOTIFY: SW1: running netlist for Uce = 0.531646
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 15 iterations
+NOTIFY: SW1: running netlist for Uce = 0.56962
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations
+NOTIFY: SW1: running netlist for Uce = 0.607595
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations
+NOTIFY: SW1: running netlist for Uce = 0.64557
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations
+NOTIFY: SW1: running netlist for Uce = 0.683544
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations
+NOTIFY: SW1: running netlist for Uce = 0.721519
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations
+NOTIFY: SW1: running netlist for Uce = 0.759494
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations
+NOTIFY: SW1: running netlist for Uce = 0.797468
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations
+NOTIFY: SW1: running netlist for Uce = 0.835443
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations
+NOTIFY: SW1: running netlist for Uce = 0.873418
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations
+NOTIFY: SW1: running netlist for Uce = 0.911392
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations
+NOTIFY: SW1: running netlist for Uce = 0.949367
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations
+NOTIFY: SW1: running netlist for Uce = 0.987342
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations
+NOTIFY: SW1: running netlist for Uce = 1.02532
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations
+NOTIFY: SW1: running netlist for Uce = 1.06329
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations
+NOTIFY: SW1: running netlist for Uce = 1.10127
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations
+NOTIFY: SW1: running netlist for Uce = 1.13924
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations
+NOTIFY: SW1: running netlist for Uce = 1.17722
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations
+NOTIFY: SW1: running netlist for Uce = 1.21519
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations
+NOTIFY: SW1: running netlist for Uce = 1.25316
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations
+NOTIFY: SW1: running netlist for Uce = 1.29114
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations
+NOTIFY: SW1: running netlist for Uce = 1.32911
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations
+NOTIFY: SW1: running netlist for Uce = 1.36709
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations
+NOTIFY: SW1: running netlist for Uce = 1.40506
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations
+NOTIFY: SW1: running netlist for Uce = 1.44304
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations
+NOTIFY: SW1: running netlist for Uce = 1.48101
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations
+NOTIFY: SW1: running netlist for Uce = 1.51899
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations
+NOTIFY: SW1: running netlist for Uce = 1.55696
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations
+NOTIFY: SW1: running netlist for Uce = 1.59494
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations
+NOTIFY: SW1: running netlist for Uce = 1.63291
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations
+NOTIFY: SW1: running netlist for Uce = 1.67089
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations
+NOTIFY: SW1: running netlist for Uce = 1.70886
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations
+NOTIFY: SW1: running netlist for Uce = 1.74684
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations
+NOTIFY: SW1: running netlist for Uce = 1.78481
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations
+NOTIFY: SW1: running netlist for Uce = 1.82278
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations
+NOTIFY: SW1: running netlist for Uce = 1.86076
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations
+NOTIFY: SW1: running netlist for Uce = 1.89873
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations
+NOTIFY: SW1: running netlist for Uce = 1.93671
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations
+NOTIFY: SW1: running netlist for Uce = 1.97468
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations
+NOTIFY: SW1: running netlist for Uce = 2.01266
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations
+NOTIFY: SW1: running netlist for Uce = 2.05063
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations
+NOTIFY: SW1: running netlist for Uce = 2.08861
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations
+NOTIFY: SW1: running netlist for Uce = 2.12658
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations
+NOTIFY: SW1: running netlist for Uce = 2.16456
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations
+NOTIFY: SW1: running netlist for Uce = 2.20253
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations
+NOTIFY: SW1: running netlist for Uce = 2.24051
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations
+NOTIFY: SW1: running netlist for Uce = 2.27848
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations
+NOTIFY: SW1: running netlist for Uce = 2.31646
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations
+NOTIFY: SW1: running netlist for Uce = 2.35443
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations
+NOTIFY: SW1: running netlist for Uce = 2.39241
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations
+NOTIFY: SW1: running netlist for Uce = 2.43038
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations
+NOTIFY: SW1: running netlist for Uce = 2.46835
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations
+NOTIFY: SW1: running netlist for Uce = 2.50633
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations
+NOTIFY: SW1: running netlist for Uce = 2.5443
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations
+NOTIFY: SW1: running netlist for Uce = 2.58228
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations
+NOTIFY: SW1: running netlist for Uce = 2.62025
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations
+NOTIFY: SW1: running netlist for Uce = 2.65823
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations
+NOTIFY: SW1: running netlist for Uce = 2.6962
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations
+NOTIFY: SW1: running netlist for Uce = 2.73418
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations
+NOTIFY: SW1: running netlist for Uce = 2.77215
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations
+NOTIFY: SW1: running netlist for Uce = 2.81013
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations
+NOTIFY: SW1: running netlist for Uce = 2.8481
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations
+NOTIFY: SW1: running netlist for Uce = 2.88608
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations
+NOTIFY: SW1: running netlist for Uce = 2.92405
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations
+NOTIFY: SW1: running netlist for Uce = 2.96203
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations
+NOTIFY: SW1: running netlist for Uce = 3
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations
+NOTIFY: SW2: running netlist for Ib = 8.58571e-05
+NOTIFY: SW1: running netlist for Uce = 0
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 11 iterations
+NOTIFY: SW1: running netlist for Uce = 0.0379747
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 11 iterations
+NOTIFY: SW1: running netlist for Uce = 0.0759494
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 11 iterations
+NOTIFY: SW1: running netlist for Uce = 0.113924
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 12 iterations
+NOTIFY: SW1: running netlist for Uce = 0.151899
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 12 iterations
+NOTIFY: SW1: running netlist for Uce = 0.189873
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 13 iterations
+NOTIFY: SW1: running netlist for Uce = 0.227848
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 13 iterations
+NOTIFY: SW1: running netlist for Uce = 0.265823
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 14 iterations
+NOTIFY: SW1: running netlist for Uce = 0.303797
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 14 iterations
+NOTIFY: SW1: running netlist for Uce = 0.341772
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 14 iterations
+NOTIFY: SW1: running netlist for Uce = 0.379747
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 15 iterations
+NOTIFY: SW1: running netlist for Uce = 0.417722
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 15 iterations
+NOTIFY: SW1: running netlist for Uce = 0.455696
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 15 iterations
+NOTIFY: SW1: running netlist for Uce = 0.493671
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 15 iterations
+NOTIFY: SW1: running netlist for Uce = 0.531646
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 15 iterations
+NOTIFY: SW1: running netlist for Uce = 0.56962
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 15 iterations
+NOTIFY: SW1: running netlist for Uce = 0.607595
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 15 iterations
+NOTIFY: SW1: running netlist for Uce = 0.64557
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations
+NOTIFY: SW1: running netlist for Uce = 0.683544
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations
+NOTIFY: SW1: running netlist for Uce = 0.721519
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations
+NOTIFY: SW1: running netlist for Uce = 0.759494
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations
+NOTIFY: SW1: running netlist for Uce = 0.797468
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations
+NOTIFY: SW1: running netlist for Uce = 0.835443
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations
+NOTIFY: SW1: running netlist for Uce = 0.873418
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations
+NOTIFY: SW1: running netlist for Uce = 0.911392
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations
+NOTIFY: SW1: running netlist for Uce = 0.949367
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations
+NOTIFY: SW1: running netlist for Uce = 0.987342
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations
+NOTIFY: SW1: running netlist for Uce = 1.02532
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations
+NOTIFY: SW1: running netlist for Uce = 1.06329
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations
+NOTIFY: SW1: running netlist for Uce = 1.10127
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations
+NOTIFY: SW1: running netlist for Uce = 1.13924
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations
+NOTIFY: SW1: running netlist for Uce = 1.17722
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations
+NOTIFY: SW1: running netlist for Uce = 1.21519
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations
+NOTIFY: SW1: running netlist for Uce = 1.25316
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations
+NOTIFY: SW1: running netlist for Uce = 1.29114
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations
+NOTIFY: SW1: running netlist for Uce = 1.32911
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations
+NOTIFY: SW1: running netlist for Uce = 1.36709
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations
+NOTIFY: SW1: running netlist for Uce = 1.40506
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations
+NOTIFY: SW1: running netlist for Uce = 1.44304
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations
+NOTIFY: SW1: running netlist for Uce = 1.48101
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations
+NOTIFY: SW1: running netlist for Uce = 1.51899
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations
+NOTIFY: SW1: running netlist for Uce = 1.55696
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations
+NOTIFY: SW1: running netlist for Uce = 1.59494
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations
+NOTIFY: SW1: running netlist for Uce = 1.63291
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations
+NOTIFY: SW1: running netlist for Uce = 1.67089
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations
+NOTIFY: SW1: running netlist for Uce = 1.70886
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations
+NOTIFY: SW1: running netlist for Uce = 1.74684
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations
+NOTIFY: SW1: running netlist for Uce = 1.78481
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations
+NOTIFY: SW1: running netlist for Uce = 1.82278
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations
+NOTIFY: SW1: running netlist for Uce = 1.86076
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations
+NOTIFY: SW1: running netlist for Uce = 1.89873
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations
+NOTIFY: SW1: running netlist for Uce = 1.93671
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations
+NOTIFY: SW1: running netlist for Uce = 1.97468
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations
+NOTIFY: SW1: running netlist for Uce = 2.01266
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations
+NOTIFY: SW1: running netlist for Uce = 2.05063
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations
+NOTIFY: SW1: running netlist for Uce = 2.08861
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations
+NOTIFY: SW1: running netlist for Uce = 2.12658
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations
+NOTIFY: SW1: running netlist for Uce = 2.16456
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations
+NOTIFY: SW1: running netlist for Uce = 2.20253
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations
+NOTIFY: SW1: running netlist for Uce = 2.24051
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations
+NOTIFY: SW1: running netlist for Uce = 2.27848
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations
+NOTIFY: SW1: running netlist for Uce = 2.31646
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations
+NOTIFY: SW1: running netlist for Uce = 2.35443
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations
+NOTIFY: SW1: running netlist for Uce = 2.39241
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations
+NOTIFY: SW1: running netlist for Uce = 2.43038
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations
+NOTIFY: SW1: running netlist for Uce = 2.46835
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations
+NOTIFY: SW1: running netlist for Uce = 2.50633
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations
+NOTIFY: SW1: running netlist for Uce = 2.5443
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations
+NOTIFY: SW1: running netlist for Uce = 2.58228
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations
+NOTIFY: SW1: running netlist for Uce = 2.62025
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations
+NOTIFY: SW1: running netlist for Uce = 2.65823
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations
+NOTIFY: SW1: running netlist for Uce = 2.6962
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations
+NOTIFY: SW1: running netlist for Uce = 2.73418
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations
+NOTIFY: SW1: running netlist for Uce = 2.77215
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations
+NOTIFY: SW1: running netlist for Uce = 2.81013
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations
+NOTIFY: SW1: running netlist for Uce = 2.8481
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations
+NOTIFY: SW1: running netlist for Uce = 2.88608
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations
+NOTIFY: SW1: running netlist for Uce = 2.92405
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations
+NOTIFY: SW1: running netlist for Uce = 2.96203
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations
+NOTIFY: SW1: running netlist for Uce = 3
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations
+NOTIFY: SW2: running netlist for Ib = 0.0001
+NOTIFY: SW1: running netlist for Uce = 0
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 11 iterations
+NOTIFY: SW1: running netlist for Uce = 0.0379747
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 11 iterations
+NOTIFY: SW1: running netlist for Uce = 0.0759494
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 11 iterations
+NOTIFY: SW1: running netlist for Uce = 0.113924
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 11 iterations
+NOTIFY: SW1: running netlist for Uce = 0.151899
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 12 iterations
+NOTIFY: SW1: running netlist for Uce = 0.189873
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 12 iterations
+NOTIFY: SW1: running netlist for Uce = 0.227848
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 13 iterations
+NOTIFY: SW1: running netlist for Uce = 0.265823
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 13 iterations
+NOTIFY: SW1: running netlist for Uce = 0.303797
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 14 iterations
+NOTIFY: SW1: running netlist for Uce = 0.341772
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 14 iterations
+NOTIFY: SW1: running netlist for Uce = 0.379747
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 14 iterations
+NOTIFY: SW1: running netlist for Uce = 0.417722
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 15 iterations
+NOTIFY: SW1: running netlist for Uce = 0.455696
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 15 iterations
+NOTIFY: SW1: running netlist for Uce = 0.493671
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 15 iterations
+NOTIFY: SW1: running netlist for Uce = 0.531646
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 15 iterations
+NOTIFY: SW1: running netlist for Uce = 0.56962
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 15 iterations
+NOTIFY: SW1: running netlist for Uce = 0.607595
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 15 iterations
+NOTIFY: SW1: running netlist for Uce = 0.64557
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 15 iterations
+NOTIFY: SW1: running netlist for Uce = 0.683544
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 15 iterations
+NOTIFY: SW1: running netlist for Uce = 0.721519
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations
+NOTIFY: SW1: running netlist for Uce = 0.759494
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations
+NOTIFY: SW1: running netlist for Uce = 0.797468
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations
+NOTIFY: SW1: running netlist for Uce = 0.835443
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations
+NOTIFY: SW1: running netlist for Uce = 0.873418
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations
+NOTIFY: SW1: running netlist for Uce = 0.911392
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations
+NOTIFY: SW1: running netlist for Uce = 0.949367
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations
+NOTIFY: SW1: running netlist for Uce = 0.987342
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations
+NOTIFY: SW1: running netlist for Uce = 1.02532
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations
+NOTIFY: SW1: running netlist for Uce = 1.06329
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations
+NOTIFY: SW1: running netlist for Uce = 1.10127
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations
+NOTIFY: SW1: running netlist for Uce = 1.13924
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations
+NOTIFY: SW1: running netlist for Uce = 1.17722
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations
+NOTIFY: SW1: running netlist for Uce = 1.21519
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations
+NOTIFY: SW1: running netlist for Uce = 1.25316
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations
+NOTIFY: SW1: running netlist for Uce = 1.29114
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations
+NOTIFY: SW1: running netlist for Uce = 1.32911
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations
+NOTIFY: SW1: running netlist for Uce = 1.36709
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations
+NOTIFY: SW1: running netlist for Uce = 1.40506
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations
+NOTIFY: SW1: running netlist for Uce = 1.44304
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations
+NOTIFY: SW1: running netlist for Uce = 1.48101
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations
+NOTIFY: SW1: running netlist for Uce = 1.51899
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations
+NOTIFY: SW1: running netlist for Uce = 1.55696
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations
+NOTIFY: SW1: running netlist for Uce = 1.59494
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations
+NOTIFY: SW1: running netlist for Uce = 1.63291
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations
+NOTIFY: SW1: running netlist for Uce = 1.67089
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations
+NOTIFY: SW1: running netlist for Uce = 1.70886
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations
+NOTIFY: SW1: running netlist for Uce = 1.74684
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations
+NOTIFY: SW1: running netlist for Uce = 1.78481
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations
+NOTIFY: SW1: running netlist for Uce = 1.82278
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations
+NOTIFY: SW1: running netlist for Uce = 1.86076
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations
+NOTIFY: SW1: running netlist for Uce = 1.89873
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations
+NOTIFY: SW1: running netlist for Uce = 1.93671
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations
+NOTIFY: SW1: running netlist for Uce = 1.97468
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations
+NOTIFY: SW1: running netlist for Uce = 2.01266
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations
+NOTIFY: SW1: running netlist for Uce = 2.05063
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations
+NOTIFY: SW1: running netlist for Uce = 2.08861
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations
+NOTIFY: SW1: running netlist for Uce = 2.12658
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations
+NOTIFY: SW1: running netlist for Uce = 2.16456
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations
+NOTIFY: SW1: running netlist for Uce = 2.20253
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations
+NOTIFY: SW1: running netlist for Uce = 2.24051
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations
+NOTIFY: SW1: running netlist for Uce = 2.27848
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations
+NOTIFY: SW1: running netlist for Uce = 2.31646
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations
+NOTIFY: SW1: running netlist for Uce = 2.35443
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations
+NOTIFY: SW1: running netlist for Uce = 2.39241
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations
+NOTIFY: SW1: running netlist for Uce = 2.43038
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations
+NOTIFY: SW1: running netlist for Uce = 2.46835
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations
+NOTIFY: SW1: running netlist for Uce = 2.50633
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations
+NOTIFY: SW1: running netlist for Uce = 2.5443
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations
+NOTIFY: SW1: running netlist for Uce = 2.58228
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations
+NOTIFY: SW1: running netlist for Uce = 2.62025
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations
+NOTIFY: SW1: running netlist for Uce = 2.65823
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations
+NOTIFY: SW1: running netlist for Uce = 2.6962
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations
+NOTIFY: SW1: running netlist for Uce = 2.73418
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations
+NOTIFY: SW1: running netlist for Uce = 2.77215
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations
+NOTIFY: SW1: running netlist for Uce = 2.81013
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations
+NOTIFY: SW1: running netlist for Uce = 2.8481
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations
+NOTIFY: SW1: running netlist for Uce = 2.88608
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations
+NOTIFY: SW1: running netlist for Uce = 2.92405
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations
+NOTIFY: SW1: running netlist for Uce = 2.96203
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations
+NOTIFY: SW1: running netlist for Uce = 3
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 16 iterations

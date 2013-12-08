@@ -1,0 +1,38 @@
+parsing netlist...
+checking netlist...
+checker notice, variable `neg.Vt' in equation `Vout' not yet defined
+checker notice, variable `pos.Vt' in equation `Vout' not yet defined
+checker notice, variable `time' in equation `Spectrum' not yet defined
+subcircuit root
+  R:R1 pos _net0 R="10000" Temp="26.85" Tc1="0" Tc2="0" Tnom="26.85"
+  R:R2 neg _net0 R="10000" Temp="26.85" Tc1="0" Tc2="0" Tnom="26.85"
+  Vdc:V1 _net0 gnd U="5V"
+  Vac:RF _net1 gnd U="0.2V" f="1e+06Hz" Phase="0" Theta="0"
+  Vac:LO _net2 _net3 U="3V" f="1e+07Hz" Phase="0" Theta="0"
+  MOSFET:T3 _net1 _net4 gnd gnd Type="nfet" Vt0="-1V" Kp="2e-05" Gamma="0" Phi="0.6V" Lambda="0" Rd="0Ohm" Rs="0Ohm" Rg="0Ohm" Is="1e-14A" N="1" W="1e-06m" L="1e-06m" Ld="0" Tox="1e-07m" Cgso="0" Cgdo="0" Cgbo="0" Cbd="0F" Cbs="0F" Pb="0.8V" Mj="0.5" Fc="0.5" Cjsw="0" Mjsw="0.33" Tt="0s" Nsub="0" Nss="0" Tpg="1" Uo="600" Rsh="0" Nrd="1" Nrs="1" Cj="0" Js="0" Ad="0" As="0" Pd="0" Ps="0" Kf="0" Af="1" Ffe="1" Temp="26.85" Tnom="26.85"
+  MOSFET:T1 _net2 pos _net4 _net4 Type="nfet" Vt0="1V" Kp="2e-05" Gamma="0" Phi="0.6V" Lambda="0" Rd="0Ohm" Rs="0Ohm" Rg="0Ohm" Is="1e-14A" N="1" W="1e-06m" L="1e-06m" Ld="0" Tox="1e-07m" Cgso="0" Cgdo="0" Cgbo="0" Cbd="0F" Cbs="0F" Pb="0.8V" Mj="0.5" Fc="0.5" Cjsw="0" Mjsw="0.33" Tt="0s" Nsub="0" Nss="0" Tpg="1" Uo="600" Rsh="0" Nrd="1" Nrs="1" Cj="0" Js="0" Ad="0" As="0" Pd="0" Ps="0" Kf="0" Af="1" Ffe="1" Temp="26.85" Tnom="26.85"
+  MOSFET:T2 _net3 neg _net4 _net4 Type="nfet" Vt0="1V" Kp="2e-05" Gamma="0" Phi="0.6V" Lambda="0" Rd="0Ohm" Rs="0Ohm" Rg="0Ohm" Is="1e-14A" N="1" W="1e-06m" L="1e-06m" Ld="0" Tox="1e-07m" Cgso="0" Cgdo="0" Cgbo="0" Cbd="0F" Cbs="0F" Pb="0.8V" Mj="0.5" Fc="0.5" Cjsw="0" Mjsw="0.33" Tt="0s" Nsub="0" Nss="0" Tpg="1" Uo="600" Rsh="0" Nrd="1" Nrs="1" Cj="0" Js="0" Ad="0" As="0" Pd="0" Ps="0" Kf="0" Af="1" Ffe="1" Temp="26.85" Tnom="26.85"
+  Vdc:V4 _net3 gnd U="5V"
+  TR:TR1 Type="lin" Start="0" Stop="2e-06s" Points="401" IntegrationMethod="Trapezoidal" Order="2" InitialStep="1e-09s" MinStep="1e-16" MaxIter="150" reltol="0.001" abstol="1e-12A" vntol="1e-06V" Temp="26.85" LTEreltol="0.001" LTEabstol="1e-06" LTEfactor="1" Solver="CroutLU" relaxTSR="no" initialDC="yes" MaxStep="0"
+netlist content
+      3 MOSFET instances
+      2 R instances
+      2 Vdc instances
+      2 Vac instances
+      1 TR instances
+creating netlist...
+checker notice, variable `neg.Vt' in equation `Vout' not yet defined
+checker notice, variable `pos.Vt' in equation `Vout' not yet defined
+checker notice, variable `time' in equation `Spectrum' not yet defined
+NOTIFY: Cox=3.45313e-16, Beta=2e-05 Ga=0, Phi=0.6, Vto=1
+NOTIFY: Cox=3.45313e-16, Beta=2e-05 Ga=0, Phi=0.6, Vto=1
+NOTIFY: Cox=3.45313e-16, Beta=2e-05 Ga=0, Phi=0.6, Vto=-1
+NOTIFY: TR1: creating node list for initial DC analysis
+NOTIFY: TR1: solving initial DC netlist
+NOTIFY: Cox=3.45313e-16, Beta=2e-05 Ga=0, Phi=0.6, Vto=1
+NOTIFY: Cox=3.45313e-16, Beta=2e-05 Ga=0, Phi=0.6, Vto=1
+NOTIFY: Cox=3.45313e-16, Beta=2e-05 Ga=0, Phi=0.6, Vto=-1
+NOTIFY: TR1: creating node list for transient analysis
+NOTIFY: TR1: solving transient netlist
+NOTIFY: TR1: average time-step 1.26263e-09, 157 rejections
+NOTIFY: TR1: average NR-iterations 3.19508, 0 non-convergences

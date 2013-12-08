@@ -1,0 +1,34 @@
+parsing netlist...
+checking netlist...
+checker notice, variable `In.v' in equation `Gain' not yet defined
+checker notice, variable `Out.v' in equation `Gain' not yet defined
+subcircuit root
+  C:C1 _net0 _net1 C="1.01e-06"
+  R:R5 In Out R="10000" Temp="26.85" Tc1="0" Tc2="0" Tnom="26.85"
+  R:R3 _net2 _net3 R="1000" Temp="26.85" Tc1="0" Tc2="0" Tnom="26.85"
+  R:R4 _net4 _net3 R="1000" Temp="26.85" Tc1="0" Tc2="0" Tnom="26.85"
+  R:R2 _net1 _net2 R="1000" Temp="26.85" Tc1="0" Tc2="0" Tnom="26.85"
+  C:C2 _net4 Out C="1e-06"
+  DC:DC1 Temp="26.85" reltol="0.001" abstol="1e-12A" vntol="1e-06V" saveOPs="no" MaxIter="150" saveAll="no" convHelper="none" Solver="CroutLU"
+  OpAmp:OP1 _net4 _net0 _net1 G="1e+06" Umax="15V"
+  OpAmp:OP2 _net4 _net2 _net3 G="1e+06" Umax="15V"
+  R:R1 gnd _net0 R="10000" Temp="26.85" Tc1="0" Tc2="0" Tnom="26.85"
+  Vac:V1 In gnd U="1e-06V" f="1e+09Hz" Phase="0" Theta="0"
+  AC:AC1 Type="log" Start="5" Stop="500" Points="100" Noise="no"
+netlist content
+      1 AC instances
+      2 C instances
+      1 DC instances
+      5 R instances
+      2 OpAmp instances
+      1 Vac instances
+creating netlist...
+checker notice, variable `In.v' in equation `Gain' not yet defined
+checker notice, variable `Out.v' in equation `Gain' not yet defined
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 2 iterations
+checker notice, variable `In.v' in equation `Gain' not yet defined
+checker notice, variable `Out.v' in equation `Gain' not yet defined
+NOTIFY: AC1: creating node list for AC analysis
+NOTIFY: AC1: solving AC netlist

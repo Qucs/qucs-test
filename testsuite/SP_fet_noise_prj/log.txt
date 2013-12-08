@@ -1,0 +1,51 @@
+parsing netlist...
+checking netlist...
+subcircuit root
+  R:fet.SUB1.R3 fet.SUB1._net3 fet.SUB1._net2 R="312" Temp="6000" Tc1="0" Tc2="0" Tnom="26.85"
+  L:fet.SUB1.L3 gnd fet.SUB1._net4 L="6.4e-12H"
+  R:fet.SUB1.R5 fet.SUB1._net4 fet.SUB1._net3 R="2.4Ohm" Temp="16.85" Tc1="0" Tc2="0" Tnom="26.85"
+  C:fet.SUB1.C5 fet.SUB1._net3 fet.SUB1._net2 C="1.4e-14F"
+  R:fet.SUB1.R6 fet.SUB1._net2 fet.SUB1._net7 R="2.5" Temp="16.85" Tc1="0" Tc2="0" Tnom="26.85"
+  R:fet.SUB1.R2 fet.SUB1._net6 fet.SUB1._net2 R="3.6Ohm" Temp="16.85" Tc1="0" Tc2="0" Tnom="26.85"
+  R:fet.SUB1.R4 fet.SUB1._net3 fet.SUB1._net0 R="1.9" Temp="16.85" Tc1="0" Tc2="0" Tnom="26.85"
+  R:fet.SUB1.R1 fet.SUB1._net5 fet.SUB1._net1 R="0.9Ohm" Temp="16.85" Tc1="0" Tc2="0" Tnom="26.85"
+  L:fet.SUB1.L1 _net0 fet.SUB1._net5 L="6e-12H"
+  L:fet.SUB1.L2 fet.SUB1._net7 _net1 L="1.67e-11H"
+  C:fet.SUB1.C2 fet.SUB1._net4 fet.SUB1._net7 C="3.1e-14F"
+  C:fet.SUB1.C1 fet.SUB1._net1 fet.SUB1._net6 C="3.9e-14F"
+  C:fet.SUB1.C4 fet.SUB1._net4 fet.SUB1._net5 C="5e-15F"
+  VCCS:fet.SUB1.SRC1 fet.SUB1._net1 fet.SUB1._net2 fet.SUB1._net3 fet.SUB1._net0 G="0.069S" T="1.69e-12s"
+  C:fet.SUB1.C3 fet.SUB1._net0 fet.SUB1._net1 C="2.34e-13F"
+  L:L1 _net2 _net0 L="1.1e-09H"
+  L:L2 gnd _net0 L="4e-09H"
+  Pac:P1 _net2 gnd Num="1" Z="50Ohm" P="0.001" f="1e+09Hz" Temp="26.85"
+  Pac:P2 _net1 gnd Num="2" Z="50Ohm" P="0.001" f="1e+09Hz" Temp="26.85"
+  SP:SP1 Type="lin" Start="1e+09Hz" Stop="2e+10Hz" Points="39" Noise="yes" NoiseIP="1" NoiseOP="2" saveCVs="no" saveAll="no"
+subcircuit fet
+  C:C3 _net0 _net1 C="2.34e-13F"
+  VCCS:SRC1 _net1 _net2 _net3 _net0 G="0.069S" T="1.69e-12s"
+  C:C4 _net4 _net5 C="5e-15F"
+  C:C1 _net1 _net6 C="3.9e-14F"
+  C:C2 _net4 _net7 C="3.1e-14F"
+  L:L2 _net7 _net8 L="1.67e-11H"
+  L:L1 _net9 _net5 L="6e-12H"
+  R:R1 _net5 _net1 R="0.9Ohm" Temp="16.85" Tc1="0" Tc2="0" Tnom="26.85"
+  R:R4 _net3 _net0 R="1.9" Temp="16.85" Tc1="0" Tc2="0" Tnom="26.85"
+  R:R2 _net6 _net2 R="3.6Ohm" Temp="16.85" Tc1="0" Tc2="0" Tnom="26.85"
+  R:R6 _net2 _net7 R="2.5" Temp="16.85" Tc1="0" Tc2="0" Tnom="26.85"
+  C:C5 _net3 _net2 C="1.4e-14F"
+  R:R5 _net4 _net3 R="2.4Ohm" Temp="16.85" Tc1="0" Tc2="0" Tnom="26.85"
+  L:L3 _net10 _net4 L="6.4e-12H"
+  R:R3 _net3 _net2 R="312" Temp="6000" Tc1="0" Tc2="0" Tnom="26.85"
+netlist content
+      5 C instances
+      5 L instances
+      6 R instances
+      2 Pac instances
+      1 VCCS instances
+      1 SP instances
+creating netlist...
+NOTIFY: SP1: preparing circuit for analysis
+NOTIFY: SP1: inserted 6 tees, 4 crosses, 0 opens and 4 grounds
+NOTIFY: SP1: creating sorted nodelist for SP analysis
+NOTIFY: SP1: solving SP netlist

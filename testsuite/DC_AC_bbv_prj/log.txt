@@ -1,0 +1,47 @@
+parsing netlist...
+checking netlist...
+checker notice, variable `In.v' in equation `Gain' not yet defined
+checker notice, variable `Out.v' in equation `Gain' not yet defined
+subcircuit root
+  R:RE1 gnd _net0 R="12" Temp="26.85" Tc1="0" Tc2="0" Tnom="26.85"
+  R:R1 _net1 _net2 R="650" Temp="26.85" Tc1="0" Tc2="0" Tnom="26.85"
+  BJT:btgn1 _net3 _net1 _net0 _net1 Type="npn" Is="2e-15" Nf="1" Nr="1" Ikf="0.01" Ikr="0.1" Vaf="100" Var="10" Ise="0" Ne="2" Isc="0" Nc="2" Bf="300" Br="5.67" Rbm="0" Irb="0" Rc="0" Re="0" Rb="0" Cje="0" Vje="0.75" Mje="0.33" Cjc="0" Vjc="0.75" Mjc="0.33" Xcjc="1" Cjs="0" Vjs="0.75" Mjs="0" Fc="0.5" Tf="0" Xtf="0" Vtf="0" Itf="0" Tr="0" Temp="26.85" Kf="0" Af="1" Ffe="1" Kb="0" Ab="1" Fb="1" Ptf="0" Xtb="0" Xti="3" Eg="1.11" Tnom="26.85" Area="1"
+  L:L1 _net4 _net3 L="3e-09H"
+  R:RF1 _net5 _net0 R="140" Temp="26.85" Tc1="0" Tc2="0" Tnom="26.85"
+  BJT:btgn4 _net6 _net6 _net5 _net6 Type="npn" Is="1e-15" Nf="1" Nr="1" Ikf="0.01" Ikr="0.1" Vaf="100" Var="10" Ise="0" Ne="2" Isc="0" Nc="2" Bf="300" Br="5.67" Rbm="0" Irb="0" Rc="0" Re="0" Rb="0" Cje="0" Vje="0.75" Mje="0.33" Cjc="0" Vjc="0.75" Mjc="0.33" Xcjc="1" Cjs="0" Vjs="0.75" Mjs="0" Fc="0.5" Tf="0" Xtf="0" Vtf="0" Itf="0" Tr="0" Temp="26.85" Kf="0" Af="1" Ffe="1" Kb="0" Ab="1" Fb="1" Ptf="0" Xtb="0" Xti="3" Eg="1.11" Tnom="26.85" Area="1"
+  BJT:btgn3 _net7 _net2 _net6 _net2 Type="npn" Is="1e-15" Nf="1" Nr="1" Ikf="0.01" Ikr="0.1" Vaf="100" Var="10" Ise="0" Ne="2" Isc="0" Nc="2" Bf="300" Br="5.67" Rbm="0" Irb="0" Rc="0" Re="0" Rb="0" Cje="0" Vje="0.75" Mje="0.33" Cjc="0" Vjc="0.75" Mjc="0.33" Xcjc="1" Cjs="0" Vjs="0.75" Mjs="0" Fc="0.5" Tf="0" Xtf="0" Vtf="0" Itf="0" Tr="0" Temp="26.85" Kf="0" Af="1" Ffe="1" Kb="0" Ab="1" Fb="1" Ptf="0" Xtb="0" Xti="3" Eg="1.11" Tnom="26.85" Area="1"
+  R:RF2 _net8 _net3 R="200" Temp="26.85" Tc1="0" Tc2="0" Tnom="26.85"
+  Vdc:VCC _net2 gnd U="6V"
+  Vac:V1 In gnd U="5e-05" f="1e+09Hz" Phase="0" Theta="0"
+  DCBlock:C1 In _net4 C="1e-06F"
+  DC:DC1 Temp="26.85" reltol="0.001" abstol="1e-12A" vntol="1e-06V" saveOPs="no" MaxIter="150" saveAll="no" convHelper="none" Solver="CroutLU"
+  AC:AC1 Type="log" Start="10000" Stop="1e+11" Points="100" Noise="no"
+  R:R3 _net8 _net9 R="140" Temp="26.85" Tc1="0" Tc2="0" Tnom="26.85"
+  BJT:btgn6 _net1 _net7 _net9 _net7 Type="npn" Is="1e-15" Nf="1" Nr="1" Ikf="0.01" Ikr="0.1" Vaf="100" Var="10" Ise="0" Ne="2" Isc="0" Nc="2" Bf="300" Br="5.67" Rbm="0" Irb="0" Rc="0" Re="0" Rb="0" Cje="0" Vje="0.75" Mje="0.33" Cjc="0" Vjc="0.75" Mjc="0.33" Xcjc="1" Cjs="0" Vjs="0.75" Mjs="0" Fc="0.5" Tf="0" Xtf="0" Vtf="0" Itf="0" Tr="0" Temp="26.85" Kf="0" Af="1" Ffe="1" Kb="0" Ab="1" Fb="1" Ptf="0" Xtb="0" Xti="3" Eg="1.11" Tnom="26.85" Area="1"
+  R:RE2 _net10 _net8 R="12" Temp="26.85" Tc1="0" Tc2="0" Tnom="26.85"
+  BJT:btgn5 _net10 _net10 gnd _net10 Type="npn" Is="1e-15" Nf="1" Nr="1" Ikf="0.01" Ikr="0.1" Vaf="100" Var="10" Ise="0" Ne="2" Isc="0" Nc="2" Bf="300" Br="5.67" Rbm="0" Irb="0" Rc="0" Re="0" Rb="0" Cje="0" Vje="0.75" Mje="0.33" Cjc="0" Vjc="0.75" Mjc="0.33" Xcjc="1" Cjs="0" Vjs="0.75" Mjs="0" Fc="0.5" Tf="0" Xtf="0" Vtf="0" Itf="0" Tr="0" Temp="26.85" Kf="0" Af="1" Ffe="1" Kb="0" Ab="1" Fb="1" Ptf="0" Xtb="0" Xti="3" Eg="1.11" Tnom="26.85" Area="1"
+  BJT:btgn2 _net9 _net7 _net8 _net7 Type="npn" Is="1e-15" Nf="1" Nr="1" Ikf="0.01" Ikr="0.1" Vaf="100" Var="10" Ise="0" Ne="2" Isc="0" Nc="2" Bf="300" Br="5.67" Rbm="0" Irb="0" Rc="0" Re="0" Rb="0" Cje="0" Vje="0.75" Mje="0.33" Cjc="0" Vjc="0.75" Mjc="0.33" Xcjc="1" Cjs="0" Vjs="0.75" Mjs="0" Fc="0.5" Tf="0" Xtf="0" Vtf="0" Itf="0" Tr="0" Temp="26.85" Kf="0" Af="1" Ffe="1" Kb="0" Ab="1" Fb="1" Ptf="0" Xtb="0" Xti="3" Eg="1.11" Tnom="26.85" Area="1"
+  R:R2 _net7 _net2 R="225" Temp="26.85" Tc1="0" Tc2="0" Tnom="26.85"
+  R:R0 _net11 _net7 R="10" Temp="26.85" Tc1="0" Tc2="0" Tnom="26.85"
+  DCBlock:C2 Out _net12 C="1e-06F"
+  L:L2 _net11 Out L="3e-09H"
+  R:RL gnd _net12 R="1000" Temp="26.85" Tc1="0" Tc2="0" Tnom="26.85"
+netlist content
+      2 DCBlock instances
+      1 AC instances
+      6 BJT instances
+      1 DC instances
+      2 L instances
+      9 R instances
+      1 Vdc instances
+      1 Vac instances
+creating netlist...
+checker notice, variable `In.v' in equation `Gain' not yet defined
+checker notice, variable `Out.v' in equation `Gain' not yet defined
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: DC1: convergence reached after 11 iterations
+checker notice, variable `In.v' in equation `Gain' not yet defined
+checker notice, variable `Out.v' in equation `Gain' not yet defined
+NOTIFY: AC1: creating node list for AC analysis
+NOTIFY: AC1: solving AC netlist
