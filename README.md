@@ -42,11 +42,15 @@ Outputs:
 Mac OSX 10.8.5, Python 2.7.5, Numpy 1.7.1
 
 
-## Output
+## Output Examples
 
-[Output without errors](output_normal.txt)
-[Output with errors](output_errors.txt)
+  * [Output without errors](output_normal.txt)
 
+  * [Output with errors](output_errors.txt)
+
+  * [Table output from simulations](131209_015514_sim_results.txt)
+
+  * [Currently failing projects](skip.txt)
 
 ## How it works
 
