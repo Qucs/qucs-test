@@ -1,3 +1,7 @@
+# Original author
+# Author: cnovak <clemens@familie-novak.net>
+# This is a modified version.
+
 import re
 import numpy as np
 
