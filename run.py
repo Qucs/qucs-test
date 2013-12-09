@@ -1,6 +1,7 @@
 
 
 import argparse
+import datetime
 import difflib
 import numpy as np
 import os
@@ -140,7 +141,7 @@ def run_schematic_to_netlist(proj, net_report={}, prefix='', init_test=False):
     #project dir
     name = proj.split(os.sep)[-1]
 
-    print name
+    #print name
 
     # FIXME fail if the project name has underscore
     sim_types= ['DC_', 'AC_', 'TR_', 'SP_', 'SW_']
@@ -149,7 +150,7 @@ def run_schematic_to_netlist(proj, net_report={}, prefix='', init_test=False):
             name=name[3:]
 
     name = name[:-4]
-    print name
+    #print name
 
     tests_dir = os.getcwd()
     #print tests_dir
@@ -224,7 +225,7 @@ def run_simulation(proj, sim_report={}, prefix='', init_test=False):
     #project dir
     name = proj.split(os.sep)[-1]
 
-    print name
+    #print name
 
     # FIXME fail if the project name has underscore
     sim_types= ['DC_', 'AC_', 'TR_', 'SP_', 'SW_']
@@ -233,7 +234,7 @@ def run_simulation(proj, sim_report={}, prefix='', init_test=False):
             name=name[3:]
 
     name = name[:-4]
-    print name
+    #print name
 
     tests_dir = os.getcwd()
 
@@ -247,17 +248,22 @@ def run_simulation(proj, sim_report={}, prefix='', init_test=False):
 
     if os.path.isfile(input_net):
 
-        #TODO get the DataSet field from the schematic file
+        # get the Qucs Schematic version from the schematic
+        # get the DataSet field from the schematic file
         schematic = os.path.join(proj_dir,name+'.sch')
         #print 'schematic', schematic
         with open(schematic) as fp:
             for line in fp:
+                if 'Qucs Schematic' in line:
+                    qucs_version = line.split(' ')[-1][:-2]
+                    #print qucs_version
+                    sim_report['version'] = qucs_version
                 if 'DataSet' in line:
                     # DataSet filename, no quotes
                     ref_dataset = line.split('=')[-1][:-2]
 
 
-        print 'ref_dataset', ref_dataset
+        #print 'ref_dataset', ref_dataset
 
         if init_test:
             output_dataset = ref_dataset
@@ -276,6 +282,15 @@ def run_simulation(proj, sim_report={}, prefix='', init_test=False):
         toc = time.clock()
 
         runtime = toc - tic
+
+        # If return code, ignore time
+        if command.retcode:
+            sim_report['runtime'] = 'FAIL CODE %i' %command.retcode
+        elif command.timeout:
+            sim_report['runtime'] = 'TIMEOUT'
+        else:
+            sim_report['runtime'] = runtime
+
 
         print pb('Runtime: %f' %runtime)
 
@@ -306,7 +321,10 @@ def run_simulation(proj, sim_report={}, prefix='', init_test=False):
         # perform comparison
         else:
             if not os.path.isfile(ref_dataset):
-                os.exit(pr('bad, missing ref output'))
+                print (pr('Bad skipping comparison, missing reference output'))
+                # step out
+                os.chdir(tests_dir)
+                return sim_report
 
             # TODO failed also catches if the solver didn't run, output_dataset will be empty,
             # it will fail the comparison
@@ -341,11 +359,11 @@ def run_simulation(proj, sim_report={}, prefix='', init_test=False):
 
             # keep list of variables that failed comparison
             if failed:
-                sim_report[proj] = [failed]
+                sim_report['fail_comp'] = [failed]
 
             # mark project as timed out
             if command.timeout:
-                sim_report[proj] = ['timed out']
+                sim_report['timeout'] = command.timeout
 
 
             # In case of failure or timeout, save the log and error ouputs
@@ -435,6 +453,45 @@ def add_test_project(sch):
     # ready to test-fire, run.py and check --qucs, --qucsator
     # reminder to add to repository
     return
+
+
+def table_print(report, savename=''):
+    '''
+    Very simple table printer.
+    It can also write to file.
+    '''
+    keys = report.keys()
+    keys.sort()
+    header = '%-30s | %-15s | %s' %('Project','Schem. Version', 'Sim. Runtime')
+    line = '-'*len(header)
+
+    if savename:
+        f = open(savename, 'w')
+        f.write(line+'\n')
+        f.write(header+'\n')
+        f.write(line+'\n')
+
+    print line
+    print header
+    print line
+    for key in keys:
+        proj_stat = '%-30s | %-15s | %s' %(key, str(report[key]['version']), str(report[key]['runtime']))
+        print proj_stat
+
+        if savename:
+            f.write(proj_stat+'\n')
+    print line
+    if savename:
+        f.write(line+'\n')
+        f.close()
+        print py("Saved report to table: %s " %savename)
+
+
+def timestamp():
+    '''
+     simple timestamp
+    '''
+    return datetime.datetime.now().strftime("%y%m%d_%H%M%S")
 
 
 if __name__ == '__main__':
@@ -529,21 +586,34 @@ if __name__ == '__main__':
         print pb('** Test simulation and output **')
         print pb('********************************')
 
+        #collect all reports
+        sim_collect ={}
+
         # loop over testsuite
         # messages are added to the dict, project as key
-        sim_report = {}
         for test in testsuite:
+            sim_report = {}
             sim_report = run_simulation(test, sim_report, prefix)
+            sim_collect[test] = sim_report
 
 
         print '\n'
         print pb('############################################')
         print pb('#  Report simulation result comparison     #')
-        if sim_report.keys():
+        if 'fail_comp' in sim_report.keys():
             print pr('--> Found numerical differences (!)')
             pprint.pprint(sim_report)
         else:
             print pg('--> No significant numerical differences found.')
+
+        # TODO get Git branch and hash, append to filename
+        # example for Qucs repo: [tag - added commits - last commit hash (skip g, 2b48407)]
+        #label = subprocess.check_output(["git", "describe"])
+        #labe ==> qucs-0.0.17-234-g2b48407
+
+        table_name = timestamp() + '_sim_results.txt'
+        # Print report to scressn and save to table_name
+        table_print(sim_collect, table_name)
 
     # Add schematic as test-project and initialize its netlist, result and log files
     if args.add_test:
