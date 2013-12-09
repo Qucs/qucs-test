@@ -1,14 +1,20 @@
 # Qucs testing scripts.
 
 
-Objective: test the frond and back ends.
+Objective: test the Qucs frond and back ends.
+
+The test projects under the `testsuite` directory are all run by default.
+
+To skip failing projects use the `--skip` option with a list of projects to be ignored.
 
 
 
 ## Running the test suite
 
+Example of running the test-suite while skipping a few test projects:
+
 ```
-$python run.py --prefix [qucs/installed/prefix] [--qucs, --qucsator, --add-test [file].sch]
+$python run.py --prefix [qucs/installed/prefix] [--qucs, --qucsator --skip [file] ]
 ```
 
 Options:
@@ -24,6 +30,16 @@ Options:
  * `--skip [file]` will skip the projects listed in the [file].
 
     * current format: PROJECT_NAME, Any comment (project name should end with a ',')
+
+Outputs:
+
+ * The script is rather verbose and the progress is printed to the terminal (with colors, yeah!).
+
+ * A table with the run project, Qucs schematic version and simulation runtim is saved automatically and time-stamped.
+
+## Tested with
+
+Mac OSX 10.8.5, Python 2.7.5, Numpy 1.7.1
 
 
 ## Output
