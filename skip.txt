@@ -1,4 +1,4 @@
-## Project dir, Comment
+## Project dir, Comment: it parses to the left of ','
 DC_SP_opamp_gyrator_prj,  Qucs GUI sch->netlist :: Format Error: Wrong 'component' line format!
 TR_colpitts_base_prj,     error_code.txt
 TR_sawtooth-discreet_prj, error_code.txt
