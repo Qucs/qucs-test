@@ -14,7 +14,7 @@ To skip failing projects use the `--skip` option with a list of projects to be i
 Example of running the test-suite while skipping a few test projects:
 
 ```
-$python run.py --prefix [qucs/installed/prefix] [--qucs, --qucsator --skip [file] ]
+$python run.py --prefix /home/user/local/qucs-master/bin/ --skip skip.txt --qucsator
 ```
 
 Options:
