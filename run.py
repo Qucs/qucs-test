@@ -289,7 +289,7 @@ def run_simulation(proj, sim_report={}, prefix='', init_test=False):
         elif command.timeout:
             sim_report['runtime'] = 'TIMEOUT'
         else:
-            sim_report['runtime'] = runtime
+            sim_report['runtime'] = '%f' %runtime
 
 
         print pb('Runtime: %f' %runtime)
