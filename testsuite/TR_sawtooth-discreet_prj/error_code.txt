@@ -1,2 +1,0 @@
-line 18: checker error, no such variable `normal' used in a `Diode:D2' property
-line 19: checker error, no such variable `normal' used in a `Diode:D9' property
