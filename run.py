@@ -305,17 +305,17 @@ def run_simulation(proj, sim_report={}, prefix='', init_test=False):
             with open(logout, 'w') as myFile:
                 myFile.write(command.out)
 
-            if (command.timeout):
-                errout = 'error_timeout.txt'
-                print pr('Failed initializaton of %s saving: \n   %s/%s' %(proj, proj_dir, errout))
-                with open(errout, 'w') as myFile:
-                    myFile.write(command.err)
+        if (command.timeout):
+            errout = 'error_timeout.txt'
+            print pr('Failed initializaton of %s saving: \n   %s/%s' %(proj, proj_dir, errout))
+            with open(errout, 'w') as myFile:
+                myFile.write(command.err)
 
-            if (command.retcode):
-                errout = 'error_code.txt'
-                print pr('Failed initializaton of %s saving: \n   %s/%s' %(proj, proj_dir, errout))
-                with open(errout, 'w') as myFile:
-                    myFile.write(command.err)
+        if (command.retcode):
+            errout = 'error_code.txt'
+            print pr('Failed initializaton of %s saving: \n   %s/%s' %(proj, proj_dir, errout))
+            with open(errout, 'w') as myFile:
+                myFile.write(command.err)
 
 
         # perform comparison
