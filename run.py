@@ -322,6 +322,7 @@ def run_simulation(proj, sim_report={}, prefix='', init_test=False):
         else:
             if not os.path.isfile(ref_dataset):
                 print (pr('Bad skipping comparison, missing reference output'))
+                sim_report['fail_comp'] = 'No reference output to compare'
                 # step out
                 os.chdir(tests_dir)
                 return sim_report
@@ -591,26 +592,37 @@ if __name__ == '__main__':
 
         # loop over testsuite
         # messages are added to the dict, project as key
+        fail = []
         for test in testsuite:
             sim_report = {}
             sim_report = run_simulation(test, sim_report, prefix)
+            if 'fail_comp' in sim_report.keys():
+                fail.append(test)
+
+            # keep reports
             sim_collect[test] = sim_report
 
 
         print '\n'
         print pb('############################################')
         print pb('#  Report simulation result comparison     #')
-        if 'fail_comp' in sim_report.keys():
+        if len(fail):
             print pr('--> Found numerical differences (!)')
-            pprint.pprint(sim_report)
+            for item in fail:
+                print pr(item)
+                pprint.pprint(sim_collect[item])
         else:
             print pg('--> No significant numerical differences found.')
+
+        print pb('#                                          #')
+        print pb('############################################')
 
         # TODO get Git branch and hash, append to filename
         # example for Qucs repo: [tag - added commits - last commit hash (skip g, 2b48407)]
         #label = subprocess.check_output(["git", "describe"])
         #labe ==> qucs-0.0.17-234-g2b48407
 
+        print py('Qucsator report')
         table_name = timestamp() + '_sim_results.txt'
         # Print report to scressn and save to table_name
         table_print(sim_collect, table_name)
