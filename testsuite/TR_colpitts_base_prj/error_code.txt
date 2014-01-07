@@ -1,2 +1,0 @@
-checker error, undefined variable `Output2.Vt' in equation `Vout'
-checker error, undefined variable `Output1.Vt' in equation `Vout'
