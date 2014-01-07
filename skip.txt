@@ -2,20 +2,3 @@
 DC_SP_opamp_gyrator_prj,  Qucs GUI sch->netlist :: Format Error: Wrong 'component' line format!
 TR_colpitts_base_prj,     error_code.txt
 TR_sawtooth-discreet_prj, error_code.txt
-
-DC_AC_active_bp_prj,    failing in parse_result.py
-DC_AC_active_lp_prj,    failing in parse_result
-DC_AC_bbv_prj,          failing in parse_result
-DC_AC_gain_prj,         failing in parse_result
-DC_AC_gyrator_prj,      failing in parse_result
-DC_AC_notch_prj,        failing in parse_result
-DC_AC_selective_amp_prj,failing in parse_result
-DC_AC_SP_stab_prj,      failing in parse_result
-DC_SP_LPF-Balun2_prj,   failing in parse_result
-DC_SP_LPF-Balun3_prj,   failing in parse_result
-DC_SW_rgummel_prj,      failing in parse_result
-DC_TR_active_mixer_prj, failing in parse_result
-TR_diode_hb_prj,        failing in parse_result
-TR_lc_osc_prj,          failing in parse_result
-TR_resistor_prj,        failing in parse_result
-TR_single_balanced_prj, failing in parse_result
