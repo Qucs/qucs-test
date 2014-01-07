@@ -2,8 +2,8 @@
 <Properties>
   <View=0,0,800,800,1,0,0>
   <Grid=10,10,1>
-  <DataSet=TR_resistor.dat>
-  <DataDisplay=TR_resistor.dpl>
+  <DataSet=resistor.dat>
+  <DataDisplay=resistor.dpl>
   <OpenDisplay=0>
   <Script=TR_resistor.m>
   <RunScript=0>
