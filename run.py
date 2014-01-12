@@ -94,6 +94,25 @@ def get_qucsator_version(prefix):
     return version
 
 
+def get_components(netlist):
+    '''
+    Fetch types of simulation an types of components
+    returns two lists
+    '''
+    sim=set()
+    comps=set()
+    with open(netlist) as fp:
+        for line in fp:
+            if ':' in line:
+                element = line.split(':')[0].strip()
+                # simulation
+                if '.' in element:
+                    sim.add(element)
+                # component
+                else:
+                    comps.add(element)
+    return list(sim), list(comps)
+
 
 def get_subdirs(dir):
     '''
@@ -257,6 +276,11 @@ def run_simulation(proj, sim_report={}, prefix='', init_test=False):
     input_net = "netlist.txt"
 
     if os.path.isfile(input_net):
+
+        # fetch types of simulation an types of components
+        sim, comps = get_components(input_net)
+        sim_report['sim_types'] = sim
+        sim_report['comp_types'] = comps
 
         # get the Qucs Schematic version from the schematic
         # get the DataSet field from the schematic file
@@ -640,7 +664,7 @@ if __name__ == '__main__':
         #labe ==> qucs-0.0.17-234-g2b48407
 
         print py('Qucsator report')
-        table_name = timestamp() + '_sim_results.txt'
+        table_name = timestamp() +'_'+ get_qucsator_version(prefix).replace(' ','_') + '_sim_results.txt'
 
         footer  = 'QucsAtor version:   ' + get_qucsator_version(prefix) + '\n'
         footer += 'Report produced on: ' + timestamp("%Y-%m-%d %H:%M:%S") + '\n'
