@@ -84,6 +84,16 @@ class Command(object):
             print pb('  Return code: %i' %self.retcode)
 
 
+def get_qucsator_version(prefix):
+    '''
+    Run QucsAtor and return the version string.
+    '''
+    cmd = [prefix + "qucsator", "-v"]
+    p = subprocess.Popen(cmd, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
+    version = p.stdout.readlines()[0].strip()
+    return version
+
+
 
 def get_subdirs(dir):
     '''
