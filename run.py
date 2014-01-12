@@ -466,7 +466,7 @@ def add_test_project(sch):
     return
 
 
-def table_print(report, savename=''):
+def table_print(report, savename='', footer=''):
     '''
     Very simple table printer.
     It can also write to file.
@@ -491,18 +491,25 @@ def table_print(report, savename=''):
 
         if savename:
             f.write(proj_stat+'\n')
-    print line
+
+    if footer:
+        print line
+        f.write(line+'\n')
+        print footer
+        f.write(footer)
+
     if savename:
+        print line
         f.write(line+'\n')
         f.close()
         print py("Saved report to table: %s " %savename)
 
 
-def timestamp():
+def timestamp(timeformat="%y%m%d_%H%M%S"):
     '''
      simple timestamp
     '''
-    return datetime.datetime.now().strftime("%y%m%d_%H%M%S")
+    return datetime.datetime.now().strftime(timeformat)
 
 
 if __name__ == '__main__':
@@ -634,8 +641,12 @@ if __name__ == '__main__':
 
         print py('Qucsator report')
         table_name = timestamp() + '_sim_results.txt'
+
+        footer  = 'QucsAtor version:   ' + get_qucsator_version(prefix) + '\n'
+        footer += 'Report produced on: ' + timestamp("%Y-%m-%d %H:%M:%S") + '\n'
+
         # Print report to scressn and save to table_name
-        table_print(sim_collect, table_name)
+        table_print(sim_collect, table_name, footer)
 
     # Add schematic as test-project and initialize its netlist, result and log files
     if args.add_test:
