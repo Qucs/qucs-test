@@ -114,6 +114,28 @@ def get_components(netlist):
     return list(sim), list(comps)
 
 
+def get_registed_models(prefix):
+    '''
+    Fetch list of available components defined in QucsAtor
+    Also listed in qucsdefs.h
+    '''
+    cmd = [prefix + "qucsator", "-l"]
+    p = subprocess.Popen(cmd, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
+    listing = p.stdout.readlines()
+
+    available=[]
+    defs = False
+    for line in listing:
+        if 'struct define_t qucs_definition_available' in line:
+            defs = True
+        if defs:
+            if 'def_' in line:
+               model = line.split('_')[1].strip()[:-1]
+               available.append(model)
+    available.sort()
+    return available
+
+
 def get_subdirs(dir):
     '''
     Return a list of names of subdirectories.
