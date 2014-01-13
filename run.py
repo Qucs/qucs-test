@@ -130,8 +130,10 @@ def get_registed_models(prefix):
             defs = True
         if defs:
             if 'def_' in line:
-               model = line.split('_')[1].strip()[:-1]
-               available.append(model)
+                model=line.strip()
+                model=model.strip(',')
+                model=model.strip('def_')
+                available.append(model)
     available.sort()
     return available
 
