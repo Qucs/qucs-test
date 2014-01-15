@@ -38,7 +38,7 @@ def parse_file(name):
                 g = r.groups()
                 name = g[0]
                 # reserve a complex matrix to be on the safe side
-                data[name] = np.zeros(int(numpoints), np.complex128)
+                data[name] = np.zeros(int(numpoints), np.complex64)
                 ind = 0
                 # store that this is a dependent variable
                 variables[name] = 'dep'
