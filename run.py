@@ -332,12 +332,12 @@ def run_simulation(proj, sim_report={}, prefix='', init_test=False):
         print 'Running : ', ' '.join(cmd)
 
         # TODO run a few times, record average, add to report
-        tic = time.clock()
+        tic = time.time()
 
         # call the solver in a subprocess, set the timeout
         command = Command(cmd)
         command.run(timeout=5)
-        toc = time.clock()
+        toc = time.time()
 
         runtime = toc - tic
 
