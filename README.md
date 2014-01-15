@@ -41,6 +41,18 @@ Outputs:
 
 Mac OSX 10.8.5, Python 2.7.5, Numpy 1.7.1
 
+Debian 6.0.7 (Squeeze), Python 2.6.6, 1.4.1
+
+You might need to install `argparse` which is not included with Python 2.6. Something like:
+
+```
+$sudo apt-get update
+$sudo apt-get install python-setuptools
+$sudo easy_install pip
+$sudo pip install setuptools --no-use-wheel --upgrade
+$sudo pip install argparse
+```
+
 
 ## Output Examples
 
