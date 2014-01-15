@@ -158,28 +158,28 @@ def check_netlist(ref_netlist, output_netlist, skip=1, verbose=0):
     # http://docs.python.org/2.7/library/difflib.html
     net_equal = True
     bad_lines = []
-    with open(ref_netlist) as f, open(output_netlist) as g:
-
+    with open(ref_netlist) as f:
         flines = f.readlines()
+    with open(output_netlist) as g:
         glines = g.readlines()
 
-        d = difflib.Differ()
+    d = difflib.Differ()
 
-        # skip first line?
-        diff = list(d.compare(flines[skip:], glines[skip:]))
+    # skip first line?
+    diff = list(d.compare(flines[skip:], glines[skip:]))
 
-        # show complete diff?
-        if verbose:
-            print ' '.join(diff)
+    # show complete diff?
+    if verbose:
+        print ' '.join(diff)
 
-        for line in diff:
-            # look in diff for code [+ - ?]: unique to f, unique to g or not present in f or g
-            chars = set('+-?')
-            if any((c in chars for c in line[:1])):
-                net_equal = False
-                #print line
-                bad_lines.append(line)
-        return net_equal, bad_lines
+    for line in diff:
+        # look in diff for code [+ - ?]: unique to f, unique to g or not present in f or g
+        chars = set('+-?')
+        if any((c in chars for c in line[:1])):
+            net_equal = False
+            #print line
+            bad_lines.append(line)
+    return net_equal, bad_lines
 
 
 def run_schematic_to_netlist(proj, net_report={}, prefix='', init_test=False):
