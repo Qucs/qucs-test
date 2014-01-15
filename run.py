@@ -107,7 +107,7 @@ def get_components(netlist):
                 element = line.split(':')[0].strip()
                 # simulation
                 if '.' in element:
-                    sim.add(element)
+                    sim.add(element.strip('.'))
                 # component
                 else:
                     comps.add(element)
@@ -132,7 +132,7 @@ def get_registed_models(prefix):
             if 'def_' in line:
                 model=line.strip()
                 model=model.strip(',')
-                model=model.strip('def_')
+                model=model[4:]
                 available.append(model)
     available.sort()
     return available
