@@ -1,4 +1,9 @@
+'''
 
+  Notes:
+  * it skips subcircut marker '.Def'/
+
+'''
 
 import argparse
 import datetime
@@ -11,6 +16,7 @@ import shutil
 import sys
 import threading
 import time
+import pickle
 
 import parse_result as parse
 
@@ -107,7 +113,9 @@ def get_components(netlist):
                 element = line.split(':')[0].strip()
                 # simulation
                 if '.' in element:
-                    sim.add(element.strip('.'))
+                    # skip subcircuit '.Def' marker
+                    if not 'Def' in element:
+                        sim.add(element.strip('.'))
                 # component
                 else:
                     comps.add(element)
@@ -145,6 +153,88 @@ def get_subdirs(dir):
     '''
     return [name for name in os.listdir(dir)
             if os.path.isdir(os.path.join(dir, name))]
+
+def flat_sim(sim_collect):
+    '''
+    flattens into each component the types of simulations covered
+    returns: dict[component as key] = list of simulations
+    '''
+    tested = {}
+    for key in sim_collect:
+        sim_data = sim_collect[key]
+        for comp in sim_data['comp_types']:
+            if comp not in tested:
+                tested[comp] = list()
+            tested[comp] = list(set(tested[comp])|set(sim_data['sim_types']))
+    return tested
+
+
+
+def report_simulation(sim_collect, datafile, report_out=''):
+
+    # flatten data from simulation
+    tested = flat_sim(sim_collect)
+
+
+    # data from source files
+    # Load the dictionary back from the pickle file.
+    if not os.path.isfile(datafile):
+        print pr('Problem finding: %s' %datafile)
+        print pr('  Run "parse_models.py"')
+        return
+
+    data = pickle.load( open( datafile, "rb" ) )
+
+
+    reg = [
+    '  REGISTER_LUMPED',
+    '  REGISTER_SOURCE',
+    '  REGISTER_PROBE',
+    '  REGISTER_TRANS',
+    '  REGISTER_NONLINEAR',
+    '  REGISTER_VERILOGA',
+    '  REGISTER_DIGITAL',
+    '  REGISTER_FILE',
+    #'  REGISTER_SIMULATION'
+    ]
+
+    sims_avail = ['AC_Sim', 'DC_Sim', 'Digi_Sim', 'HB_Sim', 'Optimize_Sim', 'Param_Sweep', 'SP_Sim', 'TR_Sim']
+
+    regs = [reg[index].strip().split('_')[1] for index in range(len(reg))]
+
+    cov_report = ''
+    line = '\n'+'-'*40
+    cov_report += line
+    cov_report += '\nReport on Qucs components test coverage'
+    # sort by kind
+    for reg_kind in regs:
+        cov_report += line
+        cov_report += '\n### Kind: %s' %(reg_kind)
+        cov_report += line
+        cov_report += '\n%-18s | %-10s ' %('Component', 'Simulations Covered')
+        cov_report += line
+        for key in sorted(data):
+            model, name, base, kind = data[key]
+            if  kind== reg_kind:
+
+                # cross with test coverage
+                if model in tested:
+                    cov_report += '\n%-18s | %-10s ' %(key, ', '.join(tested[model]))
+                else:
+                    cov_report += '\n%-18s | %-10s ' %(key, ' --- ')
+    cov_report += line
+    cov_report += line
+    cov_report += '\nAll Available Simulations:'
+    cov_report += '\n'+', '.join(sims_avail)
+    cov_report += line
+
+    if report_out:
+        print py('\nSaving coverage table: %s' %(report_out) )
+        with open(report_out, 'w') as rep_file:
+            rep_file.write(cov_report)
+
+    return cov_report
+
 
 
 def check_netlist(ref_netlist, output_netlist, skip=1, verbose=0):
@@ -688,13 +778,21 @@ if __name__ == '__main__':
         #labe ==> qucs-0.0.17-234-g2b48407
 
         print py('Qucsator report')
-        table_name = timestamp() +'_'+ get_qucsator_version(prefix).replace(' ','_') + '_sim_results.txt'
+        #table_name = timestamp() +'_'+ get_qucsator_version(prefix).replace(' ','_') + '_sim_results.txt'
+        table_name = 'report_simulation'+'_'+ get_qucsator_version(prefix).replace(' ','_') + timestamp()+'.txt'
 
         footer  = 'QucsAtor version:   ' + get_qucsator_version(prefix) + '\n'
         footer += 'Report produced on: ' + timestamp("%Y-%m-%d %H:%M:%S") + '\n'
 
-        # Print report to scressn and save to table_name
+        # Print simulation report to scress and save to table_name
         table_print(sim_collect, table_name, footer)
+
+        # Report tested/untested devices
+
+        # data from simulation
+        datafile = 'qucs_components_data.p'
+        report_out = 'report_test_coverage_%s.txt' %(timestamp())
+        report_simulation(sim_collect, datafile, report_out)
 
     # Add schematic as test-project and initialize its netlist, result and log files
     if args.add_test:
