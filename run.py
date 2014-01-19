@@ -779,7 +779,7 @@ if __name__ == '__main__':
 
         print py('Qucsator report')
         #table_name = timestamp() +'_'+ get_qucsator_version(prefix).replace(' ','_') + '_sim_results.txt'
-        table_name = 'report_simulation'+'_'+ get_qucsator_version(prefix).replace(' ','_') + timestamp()+'.txt'
+        table_name = 'report_simulation'+'_'+ get_qucsator_version(prefix).replace(' ','_')+'_'+timestamp()+'.txt'
 
         footer  = 'QucsAtor version:   ' + get_qucsator_version(prefix) + '\n'
         footer += 'Report produced on: ' + timestamp("%Y-%m-%d %H:%M:%S") + '\n'
