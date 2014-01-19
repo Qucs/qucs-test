@@ -37,6 +37,8 @@ Outputs:
 
  * A table with the run project, Qucs schematic version and simulation runtim is saved automatically and time-stamped.
 
+ * A report table with all components available to Qucs and the coverage with respect to the types of simulations.
+
 ## Tested with
 
 Mac OSX 10.8.5, Python 2.7.5, Numpy 1.7.1
@@ -60,9 +62,11 @@ $sudo pip install argparse
 
   * [Output with errors](output_errors.txt)
 
-  * [Table output from simulations](131209_015514_sim_results.txt)
+  * [Table output from simulations](report_simulation_Qucsator_0.0.18140119_020240.txt)
 
   * [Currently failing projects](skip.txt)
+
+  * [Component test coverage](report_test_coverage_140119_020240.txt)
 
 ## How it works
 
