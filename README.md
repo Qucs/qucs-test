@@ -67,6 +67,8 @@ $sudo pip install argparse
   * [Currently failing projects](skip.txt)
 
   * [Component test coverage](report_test_coverage_140119_020240.txt)
+  
+  * [List of available Qucs components](qucs_components.txt)
 
 ## How it works
 
