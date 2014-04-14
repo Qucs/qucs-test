@@ -1,7 +1,9 @@
 '''
 
   Notes:
-  * it skips subcircut marker '.Def'/
+  * it skips subcircut marker '.Def'
+  * there is no indication that a Spice file is translated into the netlist.
+    The only hint is the '_cir' appended tot he definition .DEF, which is skiped
 
 '''
 
@@ -110,12 +112,18 @@ def get_components(netlist):
     with open(netlist) as fp:
         for line in fp:
             if ':' in line:
+                # left of :
                 element = line.split(':')[0].strip()
                 # simulation
                 if '.' in element:
                     # skip subcircuit '.Def' marker
                     if not 'Def' in element:
                         sim.add(element.strip('.'))
+                    else: # has .Def, look for '_cir' SPICE definition
+                        #right of :
+                        descr = line.split(':')[1].strip()
+                        if '_cir' in descr:
+                            comps.add('SPICE') # note 'model name'
                 # component
                 else:
                     comps.add(element)
@@ -671,6 +679,9 @@ if __name__ == '__main__':
     parser.add_argument('--skip', type=str,
                        help='file listing skipped test projects')
 
+    parser.add_argument('--project', type=str,
+                       help='path to a test project')
+
     args = parser.parse_args()
     print(args)
 
@@ -689,8 +700,12 @@ if __name__ == '__main__':
     else:
         sys.exit(pr('Oh dear, Qucs not found in: %s' %(prefix)))
 
-    # get list of test-projects
-    testsuite = get_subdirs('./testsuite/')
+
+    # get single project or list of test-projects
+    if args.project:
+        testsuite =  [os.path.join(args.project)]
+    else:
+        testsuite = get_subdirs('./testsuite/')
 
     # TODO read list of: skip, testshort, testlong
 

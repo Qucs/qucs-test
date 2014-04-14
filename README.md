@@ -31,6 +31,8 @@ Options:
 
     * current format: PROJECT_NAME, Any comment (project name should end with a ',')
 
+ * `--project [project directory from testset]` will run a single test from the set.
+
 Outputs:
 
  * The script is rather verbose and the progress is printed to the terminal (with colors, yeah!).
@@ -43,7 +45,7 @@ Outputs:
 
 Mac OSX 10.8.5, Python 2.7.5, Numpy 1.7.1
 
-Debian 6.0.7 (Squeeze), Python 2.6.6, 1.4.1
+Debian 6.0.7 (Squeeze), Python 2.6.6, Numpy 1.4.1
 
 You might need to install `argparse` which is not included with Python 2.6. Something like:
 
