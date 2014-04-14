@@ -1,0 +1,53 @@
+* PACKAGE : SOT23 DIE MODEL : BFR520
+* 1: COLLECTOR; 2: BASE; 3: EMITTER;
+RB 2 0 1MEG
+RC 1 0 1MEG
+RE 3 0 1MEG
+Q1 6 5 7 BFR520
+*----------------------
+* SOT23 parasitic model
+*----------------------
+Lb  4 5 .4n
+Le  7 8 .83n
+L1  2 4 .35n
+L2  1 6 .17n
+L3  3 8 .35n
+Ccb  4 6 71f
+Cbe  4 8 2f
+Cce  6 8 71f
+*
+* PHILIPS SEMICONDUCTORS                                     Version:   1.0
+* Filename:   BFR520.PRM                                     Date: Feb 1992
+*
+.MODEL  BFR520   NPN
++              IS = 1.01677E-015
++              BF = 2.20182E+002
++              NF = 1.00065E+000
++             VAF = 4.80619E+001
++             IKF = 5.10042E-001
++             ISE = 2.83095E-013
++              NE = 2.03568E+000
++              BR = 1.00714E+002
++              NR = 9.88109E-001
++             VAR = 1.69288E+000
++             IKR = 2.35262E-003
++             ISC = 2.44898E-017
++              NC = 1.02256E+000
++              RB = 1.00000E+001
++             IRB = 1.00000E-006
++             RBM = 1.00000E+001
++              RE = 7.75349E-001
++              RC = 2.21000E+000
++              EG = 1.11000E+000
++             XTI = 3.00000E+000
++             CJE = 1.24548E-012
++             VJE = 6.00000E-001
++             MJE = 2.58153E-001
++              TF = 8.61625E-012
++             XTF = 6.78866E+000
++             VTF = 1.41469E+000
++             ITF = 1.10365E-001
++             PTF = 4.50197E+001
++             CJC = 4.47646E-013
++             VJC = 1.89234E-001
+.END
