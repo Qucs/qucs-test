@@ -663,7 +663,7 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='Qucs testing script.')
 
     parser.add_argument('--prefix', type=str,
-                       help='prefix of installed Qucs (default: /usr/local/)')
+                       help='prefix of installed Qucs (default: /usr/local/bin/)')
 
     parser.add_argument('--qucs',
                        action='store_true',
