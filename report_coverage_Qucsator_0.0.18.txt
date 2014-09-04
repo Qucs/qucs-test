@@ -49,7 +49,7 @@ Source_ac          | AC, SP, DC
 VCCS               | SP         
 VCVS               | AC         
 Volt_ac            | AC, HB, TR, SP, SW, DC 
-Volt_dc            | AC, SW, SP, TR, DC 
+Volt_dc            | AC, TR, SP, SW, DC 
 Volt_noise         |  ---       
 iExp               |  ---       
 iFile              |  ---       
@@ -121,7 +121,7 @@ HBT_X              |  ---
 MESFET             |  ---       
 bsim3v34nMOS       |  ---       
 bsim3v34pMOS       |  ---       
-bsim4v30nMOS       |  ---       
+bsim4v30nMOS       | SW, DC     
 bsim4v30pMOS       |  ---       
 hic0_full          |  ---       
 hic2_full          |  ---       
