@@ -695,10 +695,17 @@ if __name__ == '__main__':
         # TODO add default paths, build location, system locations
         prefix = os.path.join('/usr/local/bin/')
 
-    if os.path.isfile(os.path.join(prefix, 'qucsator')):
-        print pb('Found Qucs in: %s' %(prefix))
-    else:
-        sys.exit(pr('Oh dear, Qucs not found in: %s' %(prefix)))
+    if args.qucs:
+        if os.path.isfile(os.path.join(prefix, 'qucs')):
+            print pb('Found Qucs in: %s' %(prefix))
+        else:
+            sys.exit(pr('Oh dear, Qucs not found in: %s' %(prefix)))
+
+    if args.qucsator:
+        if os.path.isfile(os.path.join(prefix, 'qucsator')):
+            print pb('Found Qucsator in: %s' %(prefix))
+        else:
+            sys.exit(pr('Oh dear, Qucsator not found in: %s' %(prefix)))
 
 
     # get single project or list of test-projects
