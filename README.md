@@ -58,19 +58,26 @@ $sudo pip install argparse
 ```
 
 
-## Output Examples
+## Testsuite results, Qucs 0.0.18
+
+  * [List of Qucs components](qucs_components.txt)
+
+  * [Testsuite simulation report](report_simulation_Qucsator_0.0.18.txt)
+
+  * [Testsuite component coverage report](report_coverage_Qucsator_0.0.18.txt)
+
+  * [Currently failing projects](skip.txt)
+
+
+## Error Output Examples
 
   * [Output without errors](output_normal.txt)
 
   * [Output with errors](output_errors.txt)
 
-  * [Table output from simulations](report_simulation_Qucsator_0.0.18140119_020240.txt)
+---
 
-  * [Currently failing projects](skip.txt)
-
-  * [Component test coverage](report_test_coverage_140119_020240.txt)
-  
-  * [List of available Qucs components](qucs_components.txt)
+_under construction_
 
 ## How it works
 
@@ -86,8 +93,6 @@ It considers every directory under `testsuite` as a project to be run. Then,
 
  * It collects : failed netlist diffs, simulation runtime, failed variable comparison, output and warnings (not used currently).
 
-
----
 
 ## Running Qucs on the command line:
 
