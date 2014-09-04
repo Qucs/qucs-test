@@ -20,6 +20,7 @@ import threading
 import time
 import pickle
 
+# Qucsator data parser
 import parse_result as parse
 
 
@@ -94,7 +95,18 @@ class Command(object):
 
 def get_qucsator_version(prefix):
     '''
-    Run QucsAtor and return the version string.
+    Run Qucsator and return the version string.
+
+    Parameters
+    ----------
+    prefix : string
+        path to qucsator executable
+
+    Returns
+    -------
+    version : string
+        the version tag of qucsator
+
     '''
     cmd = [prefix + "qucsator", "-v"]
     p = subprocess.Popen(cmd, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
@@ -282,11 +294,22 @@ def check_netlist(ref_netlist, output_netlist, skip=1, verbose=0):
 
 def run_schematic_to_netlist(proj, net_report={}, prefix='', init_test=False):
     '''
-    Run Qucs to pererform the schematic -> netlist conversion.
 
-    input  : test directory
-    input  : dictionary for the testsuite
-    output : dictionary reporting/updating issues
+    Run Qucs to perform the schematic -> netlist conversion.
+
+    Parameters
+    ----------
+    proj : str
+        test directory
+    prefix : str
+        prefix to qucsator
+    init_test : Boolean
+        adding new project (no diff is done) or running tests (does diff) ?
+
+    Returns
+    -------
+    net_report : dictionary
+        contains the diff results, proj as key
     '''
 
     #project dir
@@ -731,10 +754,14 @@ if __name__ == '__main__':
     print pb('** Test suite - Selected Test Projects  **')
     print pb('******************************************')
 
+    #
     # Print list of selected tests
+    #
     pprint.pprint(testsuite)
 
+    #
     # Run Qucs GUI
+    #
     if args.qucs:
         print '\n'
         print pb('******************************************')
@@ -757,7 +784,9 @@ if __name__ == '__main__':
         else:
             print pg('--> No differences found.')
 
+    #
     # Run Qucs simulator
+    #
     if args.qucsator:
         print '\n'
         print pb('********************************')
@@ -816,7 +845,9 @@ if __name__ == '__main__':
         report_out = 'report_coverage_%s.txt' %(get_qucsator_version(prefix).replace(' ','_'))
         report_simulation(sim_collect, datafile, report_out)
 
+    #
     # Add schematic as test-project and initialize its netlist, result and log files
+    #
     if args.add_test:
         print '\n'
         print py('********************************')
