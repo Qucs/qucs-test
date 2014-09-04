@@ -3,4 +3,5 @@
 test_*.dat
 fail_log.txt
 fail_error.txt
+test_*_netlist.txt
 
