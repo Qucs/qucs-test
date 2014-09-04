@@ -1,7 +1,7 @@
-# Qucs 0.0.18  /Users/guilherme/git/qucs-test/testsuite/TR_Puls3b_prj/Puls3b.sch
+# Qucs 0.0.18  /Users/guitorri/git/qucs-test/testsuite/TR_Puls3b_prj/Puls3b.sch
 
-Switch:S1 _net0 _net1 init="on" time="[9ns]" Ron="0" Roff="1e12" Temp="26.85"
-Switch:S2 _net1 _net2 init="off" time="[10ns]" Ron="0" Roff="1e12" Temp="26.85"
+Switch:S1 _net0 _net1 init="on" time="[9ns]" Ron="0" Roff="1e12" Temp="26.85" MaxDuration="1e-6"
+Switch:S2 _net1 _net2 init="off" time="[10ns]" Ron="0" Roff="1e12" Temp="26.85" MaxDuration="1e-6"
 R:RD _net2 _net3 R="200m" Temp="26.85" Tc1="0.0" Tc2="0.0" Tnom="26.85"
 Vdc:VDC _net4 gnd U="13.5V"
 Vdc:VGEN _net0 _net4 U="200V"
