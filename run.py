@@ -801,7 +801,7 @@ if __name__ == '__main__':
 
         print py('Qucsator report')
         #table_name = timestamp() +'_'+ get_qucsator_version(prefix).replace(' ','_') + '_sim_results.txt'
-        table_name = 'report_simulation'+'_'+ get_qucsator_version(prefix).replace(' ','_')+'_'+timestamp()+'.txt'
+        table_name = 'report_simulation'+'_'+ get_qucsator_version(prefix).replace(' ','_')+'.txt'
 
         footer  = 'QucsAtor version:   ' + get_qucsator_version(prefix) + '\n'
         footer += 'Report produced on: ' + timestamp("%Y-%m-%d %H:%M:%S") + '\n'
@@ -813,7 +813,7 @@ if __name__ == '__main__':
 
         # data from simulation
         datafile = 'qucs_components_data.p'
-        report_out = 'report_test_coverage_%s.txt' %(timestamp())
+        report_out = 'report_coverage_%s.txt' %(get_qucsator_version(prefix).replace(' ','_'))
         report_simulation(sim_collect, datafile, report_out)
 
     # Add schematic as test-project and initialize its netlist, result and log files
