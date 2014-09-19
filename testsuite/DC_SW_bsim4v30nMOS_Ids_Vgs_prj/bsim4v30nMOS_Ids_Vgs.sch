@@ -2,10 +2,10 @@
 <Properties>
   <View=-10,-4,1148,854,0.87931,0,0>
   <Grid=10,10,1>
-  <DataSet=test_DC_SW_Ids_Vgs.dat>
-  <DataDisplay=test_DC_SW_Ids_Vgs.dpl>
+  <DataSet=bsim4v30nMOS_Ids_Vgs.dat>
+  <DataDisplay=bsim4v30nMOS_Ids_Vgs.dpl>
   <OpenDisplay=0>
-  <Script=test_DC_SW_Ids_Vgs.m>
+  <Script=bsim4v30nMOS_Ids_Vgs.m>
   <RunScript=0>
   <showFrame=0>
   <FrameText0=Title>
@@ -39,7 +39,7 @@
   <350 180 350 200 "" 0 0 0 "">
 </Wires>
 <Diagrams>
-  <Rect 200 476 308 206 3 #c0c0c0 1 00 1 0 0.5 3 1 -0.000341077 0.001 0.004 1 -1 0.5 1 315 0 225 "" "" "">
+  <Rect 200 476 308 206 3 #c0c0c0 1 00 1 0 0.5 3 1 -0.000149362 0.0005 0.00164298 1 -1 0.5 1 315 0 225 "" "" "">
 	<"Ids.I" #0000ff 0 3 0 0 0>
   </Rect>
   <Rect3D 579 536 437 356 1 #c0c0c0 1 00 1 0 0.5 3 1 -0.3 0.5 3.3 1 -0.000149362 0.0005 0.00164298 315 0 32 "" "" "">
