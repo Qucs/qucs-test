@@ -695,6 +695,10 @@ if __name__ == '__main__':
     parser.add_argument('--qucsator',
                        action='store_true',
                        help='run qucsator tests')
+    # TODO, cannot use --print, it chockes when try to use args.print
+    parser.add_argument('-p',
+                       action='store_true',
+                       help='run qucs and prints the schematic to file')
 
     parser.add_argument('--add-test', type=str,
                        help='add schematic to the testsuite')
@@ -718,7 +722,7 @@ if __name__ == '__main__':
         # TODO add default paths, build location, system locations
         prefix = os.path.join('/usr/local/bin/')
 
-    if args.qucs:
+    if (args.qucs or args.p):
         if os.path.isfile(os.path.join(prefix, 'qucs')):
             print pb('Found Qucs in: %s' %(prefix))
         else:
@@ -857,7 +861,58 @@ if __name__ == '__main__':
 
         add_test_project(sch)
 
+    #
+    # Print schematics contained in all (or selected) projects
+    #
+    if args.p:
+        print '\n'
+        print py('********************************')
+        print 'printing schematic: %s' %(testsuite)
 
+        # for each on testsuite
+        # grab [].sch (so far only one per project)
+        # print to [].pdf
+
+        #project dir
+        for proj in testsuite:
+            name = proj.split(os.sep)[-1]
+
+            #print name
+
+            # FIXME fail if the project name has underscore
+            sim_types= ['DC_', 'AC_', 'TR_', 'SP_', 'SW_']
+            for sim in sim_types:
+                if sim in name:
+                    name=name[3:]
+
+            name = name[:-4]
+            #print name
+
+            tests_dir = os.getcwd()
+            #print tests_dir
+
+            proj_dir = os.path.join(tests_dir, 'testsuite', proj)
+            print '\nProject : ', proj_dir
+
+            # step into project
+            os.chdir(proj_dir)
+
+            input_sch = name+".sch"
+            out_print = name+".pdf"
+
+            print 'Input:  ', input_sch
+            print 'Output: ', out_print
+
+            cmd = [prefix + "qucs", "-p", "-i", input_sch, "-o", out_print]
+            print 'Running : ', ' '.join(cmd)
+
+            p = subprocess.Popen(cmd, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
+            retval = p.wait()
+
+            if retval: print retval
+
+            # step out
+            os.chdir(tests_dir)
 
     print '\n'
     print pb('###############  Done ######################')

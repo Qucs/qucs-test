@@ -17,6 +17,21 @@ Example of running the test-suite while skipping a few test projects:
 $python run.py --prefix /home/user/local/qucs-master/bin/ --skip skip.txt --qucsator
 ```
 
+
+## Printing the schematic to PDF files (devel)
+
+See below examples of printing schematics to file (pdf):
+
+ * printing all
+ * skipking a list of projects
+ * a single project from the testsuite
+
+```
+$python run.py --prefix /home/user/local/qucs-master/bin/ --p
+$python run.py --prefix /home/user/local/qucs-master/bin/ --skip skip_print.txt -p
+$python run.py --prefix /home/user/local/qucs-master/bin/ --p --project AC_SW_resonance_prj
+```
+
 Options:
 
  * `--qucs` runs the schematic to netlist conversion.
@@ -104,6 +119,14 @@ It is possible to use Qucs GUI from the command line to read a schematic and cre
 
 ```
 $qucs -n -i file.sch -o netlist.txt
+```
+
+### Schematic to file (print):
+
+The Qucs GUI can be used from the command line to read a schematic and crete a printout (feature in development).
+
+```
+$qucs -p -i file.sch -o netlist.pdf
 ```
 
 ### Netlist to Results:
