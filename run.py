@@ -635,14 +635,18 @@ def add_test_project(sch):
     return
 
 
-def table_print(report, savename='', footer=''):
+def table_print(reports, savename='', footer=''):
     '''
     Very simple table printer.
     It can also write to file.
     '''
-    keys = report.keys()
+    keys = reports[0].keys()
     keys.sort()
-    header = '%-30s | %-15s | %s' %('Project','Schem. Version', 'Sim. Runtime')
+    header = '%-30s | %-15s ' %('Project', 'Schem. Version')
+
+    for rp in reports:
+        header += ' |   Sim. Runtime'
+
     line = '-'*len(header)
 
     if savename:
@@ -655,7 +659,10 @@ def table_print(report, savename='', footer=''):
     print header
     print line
     for key in keys:
-        proj_stat = '%-30s | %-15s | %s' %(key, str(report[key]['version']), str(report[key]['runtime']))
+        proj_stat = '%-30s | %-15s  ' %(key, str(reports[0][key]['version']))
+        for rp in reports:
+            proj_stat += '| %-15s' %(str(rp[key]['runtime']))
+
         print proj_stat
 
         if savename:
@@ -706,8 +713,14 @@ if __name__ == '__main__':
     parser.add_argument('--skip', type=str,
                        help='file listing skipped test projects')
 
+    parser.add_argument('--only', type=str,
+                       help='string containing single test project to run')
+
     parser.add_argument('--project', type=str,
                        help='path to a test project')
+
+    parser.add_argument('--compare-qucsator', nargs='+', type=str,
+                       help='two full paths to directories containing qucsator binaries for comparison test')
 
     args = parser.parse_args()
     print(args)
@@ -717,7 +730,7 @@ if __name__ == '__main__':
 
     if args.prefix:
         #prefix = os.path.join(args.prefix, 'bin', os.sep)
-        prefix = args.prefix
+        prefix = [args.prefix]
     else:
         # TODO add default paths, build location, system locations
         prefix = os.path.join('/usr/local/bin/')
@@ -729,10 +742,24 @@ if __name__ == '__main__':
             sys.exit(pr('Oh dear, Qucs not found in: %s' %(prefix)))
 
     if args.qucsator:
-        if os.path.isfile(os.path.join(prefix, 'qucsator')):
+
+        if os.path.isfile(os.path.join(prefix[0], 'qucsator')):
             print pb('Found Qucsator in: %s' %(prefix))
         else:
             sys.exit(pr('Oh dear, Qucsator not found in: %s' %(prefix)))
+
+
+    if args.compare_qucsator:
+
+        prefix = args.compare_qucsator
+
+        print pb('Comparing the following qucsators:')
+
+        for qp in prefix:
+            if os.path.isfile(os.path.join(qp, 'qucsator')):
+                print pb('%s' %(qp))
+            else:
+                sys.exit(pr("No qucsator binary found in: %s" %(qp)))
 
 
     # get single project or list of test-projects
@@ -751,6 +778,14 @@ if __name__ == '__main__':
                 if skip_proj in testsuite:
                     print py('Skipping %s' %skip_proj)
                     testsuite.remove(skip_proj)
+
+    if args.only:
+        only_proj = args.only
+        if only_proj in testsuite:
+            print py('Only running %s' %only_proj)
+            testsuite = [only_proj]
+        else:
+            sys.exit(pr("Project %s not found in testsuite." %(only_proj)))
 
 
     print '\n'
@@ -791,38 +826,50 @@ if __name__ == '__main__':
     #
     # Run Qucs simulator
     #
-    if args.qucsator:
+    if args.qucsator or args.compare_qucsator:
         print '\n'
         print pb('********************************')
         print pb('** Test simulation and output **')
         print pb('********************************')
 
-        #collect all reports
-        sim_collect ={}
-
-        # loop over testsuite
-        # messages are added to the dict, project as key
+        # collect all reports, sim_collect will be a list of dicts,
+        # one list for each qpath. Each dict contains the report output
+        # for each simulationperformed
+        sim_collect = []
+        # fail will be a list of lists, one for each qpath. Each sub-list
+        # contains information on failed tests
         fail = []
-        for test in testsuite:
-            sim_report = {}
-            sim_report = run_simulation(test, sim_report, prefix)
-            if 'fail_comp' in sim_report.keys():
-                fail.append(test)
+        for n, qp in enumerate (prefix):
 
-            # keep reports
-            sim_collect[test] = sim_report
+            fail.append ([])
+
+            sim_collect.append({})
+
+            # loop over testsuite
+            # messages are added to the dict, project as key
+
+            for test in testsuite:
+                sim_report = {}
+                sim_report = run_simulation(test, sim_report, qp)
+                if 'fail_comp' in sim_report.keys():
+                    fail[n].append(test)
+
+                # keep reports
+                sim_collect[n][test] = sim_report
 
 
         print '\n'
         print pb('############################################')
         print pb('#  Report simulation result comparison     #')
-        if len(fail):
-            print pr('--> Found numerical differences (!)')
-            for item in fail:
-                print pr(item)
-                pprint.pprint(sim_collect[item])
-        else:
-            print pg('--> No significant numerical differences found.')
+
+        for n, qp in enumerate (prefix):
+            if len(fail[n]):
+                print pr('--> WARNING !! Found numerical differences for {}qucsator'.format (qp))
+                for item in fail[n]:
+                    print pr(item)
+                    pprint.pprint(sim_collect[n][item])
+            else:
+                print pg('--> No significant numerical differences found.')
 
         print pb('#                                          #')
         print pb('############################################')
@@ -833,10 +880,29 @@ if __name__ == '__main__':
         #labe ==> qucs-0.0.17-234-g2b48407
 
         print py('Qucsator report')
-        #table_name = timestamp() +'_'+ get_qucsator_version(prefix).replace(' ','_') + '_sim_results.txt'
-        table_name = 'report_simulation'+'_'+ get_qucsator_version(prefix).replace(' ','_')+'.txt'
 
-        footer  = 'QucsAtor version:   ' + get_qucsator_version(prefix) + '\n'
+        if args.compare_qucsator:
+            table_name = 'qucsator_comparison_' + timestamp() + '_sim_results.txt'
+        else:
+            table_name = 'report_simulation'+'_'+ get_qucsator_version(prefix[0]).replace(' ','_')+'.txt'
+
+        if len (prefix) > 1:
+            footer  = 'Qucsator versions:   '
+            for qp in prefix:
+                footer += get_qucsator_version(qp) + ' : '
+
+            footer += '\nBinary Locations:'
+            for qp in prefix:
+                footer += '\n' + qp
+
+            footer += '\n'
+
+        else:
+            footer  = 'Qucsator version:   '  + get_qucsator_version(qp) + ' '
+
+
+        footer += '\n'
+
         footer += 'Report produced on: ' + timestamp("%Y-%m-%d %H:%M:%S") + '\n'
 
         # Print simulation report to scress and save to table_name
@@ -845,9 +911,10 @@ if __name__ == '__main__':
         # Report tested/untested devices
 
         # data from simulation
-        datafile = 'qucs_components_data.p'
-        report_out = 'report_coverage_%s.txt' %(get_qucsator_version(prefix).replace(' ','_'))
-        report_simulation(sim_collect, datafile, report_out)
+        for n, qp in enumerate (prefix):
+            datafile = 'qucs_components_data.p'
+            report_out = 'report_coverage_%s.txt' %(get_qucsator_version(qp).replace(' ','_'))
+            report_simulation(sim_collect[n], datafile, report_out)
 
     #
     # Add schematic as test-project and initialize its netlist, result and log files
