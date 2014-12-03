@@ -713,9 +713,6 @@ if __name__ == '__main__':
     parser.add_argument('--skip', type=str,
                        help='file listing skipped test projects')
 
-    parser.add_argument('--only', type=str,
-                       help='string containing single test project to run')
-
     parser.add_argument('--project', type=str,
                        help='path to a test project')
 
@@ -779,13 +776,7 @@ if __name__ == '__main__':
                     print py('Skipping %s' %skip_proj)
                     testsuite.remove(skip_proj)
 
-    if args.only:
-        only_proj = args.only
-        if only_proj in testsuite:
-            print py('Only running %s' %only_proj)
-            testsuite = [only_proj]
-        else:
-            sys.exit(pr("Project %s not found in testsuite." %(only_proj)))
+
 
 
     print '\n'
