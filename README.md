@@ -48,6 +48,10 @@ Options:
 
  * `--project [project directory from testset]` will run a single test from the set.
 
+ * `--compare-qucsator [prefix/one prefix/two prefix/three]` runs multipe qucsator simulators.
+
+    * The simulator found in each supplied directory is run on all on the projects for comparison.
+
 Outputs:
 
  * The script is rather verbose and the progress is printed to the terminal (with colors, yeah!).
