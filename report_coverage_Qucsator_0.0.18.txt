@@ -9,7 +9,7 @@ Component          | Simulations Covered
 Amplifier          |  ---       
 Attenuator         |  ---       
 BiasT              |  ---       
-Capacitor          | AC, SW, SP, TR, DC 
+Capacitor          | AC, TR, SP, SW, DC 
 Circulator         |  ---       
 Coupler            |  ---       
 Ground             |  ---       
@@ -23,7 +23,7 @@ Phaseshifter       |  ---
 RFedd              |  ---       
 RFedd2P            |  ---       
 Relais             | TR         
-Resistor           | AC, HB, TR, SP, SW, DC 
+Resistor           | AC, HB, SW, SP, TR, DC 
 SubCirPort         |  ---       
 Switch             | TR         
 Transformer        | SW, AC, TR, DC 
@@ -49,7 +49,7 @@ Source_ac          | AC, SP, DC
 VCCS               | SP         
 VCVS               | AC         
 Volt_ac            | AC, HB, TR, SP, SW, DC 
-Volt_dc            | AC, SW, SP, TR, DC 
+Volt_dc            | AC, TR, SP, SW, DC 
 Volt_noise         |  ---       
 iExp               |  ---       
 iFile              |  ---       
