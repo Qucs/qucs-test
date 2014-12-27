@@ -69,13 +69,13 @@ class Command(object):
 
     def run(self, timeout):
         def target():
-            print pb('Thread started')
+            vprint( pb('Thread started') )
             self.process = subprocess.Popen(self.cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
             out, err = self.process.communicate()
             # keep the stdout and stderr
             self.out = out
             self.err = err
-            print pb('Thread finished')
+            vprint( pb('Thread finished') )
 
         thread = threading.Thread(target=target)
         thread.start()
@@ -90,7 +90,7 @@ class Command(object):
         if self.retcode:
             print pr('  Return code: %i' %self.retcode)
         else:
-            print pb('  Return code: %i' %self.retcode)
+            vprint( pb('  Return code: %i' %self.retcode) )
 
 
 def get_qucsator_version(prefix):
@@ -471,7 +471,7 @@ def run_simulation(proj, sim_report={}, prefix='', init_test=False):
             sim_report['runtime'] = '%f' %runtime
 
 
-        print pb('Runtime: %f' %runtime)
+        vprint( pb('Runtime: %f' %runtime) )
 
 
         # if adding test-project just save the log
@@ -514,15 +514,15 @@ def run_simulation(proj, sim_report={}, prefix='', init_test=False):
             # list of failed variable comparisons
             failed=[]
             if not command.timeout:
-                print pb('load data %s' %(ref_dataset))
+                vprint( pb('load data %s' %(ref_dataset)) )
                 ref_data = parse.parse_file(ref_dataset)
 
-                print pb('load data %s' %(output_dataset))
+                vprint( pb('load data %s' %(output_dataset)) )
                 test_data = parse.parse_file(output_dataset)
 
                 #print ref_data['variables']
 
-                print pb('Comparing dependent variables')
+                vprint( pb('Comparing dependent variables') )
 
                 for name, kind in ref_data['variables'].items():
                     if kind == 'dep':
@@ -534,7 +534,7 @@ def run_simulation(proj, sim_report={}, prefix='', init_test=False):
                             print pr('  Failed %s' %(name))
                             failed.append(name)
                         else:
-                            print pg('  Passed %s' %(name))
+                            vprint( pg('  Passed %s' %(name)) )
 
 
             # keep list of variables that failed comparison
@@ -719,9 +719,18 @@ if __name__ == '__main__':
     parser.add_argument('--compare-qucsator', nargs='+', type=str,
                        help='two full paths to directories containing qucsator binaries for comparison test')
 
-    args = parser.parse_args()
-    print(args)
+    parser.add_argument("-v", "--verbose", const=1, default=0, type=int, nargs="?",
+                        help="increase verbosity: 0 = progress and errors, 1 = all info. Default is low verbosity.")
 
+
+    args = parser.parse_args()
+    #print(args)
+
+    # simple verbose printer
+    # TODO use logging module?
+    def vprint(msg):
+        if (args.verbose == 1):
+            print msg
 
     # TODO improve the discovery of qucs, qucator
 
