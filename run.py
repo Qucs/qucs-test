@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+
 '''
 
   Notes:
@@ -465,8 +467,10 @@ def run_simulation(proj, sim_report={}, prefix='', init_test=False):
         # If return code, ignore time
         if command.retcode:
             sim_report['runtime'] = 'FAIL CODE %i' %command.retcode
+            sim_report['status'] = 'FAIL'
         elif command.timeout:
             sim_report['runtime'] = 'TIMEOUT'
+            sim_report['status'] = 'FAIL'
         else:
             sim_report['runtime'] = '%f' %runtime
 
@@ -486,13 +490,13 @@ def run_simulation(proj, sim_report={}, prefix='', init_test=False):
 
         if (command.timeout):
             errout = 'error_timeout.txt'
-            print pr('Failed initializaton of %s saving: \n   %s/%s' %(proj, proj_dir, errout))
+            print pr('Failed with timeout, saving: \n   %s/%s' %(proj_dir, errout))
             with open(errout, 'w') as myFile:
                 myFile.write(command.err)
 
         if (command.retcode):
             errout = 'error_code.txt'
-            print pr('Failed initializaton of %s saving: \n   %s/%s' %(proj, proj_dir, errout))
+            print pr('Failed with error code, saving: \n   %s/%s' %(proj_dir, errout))
             with open(errout, 'w') as myFile:
                 myFile.write(command.err)
 
@@ -533,8 +537,10 @@ def run_simulation(proj, sim_report={}, prefix='', init_test=False):
                         if not np.allclose(ref_trace, test_trace, rtol=1.00001e10, atol=1e-8):
                             print pr('  Failed %s' %(name))
                             failed.append(name)
+                            sim_report['status'] = 'FAIL'
                         else:
                             vprint( pg('  Passed %s' %(name)) )
+                            sim_report['status'] = 'PASS'
 
 
             # keep list of variables that failed comparison
@@ -786,6 +792,8 @@ if __name__ == '__main__':
                     testsuite.remove(skip_proj)
 
 
+    # Toggle if any test fail
+    returnStatus = 0
 
 
     print '\n'
@@ -853,6 +861,10 @@ if __name__ == '__main__':
                 sim_report = run_simulation(test, sim_report, qp)
                 if 'fail_comp' in sim_report.keys():
                     fail[n].append(test)
+
+                # if any fail, change retur status
+                if sim_report['status'] == 'FAIL':
+                    returnStatus = -1
 
                 # keep reports
                 sim_collect[n][test] = sim_report
@@ -981,6 +993,13 @@ if __name__ == '__main__':
             # step out
             os.chdir(tests_dir)
 
+    if returnStatus:
+        status = 'FAIL'
+    else:
+        status = 'PASS'
+
     print '\n'
-    print pb('###############  Done ######################')
+    print pb('###############  Done. Return status: %s ###############' %status )
+
+    sys.exit(returnStatus)
 
