@@ -52,6 +52,8 @@ Options:
 
     * The simulator found in each supplied directory is run on all on the projects for comparison.
 
+ * `--verbose [0|1]` increase verbosity: 0 = progress and errors, 1 = all info.
+
 Outputs:
 
  * The script is rather verbose and the progress is printed to the terminal (with colors, yeah!).
