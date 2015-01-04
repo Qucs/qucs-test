@@ -50,9 +50,11 @@ DLS_nto1             | DLS_nto1             | Y               | DLS_nto1.cpp
 dmux2to4             | dmux2to4             | Y               | dmux2to4.cpp
 dmux3to8             | dmux3to8             | Y               | dmux3to8.cpp
 dmux4to16            | dmux4to16            | Y               | dmux4to16.cpp
+ecvs                 | ECVS                 | ECVS            | ecvs.cpp  
 EKV26MOS             | EKV26MOS             | M               | EKV26MOS.cpp
 EqnDefined           | EDD                  | D               | eqndefined.cpp
 Equation             | Eqn                  | Eqn             | equation.cpp
+ETR_Sim              | .ETR                 | ETR             | etr_sim.cpp
 fa1b                 | fa1b                 | Y               | fa1b.cpp  
 fa2b                 | fa2b                 | Y               | fa2b.cpp  
 gatedDlatch          | gatedDlatch          | Y               | gatedDlatch.cpp
@@ -113,6 +115,7 @@ MStee                | MTEE                 | MS              | mstee.cpp
 MSvia                | MVIA                 | MS              | msvia.cpp 
 Mutual               | MUT                  | Tr              | mutual.cpp
 Mutual2              | MUT2                 | Tr              | mutual2.cpp
+MutualX              | MUTX                 | Tr              | mutualx.cpp
 mux2to1              | mux2to1              | Y               | mux2to1.cpp
 mux4to1              | mux4to1              | Y               | mux4to1.cpp
 mux8to1              | mux8to1              | Y               | mux8to1.cpp
@@ -157,6 +160,7 @@ Triac                | Triac                | D               | triac.cpp
 TunnelDiode          | RTD                  | D               | tunneldiode.cpp
 TwistedPair          | TWIST                | Line            | twistedpair.cpp
 VCCS                 | VCCS                 | SRC             | vccs.cpp  
+vcresistor           | vcresistor           | VCR             | vcresistor.cpp
 VCVS                 | VCVS                 | SRC             | vcvs.cpp  
 vExp                 | Vexp                 | V               | vexp.cpp  
 Volt_ac              | Vac                  | V               | volt_ac.cpp
@@ -166,5 +170,5 @@ vProbe               | VProbe               | Pr              | vprobe.cpp
 vPulse               | Vpulse               | V               | vpulse.cpp
 vRect                | Vrect                | V               | vrect.cpp 
 --------------------------------------------------------------------------------
-Total: 159
+Total: 163
 --------------------------------------------------------------------------------
