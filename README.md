@@ -62,6 +62,29 @@ Outputs:
 
  * A report table with all components available to Qucs and the coverage with respect to the types of simulations.
 
+
+## Running the Qucs equations tests
+
+Qucs is featured with an equation system directly on the schematic area.
+
+The script below tests seveal of the built-in functions.
+
+In short, it works as follows:
+
+- For each entry in src/application.h.
+- Generate random (or constrained) arguments (double, complex, matrix...)
+- Create a test equation and computes the expected result.
+- Save test equation into a netlist
+- Run the netlist and read the simulator output
+- Compare simulator output to the expected result.
+
+Run it with:
+
+```
+$ python run_equations.py /home/user/git/qucs-clone/
+```
+
+
 ## Tested with
 
 Mac OSX 10.8.5, Python 2.7.5, Numpy 1.7.1
