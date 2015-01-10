@@ -496,7 +496,7 @@ if __name__ == '__main__':
     if args.prefix:
         if os.path.isfile(os.path.join(args.prefix, 'qucsator')):
             prefix = args.prefix
-            print 'Found Qucsator in: %s' %(prefix)
+            print '\nFound Qucsator in: %s\n' %(prefix)
         else:
             sys.exit('Oh dear, Qucsator not found in: %s' %(prefix))
     else:
@@ -516,6 +516,9 @@ if __name__ == '__main__':
     skipCount = 0
     passCount = 0
     failCount = 0
+
+    # Toggle if any test fail
+    returnStatus = 0
 
     # Process every operation
     for op in operations:
@@ -602,6 +605,10 @@ if __name__ == '__main__':
             print "[ %s ]  TEST %03i  [ %s ] ==> [%s] = %s" %(stat, testCount, op, retType, argTypes)
 
             if stat != 'PASS' or sim =='FAIL':
+
+                # fail due do numerical error or qucsator fail
+                returnStatus -1
+
                 failCount +=1
                 print '---'
                 print net
@@ -626,4 +633,14 @@ if __name__ == '__main__':
     print '='*15
     print '-- TOTAL = ', total
     print '-'*15
+
+    if returnStatus:
+        status = 'FAIL'
+    else:
+        status = 'PASS'
+
+    print '\n'
+    print ('###############  Done. Return status: %s ###############' %status )
+
+    sys.exit(returnStatus)
 
