@@ -488,6 +488,8 @@ if __name__ == '__main__':
     parser.add_argument('--prefix', type=str,
                        help='prefix of installed Qucs (default: /usr/local/bin/)')
 
+    parser.add_argument('--operation', type=str,
+                       help='test one particular operation, ex. \'+\')')
     args = parser.parse_args()
     #print args
 
@@ -509,6 +511,13 @@ if __name__ == '__main__':
     # operations, applications = parseApplications("/Users/guitorri/git/qucs/qucs-core/src/applications.h")
     operations   = pickle.load( open( 'qucs_operations.p', "rb" ) )
     applications = pickle.load( open( 'qucs_applications.p', "rb" ) )
+
+
+    if args.operation in operations:
+        operations = [args.operation]
+    else:
+        sys.exit('Operation not supported: %s' %args.operation)
+
 
 
     # Well, these are counters
