@@ -178,6 +178,52 @@ def argTypeToMath(op, argc, argsTypes, prec='%.12f'):
             Eqn.append( qucsString );
             pyEqn.append(repr(value));
 
+        elif arg == 'TAG_MATVEC':
+            # matrix of vectors :
+            # A=[1,2,3,4] # vector
+            # matvec1="[A;A]"  # stack
+            # matvec2="[A,A]"  # concat
+            # ex
+            # Eqn:Eqn1  A="[1,2,3,4]" matvec1="[A; A]" \
+            #           matvec2="[[1,2];[3,4,5]]" Export="yes"
+            # Eqn:Eqn1 A="[1,1;1,1]"
+            #          MV="[[2,2]; [2,2]]" check="A+MV" Export="yes"
+            # expect [3,3; 3,3]
+            # matrix + matvec
+            #Eqn:Eqn1 M="[1,1;1,1]" MV="[[2,2]; [2,2]]" check="M+MV" Export="yes"
+
+            # matvec + matvec
+            #Eqn:Eqn1 V="[[1,1];[1,1]]" MV="[[2,2]; [2,2]]" check="MV+V" Export="yes"
+
+            # matvec + matvec
+            #Eqn:Eqn1 V="[[1,1];[1,1]]" MV="[[2,2]; [2,2]]" check="MV+V" Export="yes"
+
+            #THIS IS WRONG. no coverage.
+            #whoe to create a matvec??
+
+
+
+            #value = np.random.rand(2,2,2) #random matrix
+            v1 = np.ones(2)
+            v2 = np.ones(2)
+
+            mv = np.array([v1,v2])
+
+            # format qucs equation string
+            q1 = qmat(v1, format=prec)
+            q2 = qmat(v2, format=prec)
+
+            # matrix of stacked vectors
+            qucsString = '[%s;%s]' %(q1,q2)
+
+            Eqn.append( qucsString );
+            pyEqn.append(repr(mv));
+
+            #print '=Q=',  Eqn
+            #print '+P+', pyEqn
+
+            #sys.exit()
+
         elif arg == 'TAG_UNKNOWN':
             # no argument?
             value = ''
@@ -196,7 +242,7 @@ def argTypeToMath(op, argc, argsTypes, prec='%.12f'):
     # map qucs operator to python operators
     # to compute the expected result
 
-    #print pyEqn
+    #print '=pyEqn=>', pyEqn
 
     opMap={}
     opMap['^'] = '**'
@@ -275,7 +321,8 @@ def argTypeToMath(op, argc, argsTypes, prec='%.12f'):
 
         expression = 'check="%s(%s)"' %(op, Eqn[0])
         pyCode = '%s(%s)' %(pyOp, pyEqn[0])
-        #print op
+
+        #print expression
         #print pyCode
 
     # Binary operation ex. 1+1
@@ -467,7 +514,9 @@ implemented = [
  'TAG_COMPLEX',
  'TAG_VECTOR',
  'TAG_MATRIX',  # parser hacked to support it, redo
- #'TAG_MATVEC', # don't know how to handle this
+ 'TAG_MATVEC',
+ # it does not look right. matvec is not parsed py parse_netlist. only internal?
+
  #'TAG_CHAR',  # see 'array'
  #'TAG_STRING',  # see '+'
  #
@@ -554,16 +603,17 @@ if __name__ == '__main__':
                 continue
 
             # get Quscs string and Python result
-            try:
-                expression, pyExpression, pyResult = argTypeToMath(op, argc, argTypes, prec='%.12f')
-            except:
-                print ' >> ISSUES with %s' %op
-                print expression, pyResult
+            #try:
+            expression, pyExpression, pyResult = argTypeToMath(op, argc, argTypes, prec='%.12f')
+            #except:
+            #    print ' >> ISSUES with %s' %op
+
+            #print expression, pyResult
 
             # if pyResult is a string, report and move to next
             if isinstance(pyResult, str):
-                #print ' >> PYTHON ERROR    [ %s ] ==> [%s] = %s | PyCode  >> %s' %(op, retType, argTypes, pyExpression)
-                print ' >> PYTHON ERROR    [ %s ] ==> [%s] = %s' %(op, retType, argTypes)
+                print ' >> PYTHON ERROR    [ %s ] ==> [%s] = %s | PyCode  >> %s' %(op, retType, argTypes, pyExpression)
+                #print ' >> PYTHON ERROR    [ %s ] ==> [%s] = %s' %(op, retType, argTypes)
                 skipCount +=  1
                 continue
 
