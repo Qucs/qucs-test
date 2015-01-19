@@ -67,7 +67,7 @@ class Command(object):
         thread.join(timeout)
         if thread.is_alive():
             self.timeout = True
-            print pr('Terminating process, timed out %i s' %timeout)
+            print ('Terminating process, timed out %i s' %timeout)
             self.process.terminate()
             thread.join()
         self.retcode =  self.process.returncode
@@ -563,9 +563,10 @@ if __name__ == '__main__':
 
 
     if args.operation in operations:
-        operations = [args.operation]
-    else:
-        sys.exit('Operation not supported: %s' %args.operation)
+        if args.operation in operations:
+            operations = [args.operation]
+        else:
+            sys.exit('Operation not supported: %s' %args.operation)
 
 
 
