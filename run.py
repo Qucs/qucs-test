@@ -534,7 +534,7 @@ def run_simulation(proj, sim_report={}, prefix='', init_test=False):
                         ref_trace  = ref_data[name]
                         test_trace = test_data[name]
 
-                        if not np.allclose(ref_trace, test_trace, rtol=1.00001e10, atol=1e-8):
+                        if not np.allclose(ref_trace, test_trace, rtol=1e-05, atol=1e-08):
                             print pr('  Failed %s' %(name))
                             failed.append(name)
                             sim_report['status'] = 'FAIL'
