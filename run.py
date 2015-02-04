@@ -667,7 +667,10 @@ def table_print(reports, savename='', footer=''):
     for key in keys:
         proj_stat = '%-30s | %-15s  ' %(key, str(reports[0][key]['version']))
         for rp in reports:
-            proj_stat += '| %-15s' %(str(rp[key]['runtime']))
+            if rp[key]['status'] == 'FAIL':
+                proj_stat += '| %-15s' %(str('FAIL'))
+            else:
+                proj_stat += '| %-15s' %(str(rp[key]['runtime']))
 
         print proj_stat
 
