@@ -7,6 +7,10 @@
   * there is no indication that a Spice file is translated into the netlist.
     The only hint is the '_cir' appended tot he definition .DEF, which is skiped
 
+  TODO
+  - create a schematic parser with getters
+  - create a netlist parser with getters
+
 '''
 
 import argparse
@@ -37,24 +41,36 @@ class bcolors:
 
 # Avoid color codes if output piped to file
 def pb(message):
+    '''
+    Add blue color if message used on terminal.
+    '''
     if sys.stdout.isatty():
         return bcolors.OKBLUE + message + bcolors.ENDC
     else:
         return message
 
 def pg(message):
+    '''
+    Add green color if message used on terminal.
+    '''
     if sys.stdout.isatty():
         return bcolors.OKGREEN + message + bcolors.ENDC
     else:
         return message
 
 def pr(message):
+    '''
+    Add red color if message used on terminal.
+    '''
     if sys.stdout.isatty():
         return bcolors.FAIL + message + bcolors.ENDC
     else:
         return message
 
 def py(message):
+    '''
+    Add yellow color if message used on terminal.
+    '''
     if sys.stdout.isatty():
         return bcolors.WARNING + message + bcolors.ENDC
     else:
@@ -63,6 +79,9 @@ def py(message):
 
 #http://stackoverflow.com/questions/1191374/subprocess-with-timeout
 class Command(object):
+    '''
+    Class used to run a subprocess call with timeout.
+    '''
     def __init__(self, cmd):
         self.cmd = cmd
         self.process = None
@@ -97,29 +116,42 @@ class Command(object):
 
 def get_qucsator_version(prefix):
     '''
-    Run Qucsator and return the version string.
+    Run Qucsator and return its version string.
 
-    Parameters
-    ----------
-    prefix : string
-        path to qucsator executable
-
-    Returns
-    -------
-    version : string
-        the version tag of qucsator
-
+    :param prefix: path to qucsator executable
+    :return: the version tag of qucsator
     '''
     cmd = [prefix + "qucsator", "-v"]
     p = subprocess.Popen(cmd, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
     version = p.stdout.readlines()[0].strip()
     return version
 
-
-def get_components(netlist):
+def get_sch_version(schematic):
     '''
-    Fetch types of simulation an types of components
-    returns two lists
+    :return: version of qucs that created the schematic.
+    '''
+    with open(schematic) as fp:
+        for line in fp:
+            if 'Qucs Schematic' in line:
+                qucs_version = line.split(' ')[-1][:-2]
+                return qucs_version
+
+def get_sch_dataset(schematic):
+    '''
+    :return: DataSet fiel, name used to save the data file.
+    '''
+    with open(schematic) as fp:
+        for line in fp:
+            if 'DataSet' in line:
+                ref_dataset = line.split('=')[-1][:-2]
+                return ref_dataset
+
+def get_net_components(netlist):
+    '''
+    Search for simulations and components types on a netlist file.
+
+    :param netlist: text file containing a netlist
+    :return: list of simulations, list of components
     '''
     sim=set()
     comps=set()
@@ -146,14 +178,17 @@ def get_components(netlist):
 
 def get_registed_models(prefix):
     '''
-    Fetch list of available components defined in QucsAtor
-    Also listed in qucsdefs.h
+    Query qucsator for defined components. Option -l (debug mode only?).
+    Definitions also listed in qucsdefs.h
+
+    :param prefix: path containing qucsator executable
+    :return: list of registered components
     '''
     cmd = [prefix + "qucsator", "-l"]
     p = subprocess.Popen(cmd, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
     listing = p.stdout.readlines()
 
-    available=[]
+    registered=[]
     defs = False
     for line in listing:
         if 'struct define_t qucs_definition_available' in line:
@@ -163,24 +198,35 @@ def get_registed_models(prefix):
                 model=line.strip()
                 model=model.strip(',')
                 model=model[4:]
-                available.append(model)
-    available.sort()
-    return available
+                registered.append(model)
+    registered.sort()
+    return registered
 
 
 def get_subdirs(dir):
     '''
     Return a list of names of subdirectories.
-    input : dir to look up for subdirs.
+
+    :param dir: dir to look up for subdirs.
+    :return: list of subdirec
     '''
     return [name for name in os.listdir(dir)
             if os.path.isdir(os.path.join(dir, name))]
 
-def flat_sim(sim_collect):
+
+
+def report_coverage(sim_collect, datafile, report_name=''):
     '''
-    flattens into each component the types of simulations covered
-    returns: dict[component as key] = list of simulations
+    Report the coverage 
+
+    :param sim_collect: data collected while running testsuite
+    :param datafile: file containing data from cpp source files
+    :param report_name: name used to save the report
+    :return: string containing the report
     '''
+
+    # flattens into each component the types of simulations covered
+    # tested[component as key] = list of simulations
     tested = {}
     for key in sim_collect:
         sim_data = sim_collect[key]
@@ -188,15 +234,6 @@ def flat_sim(sim_collect):
             if comp not in tested:
                 tested[comp] = list()
             tested[comp] = list(set(tested[comp])|set(sim_data['sim_types']))
-    return tested
-
-
-
-def report_simulation(sim_collect, datafile, report_out=''):
-
-    # flatten data from simulation
-    tested = flat_sim(sim_collect)
-
 
     # data from source files
     # Load the dictionary back from the pickle file.
@@ -204,9 +241,7 @@ def report_simulation(sim_collect, datafile, report_out=''):
         print pr('Problem finding: %s' %datafile)
         print pr('  Run "parse_models.py"')
         return
-
     data = pickle.load( open( datafile, "rb" ) )
-
 
     reg = [
     '  REGISTER_LUMPED',
@@ -220,9 +255,12 @@ def report_simulation(sim_collect, datafile, report_out=''):
     #'  REGISTER_SIMULATION'
     ]
 
-    sims_avail = ['AC_Sim', 'DC_Sim', 'Digi_Sim', 'HB_Sim', 'Optimize_Sim', 'Param_Sweep', 'SP_Sim', 'TR_Sim']
+    # list of simulations
+    sims_avail = ['AC_Sim', 'DC_Sim', 'Digi_Sim', 'HB_Sim',
+                  'Optimize_Sim', 'Param_Sweep', 'SP_Sim', 'TR_Sim']
 
-    regs = [reg[index].strip().split('_')[1] for index in range(len(reg))]
+    # get suffix type
+    regs = [r.strip().split('_')[1] for r in reg]
 
     cov_report = ''
     line = '\n'+'-'*40
@@ -250,9 +288,10 @@ def report_simulation(sim_collect, datafile, report_out=''):
     cov_report += '\n'+', '.join(sims_avail)
     cov_report += line
 
-    if report_out:
-        print py('\nSaving coverage table: %s' %(report_out) )
-        with open(report_out, 'w') as rep_file:
+    # save to file?
+    if report_name:
+        print py('\nSaving coverage table: %s' %(report_name) )
+        with open(report_name, 'w') as rep_file:
             rep_file.write(cov_report)
 
     return cov_report
@@ -261,11 +300,13 @@ def report_simulation(sim_collect, datafile, report_out=''):
 
 def check_netlist(ref_netlist, output_netlist, skip=1, verbose=0):
     '''
-    Does a diff with reference netlist and a test netlist.
+    Does a diff between a reference netlist and a test netlist.
 
-    input  : reference netlist
-    input  : test output netlist
-    output : diff status, different lines
+    :param ref_netlist: text file used as reference netlist
+    :param output_netlist: text file used on test
+    :param skip: skip lines
+    :param verbose: print the difference
+    :return: diff equal (True|False), list of lines with mismatches
     '''
     # http://docs.python.org/2.7/library/difflib.html
     net_equal = True
@@ -277,7 +318,7 @@ def check_netlist(ref_netlist, output_netlist, skip=1, verbose=0):
 
     d = difflib.Differ()
 
-    # skip first line?
+    # skip header lines?
     diff = list(d.compare(flines[skip:], glines[skip:]))
 
     # show complete diff?
@@ -294,48 +335,61 @@ def check_netlist(ref_netlist, output_netlist, skip=1, verbose=0):
     return net_equal, bad_lines
 
 
+
+def sch2net (input_sch, output_net, prefix):
+    '''
+    Convert sch to netlist.
+    Run Qucs-GUI, convert schematic into netlist.
+
+    :param input_sch: path to input schematic
+    :param output_net: path to generated netlist
+    :param prefix: previx where qucs can be found
+    '''
+    print pb("Creating reference netlist.")
+    cmd = [os.path.join(prefix,"qucs"), "-n", "-i", input_sch, "-o", output_net]
+    print 'Running [qucs]: ', ' '.join(cmd)
+    p = subprocess.Popen(cmd, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
+    retval = p.wait()
+    # report issues if any
+    if retval:
+        print 'Return code: ', retval
+        for line in p.stdout.readlines():
+            print line,
+        sys.exit('Error on sch2net.')
+
+
 def run_schematic_to_netlist(proj, net_report={}, prefix='', init_test=False):
     '''
+    Run Qucs-GUI to perform the schematic -> netlist conversion.
 
-    Run Qucs to perform the schematic -> netlist conversion.
-
-    Parameters
-    ----------
-    proj : str
-        test directory
-    prefix : str
-        prefix to qucsator
-    init_test : Boolean
-        adding new project (no diff is done) or running tests (does diff) ?
-
-    Returns
-    -------
-    net_report : dictionary
-        contains the diff results, proj as key
+    :param proj: test directory
+    :param prefix: prefix to qucsator
+    :init_test: adding new project (no diff is done) or running tests (does diff) ?
+    :return net_report: dictionary contains the diff results, proj as key
     '''
 
-    #project dir
+    print pb('schematic -> netlist.')
+    print 'Project: %s' %(proj)
+
+    # get project dir
     name = proj.split(os.sep)[-1]
 
-    #print name
-
-    # FIXME fail if the project name has underscore
+    # figure ou the schematic name,
+    # trim the simulation types form directory name
     sim_types= ['DC_', 'AC_', 'TR_', 'SP_', 'SW_']
     for sim in sim_types:
         if sim in name:
             name=name[3:]
 
+    # trim '_prj'
     name = name[:-4]
-    #print name
 
     tests_dir = os.getcwd()
-    #print tests_dir
-
-    proj_dir = os.path.join(tests_dir, 'testsuite', proj)
-    print '\nProject : ', proj_dir
+    #proj_dir = os.path.join(tests_dir, 'testsuite', proj)
+    #print '\nProject : ', proj_dir
 
     # step into project
-    os.chdir(proj_dir)
+    os.chdir(proj)
 
     input_sch = name+".sch"
 
@@ -346,25 +400,24 @@ def run_schematic_to_netlist(proj, net_report={}, prefix='', init_test=False):
 
         # either create reference netlist, initialize a test-project
         # or create a test-netlist to compare with existing reference netlist
-        if init_test:
-            print pb("Add test, creating reference netlist")
-            output_netlist = "netlist.txt"
-        else:
-            output_netlist = "test_"+name+"_netlist.txt"
+        output_netlist = "test_"+name+"_netlist.txt"
 
-        cmd = [prefix + "qucs", "-n", "-i", input_sch, "-o", output_netlist]
-        print 'Running : ', ' '.join(cmd)
+        sch2net(input_sch, outpu_netlist, prefix)
 
-        p = subprocess.Popen(cmd, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
-        retval = p.wait()
-        # report issues if any
-        if retval:
-            print 'Return code: ', retval
-            for line in p.stdout.readlines():
-                print line,
+        #cmd = [prefix + "qucs", "-n", "-i", input_sch, "-o", output_netlist]
+        #print 'Running : ', ' '.join(cmd)
+
+        #p = subprocess.Popen(cmd, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
+        #retval = p.wait()
+        ## report issues if any
+        #if retval:
+        #    print 'Return code: ', retval
+        #    for line in p.stdout.readlines():
+        #        print line,
 
         # if not initializing the added test, compare netlists
         if not init_test:
+
             ###
             # netlist check
             # - if reference netlist provided, diff compare with test netlist
@@ -392,25 +445,27 @@ def run_schematic_to_netlist(proj, net_report={}, prefix='', init_test=False):
     return net_report
 
 
-def run_simulation(proj, sim_report={}, prefix='', init_test=False):
+def run_simulation(proj, sim_report={}, prefix=''):
     '''
     Run simulation from reference netlist and compare outputs (dat, log)
+
+    :param proj: directory containit test
+    :param prefix: path containint qucsator
+    :return sim_report:
     '''
 
-    #name = proj.split('_')[-2]
-    #project dir
-    name = proj.split(os.sep)[-1]
+    name = proj.strip(os.sep)
+    print name
 
-    #print name
-
-    # FIXME fail if the project name has underscore
+    # get schematic name from direcitory name
+    # trim the simulation types
     sim_types= ['DC_', 'AC_', 'TR_', 'SP_', 'SW_']
     for sim in sim_types:
         if sim in name:
             name=name[3:]
 
     name = name[:-4]
-    #print name
+    print name
 
     tests_dir = os.getcwd()
 
@@ -422,186 +477,170 @@ def run_simulation(proj, sim_report={}, prefix='', init_test=False):
 
     input_net = "netlist.txt"
 
-    if os.path.isfile(input_net):
+    if not os.path.isfile(input_net):
+        sys.exit('Input netlist not found')
 
-        # fetch types of simulation an types of components
-        sim, comps = get_components(input_net)
-        sim_report['sim_types'] = sim
-        sim_report['comp_types'] = comps
+    # fetch types of simulation an types of components
+    sim, comps = get_net_components(input_net)
+    sim_report['sim_types'] = sim
+    sim_report['comp_types'] = comps
 
-        # get the Qucs Schematic version from the schematic
-        # get the DataSet field from the schematic file
-        schematic = os.path.join(proj_dir,name+'.sch')
-        #print 'schematic', schematic
-        with open(schematic) as fp:
-            for line in fp:
-                if 'Qucs Schematic' in line:
-                    qucs_version = line.split(' ')[-1][:-2]
-                    #print qucs_version
-                    sim_report['version'] = qucs_version
-                if 'DataSet' in line:
-                    # DataSet filename, no quotes
-                    ref_dataset = line.split('=')[-1][:-2]
+    # get the Qucs Schematic version from the schematic
+    schematic = os.path.join(proj_dir, name+'.sch')
 
+    sim_report['version'] = get_sch_version(schematic)
 
-        #print 'ref_dataset', ref_dataset
+    output_dataset = "test_"+name+".dat"
 
-        if init_test:
-            output_dataset = ref_dataset
-        else:
-            output_dataset = "test_"+name+".dat"
+    print  prefix, input_net, output_dataset
 
-        cmd = [prefix + "qucsator", "-i", input_net, "-o", output_dataset]
-        print 'Running : ', ' '.join(cmd)
+    cmd = [prefix + "qucsator", "-i", input_net, "-o", output_dataset]
+    print 'Running : ', ' '.join(cmd)
 
-        # TODO run a few times, record average, add to report
-        tic = time.time()
+    # TODO run a few times, record average, add to report
+    tic = time.time()
+    # call the solver in a subprocess, set the timeout
+    command = Command(cmd)
+    command.run(timeout=5)
+    toc = time.time()
+    runtime = toc - tic
 
-        # call the solver in a subprocess, set the timeout
-        command = Command(cmd)
-        command.run(timeout=5)
-        toc = time.time()
-
-        runtime = toc - tic
-
-        # If return code, ignore time
-        if command.retcode:
-            sim_report['runtime'] = 'FAIL CODE %i' %command.retcode
-            sim_report['status'] = 'FAIL'
-        elif command.timeout:
-            sim_report['runtime'] = 'TIMEOUT'
-            sim_report['status'] = 'FAIL'
-        else:
-            sim_report['runtime'] = '%f' %runtime
+    # If return code, ignore time
+    if command.retcode:
+        sim_report['runtime'] = 'FAIL CODE %i' %command.retcode
+        sim_report['status'] = 'FAIL'
+    elif command.timeout:
+        sim_report['runtime'] = 'TIMEOUT'
+        sim_report['status'] = 'FAIL'
+    else:
+        sim_report['runtime'] = '%f' %runtime
 
 
-        vprint( pb('Runtime: %f' %runtime) )
+    vprint( pb('Runtime: %f' %runtime) )
+
+    if (command.timeout):
+        errout = 'error_timeout.txt'
+        print pr('Failed with timeout, saving: \n   %s/%s' %(proj_dir, errout))
+        with open(errout, 'w') as myFile:
+            myFile.write(command.err)
+
+    if (command.retcode):
+        errout = 'error_code.txt'
+        print pr('Failed with error code, saving: \n   %s/%s' %(proj_dir, errout))
+        with open(errout, 'w') as myFile:
+            myFile.write(command.err)
 
 
-        # if adding test-project just save the log
-        if init_test:
-            # save log.txt
-            # FIXME note that Qucs-gui adds a timestamp to the the log
-            #       running Qucsator it does not the same header/footer
-            logout = 'log.txt'
-            print pb('Initializing %s saving: \n   %s/%s' %(proj, proj_dir, logout))
+    # perform comparison
+    else:
+        ref_dataset = get_sch_dataset(schematic)
+        if not os.path.isfile(ref_dataset):
+            print (pr('Bad skipping comparison, missing reference output'))
+            sim_report['fail_comp'] = 'No reference output to compare'
+            # step out
+            os.chdir(tests_dir)
+            return sim_report
+
+        # TODO failed also catches if the solver didn't run, output_dataset will be empty,
+        # it will fail the comparison
+
+        # let's compare results
+
+        # list of failed variable comparisons
+        failed=[]
+        if not command.timeout:
+            vprint( pb('load data %s' %(ref_dataset)) )
+            ref_data = parse.parse_file(ref_dataset)
+
+            vprint( pb('load data %s' %(output_dataset)) )
+            test_data = parse.parse_file(output_dataset)
+
+            #print ref_data['variables']
+
+            vprint( pb('Comparing dependent variables') )
+
+            for name, kind in ref_data['variables'].items():
+                if kind == 'dep':
+                    #print name
+                    ref_trace  = ref_data[name]
+                    test_trace = test_data[name]
+
+                    if not np.allclose(ref_trace, test_trace, rtol=1e-05, atol=1e-08):
+                        print pr('  Failed %s' %(name))
+                        failed.append(name)
+                        sim_report['status'] = 'FAIL'
+                    else:
+                        vprint( pg('  Passed %s' %(name)) )
+                        sim_report['status'] = 'PASS'
+
+
+        # keep list of variables that failed comparison
+        if failed:
+            sim_report['fail_comp'] = [failed]
+
+        # mark project as timed out
+        if command.timeout:
+            sim_report['timeout'] = command.timeout
+
+
+        # In case of failure or timeout, save the log and error ouputs
+        if (failed or command.timeout):
+
+            logout = 'fail_log.txt'
+            print pr('failed %s saving: \n   %s/%s' %(proj, proj_dir, logout))
             with open(logout, 'w') as myFile:
                 myFile.write(command.out)
 
-        if (command.timeout):
-            errout = 'error_timeout.txt'
-            print pr('Failed with timeout, saving: \n   %s/%s' %(proj_dir, errout))
+            errout = 'fail_error.txt'
+            print pr('failed %s saving: \n   %s/%s' %(proj, proj_dir, errout))
             with open(errout, 'w') as myFile:
                 myFile.write(command.err)
 
-        if (command.retcode):
-            errout = 'error_code.txt'
-            print pr('Failed with error code, saving: \n   %s/%s' %(proj_dir, errout))
-            with open(errout, 'w') as myFile:
-                myFile.write(command.err)
+    # TODO add timestamp into qucsator. Or time the call.
+    # qucs creates the log.txt with time start and time end.
 
-
-        # perform comparison
-        else:
-            if not os.path.isfile(ref_dataset):
-                print (pr('Bad skipping comparison, missing reference output'))
-                sim_report['fail_comp'] = 'No reference output to compare'
-                # step out
-                os.chdir(tests_dir)
-                return sim_report
-
-            # TODO failed also catches if the solver didn't run, output_dataset will be empty,
-            # it will fail the comparison
-
-            # let's compare results
-
-            # list of failed variable comparisons
-            failed=[]
-            if not command.timeout:
-                vprint( pb('load data %s' %(ref_dataset)) )
-                ref_data = parse.parse_file(ref_dataset)
-
-                vprint( pb('load data %s' %(output_dataset)) )
-                test_data = parse.parse_file(output_dataset)
-
-                #print ref_data['variables']
-
-                vprint( pb('Comparing dependent variables') )
-
-                for name, kind in ref_data['variables'].items():
-                    if kind == 'dep':
-                        #print name
-                        ref_trace  = ref_data[name]
-                        test_trace = test_data[name]
-
-                        if not np.allclose(ref_trace, test_trace, rtol=1e-05, atol=1e-08):
-                            print pr('  Failed %s' %(name))
-                            failed.append(name)
-                            sim_report['status'] = 'FAIL'
-                        else:
-                            vprint( pg('  Passed %s' %(name)) )
-                            sim_report['status'] = 'PASS'
-
-
-            # keep list of variables that failed comparison
-            if failed:
-                sim_report['fail_comp'] = [failed]
-
-            # mark project as timed out
-            if command.timeout:
-                sim_report['timeout'] = command.timeout
-
-
-            # In case of failure or timeout, save the log and error ouputs
-            if (failed or command.timeout):
-
-                logout = 'fail_log.txt'
-                print pr('failed %s saving: \n   %s/%s' %(proj, proj_dir, logout))
-                with open(logout, 'w') as myFile:
-                    myFile.write(command.out)
-
-                errout = 'fail_error.txt'
-                print pr('failed %s saving: \n   %s/%s' %(proj, proj_dir, errout))
-                with open(errout, 'w') as myFile:
-                    myFile.write(command.err)
-
-        # TODO add timestamp into qucsator. Or time the call.
-        # qucs creates the log.txt with time start and time end.
-
-        # step out
-        os.chdir(tests_dir)
+    # step out
+    os.chdir(tests_dir)
 
     return sim_report
 
 
 def add_test_project(sch):
     '''
+    Add a schematic file as a test on the testsuite.
 
+    - create directory (start with simulation types, ex. DC_TR_myCircuit_prj)
+    - search and copy related subcircuits
+    - initialize reference netlis
+    - initialize reference data file
+
+    :param sch: path to a schematic file (.sch)
+    :return: destination directory
     '''
 
-    # get basename
-    sch_name = os.path.basename(sch)[:-4]
+    print pb('Adding new project to test-suite.')
+    print 'Adding schematic: %s' %(sch)
 
+    # get schematic basename
+    sch_name = os.path.splitext(os.path.basename(sch))[0]
 
     # scan schematic for types of simulation [.DC, .AC, .TR, .SP, .SW]
-    #  skip if no simulaiton found, subcircuit?
+    # create dir, concatenate simulation type(s), schematic name, append '_prj'
+    # ex. TR_myCircuit_prj, DC_AC_TR_complexCircuit_prj
     sim_types= ['.DC', '.AC', '.TR', '.SP', '.SW']
+    # TODO move to a sch getter
     schematic = open(sch).read()
     sim_found=''
     for sim in sim_types:
         if sim in schematic:
-            #skip dot
+            #skip dot, prepend simulation types 
             sim_found+=sim[1:]+'_'
-    #print sim_found
-
     if not sim_found:
         sys.exit( pr('This schematic performs no simulation, is it a subcircuit?'))
-
-    # create dir, concatenate simulation type(s), schematic name, append '_prj'
     dest = sim_found + sch_name + '_prj'
-    print dest
 
     # scan for subcircuits, to be copied over destination Sub, filename=split(' ')[-2]
+    # TODO move to a sch getter
     sub_files=[]
     with open(sch) as fp:
         for line in fp:
@@ -610,41 +649,37 @@ def add_test_project(sch):
                 sub_file = line.split(' ')[-2][1:-1]
                 if sub_file not in sub_files:
                     sub_files.append(sub_file)
-    print 'subcircuits', sub_files
 
     dest_dir = os.path.join(os.getcwd(),'testsuite', dest)
     if not os.path.exists(dest_dir):
-        print 'creating ', dest_dir
+        print 'Creating directory:', dest_dir
         os.makedirs(dest_dir)
+    else:
+        print 'Use existing directory:', dest_dir
 
-
-    # copy schematic and needed subcircuit
+    # copy schematic
     shutil.copy2(sch, dest_dir)
 
+    # copy listed subcircuit
     for sub in sub_files:
+        print 'Copying subcirc', sub
         src = os.path.join(os.path.dirname(sch),sub)
-
         if os.path.isfile(src):
             shutil.copy2(src, dest_dir)
         else:
             sys.exit(pr('Oops, subcircuit not found: ', src))
 
-    # bootstrap the netlist.txt
-    run_schematic_to_netlist(dest_dir, prefix=prefix, init_test=True)
-
-    # bootstrap the result.dat, log.txt
-    run_simulation(dest_dir, prefix=prefix, init_test=True)
+    return dest_dir
 
 
-    # ready to test-fire, run.py and check --qucs, --qucsator
-    # reminder to add to repository
-    return
-
-
-def table_print(reports, savename='', footer=''):
+def report_status(reports, savename='', footer=''):
     '''
-    Very simple table printer.
-    It can also write to file.
+    Print a table with test resuts. It can also write to file.
+
+    :param reports: data collected during tests.
+    :param savename: name used to save the table to a text file.
+    :param footer: custom footer appended to the table.
+    :return: None
     '''
     keys = reports[0].keys()
     keys.sort()
@@ -692,12 +727,20 @@ def table_print(reports, savename='', footer=''):
 
 def timestamp(timeformat="%y%m%d_%H%M%S"):
     '''
-     simple timestamp
+    Format a timestamp.
+
+    :param timeformat: format for the time-stamp.
+    :return: formated time/date format
     '''
     return datetime.datetime.now().strftime(timeformat)
 
 
-if __name__ == '__main__':
+def parse_options():
+    '''
+    Helper to handle the command line option parsing.
+
+    :return: parsed command line options
+    '''
 
     parser = argparse.ArgumentParser(description='Qucs testing script.')
 
@@ -731,8 +774,14 @@ if __name__ == '__main__':
     parser.add_argument("-v", "--verbose", const=1, default=0, type=int, nargs="?",
                         help="increase verbosity: 0 = progress and errors, 1 = all info. Default is low verbosity.")
 
-
     args = parser.parse_args()
+    return args
+
+
+
+if __name__ == '__main__':
+
+    args = parse_options()
     #print(args)
 
     # simple verbose printer
@@ -742,13 +791,13 @@ if __name__ == '__main__':
             print msg
 
     # TODO improve the discovery of qucs, qucator
-
     if args.prefix:
         #prefix = os.path.join(args.prefix, 'bin', os.sep)
         prefix = [args.prefix]
     else:
         # TODO add default paths, build location, system locations
         prefix = os.path.join('/usr/local/bin/')
+
 
     if (args.qucs or args.p):
         if os.path.isfile(os.path.join(prefix, 'qucs')):
@@ -799,14 +848,14 @@ if __name__ == '__main__':
     returnStatus = 0
 
 
-    print '\n'
-    print pb('******************************************')
+    #print '\n'
+    #print pb('******************************************')
     print pb('** Test suite - Selected Test Projects  **')
-    print pb('******************************************')
+    #print pb('******************************************')
 
-    #
-    # Print list of selected tests
-    #
+    ##
+    ## Print list of selected tests
+    ##
     pprint.pprint(testsuite)
 
     #
@@ -814,14 +863,15 @@ if __name__ == '__main__':
     #
     if args.qucs:
         print '\n'
-        print pb('******************************************')
         print pb('** Test schematic to netlist conversion **')
-        print pb('******************************************')
 
         # loop over testsuite
         # messages are added to the dict, project as key
         net_report = {}
         for test in testsuite:
+
+            # sch2net
+            # diff ?
             net_report =  run_schematic_to_netlist(test, net_report)
 
 
@@ -860,6 +910,7 @@ if __name__ == '__main__':
             # messages are added to the dict, project as key
 
             for test in testsuite:
+                print test
                 sim_report = {}
                 sim_report = run_simulation(test, sim_report, qp)
                 if 'fail_comp' in sim_report.keys():
@@ -917,31 +968,72 @@ if __name__ == '__main__':
 
 
         footer += '\n'
-
         footer += 'Report produced on: ' + timestamp("%Y-%m-%d %H:%M:%S") + '\n'
 
         # Print simulation report to scress and save to table_name
-        table_print(sim_collect, table_name, footer)
+        report_status(sim_collect, table_name, footer)
 
         # Report tested/untested devices
 
         # data from simulation
         for n, qp in enumerate (prefix):
             datafile = 'qucs_components_data.p'
-            report_out = 'report_coverage_%s.txt' %(get_qucsator_version(qp).replace(' ','_'))
-            report_simulation(sim_collect[n], datafile, report_out)
+            report_name = 'report_coverage_%s.txt' %(get_qucsator_version(qp).replace(' ','_'))
+            report_coverage(sim_collect[n], datafile, report_name)
 
     #
     # Add schematic as test-project and initialize its netlist, result and log files
     #
     if args.add_test:
-        print '\n'
-        print py('********************************')
-        print 'adding schematic: %s' %(args.add_test)
-
         sch = args.add_test
+        if os.path.exists(sch):
 
-        add_test_project(sch)
+            # copy stuff into place
+            dest_dir = add_test_project(sch)
+
+            # create reference netlist.txt
+            input_sch  = os.path.join(dest_dir, sch)
+            output_net = os.path.join(dest_dir,"netlist.txt")
+            sch2net(input_sch, output_net, prefix[0])
+
+            # create reference .dat, log.txt
+            #run_simulation(dest_dir, prefix=prefix[0], init_test=True)
+
+            # get the Qucs Schematic version from the schematic
+            # get the DataSet field from the schematic file
+            #schematic = os.path.join(proj_dir,name+'.sch')
+            #print 'schematic', schematic
+
+
+
+            print pb("Creating reference data and log files.")
+            output_dataset = get_sch_dataset(input_sch)
+            output_dataset = os.path.join(dest_dir, output_dataset)
+            cmd = [os.path.join(prefix[0],"qucsator"), "-i", output_net, "-o", output_dataset]
+            print 'Running [qucsator]: ', ' '.join(cmd)
+
+            # TODO run a few times, record average, add to report
+            tic = time.time()
+            # call the solver in a subprocess, set the timeout
+            command = Command(cmd)
+            command.run(timeout=5)
+            toc = time.time()
+            runtime = toc - tic
+
+            # save log.txt
+            # FIXME note that Qucs-gui adds a timestamp to the the log
+            #       running Qucsator it does not the same header/footer
+            logout = os.path.join(dest_dir,'log.txt')
+            #print pb('Initializing %s saving: \n   %s' %(sch, logout))
+            with open(logout, 'w') as myFile:
+                myFile.write(command.out)
+
+            ## ready to test-fire, run.py and check --qucs, --qucsator
+            ## reminder to add to repository
+            #sys.exit(0)
+        else:
+            sys.exit("File not found: %s" %sch)
+
 
     #
     # Print schematics contained in all (or selected) projects
@@ -968,10 +1060,7 @@ if __name__ == '__main__':
                     name=name[3:]
 
             name = name[:-4]
-            #print name
-
             tests_dir = os.getcwd()
-            #print tests_dir
 
             proj_dir = os.path.join(tests_dir, 'testsuite', proj)
             print '\nProject : ', proj_dir
