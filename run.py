@@ -381,7 +381,6 @@ def run_simulation(proj, sim_report={}, prefix=''):
     '''
 
     name = proj.strip(os.sep)
-    print name
 
     # get schematic name from direcitory name
     # trim the simulation types
@@ -391,8 +390,6 @@ def run_simulation(proj, sim_report={}, prefix=''):
             name=name[3:]
 
     name = name[:-4]
-    print name
-
     tests_dir = os.getcwd()
 
     proj_dir = os.path.join(tests_dir, 'testsuite', proj)
@@ -417,9 +414,6 @@ def run_simulation(proj, sim_report={}, prefix=''):
     sim_report['version'] = get_sch_version(schematic)
 
     output_dataset = "test_"+name+".dat"
-
-    print  prefix, input_net, output_dataset
-
     cmd = [prefix + "qucsator", "-i", input_net, "-o", output_dataset]
     print 'Running : ', ' '.join(cmd)
 
@@ -872,7 +866,6 @@ if __name__ == '__main__':
             # messages are added to the dict, project as key
 
             for test in testsuite:
-                print test
                 sim_report = {}
                 sim_report = run_simulation(test, sim_report, qp)
                 if 'fail_comp' in sim_report.keys():
