@@ -174,6 +174,7 @@ $qucsator -i netlist.txt -o result.dat
  * Tests should exercise corners that are crucial for stable releases.
  * Before releasing, the test set should be run with no regressions.
  * Git can be used to version test result (timing history?)
+ * Use `git diff -G '^([^#])'` to ignore the changes on the header line of the netlist files.
 
 
 # Test-case
