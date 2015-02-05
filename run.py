@@ -25,6 +25,7 @@ import sys
 import threading
 import time
 import pickle
+from distutils.version import LooseVersion
 
 # Qucsator data parser
 import parse_result as parse
@@ -122,6 +123,18 @@ def get_qucsator_version(prefix):
     :return: the version tag of qucsator
     '''
     cmd = [prefix + "qucsator", "-v"]
+    p = subprocess.Popen(cmd, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
+    version = p.stdout.readlines()[0].strip()
+    return version
+
+def get_qucs_version(prefix):
+    '''
+    Run Qucs-GUI and return its version string.
+
+    :param prefix: path to qucsator executable
+    :return: the version tag of qucsator
+    '''
+    cmd = [prefix + "qucs", "-v"]
     p = subprocess.Popen(cmd, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
     version = p.stdout.readlines()[0].strip()
     return version
@@ -345,7 +358,7 @@ def sch2net (input_sch, output_net, prefix):
     :param output_net: path to generated netlist
     :param prefix: previx where qucs can be found
     '''
-    print pb("Creating reference netlist.")
+    print pb("Converting schematic to netlist.")
     cmd = [os.path.join(prefix,"qucs"), "-n", "-i", input_sch, "-o", output_net]
     print 'Running [qucs]: ', ' '.join(cmd)
     p = subprocess.Popen(cmd, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
@@ -356,93 +369,6 @@ def sch2net (input_sch, output_net, prefix):
         for line in p.stdout.readlines():
             print line,
         sys.exit('Error on sch2net.')
-
-
-def run_schematic_to_netlist(proj, net_report={}, prefix='', init_test=False):
-    '''
-    Run Qucs-GUI to perform the schematic -> netlist conversion.
-
-    :param proj: test directory
-    :param prefix: prefix to qucsator
-    :init_test: adding new project (no diff is done) or running tests (does diff) ?
-    :return net_report: dictionary contains the diff results, proj as key
-    '''
-
-    print pb('schematic -> netlist.')
-    print 'Project: %s' %(proj)
-
-    # get project dir
-    name = proj.split(os.sep)[-1]
-
-    # figure ou the schematic name,
-    # trim the simulation types form directory name
-    sim_types= ['DC_', 'AC_', 'TR_', 'SP_', 'SW_']
-    for sim in sim_types:
-        if sim in name:
-            name=name[3:]
-
-    # trim '_prj'
-    name = name[:-4]
-
-    tests_dir = os.getcwd()
-    #proj_dir = os.path.join(tests_dir, 'testsuite', proj)
-    #print '\nProject : ', proj_dir
-
-    # step into project
-    os.chdir(proj)
-
-    input_sch = name+".sch"
-
-    print 'Input: ', input_sch
-
-    # have schematic to convert
-    if os.path.isfile(input_sch):
-
-        # either create reference netlist, initialize a test-project
-        # or create a test-netlist to compare with existing reference netlist
-        output_netlist = "test_"+name+"_netlist.txt"
-
-        sch2net(input_sch, outpu_netlist, prefix)
-
-        #cmd = [prefix + "qucs", "-n", "-i", input_sch, "-o", output_netlist]
-        #print 'Running : ', ' '.join(cmd)
-
-        #p = subprocess.Popen(cmd, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
-        #retval = p.wait()
-        ## report issues if any
-        #if retval:
-        #    print 'Return code: ', retval
-        #    for line in p.stdout.readlines():
-        #        print line,
-
-        # if not initializing the added test, compare netlists
-        if not init_test:
-
-            ###
-            # netlist check
-            # - if reference netlist provided, diff compare with test netlist
-            # - report if missing
-            ###
-            ref_netlist = 'netlist.txt'
-            if os.path.isfile(ref_netlist):
-                print 'Comparing : diff %s %s' %(ref_netlist, output_netlist)
-                net_equal, bad_lines = check_netlist(ref_netlist, output_netlist)
-
-                if net_equal:
-                    print pg('Diff     : PASS')
-                else:
-                    print pr('Diff     : FAIL')
-
-                # collect things that are different
-                if not net_equal:
-                    net_report[proj] = bad_lines
-            else:
-                net_report[proj] = 'missing reference [netlist.txt]'
-
-        # step out
-        os.chdir(tests_dir)
-
-    return net_report
 
 
 def run_simulation(proj, sim_report={}, prefix=''):
@@ -800,7 +726,7 @@ if __name__ == '__main__':
 
 
     if (args.qucs or args.p):
-        if os.path.isfile(os.path.join(prefix, 'qucs')):
+        if os.path.isfile(os.path.join(prefix[0], 'qucs')):
             print pb('Found Qucs in: %s' %(prefix))
         else:
             sys.exit(pr('Oh dear, Qucs not found in: %s' %(prefix)))
@@ -870,14 +796,50 @@ if __name__ == '__main__':
         net_report = {}
         for test in testsuite:
 
-            # sch2net
-            # diff ?
-            net_report =  run_schematic_to_netlist(test, net_report)
+            dest_dir = os.path.join('testsuite', test)
 
+            projName = test.strip(os.sep)
+            # get schematic name from direcitory name
+            # trim the simulation types
+            sim_types= ['DC_', 'AC_', 'TR_', 'SP_', 'SW_']
+            for sim in sim_types:
+                if sim in projName:
+                    projName=projName[3:]
+            projName = projName[:-4]
+
+            # generate test_ netlist
+            input_sch = os.path.join(dest_dir, projName+'.sch')
+
+            # skip future versions of schematic
+            sch_version = get_sch_version(input_sch)
+            qucs_version = get_qucs_version(prefix[0]).split(' ')[1]
+
+            if LooseVersion(sch_version) > LooseVersion(qucs_version):
+                print pb("Warning: skipping future version of schematic")
+                print pb("  Using qucs %s with schematic version %s"
+                         %(qucs_version, sch_version))
+                continue
+
+            # go on to create a fresh test_netlist.txt
+            test_net  = os.path.join(dest_dir, 'test_'+projName+'.txt')
+            sch2net(input_sch, test_net, prefix[0])
+
+            ref_netlist = os.path.join(dest_dir, 'netlist.txt')
+
+            # diff netlists: reference and test_
+            print 'Comparing : diff %s %s' %(ref_netlist, test_net)
+            net_equal, bad_lines = check_netlist(ref_netlist, test_net)
+
+            if net_equal:
+                print pg('Diff netlist    : PASS')
+            else:
+                print pr('Diff netlist    : FAIL')
+                net_report[test] = bad_lines
 
         print '\n'
         print pb('############################################')
         print pb('#  Report schematic to netlist conversion  #')
+
         if net_report.keys():
             print pr('--> Found differences (!)')
             pprint.pprint(net_report)
@@ -997,15 +959,6 @@ if __name__ == '__main__':
             sch2net(input_sch, output_net, prefix[0])
 
             # create reference .dat, log.txt
-            #run_simulation(dest_dir, prefix=prefix[0], init_test=True)
-
-            # get the Qucs Schematic version from the schematic
-            # get the DataSet field from the schematic file
-            #schematic = os.path.join(proj_dir,name+'.sch')
-            #print 'schematic', schematic
-
-
-
             print pb("Creating reference data and log files.")
             output_dataset = get_sch_dataset(input_sch)
             output_dataset = os.path.join(dest_dir, output_dataset)
