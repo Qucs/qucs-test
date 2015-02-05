@@ -689,10 +689,17 @@ def parse_options():
                        help='path to a test project')
 
     parser.add_argument('--compare-qucsator', nargs='+', type=str,
-                       help='two full paths to directories containing qucsator binaries for comparison test')
+                       help='two full paths to directories containing '
+                             'qucsator binaries for comparison test')
 
     parser.add_argument("-v", "--verbose", const=1, default=0, type=int, nargs="?",
-                        help="increase verbosity: 0 = progress and errors, 1 = all info. Default is low verbosity.")
+                        help="increase verbosity: 0 = progress and errors, 1 = all info. "
+                             "Default is low verbosity.")
+
+    parser.add_argument('--reset',
+                       action='store_true',
+                       help='Reset (overwrite) the netlist, data and log files of test projects '
+                            'acording version found on the given prefix.')
 
     args = parser.parse_args()
     return args
@@ -719,13 +726,13 @@ if __name__ == '__main__':
         prefix = os.path.join('/usr/local/bin/')
 
 
-    if (args.qucs or args.p):
+    if (args.qucs or args.p or args.reset):
         if os.path.isfile(os.path.join(prefix[0], 'qucs')):
             print pb('Found Qucs in: %s' %(prefix))
         else:
             sys.exit(pr('Oh dear, Qucs not found in: %s' %(prefix)))
 
-    if args.qucsator:
+    if (args.qucsator or args.reset):
 
         if os.path.isfile(os.path.join(prefix[0], 'qucsator')):
             print pb('Found Qucsator in: %s' %(prefix))
@@ -768,14 +775,12 @@ if __name__ == '__main__':
     returnStatus = 0
 
 
-    #print '\n'
-    #print pb('******************************************')
+    print '\n'
+    print pb('******************************************')
     print pb('** Test suite - Selected Test Projects  **')
-    #print pb('******************************************')
+    print pb('******************************************')
 
-    ##
-    ## Print list of selected tests
-    ##
+    # Print list of selected tests
     pprint.pprint(testsuite)
 
     #
@@ -980,6 +985,44 @@ if __name__ == '__main__':
         else:
             sys.exit("File not found: %s" %sch)
 
+    #
+    # Reset the netlist, data and log files of test projects
+    # acording version found on the given prefix.
+    #
+    if args.reset:
+        for test in testsuite:
+            dest_dir = os.path.join('testsuite', test)
+
+            projName = test.strip(os.sep)
+            # get schematic name from direcitory name
+            # trim the simulation types
+            sim_types= ['DC_', 'AC_', 'TR_', 'SP_', 'SW_']
+            for sim in sim_types:
+                if sim in projName:
+                    projName=projName[3:]
+            projName = projName[:-4]
+
+            # generate test_ netlist
+            input_sch = os.path.join(dest_dir, projName+'.sch')
+
+            # skip future versions of schematic
+            sch_version = get_sch_version(input_sch)
+            qucs_version = get_qucs_version(prefix[0]).split(' ')[1]
+
+            if LooseVersion(sch_version) > LooseVersion(qucs_version):
+                print pb("Warning: skipping future version of schematic")
+                print pb("  Using qucs %s with schematic version %s"
+                         %(qucs_version, sch_version))
+                continue
+
+            # OVERWRITE netlist.txt
+            test_net  = os.path.join(dest_dir, 'netlist.txt')
+            print pb('Reseting to %s %s' %(qucs_version, test_net))
+            sch2net(input_sch, test_net, prefix[0])
+        
+        # get schematic
+        # overwrite netlist
+        # overwrite data, log
 
     #
     # Print schematics contained in all (or selected) projects
