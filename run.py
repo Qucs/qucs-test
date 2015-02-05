@@ -988,6 +988,8 @@ if __name__ == '__main__':
     #
     # Reset the netlist, data and log files of test projects
     # acording version found on the given prefix.
+    # FIXME this is similar to adding the test project again...
+    # can we refactor the args.add_test?
     #
     if args.reset:
         for test in testsuite:
@@ -1016,9 +1018,33 @@ if __name__ == '__main__':
                 continue
 
             # OVERWRITE netlist.txt
-            test_net  = os.path.join(dest_dir, 'netlist.txt')
-            print pb('Reseting to %s %s' %(qucs_version, test_net))
-            sch2net(input_sch, test_net, prefix[0])
+            output_net  = os.path.join(dest_dir, 'netlist.txt')
+            print pb('Reseting to version %s netlist %s' %(qucs_version, output_net))
+            sch2net(input_sch, output_net, prefix[0])
+
+            # OVERWRITE dat and log
+            # create reference .dat, log.txt
+            print pb("Creating reference data and log files.")
+            output_dataset = get_sch_dataset(input_sch)
+            output_dataset = os.path.join(dest_dir, output_dataset)
+            cmd = [os.path.join(prefix[0],"qucsator"), "-i", output_net, "-o", output_dataset]
+            print 'Running [qucsator]: ', ' '.join(cmd)
+
+            # TODO run a few times, record average, add to report
+            tic = time.time()
+            # call the solver in a subprocess, set the timeout
+            command = Command(cmd)
+            command.run(timeout=5)
+            toc = time.time()
+            runtime = toc - tic
+
+            # save log.txt
+            # FIXME note that Qucs-gui adds a timestamp to the the log
+            #       running Qucsator it does not the same header/footer
+            logout = os.path.join(dest_dir,'log.txt')
+            #print pb('Initializing %s saving: \n   %s' %(sch, logout))
+            with open(logout, 'w') as myFile:
+                myFile.write(command.out)
         
         # get schematic
         # overwrite netlist
