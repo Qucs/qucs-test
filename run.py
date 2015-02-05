@@ -33,7 +33,7 @@ class bcolors:
     OKGREEN = '\033[92m'   # green
     WARNING = '\033[93m'   # yellow
     FAIL = '\033[91m'      # red
-    ENDC = '\033[0m'
+    ENDC = '\033[0m'       # end-color
 
 # Avoid color codes if output piped to file
 def pb(message):
