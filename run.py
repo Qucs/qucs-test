@@ -1017,10 +1017,12 @@ if __name__ == '__main__':
                          %(qucs_version, sch_version))
                 continue
 
+            # command line for sch2net was introduced in 0.0.18...
             # OVERWRITE netlist.txt
-            output_net  = os.path.join(dest_dir, 'netlist.txt')
-            print pb('Reseting to version %s netlist %s' %(qucs_version, output_net))
-            sch2net(input_sch, output_net, prefix[0])
+            if LooseVersion(qucs_version) > LooseVersion('0.0.17'):
+                output_net  = os.path.join(dest_dir, 'netlist.txt')
+                print pb('Reseting to version %s netlist %s' %(qucs_version, output_net))
+                sch2net(input_sch, output_net, prefix[0])
 
             # OVERWRITE dat and log
             # create reference .dat, log.txt
