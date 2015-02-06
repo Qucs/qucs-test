@@ -421,7 +421,7 @@ def run_simulation(proj, sim_report={}, prefix=''):
     tic = time.time()
     # call the solver in a subprocess, set the timeout
     command = Command(cmd)
-    command.run(timeout=5)
+    command.run(timeout=10)
     toc = time.time()
     runtime = toc - tic
 
