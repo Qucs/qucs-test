@@ -698,8 +698,8 @@ def parse_options():
 
     parser.add_argument('--reset',
                        action='store_true',
-                       help='Reset (overwrite) the netlist, data and log files of test projects '
-                            'acording version found on the given prefix.')
+                       help='Reset (overwrite) data and log files of test projects.'
+                            'Run qucsator given with --prefix.')
 
     args = parser.parse_args()
     return args
@@ -1004,35 +1004,20 @@ if __name__ == '__main__':
                     projName=projName[3:]
             projName = projName[:-4]
 
-            # generate test_ netlist
+            # do not reset netlist,
+            # 0.0.17 has no command line interface, it launches...
+
             input_sch = os.path.join(dest_dir, projName+'.sch')
-
-            # skip future versions of schematic
-            sch_version = get_sch_version(input_sch)
-            qucs_version = get_qucs_version(prefix[0]).split(' ')[1]
-
-            if LooseVersion(sch_version) > LooseVersion(qucs_version):
-                print pb("Warning: skipping future version of schematic")
-                print pb("  Using qucs %s with schematic version %s"
-                         %(qucs_version, sch_version))
-                continue
-
-            # command line for sch2net was introduced in 0.0.18...
-            # OVERWRITE netlist.txt
-            if LooseVersion(qucs_version) > LooseVersion('0.0.17'):
-                output_net  = os.path.join(dest_dir, 'netlist.txt')
-                print pb('Reseting to version %s netlist %s' %(qucs_version, output_net))
-                sch2net(input_sch, output_net, prefix[0])
-
-            # OVERWRITE dat and log
-            # create reference .dat, log.txt
-            print pb("Creating reference data and log files.")
             output_dataset = get_sch_dataset(input_sch)
             output_dataset = os.path.join(dest_dir, output_dataset)
+
+            output_net  = os.path.join(dest_dir, 'netlist.txt')
+
+            # OVERWRITE reference .dat, log.txt
+            print pb("Creating reference data and log files.")
             cmd = [os.path.join(prefix[0],"qucsator"), "-i", output_net, "-o", output_dataset]
             print 'Running [qucsator]: ', ' '.join(cmd)
 
-            # TODO run a few times, record average, add to report
             tic = time.time()
             # call the solver in a subprocess, set the timeout
             command = Command(cmd)
@@ -1041,16 +1026,13 @@ if __name__ == '__main__':
             runtime = toc - tic
 
             # save log.txt
+            # FIXME log reports different details if release/debug mode
             # FIXME note that Qucs-gui adds a timestamp to the the log
             #       running Qucsator it does not the same header/footer
             logout = os.path.join(dest_dir,'log.txt')
             #print pb('Initializing %s saving: \n   %s' %(sch, logout))
             with open(logout, 'w') as myFile:
                 myFile.write(command.out)
-        
-        # get schematic
-        # overwrite netlist
-        # overwrite data, log
 
     #
     # Print schematics contained in all (or selected) projects
