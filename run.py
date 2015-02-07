@@ -159,6 +159,23 @@ def get_sch_dataset(schematic):
                 ref_dataset = line.split('=')[-1][:-2]
                 return ref_dataset
 
+def get_sch_subcircuits(sch):
+    '''
+    Return list of subcircuit files.
+
+    :param sch: input schematic
+    :return: list of subcircuit schematics, included files
+    '''
+    sub_files=[]
+    with open(sch) as fp:
+        for line in fp:
+            if '<Sub ' in line:
+                # subcircuit filename, no quotes
+                sub_file = line.split(' ')[-2][1:-1]
+                if sub_file not in sub_files:
+                    sub_files.append(sub_file)
+    return sub_files
+
 def get_net_components(netlist):
     '''
     Search for simulations and components types on a netlist file.
@@ -560,15 +577,8 @@ def add_test_project(sch):
     dest = sim_found + sch_name + '_prj'
 
     # scan for subcircuits, to be copied over destination Sub, filename=split(' ')[-2]
-    # TODO move to a sch getter
-    sub_files=[]
-    with open(sch) as fp:
-        for line in fp:
-            if '<Sub ' in line:
-                # subcircuit filename, no quotes
-                sub_file = line.split(' ')[-2][1:-1]
-                if sub_file not in sub_files:
-                    sub_files.append(sub_file)
+
+    sub_files = get_sch_subcircuits(sch)
 
     dest_dir = os.path.join(os.getcwd(),'testsuite', dest)
     if not os.path.exists(dest_dir):
