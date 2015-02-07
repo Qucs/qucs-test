@@ -1,2 +1,2 @@
 ## Project dir, Comment: it parses to the left of ','
-TR_sawtooth-discreet_prj, see error_code.txt in project directory
+TR_sawtooth-discreet_prj, does not fail but has some small numerical differences need investigation
