@@ -252,12 +252,21 @@ def argTypeToMath(op, argc, argsTypes, prec='%.12f'):
         else:
             return square(x)
 
+    def mult_Help(x):
+        if type(a) == ndarray and a.ndim > 1:
+            if type(b) == ndarray and b.ndim > 1:
+                return dot(a, b)
+        else:
+            return a*b
+
     opMap['phase'] = 'angleDeg'
     opMap['ceil'] = 'ceilHelp'
     opMap['fix'] = 'fixHelp'
     opMap['hypot'] = 'hypotHelp'
     opMap['dB'] = 'dB_Help'
     opMap['sqr'] = 'sqr_help'
+
+    opMap['*'] = 'mult_help'
 
     # check for operator mapping
     pyOp = op
