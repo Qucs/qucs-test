@@ -161,20 +161,42 @@ def get_sch_dataset(schematic):
 
 def get_sch_subcircuits(sch):
     '''
-    Return list of subcircuit files.
+    Return list of subcircuit files. Search recursively for all sub-circuit files.
 
     :param sch: input schematic
-    :return: list of subcircuit schematics, included files
+    :return: list of sub-circuits referenced from top schematics
     '''
-    sub_files=[]
-    with open(sch) as fp:
-        for line in fp:
-            if '<Sub ' in line:
-                # subcircuit filename, no quotes
-                sub_file = line.split(' ')[-2][1:-1]
-                if sub_file not in sub_files:
+
+    # use a crawler to figure out all the sub-circuits necessary
+    # Similar: http://stackoverflow.com/questions/13658863/simple-web-crawler
+    def union(p,q):
+        for e in q:
+            if e not in p:
+                p.append(e)
+
+    def crawl(sch):
+        sub_files = []
+        with open(sch) as fp:
+            for line in fp:
+                if '<Sub ' in line:
+                    # subcircuit filename, no quotes
+                    sub_file = line.split(' ')[-2][1:-1]
+                    sub_file = os.path.join(os.path.dirname(sch), sub_file)
                     sub_files.append(sub_file)
-    return sub_files
+        return sub_files
+
+    def crawler(sch):
+        tocrawl=[sch]
+        crawled=[]
+        while tocrawl:
+            page=tocrawl.pop()
+            subs=crawl(page)
+            if page not in crawled:
+                union(tocrawl,subs)
+                crawled.append(page)
+        return crawled
+
+    return crawler(sch)[1:] # skip seed sch
 
 def get_net_components(netlist):
     '''
@@ -598,7 +620,7 @@ def add_test_project(sch):
         sys.exit( pr('This schematic performs no simulation, is it a subcircuit?'))
     dest = sim_found + sch_name + '_prj'
 
-    # scan for subcircuits, to be copied over destination Sub, filename=split(' ')[-2]
+    # scan for subcircuits, to be copied over to destination
     sub_files = get_sch_subcircuits(sch)
 
     dest_dir = os.path.join(os.getcwd(),'testsuite', dest)
@@ -611,9 +633,9 @@ def add_test_project(sch):
     # copy schematic
     shutil.copy2(sch, dest_dir)
 
-    # copy listed subcircuit
+    # copy listed subcircuit (recursive)
     for sub in sub_files:
-        print 'Copying subcirc', sub
+        print 'Copying sub-circuit', sub
         src = os.path.join(os.path.dirname(sch),sub)
         if os.path.isfile(src):
             shutil.copy2(src, dest_dir)
@@ -806,13 +828,14 @@ if __name__ == '__main__':
     returnStatus = 0
 
 
-    print '\n'
-    print pb('******************************************')
-    print pb('** Test suite - Selected Test Projects  **')
-    print pb('******************************************')
+    if args.qucs or args.qucsator or args.project:
+        print '\n'
+        print pb('******************************************')
+        print pb('** Test suite - Selected Test Projects  **')
+        print pb('******************************************')
 
-    # Print list of selected tests
-    pprint.pprint(testsuite)
+        # Print list of selected tests
+        pprint.pprint(testsuite)
 
     #
     # Run Qucs GUI
