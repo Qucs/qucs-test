@@ -1,0 +1,3 @@
+## Project dir, Comment: it parses to the left of ','
+TR_Puls3b_prj, fixed on 0.0.18
+DC_SP_HICUM-fig10_prj, fixed after 0.0.18
