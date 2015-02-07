@@ -205,6 +205,20 @@ def get_net_components(netlist):
                     comps.add(element)
     return list(sim), list(comps)
 
+def get_sch_simulations(sch):
+    '''
+    :return: list of simulations found on the schematic.
+    '''
+    # supported simulations
+    sim_types = ['.DC', '.AC', '.TR', '.SP', '.SW']
+
+    sim_used = []
+    schematic = open(sch).read()
+    for sim in sim_types:
+        if sim in schematic:
+            sim_used.append(sim)
+    return sim_used
+
 
 def get_registed_models(prefix):
     '''
@@ -548,8 +562,10 @@ def add_test_project(sch):
 
     - create directory (start with simulation types, ex. DC_TR_myCircuit_prj)
     - search and copy related subcircuits
+    - TODO search and copy included SPICE files
     - initialize reference netlis
     - initialize reference data file
+    - TODO initialize SPICE, run qucsconv
 
     :param sch: path to a schematic file (.sch)
     :return: destination directory
@@ -564,20 +580,16 @@ def add_test_project(sch):
     # scan schematic for types of simulation [.DC, .AC, .TR, .SP, .SW]
     # create dir, concatenate simulation type(s), schematic name, append '_prj'
     # ex. TR_myCircuit_prj, DC_AC_TR_complexCircuit_prj
-    sim_types= ['.DC', '.AC', '.TR', '.SP', '.SW']
-    # TODO move to a sch getter
-    schematic = open(sch).read()
-    sim_found=''
-    for sim in sim_types:
-        if sim in schematic:
-            #skip dot, prepend simulation types 
-            sim_found+=sim[1:]+'_'
+    sim_used = get_sch_simulations(sch)
+    sim_found = ''
+    for sim in sim_used:
+        #skip dot, prepend simulation types
+        sim_found+=sim[1:]+'_'
     if not sim_found:
         sys.exit( pr('This schematic performs no simulation, is it a subcircuit?'))
     dest = sim_found + sch_name + '_prj'
 
     # scan for subcircuits, to be copied over destination Sub, filename=split(' ')[-2]
-
     sub_files = get_sch_subcircuits(sch)
 
     dest_dir = os.path.join(os.getcwd(),'testsuite', dest)
