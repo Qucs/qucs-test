@@ -178,32 +178,40 @@ def get_sch_subcircuits(sch):
 
 def get_net_components(netlist):
     '''
-    Search for simulations and components types on a netlist file.
+    Search for component types on a netlist file.
 
     :param netlist: text file containing a netlist
-    :return: list of simulations, list of components
+    :return: list of components
     '''
-    sim=set()
     comps=set()
     with open(netlist) as fp:
         for line in fp:
             if ':' in line:
                 # left of :
                 element = line.split(':')[0].strip()
-                # simulation
+                if not '.' in element:
+                    comps.add(element)
+    return list(comps)
+
+
+def get_net_simulations(netlist):
+    '''
+    Search for simulations types on a netlist file.
+
+    :param netlist: text file containing a netlist
+    :return: list of simulations
+    '''
+    sim=set()
+    with open(netlist) as fp:
+        for line in fp:
+            if ':' in line:
+                # left of :
+                element = line.split(':')[0].strip()
                 if '.' in element:
                     # skip subcircuit '.Def' marker
                     if not 'Def' in element:
                         sim.add(element.strip('.'))
-                    else: # has .Def, look for '_cir' SPICE definition
-                        #right of :
-                        descr = line.split(':')[1].strip()
-                        if '_cir' in descr:
-                            comps.add('SPICE') # note 'model name'
-                # component
-                else:
-                    comps.add(element)
-    return list(sim), list(comps)
+    return list(sim)
 
 def get_sch_simulations(sch):
     '''
@@ -435,9 +443,10 @@ def run_simulation(proj, sim_report={}, prefix=''):
         sys.exit('Input netlist not found')
 
     # fetch types of simulation an types of components
-    sim, comps = get_net_components(input_net)
-    sim_report['sim_types'] = sim
+    comps = get_net_components(input_net)
+    sim = get_net_simulations(input_net)
     sim_report['comp_types'] = comps
+    sim_report['sim_types'] = sim
 
     # get the Qucs Schematic version from the schematic
     schematic = os.path.join(proj_dir, name+'.sch')
