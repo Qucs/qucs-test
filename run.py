@@ -10,6 +10,7 @@
   TODO
   - create a schematic parser with getters
   - create a netlist parser with getters
+  - copy also display files on add-project?
 
 '''
 
@@ -1017,11 +1018,10 @@ if __name__ == '__main__':
             cmd = [os.path.join(prefix[0],"qucsator"), "-i", output_net, "-o", output_dataset]
             print 'Running [qucsator]: ', ' '.join(cmd)
 
-            # TODO run a few times, record average, add to report
-            tic = time.time()
             # call the solver in a subprocess, set the timeout
+            tic = time.time()
             command = Command(cmd)
-            command.run(timeout=5)
+            command.run(timeout=10)
             toc = time.time()
             runtime = toc - tic
 
