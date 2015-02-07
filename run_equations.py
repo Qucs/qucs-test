@@ -214,7 +214,6 @@ def argTypeToMath(op, argc, argsTypes, prec='%.12f'):
     opMap['>='] = 'greater_equal'
     opMap['<='] = 'less_equal'
 
-    opMap['sqr'] = 'sqrt'
     opMap['arg']   = 'angle' # Qucs alias
     opMap['angle'] = 'angle'
     opMap['norm'] ='linalg.norm'
@@ -247,12 +246,18 @@ def argTypeToMath(op, argc, argsTypes, prec='%.12f'):
     def dB_Help(x):
         return 20*log10(abs(x))
 
+    def sqr_Help(x):
+        if type(x) == ndarray and x.ndim > 1:
+            return linalg.matrix_power(a,2)
+        else:
+            return square(x)
+
     opMap['phase'] = 'angleDeg'
     opMap['ceil'] = 'ceilHelp'
     opMap['fix'] = 'fixHelp'
     opMap['hypot'] = 'hypotHelp'
     opMap['dB'] = 'dB_Help'
-
+    opMap['sqr'] = 'sqr_help'
 
     # check for operator mapping
     pyOp = op
@@ -606,7 +611,7 @@ if __name__ == '__main__':
 
 
             stat = ''
-            if np.allclose(pyResult, test, rtol=1.00001e10, atol=1e-8):
+            if np.allclose(pyResult, test, rtol=1e-5, atol=1e-8):
                 stat = 'PASS'
                 passCount +=1
             else:
