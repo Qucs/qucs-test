@@ -1,33 +1,12 @@
-Output:
--------
-
-Starting new simulation on Fri 06. Feb 2015 at 23:44:27
-Starting new simulation on Fri 06. Feb 2015 at 23:44:27
-Starting new simulation on Fri 06. Feb 2015 at 23:44:27
-Starting new simulation on Fri 06. Feb 2015 at 23:44:27
-Starting new simulation on Fri 06. Feb 2015 at 23:44:27
-Starting new simulation on Fri 06. Feb 2015 at 23:44:27
-Starting new simulation on Fri 06. Feb 2015 at 23:44:27
-Starting new simulation on Fri 06. Feb 2015 at 23:44:27
-Starting new simulation on Fri 06. Feb 2015 at 23:44:27
-Starting new simulation on Fri 06. Feb 2015 at 23:44:27
-Starting new simulation on Fri 06. Feb 2015 at 23:44:27
-Starting new simulation on Fri 06. Feb 2015 at 23:44:27
-Starting new simulation on Fri 06. Feb 2015 at 23:44:27
-Starting new simulation on Fri 06. Feb 2015 at 23:44:27
-Starting new simulation on Fri 06. Feb 2015 at 23:44:27
-Starting new simulation on Fri 06. Feb 2015 at 23:44:27
-Starting new simulation on Fri 06. Feb 2015 at 23:44:27
-Starting new simulation on Fri 06. Feb 2015 at 23:44:27
-Starting new simulation on Fri 06. Feb 2015 at 23:44:27
-Starting new simulation on Fri 06. Feb 2015 at 23:44:27
-
-
-
-Errors:
--------
-
-WARNING: Unphysical model parameter Nf = 0.9955 in BJT `BC548BP_1'
-WARNING: Unphysical model parameter Nf = 0.9955 in BJT `BC548BP_1'
-WARNING: Unphysical model parameter Nf = 0.9955 in BJT `BC548BP_1'
-WARNING: Unphysical model parameter Nf = 0.9955 in BJT `BC548BP_1'
+parsing netlist...
+checking netlist...
+netlist content
+      4 Diode instances
+      1 C instances
+      3 BJT instances
+      3 R instances
+      2 Vdc instances
+      1 TR instances
+creating netlist...
+NOTIFY: TR1: average time-step 3.26016e-09, 880 rejections
+NOTIFY: TR1: average NR-iterations 2.22202, 1 non-convergences

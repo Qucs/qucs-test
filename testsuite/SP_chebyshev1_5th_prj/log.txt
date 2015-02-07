@@ -2,15 +2,6 @@ parsing netlist...
 checking netlist...
 checker notice, variable `S' in equation `S11_dB' not yet defined
 checker notice, variable `S' in equation `S21_dB' not yet defined
-subcircuit root
-  L:L1 _net0 _net1 L="8.683e-08H"
-  L:L2 _net1 _net2 L="8.683e-08H"
-  C:C1 gnd _net0 C="6.796e-11F"
-  C:C3 gnd _net2 C="6.796e-11F"
-  C:C2 gnd _net1 C="9.552e-11F"
-  Pac:P1 _net0 gnd Num="1" Z="50Ohm" P="0.001" f="1e+09Hz" Temp="26.85"
-  Pac:P2 _net2 gnd Num="2" Z="50Ohm" P="0.001" f="1e+09Hz" Temp="26.85"
-  SP:SP1 Type="lin" Start="1e+06Hz" Stop="1.5e+08Hz" Points="300" Noise="no" NoiseIP="1" NoiseOP="2" saveCVs="no" saveAll="no"
 netlist content
       3 C instances
       2 L instances
@@ -19,7 +10,3 @@ netlist content
 creating netlist...
 checker notice, variable `S' in equation `S11_dB' not yet defined
 checker notice, variable `S' in equation `S21_dB' not yet defined
-NOTIFY: SP1: preparing circuit for analysis
-NOTIFY: SP1: inserted 3 tees, 0 crosses, 0 opens and 5 grounds
-NOTIFY: SP1: creating sorted nodelist for SP analysis
-NOTIFY: SP1: solving SP netlist

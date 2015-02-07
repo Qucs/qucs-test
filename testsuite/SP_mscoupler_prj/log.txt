@@ -4,14 +4,6 @@ checker notice, variable `S' in equation `reflect' not yet defined
 checker notice, variable `S' in equation `isolated' not yet defined
 checker notice, variable `S' in equation `through' not yet defined
 checker notice, variable `S' in equation `coupled' not yet defined
-subcircuit root
-  Pac:P1 _net0 gnd Num="1" Z="50Ohm" P="0.001" f="1e+09Hz" Temp="26.85"
-  Pac:P2 _net1 gnd Num="2" Z="50Ohm" P="0.001" f="1e+09Hz" Temp="26.85"
-  Pac:P3 _net2 gnd Num="3" Z="50Ohm" P="0.001" f="1e+09Hz" Temp="26.85"
-  Pac:P4 _net3 gnd Num="4" Z="50Ohm" P="0.001" f="1e+09Hz" Temp="26.85"
-  SUBST:SubstTC1 er="9.8" h="0.000635m" t="1.75e-05m" tand="0.0001" rho="2.43902e-08" D="1.5e-07"
-  SP:SPTC1 Type="lin" Start="2e+08Hz" Stop="4.2e+09Hz" Points="101" Noise="no" NoiseIP="1" NoiseOP="2" saveCVs="no" saveAll="no"
-  MCOUPLED:MSTC1 _net0 _net1 _net2 _net3 Subst="SubstTC1" W="0.000518m" L="0.01494m" S="0.000185m" Model="Kirschning" DispModel="Kirschning" Temp="26.85"
 netlist content
       1 MCOUPLED instances
       4 Pac instances
@@ -22,7 +14,3 @@ checker notice, variable `S' in equation `reflect' not yet defined
 checker notice, variable `S' in equation `isolated' not yet defined
 checker notice, variable `S' in equation `through' not yet defined
 checker notice, variable `S' in equation `coupled' not yet defined
-NOTIFY: SPTC1: preparing circuit for analysis
-NOTIFY: SPTC1: inserted 0 tees, 0 crosses, 0 opens and 4 grounds
-NOTIFY: SPTC1: creating sorted nodelist for SP analysis
-NOTIFY: SPTC1: solving SP netlist

@@ -1,52 +1,33 @@
-Output:
--------
-
-Starting new simulation on Sat 07. Feb 2015 at 11:13:40
-Starting new simulation on Sat 07. Feb 2015 at 11:13:40
-Starting new simulation on Sat 07. Feb 2015 at 11:13:40
-Starting new simulation on Sat 07. Feb 2015 at 11:13:40
-Starting new simulation on Sat 07. Feb 2015 at 11:13:40
-Starting new simulation on Sat 07. Feb 2015 at 11:13:40
-Starting new simulation on Sat 07. Feb 2015 at 11:13:40
-Starting new simulation on Sat 07. Feb 2015 at 11:13:40
-Starting new simulation on Sat 07. Feb 2015 at 11:13:40
-Starting new simulation on Sat 07. Feb 2015 at 11:13:40
-Starting new simulation on Sat 07. Feb 2015 at 11:13:40
-Starting new simulation on Sat 07. Feb 2015 at 11:13:40
-Starting new simulation on Sat 07. Feb 2015 at 11:13:40
-Starting new simulation on Sat 07. Feb 2015 at 11:13:40
-Starting new simulation on Sat 07. Feb 2015 at 11:13:40
-Starting new simulation on Sat 07. Feb 2015 at 11:13:40
-Starting new simulation on Sat 07. Feb 2015 at 11:13:40
-Starting new simulation on Sat 07. Feb 2015 at 11:13:40
-Starting new simulation on Sat 07. Feb 2015 at 11:13:40
-Starting new simulation on Sat 07. Feb 2015 at 11:13:40
-Starting new simulation on Sat 07. Feb 2015 at 11:13:40
-Starting new simulation on Sat 07. Feb 2015 at 11:13:40
-Starting new simulation on Sat 07. Feb 2015 at 11:13:40
-Starting new simulation on Sat 07. Feb 2015 at 11:13:40
-Starting new simulation on Sat 07. Feb 2015 at 11:13:40
-Starting new simulation on Sat 07. Feb 2015 at 11:13:40
-Starting new simulation on Sat 07. Feb 2015 at 11:13:40
-Starting new simulation on Sat 07. Feb 2015 at 11:13:40
-Starting new simulation on Sat 07. Feb 2015 at 11:13:40
-Starting new simulation on Sat 07. Feb 2015 at 11:13:40
-Starting new simulation on Sat 07. Feb 2015 at 11:13:40
-Starting new simulation on Sat 07. Feb 2015 at 11:13:40
-Starting new simulation on Sat 07. Feb 2015 at 11:13:40
-Starting new simulation on Sat 07. Feb 2015 at 11:13:40
-Starting new simulation on Sat 07. Feb 2015 at 11:13:40
-Starting new simulation on Sat 07. Feb 2015 at 11:13:40
-Starting new simulation on Sat 07. Feb 2015 at 11:13:40
-Starting new simulation on Sat 07. Feb 2015 at 11:13:40
-Starting new simulation on Sat 07. Feb 2015 at 11:13:40
-Starting new simulation on Sat 07. Feb 2015 at 11:13:40
-Starting new simulation on Sat 07. Feb 2015 at 11:13:40
-
-
-
-Errors:
--------
-
-spice notice, no .END directive found, continuing
-spice notice, no .END directive found, continuing
+parsing netlist...
+checking netlist...
+checker notice, variable `V3' in equation `EGND.I1' not yet defined
+checker notice, variable `V2' in equation `EGND.I1' not yet defined
+checker notice, variable `V6' in equation `FB.I1' not yet defined
+checker notice, variable `V5' in equation `FB.I1' not yet defined
+checker notice, variable `V4' in equation `FB.I1' not yet defined
+checker notice, variable `V3' in equation `FB.I1' not yet defined
+checker notice, variable `V2' in equation `FB.I1' not yet defined
+netlist content
+      1 Idc instances
+      5 Diode instances
+      1 CCCS instances
+      2 C instances
+      2 BJT instances
+      1 DC instances
+      9 R instances
+      2 EDD instances
+      2 VCCS instances
+      7 CCVS instances
+      8 Vdc instances
+      1 Vac instances
+      1 TR instances
+creating netlist...
+checker notice, variable `V3' in equation `EGND.I1' not yet defined
+checker notice, variable `V2' in equation `EGND.I1' not yet defined
+checker notice, variable `V6' in equation `FB.I1' not yet defined
+checker notice, variable `V5' in equation `FB.I1' not yet defined
+checker notice, variable `V4' in equation `FB.I1' not yet defined
+checker notice, variable `V3' in equation `FB.I1' not yet defined
+checker notice, variable `V2' in equation `FB.I1' not yet defined
+NOTIFY: TR1: average time-step 1.66667e-06, 47 rejections
+NOTIFY: TR1: average NR-iterations 2.545, 0 non-convergences

@@ -2,22 +2,6 @@ parsing netlist...
 checking netlist...
 checker notice, variable `neg.Vt' in equation `Output' not yet defined
 checker notice, variable `pos.Vt' in equation `Output' not yet defined
-subcircuit root
-  BJT:T1 _net0 _net1 gnd _net1 Type="npn" Is="1e-16" Nf="1" Nr="1" Ikf="0" Ikr="0" Vaf="0" Var="0" Ise="0" Ne="1.5" Isc="0" Nc="2" Bf="200" Br="1" Rbm="0" Irb="0" Rc="0" Re="0" Rb="0" Cje="0" Vje="0.75" Mje="0.33" Cjc="0" Vjc="0.75" Mjc="0.33" Xcjc="1" Cjs="0" Vjs="0.75" Mjs="0" Fc="0.5" Tf="0" Xtf="0" Vtf="0" Itf="0" Tr="0" Temp="26.85" Kf="0" Af="1" Ffe="1" Kb="0" Ab="1" Fb="1" Ptf="0" Xtb="0" Xti="3" Eg="1.11" Tnom="26.85" Area="1"
-  BJT:T3 _net2 neg _net1 neg Type="npn" Is="1e-16" Nf="1" Nr="1" Ikf="0" Ikr="0" Vaf="0" Var="0" Ise="0" Ne="1.5" Isc="0" Nc="2" Bf="200" Br="1" Rbm="0" Irb="0" Rc="0" Re="0" Rb="0" Cje="0" Vje="0.75" Mje="0.33" Cjc="0" Vjc="0.75" Mjc="0.33" Xcjc="1" Cjs="0" Vjs="0.75" Mjs="0" Fc="0.5" Tf="0" Xtf="0" Vtf="0" Itf="0" Tr="0" Temp="26.85" Kf="0" Af="1" Ffe="1" Kb="0" Ab="1" Fb="1" Ptf="0" Xtb="0" Xti="3" Eg="1.11" Tnom="26.85" Area="1"
-  BJT:T2 _net3 pos _net1 pos Type="npn" Is="1e-16" Nf="1" Nr="1" Ikf="0" Ikr="0" Vaf="0" Var="0" Ise="0" Ne="1.5" Isc="0" Nc="2" Bf="200" Br="1" Rbm="0" Irb="0" Rc="0" Re="0" Rb="0" Cje="0" Vje="0.75" Mje="0.33" Cjc="0" Vjc="0.75" Mjc="0.33" Xcjc="1" Cjs="0" Vjs="0.75" Mjs="0" Fc="0.5" Tf="0" Xtf="0" Vtf="0" Itf="0" Tr="0" Temp="26.85" Kf="0" Af="1" Ffe="1" Kb="0" Ab="1" Fb="1" Ptf="0" Xtb="0" Xti="3" Eg="1.11" Tnom="26.85" Area="1"
-  R:R3 neg _net4 R="1500" Temp="26.85" Tc1="0" Tc2="0" Tnom="26.85"
-  R:R4 _net2 _net4 R="100000" Temp="26.85" Tc1="0" Tc2="0" Tnom="26.85"
-  R:R5 _net3 _net4 R="100000" Temp="26.85" Tc1="0" Tc2="0" Tnom="26.85"
-  R:R2 pos _net4 R="1500" Temp="26.85" Tc1="0" Tc2="0" Tnom="26.85"
-  Tr:Tr1 _net5 _net2 _net3 gnd T="1"
-  R:R8 _net6 _net5 R="50Ohm" Temp="26.85" Tc1="0" Tc2="0" Tnom="26.85"
-  Vdc:V2 _net4 gnd U="10V"
-  DC:DC1 Temp="26.85" reltol="0.001" abstol="1e-12A" vntol="1e-06V" saveOPs="no" MaxIter="150" saveAll="no" convHelper="none" Solver="CroutLU"
-  TR:TR1 Type="lin" Start="0" Stop="0.001s" Points="300" IntegrationMethod="Trapezoidal" Order="2" InitialStep="1e-09s" MinStep="1e-16" MaxIter="150" reltol="0.001" abstol="1e-12A" vntol="1e-06V" Temp="26.85" LTEreltol="0.001" LTEabstol="1e-06" LTEfactor="1" Solver="CroutLU" relaxTSR="no" initialDC="yes" MaxStep="0"
-  Vac:LO _net6 gnd U="0.5V" f="10000Hz" Phase="0" Theta="0"
-  Idc:I2 _net0 gnd I="2e-06A"
-  Iac:RF _net0 gnd I="1e-06A" f="1000Hz" Phase="0" Theta="0"
 netlist content
       1 Iac instances
       1 Idc instances
@@ -31,14 +15,7 @@ netlist content
 creating netlist...
 checker notice, variable `neg.Vt' in equation `Output' not yet defined
 checker notice, variable `pos.Vt' in equation `Output' not yet defined
-NOTIFY: DC1: creating node list for DC analysis
-NOTIFY: DC1: solving DC netlist
-NOTIFY: DC1: convergence reached after 18 iterations
 checker notice, variable `neg.Vt' in equation `Output' not yet defined
 checker notice, variable `pos.Vt' in equation `Output' not yet defined
-NOTIFY: TR1: creating node list for initial DC analysis
-NOTIFY: TR1: solving initial DC netlist
-NOTIFY: TR1: creating node list for transient analysis
-NOTIFY: TR1: solving transient netlist
-NOTIFY: TR1: average time-step 9.19118e-07, 15 rejections
-NOTIFY: TR1: average NR-iterations 3.38879, 0 non-convergences
+NOTIFY: TR1: average time-step 8.96057e-07, 16 rejections
+NOTIFY: TR1: average NR-iterations 3.38172, 0 non-convergences

@@ -3,27 +3,6 @@ checking netlist...
 checker notice, variable `Sopt' in equation `Ropt' not yet defined
 checker notice, variable `Sopt' in equation `Xopt' not yet defined
 checker notice, variable `Fmin' in equation `Tmin' not yet defined
-subcircuit root
-  C:C1 _net0 _net1 C="2.8e-13F"
-  R:R1 _net2 _net0 R="2.5" Temp="26.85" Tc1="0" Tc2="0" Tnom="26.85"
-  C:C2 _net2 _net3 C="6.7e-14F"
-  R:R3 _net4 _net2 R="0.5Ohm" Temp="26.85" Tc1="0" Tc2="0" Tnom="26.85"
-  C:C3 _net3 _net1 C="4.2e-14F"
-  C:C8 _net5 _net6 C="7e-15F"
-  L:L3 gnd _net4 L="7.2e-11H"
-  R:R5 _net7 _net1 R="0.5" Temp="26.85" Tc1="0" Tc2="0" Tnom="26.85"
-  R:R4 _net3 _net8 R="2.2" Temp="26.85" Tc1="0" Tc2="0" Tnom="26.85"
-  C:C6 gnd _net8 C="2.3e-13F"
-  C:C7 gnd _net6 C="1e-13F"
-  L:L2 _net8 _net6 L="3.4e-10H"
-  C:C5 gnd _net7 C="1.5e-13F"
-  C:C4 gnd _net5 C="1.1e-13F"
-  L:L1 _net5 _net7 L="3.6e-10H"
-  VCCS:SRC1 _net1 _net3 _net2 _net0 G="0.057S" T="3e-12s"
-  R:R2 _net2 _net3 R="400" Temp="5240" Tc1="0" Tc2="0" Tnom="26.85"
-  SP:SP1 Type="lin" Start="1e+09Hz" Stop="2.3e+10Hz" Points="150" Noise="yes" NoiseIP="1" NoiseOP="2" saveCVs="no" saveAll="no"
-  Pac:P1 _net5 gnd Num="1" Z="50Ohm" P="0.001" f="1e+09Hz" Temp="26.85"
-  Pac:P2 _net6 gnd Num="2" Z="50Ohm" P="0.001" f="1e+09Hz" Temp="26.85"
 netlist content
       8 C instances
       3 L instances
@@ -35,7 +14,3 @@ creating netlist...
 checker notice, variable `Sopt' in equation `Ropt' not yet defined
 checker notice, variable `Sopt' in equation `Xopt' not yet defined
 checker notice, variable `Fmin' in equation `Tmin' not yet defined
-NOTIFY: SP1: preparing circuit for analysis
-NOTIFY: SP1: inserted 5 tees, 5 crosses, 0 opens and 7 grounds
-NOTIFY: SP1: creating sorted nodelist for SP analysis
-NOTIFY: SP1: solving SP netlist

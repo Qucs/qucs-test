@@ -1,12 +1,5 @@
 parsing netlist...
 checking netlist...
-subcircuit root
-  Vac:V1 _net0 gnd U="1V" f="1e+09Hz" Phase="0" Theta="0"
-  R:R1 _net1 _net0 R="R_par" Temp="26.85" Tc1="0" Tc2="0" Tnom="26.85"
-  C:C1 gnd Voltage C="2e-12F"
-  L:L1 Voltage _net1 L="1.3e-08H"
-  SW:SW1 Sim="AC1" Type="log" Param="R_par" Start="1Ohm" Stop="20Ohm" Points="6"
-  AC:AC1 Type="lin" Start="9e+08Hz" Stop="1.1e+09Hz" Points="150" Noise="no"
 netlist content
       1 AC instances
       1 C instances
@@ -15,21 +8,3 @@ netlist content
       1 SW instances
       1 Vac instances
 creating netlist...
-NOTIFY: SW1: running netlist for R_par = 1
-NOTIFY: AC1: creating node list for AC analysis
-NOTIFY: AC1: solving AC netlist
-NOTIFY: SW1: running netlist for R_par = 1.82056
-NOTIFY: AC1: creating node list for AC analysis
-NOTIFY: AC1: solving AC netlist
-NOTIFY: SW1: running netlist for R_par = 3.31445
-NOTIFY: AC1: creating node list for AC analysis
-NOTIFY: AC1: solving AC netlist
-NOTIFY: SW1: running netlist for R_par = 6.03418
-NOTIFY: AC1: creating node list for AC analysis
-NOTIFY: AC1: solving AC netlist
-NOTIFY: SW1: running netlist for R_par = 10.9856
-NOTIFY: AC1: creating node list for AC analysis
-NOTIFY: AC1: solving AC netlist
-NOTIFY: SW1: running netlist for R_par = 20
-NOTIFY: AC1: creating node list for AC analysis
-NOTIFY: AC1: solving AC netlist

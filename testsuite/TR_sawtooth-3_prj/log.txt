@@ -1,16 +1,5 @@
 parsing netlist...
 checking netlist...
-subcircuit root
-  R:RfT1 VfT2 Vf R="1000" Temp="26.85" Tc1="0" Tc2="0" Tnom="26.85"
-  R:RfL2 _net0 Vf R="20" Temp="26.85" Tc1="0" Tc2="0" Tnom="26.85"
-  BJT:T_BC817_16_2 VfT2 _net0 gnd _net0 Type="npn" Is="4.04e-09" Nf="1" Nr="1" Ikf="0.273" Ikr="0.675" Vaf="121" Var="20" Ise="6.86e-09" Ne="2" Isc="0" Nc="2" Bf="342" Br="4" Rbm="0" Irb="0" Rc="0.0907" Re="0.227" Rb="0.907" Cje="1.07e-10" Vje="1.1" Mje="0.5" Cjc="3.47e-11" Vjc="0.3" Mjc="0.3" Xcjc="1" Cjs="0" Vjs="0.75" Mjs="0" Fc="0.5" Tf="6.51e-10" Xtf="0" Vtf="0" Itf="0" Tr="1.11e-07" Temp="26.85" Kf="0" Af="1" Ffe="1" Kb="0" Ab="1" Fb="1" Ptf="0" Xtb="0" Xti="3" Eg="1.11" Tnom="26.85" Area="1"
-  R:RfL1 _net1 Vf R="20" Temp="26.85" Tc1="0" Tc2="0" Tnom="26.85"
-  BJT:T_BC817_16_1 VfT1 _net1 gnd _net1 Type="npn" Is="4.04e-09" Nf="1" Nr="1" Ikf="0.273" Ikr="0.675" Vaf="121" Var="20" Ise="6.86e-09" Ne="2" Isc="0" Nc="2" Bf="342" Br="4" Rbm="0" Irb="0" Rc="0.0907" Re="0.227" Rb="0.907" Cje="1.07e-10" Vje="1.1" Mje="0.5" Cjc="3.47e-11" Vjc="0.3" Mjc="0.3" Xcjc="1" Cjs="0" Vjs="0.75" Mjs="0" Fc="0.5" Tf="6.51e-10" Xtf="0" Vtf="0" Itf="0" Tr="1.11e-07" Temp="26.85" Kf="0" Af="1" Ffe="1" Kb="0" Ab="1" Fb="1" Ptf="0" Xtb="0" Xti="3" Eg="1.11" Tnom="26.85" Area="1"
-  R:RfT2 VfT1 Vf R="1000" Temp="26.85" Tc1="0" Tc2="0" Tnom="26.85"
-  C:Cp2 _net0 VfT1 C="1e-07F"
-  C:Cp1 VfT2 _net1 C="1e-07F"
-  Vdc:V1 Vf gnd U="4V"
-  TR:Transient Type="lin" Start="0" Stop="0.0005s" Points="501" IntegrationMethod="Trapezoidal" Order="2" InitialStep="1e-09s" MinStep="1e-16" MaxIter="150" reltol="0.001" abstol="1e-12A" vntol="1e-06V" Temp="26.85" LTEreltol="0.001" LTEabstol="1e-06" LTEfactor="1" Solver="CroutLU" relaxTSR="no" initialDC="yes" MaxStep="0"
 netlist content
       2 C instances
       2 BJT instances
@@ -18,9 +7,5 @@ netlist content
       1 Vdc instances
       1 TR instances
 creating netlist...
-NOTIFY: Transient: creating node list for initial DC analysis
-NOTIFY: Transient: solving initial DC netlist
-NOTIFY: Transient: creating node list for transient analysis
-NOTIFY: Transient: solving transient netlist
-NOTIFY: Transient: average time-step 1.45391e-07, 656 rejections
-NOTIFY: Transient: average NR-iterations 3.10148, 1 non-convergences
+NOTIFY: Transient: average time-step 1.8423e-07, 646 rejections
+NOTIFY: Transient: average NR-iterations 3.30177, 0 non-convergences

@@ -1,15 +1,5 @@
 parsing netlist...
 checking netlist...
-subcircuit root
-  OpAmp:OP1 gnd _net0 Output G="1e+06" Umax="15V"
-  Vac:V1 _net1 gnd U="1V" f="1e+09Hz" Phase="0" Theta="0"
-  R:R3 _net1 _net2 R="390" Temp="26.85" Tc1="0" Tc2="0" Tnom="26.85"
-  R:R2 gnd _net2 R="5600" Temp="26.85" Tc1="0" Tc2="0" Tnom="26.85"
-  C:C1 _net2 _net0 C="4.7e-08"
-  C:C2 _net2 Output C="4.7e-08"
-  R:R1 _net0 Output R="3900" Temp="26.85" Tc1="0" Tc2="0" Tnom="26.85"
-  AC:AC1 Type="log" Start="100Hz" Stop="100000Hz" Points="200" Noise="no"
-  DC:DC1 Temp="26.85" reltol="0.001" abstol="1e-12A" vntol="1e-06V" saveOPs="no" MaxIter="150" saveAll="no" convHelper="none" Solver="CroutLU"
 netlist content
       1 AC instances
       2 C instances
@@ -18,8 +8,3 @@ netlist content
       1 OpAmp instances
       1 Vac instances
 creating netlist...
-NOTIFY: DC1: creating node list for DC analysis
-NOTIFY: DC1: solving DC netlist
-NOTIFY: DC1: convergence reached after 2 iterations
-NOTIFY: AC1: creating node list for AC analysis
-NOTIFY: AC1: solving AC netlist

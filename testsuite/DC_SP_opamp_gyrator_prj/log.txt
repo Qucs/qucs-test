@@ -1,13 +1,3 @@
-Output:
--------
-
-Starting new simulation on Thu 04. Sep 2014 at 12:50:13:029
-
-creating netlist... done.
-project location: 
-modules to load: 0
-factorycreate.size() is 0
-factorycreate has registered:
 parsing netlist...
 checking netlist...
 netlist content
@@ -19,14 +9,3 @@ netlist content
       2 Pac instances
       1 SP instances
 creating netlist...
-
-Simulation ended on Thu 04. Sep 2014 at 12:50:13:100
-Ready.
-
-
-
-
-Errors:
--------
-
-

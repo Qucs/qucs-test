@@ -1,16 +1,5 @@
 parsing netlist...
 checking netlist...
-checker notice, variable `Output2.Vt' in equation `Vout' not yet defined
-checker notice, variable `Output1.Vt' in equation `Vout' not yet defined
-subcircuit root
-  L:L1 _net0 Output L="5e-06"
-  Vdc:Vp _net0 gnd U="5V"
-  Vdc:Vn gnd _net1 U="5V"
-  BJT:T1 gnd Output _net2 Output Type="npn" Is="1e-16" Nf="1" Nr="1" Ikf="0" Ikr="0" Vaf="0" Var="0" Ise="0" Ne="1.5" Isc="0" Nc="2" Bf="100" Br="1" Rbm="0" Irb="0" Rc="0" Re="0" Rb="100" Cje="0" Vje="0.75" Mje="0.33" Cjc="0" Vjc="0.75" Mjc="0.33" Xcjc="1" Cjs="0" Vjs="0.75" Mjs="0" Fc="0.5" Tf="0" Xtf="0" Vtf="0" Itf="0" Tr="0" Temp="26.85" Kf="0" Af="1" Ffe="1" Kb="0" Ab="1" Fb="1" Ptf="0" Xtb="0" Xti="3" Eg="1.11" Tnom="26.85" Area="1"
-  C:C2 _net2 Output C="2e-10F"
-  C:C1 _net0 _net2 C="2e-10"
-  R:R1 _net2 _net1 R="2200" Temp="26.85" Tc1="0" Tc2="0" Tnom="26.85"
-  TR:TR1 Type="lin" Start="0s" Stop="3e-06s" Points="300" IntegrationMethod="Trapezoidal" Order="2" InitialStep="1e-09s" MinStep="1e-16" MaxIter="150" reltol="0.001" abstol="1e-12A" vntol="1e-06V" Temp="26.85" LTEreltol="0.001" LTEabstol="1e-06" LTEfactor="1" Solver="CroutLU" relaxTSR="no" initialDC="yes" MaxStep="0"
 netlist content
       2 C instances
       1 BJT instances
@@ -19,11 +8,5 @@ netlist content
       2 Vdc instances
       1 TR instances
 creating netlist...
-checker notice, variable `Output2.Vt' in equation `Vout' not yet defined
-checker notice, variable `Output1.Vt' in equation `Vout' not yet defined
-NOTIFY: TR1: creating node list for initial DC analysis
-NOTIFY: TR1: solving initial DC netlist
-NOTIFY: TR1: creating node list for transient analysis
-NOTIFY: TR1: solving transient netlist
-NOTIFY: TR1: average time-step 6.93161e-10, 506 rejections
-NOTIFY: TR1: average NR-iterations 2.79968, 0 non-convergences
+NOTIFY: TR1: average time-step 6.94284e-10, 540 rejections
+NOTIFY: TR1: average NR-iterations 2.82388, 0 non-convergences
