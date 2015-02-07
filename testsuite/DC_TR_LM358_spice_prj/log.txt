@@ -1,0 +1,52 @@
+Output:
+-------
+
+Starting new simulation on Sat 07. Feb 2015 at 11:13:40
+Starting new simulation on Sat 07. Feb 2015 at 11:13:40
+Starting new simulation on Sat 07. Feb 2015 at 11:13:40
+Starting new simulation on Sat 07. Feb 2015 at 11:13:40
+Starting new simulation on Sat 07. Feb 2015 at 11:13:40
+Starting new simulation on Sat 07. Feb 2015 at 11:13:40
+Starting new simulation on Sat 07. Feb 2015 at 11:13:40
+Starting new simulation on Sat 07. Feb 2015 at 11:13:40
+Starting new simulation on Sat 07. Feb 2015 at 11:13:40
+Starting new simulation on Sat 07. Feb 2015 at 11:13:40
+Starting new simulation on Sat 07. Feb 2015 at 11:13:40
+Starting new simulation on Sat 07. Feb 2015 at 11:13:40
+Starting new simulation on Sat 07. Feb 2015 at 11:13:40
+Starting new simulation on Sat 07. Feb 2015 at 11:13:40
+Starting new simulation on Sat 07. Feb 2015 at 11:13:40
+Starting new simulation on Sat 07. Feb 2015 at 11:13:40
+Starting new simulation on Sat 07. Feb 2015 at 11:13:40
+Starting new simulation on Sat 07. Feb 2015 at 11:13:40
+Starting new simulation on Sat 07. Feb 2015 at 11:13:40
+Starting new simulation on Sat 07. Feb 2015 at 11:13:40
+Starting new simulation on Sat 07. Feb 2015 at 11:13:40
+Starting new simulation on Sat 07. Feb 2015 at 11:13:40
+Starting new simulation on Sat 07. Feb 2015 at 11:13:40
+Starting new simulation on Sat 07. Feb 2015 at 11:13:40
+Starting new simulation on Sat 07. Feb 2015 at 11:13:40
+Starting new simulation on Sat 07. Feb 2015 at 11:13:40
+Starting new simulation on Sat 07. Feb 2015 at 11:13:40
+Starting new simulation on Sat 07. Feb 2015 at 11:13:40
+Starting new simulation on Sat 07. Feb 2015 at 11:13:40
+Starting new simulation on Sat 07. Feb 2015 at 11:13:40
+Starting new simulation on Sat 07. Feb 2015 at 11:13:40
+Starting new simulation on Sat 07. Feb 2015 at 11:13:40
+Starting new simulation on Sat 07. Feb 2015 at 11:13:40
+Starting new simulation on Sat 07. Feb 2015 at 11:13:40
+Starting new simulation on Sat 07. Feb 2015 at 11:13:40
+Starting new simulation on Sat 07. Feb 2015 at 11:13:40
+Starting new simulation on Sat 07. Feb 2015 at 11:13:40
+Starting new simulation on Sat 07. Feb 2015 at 11:13:40
+Starting new simulation on Sat 07. Feb 2015 at 11:13:40
+Starting new simulation on Sat 07. Feb 2015 at 11:13:40
+Starting new simulation on Sat 07. Feb 2015 at 11:13:40
+
+
+
+Errors:
+-------
+
+spice notice, no .END directive found, continuing
+spice notice, no .END directive found, continuing
