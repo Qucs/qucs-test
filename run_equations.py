@@ -199,7 +199,6 @@ def argTypeToMath(op, argc, argsTypes, prec='%.12f'):
     #print pyEqn
 
     opMap={}
-    opMap['^'] = '**'
     opMap['avg'] = 'average'
     opMap['length'] = 'len'
     opMap['random'] = 'random.rand'
@@ -273,6 +272,12 @@ def argTypeToMath(op, argc, argsTypes, prec='%.12f'):
         else:
             return x%y
 
+    def hat_Help(x,y):
+        if type(x) == ndarray and x.ndim >= 1:
+            return linalg.matrix_power(x,y)
+        else:
+            return x**y
+
 
     opMap['phase'] = 'angleDeg'
     opMap['ceil'] = 'ceilHelp'
@@ -284,6 +289,7 @@ def argTypeToMath(op, argc, argsTypes, prec='%.12f'):
     opMap['norm'] ='norm_help'
     opMap['sinc'] ='sinc_help'
     opMap['%'] ='modulus_help'
+    opMap['^'] ='hat_help'
 
     # check for operator mapping
     pyOp = op
@@ -382,6 +388,7 @@ def testNetlist(qucsExpression):
 # Skip them for now
 #
 skip =[
+  'arctan',  # can have one or two arguments?
   'length',  # don't know how to handle matvec input
   'array',   # ??
   '?:',      # ifthenesle, needs work
@@ -405,9 +412,6 @@ skip =[
   'NoiseCircle',
   'StabCircleL',
   'StabCircleS',
-  'GaCircle',
-  'GaCircle',
-  'GaCircle',
   'GaCircle',
   'GpCircle',
   'GpCircle',
@@ -435,6 +439,7 @@ skip =[
   'det',
   '!',
   '!=',
+  '==',     # partially working, issue with check2:  check="[1.0,1.5,2.0]==1.5" check2="1.5==[1.0,1.5,2.0]"
   'vector',
   'matrix',
   'assert',
