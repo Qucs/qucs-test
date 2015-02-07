@@ -261,6 +261,9 @@ def argTypeToMath(op, argc, argsTypes, prec='%.12f'):
     def norm_Help(x):
         return linalg.norm(x)**2
 
+    def sinc_Help(x):
+        return sinc(x/pi)
+
     opMap['phase'] = 'angleDeg'
     opMap['ceil'] = 'ceilHelp'
     opMap['fix'] = 'fixHelp'
@@ -269,6 +272,7 @@ def argTypeToMath(op, argc, argsTypes, prec='%.12f'):
     opMap['sqr'] = 'sqr_help'
     opMap['*'] = 'mult_help'
     opMap['norm'] ='norm_help'
+    opMap['sinc'] ='sinc_help'
 
     # check for operator mapping
     pyOp = op
