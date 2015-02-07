@@ -267,6 +267,13 @@ def argTypeToMath(op, argc, argsTypes, prec='%.12f'):
     def sinc_Help(x):
         return sinc(x/pi)
 
+    def modulus_Help(x,y):
+        if type(x) == complex or type(y) == complex:
+            return x - y * floor (x / y);
+        else:
+            return x%y
+
+
     opMap['phase'] = 'angleDeg'
     opMap['ceil'] = 'ceilHelp'
     opMap['fix'] = 'fixHelp'
@@ -276,6 +283,7 @@ def argTypeToMath(op, argc, argsTypes, prec='%.12f'):
     opMap['*'] = 'mult_help'
     opMap['norm'] ='norm_help'
     opMap['sinc'] ='sinc_help'
+    opMap['%'] ='modulus_help'
 
     # check for operator mapping
     pyOp = op
