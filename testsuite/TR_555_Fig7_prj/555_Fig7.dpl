@@ -1,0 +1,37 @@
+<Qucs Schematic 0.0.17>
+<Properties>
+  <View=46,40,947,1107,0.615745,0,0>
+  <Grid=10,10,0>
+  <DataSet=555_Fig7.dat>
+  <DataDisplay=555_Fig7.sch>
+  <OpenDisplay=1>
+  <Script=555_Fig7.m>
+  <RunScript=0>
+  <showFrame=0>
+  <FrameText0=Title>
+  <FrameText1=Drawn By:>
+  <FrameText2=Date:>
+  <FrameText3=Revision:>
+</Properties>
+<Symbol>
+</Symbol>
+<Components>
+</Components>
+<Wires>
+</Wires>
+<Diagrams>
+  <Rect 120 252 766 172 3 #c0c0c0 1 00 1 0 0.2 1 1 -0.1 0.5 1.1 1 -0.1 0.5 1.1 315 0 225 "" "" "">
+	<"reset.Vt" #0000ff 0 3 0 0 0>
+  </Rect>
+  <Rect 120 498 770 168 3 #c0c0c0 1 00 1 0 0.2 1 1 -0.1 0.5 1.1 1 -0.1 0.5 1.1 315 0 225 "" "" "">
+	<"vtrig.Vt" #0000ff 0 3 0 0 0>
+  </Rect>
+  <Rect 120 745 776 175 3 #c0c0c0 1 00 1 0 0.2 1 1 -0.1 0.5 1.1 1 -0.1 0.5 1.1 315 0 225 "" "" "">
+	<"vdis.Vt" #0000ff 0 3 0 0 0>
+  </Rect>
+  <Rect 120 1022 780 182 3 #c0c0c0 1 00 1 0 0.2 1 1 -0.1 0.5 1.1 1 -0.1 0.5 1.1 315 0 225 "" "" "">
+	<"vout.Vt" #0000ff 0 3 0 0 0>
+  </Rect>
+</Diagrams>
+<Paintings>
+</Paintings>
