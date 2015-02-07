@@ -216,7 +216,6 @@ def argTypeToMath(op, argc, argsTypes, prec='%.12f'):
 
     opMap['arg']   = 'angle' # Qucs alias
     opMap['angle'] = 'angle'
-    opMap['norm'] ='linalg.norm'
 
     opMap['mag'] = 'abs'
 
@@ -259,14 +258,17 @@ def argTypeToMath(op, argc, argsTypes, prec='%.12f'):
         else:
             return a*b
 
+    def norm_Help(x):
+        return linalg.norm(x)**2
+
     opMap['phase'] = 'angleDeg'
     opMap['ceil'] = 'ceilHelp'
     opMap['fix'] = 'fixHelp'
     opMap['hypot'] = 'hypotHelp'
     opMap['dB'] = 'dB_Help'
     opMap['sqr'] = 'sqr_help'
-
     opMap['*'] = 'mult_help'
+    opMap['norm'] ='norm_help'
 
     # check for operator mapping
     pyOp = op
