@@ -151,7 +151,7 @@ def argTypeToMath(op, argc, argsTypes, prec='%.12f'):
             sign = '+' if value.imag >= 0 else '-'
             valueC = formatComplex.format(value.real, sign , abs(value.imag))
 
-            Eqn.append(valueC.replace('j','*j'))
+            Eqn.append( '(%s)' %valueC.replace('j','*j') )
             pyEqn.append(repr(value));
 
         elif arg == 'TAG_VECTOR':
