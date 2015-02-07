@@ -243,7 +243,10 @@ def argTypeToMath(op, argc, argsTypes, prec='%.12f'):
         return hypot(x1, x2)
 
     def dB_Help(x):
-        return 20*log10(abs(x))
+        if type(x) == float:
+            return 10.0*log10(abs(x))
+        else:
+            return 10.0*log10(abs(x)**2)
 
     def sqr_Help(x):
         if type(x) == ndarray and x.ndim > 1:
