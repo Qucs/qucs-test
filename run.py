@@ -660,7 +660,7 @@ def report_status(reports, savename='', footer=''):
     header = '%-30s | %-15s ' %('Project', 'Schem. Version')
 
     for rp in reports:
-        header += ' |   Sim. Runtime'
+        header += ' |   Sim. Runtime     '
 
     line = '-'*len(header)
 
@@ -676,10 +676,14 @@ def report_status(reports, savename='', footer=''):
     for key in keys:
         proj_stat = '%-30s | %-15s  ' %(key, str(reports[0][key]['version']))
         for rp in reports:
-            if rp[key]['status'] == 'FAIL':
-                proj_stat += '| %-15s' %(str('FAIL'))
+            status = rp[key]['status']
+            if 'NUM' in status:
+                proj_stat += '| %-10s' %(str(rp[key]['runtime']))
+                proj_stat += '%s' %('NUM_FAIL  ')
+            elif status == 'FAIL':
+                proj_stat += '| %-20s' %(status)
             else:
-                proj_stat += '| %-15s' %(str(rp[key]['runtime']))
+                proj_stat += '| %-20s' %(str(rp[key]['runtime']))
 
         print proj_stat
 
@@ -955,6 +959,9 @@ if __name__ == '__main__':
                 print pr('--> WARNING !! Found numerical differences for {}qucsator'.format (qp))
                 for item in fail[n]:
                     print pr(item)
+                    # flag numerical difference as error
+                    sim_collect[n][item]['status']='FAIL NUM'
+                    returnStatus = -1
                     pprint.pprint(sim_collect[n][item])
             else:
                 print pg('--> No significant numerical differences found.')
