@@ -484,7 +484,7 @@ def run_simulation(proj, sim_report={}, prefix=''):
     tic = time.time()
     # call the solver in a subprocess, set the timeout
     command = Command(cmd)
-    command.run(timeout=15)
+    command.run(timeout=maxTime)
     toc = time.time()
     runtime = toc - tic
 
@@ -755,6 +755,9 @@ def parse_options():
                        help='Reset (overwrite) data and log files of test projects.'
                             'Run qucsator given with --prefix.')
 
+    parser.add_argument('--timeout', type=int, default=15,
+                       help='Abort test if longer that timeout (default: 15 s).')
+
     args = parser.parse_args()
     return args
 
@@ -764,6 +767,10 @@ if __name__ == '__main__':
 
     args = parse_options()
     #print(args)
+
+
+    maxTime = args.timeout
+
 
     # simple verbose printer
     # TODO use logging module?
@@ -1021,7 +1028,7 @@ if __name__ == '__main__':
             # call the solver in a subprocess, set the timeout
             tic = time.time()
             command = Command(cmd)
-            command.run(timeout=15)
+            command.run(timeout=maxTime)
             toc = time.time()
             runtime = toc - tic
 
@@ -1075,7 +1082,7 @@ if __name__ == '__main__':
             tic = time.time()
             # call the solver in a subprocess, set the timeout
             command = Command(cmd)
-            command.run(timeout=15)
+            command.run(timeout=maxTime)
             toc = time.time()
             runtime = toc - tic
 
@@ -1088,7 +1095,6 @@ if __name__ == '__main__':
             with open(logout, 'w') as myFile:
                 myFile.write(command.out)
 
-    #
     # Print schematics contained in all (or selected) projects
     #
     if args.p:
