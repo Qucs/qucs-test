@@ -1,2 +1,3 @@
 ## Project dir, Comment: it parses to the left of ','
-TR_sawtooth-discreet_prj, does not fail but has some small numerical differences need investigation
+TR_sawtooth-discreet_prj, there are numerical difference that needs investigation
+
