@@ -759,8 +759,8 @@ def parse_options():
                        help='Reset (overwrite) data and log files of test projects.'
                             'Run qucsator given with --prefix.')
 
-    parser.add_argument('--timeout', type=int, default=15,
-                       help='Abort test if longer that timeout (default: 15 s).')
+    parser.add_argument('--timeout', type=int, default=60,
+                       help='Abort test if longer that timeout (default: 60 s).')
 
     args = parser.parse_args()
     return args
