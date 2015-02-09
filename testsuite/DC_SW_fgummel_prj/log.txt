@@ -3,13 +3,6 @@ checking netlist...
 checker notice, variable `VBE.I' in equation `Ib' not yet defined
 checker notice, variable `VCE.I' in equation `Ic' not yet defined
 checker notice, variable `VSUB.I' in equation `Isub' not yet defined
-subcircuit root
-  Vdc:VBE _net0 gnd U="Vbe"
-  Vdc:VCE _net1 gnd U="Vbe"
-  Vdc:VSUB _net2 gnd U="0V"
-  BJT:T1 _net0 _net1 gnd _net2 Type="npn" Is="1e-16" Nf="1" Nr="1.3" Ikf="0.04A" Ikr="0.001A" Vaf="40" Var="30" Ise="1e-16" Ne="1.5" Isc="1e-15" Nc="2" Bf="100" Br="3.5" Rbm="1.1" Irb="1.5" Rc="4" Re="1" Rb="5" Cje="0" Vje="0.75" Mje="0.33" Cjc="0" Vjc="0.75" Mjc="0.33" Xcjc="1" Cjs="0" Vjs="0.75" Mjs="0" Fc="0.5" Tf="2.5e-12" Xtf="0" Vtf="0" Itf="0" Tr="1.2e-11" Temp="26.85" Kf="0" Af="1" Ffe="1" Kb="0" Ab="1" Fb="1" Ptf="0" Xtb="0" Xti="3" Eg="1.11" Tnom="26.85" Area="1"
-  DC:DC1 Temp="26.85" reltol="0.001" abstol="1e-12A" vntol="1e-06V" saveOPs="no" MaxIter="150" saveAll="no" convHelper="none" Solver="CroutLU"
-  SW:SW1 Sim="DC1" Type="lin" Param="Vbe" Start="0.1" Stop="1.1" Points="201"
 netlist content
       1 BJT instances
       1 DC instances
@@ -22,1407 +15,603 @@ checker notice, variable `VSUB.I' in equation `Isub' not yet defined
 checker notice, variable `VBE.I' in equation `Ib' not yet defined
 checker notice, variable `VCE.I' in equation `Ic' not yet defined
 checker notice, variable `VSUB.I' in equation `Isub' not yet defined
-NOTIFY: SW1: running netlist for Vbe = 0.1
-NOTIFY: DC1: creating node list for DC analysis
-NOTIFY: DC1: solving DC netlist
-NOTIFY: DC1: convergence reached after 2 iterations
 checker notice, variable `VBE.I' in equation `Ib' not yet defined
 checker notice, variable `VCE.I' in equation `Ic' not yet defined
 checker notice, variable `VSUB.I' in equation `Isub' not yet defined
-NOTIFY: SW1: running netlist for Vbe = 0.105
-NOTIFY: DC1: creating node list for DC analysis
-NOTIFY: DC1: solving DC netlist
-NOTIFY: DC1: convergence reached after 2 iterations
 checker notice, variable `VBE.I' in equation `Ib' not yet defined
 checker notice, variable `VCE.I' in equation `Ic' not yet defined
 checker notice, variable `VSUB.I' in equation `Isub' not yet defined
-NOTIFY: SW1: running netlist for Vbe = 0.11
-NOTIFY: DC1: creating node list for DC analysis
-NOTIFY: DC1: solving DC netlist
-NOTIFY: DC1: convergence reached after 2 iterations
 checker notice, variable `VBE.I' in equation `Ib' not yet defined
 checker notice, variable `VCE.I' in equation `Ic' not yet defined
 checker notice, variable `VSUB.I' in equation `Isub' not yet defined
-NOTIFY: SW1: running netlist for Vbe = 0.115
-NOTIFY: DC1: creating node list for DC analysis
-NOTIFY: DC1: solving DC netlist
-NOTIFY: DC1: convergence reached after 2 iterations
 checker notice, variable `VBE.I' in equation `Ib' not yet defined
 checker notice, variable `VCE.I' in equation `Ic' not yet defined
 checker notice, variable `VSUB.I' in equation `Isub' not yet defined
-NOTIFY: SW1: running netlist for Vbe = 0.12
-NOTIFY: DC1: creating node list for DC analysis
-NOTIFY: DC1: solving DC netlist
-NOTIFY: DC1: convergence reached after 2 iterations
 checker notice, variable `VBE.I' in equation `Ib' not yet defined
 checker notice, variable `VCE.I' in equation `Ic' not yet defined
 checker notice, variable `VSUB.I' in equation `Isub' not yet defined
-NOTIFY: SW1: running netlist for Vbe = 0.125
-NOTIFY: DC1: creating node list for DC analysis
-NOTIFY: DC1: solving DC netlist
-NOTIFY: DC1: convergence reached after 2 iterations
 checker notice, variable `VBE.I' in equation `Ib' not yet defined
 checker notice, variable `VCE.I' in equation `Ic' not yet defined
 checker notice, variable `VSUB.I' in equation `Isub' not yet defined
-NOTIFY: SW1: running netlist for Vbe = 0.13
-NOTIFY: DC1: creating node list for DC analysis
-NOTIFY: DC1: solving DC netlist
-NOTIFY: DC1: convergence reached after 2 iterations
 checker notice, variable `VBE.I' in equation `Ib' not yet defined
 checker notice, variable `VCE.I' in equation `Ic' not yet defined
 checker notice, variable `VSUB.I' in equation `Isub' not yet defined
-NOTIFY: SW1: running netlist for Vbe = 0.135
-NOTIFY: DC1: creating node list for DC analysis
-NOTIFY: DC1: solving DC netlist
-NOTIFY: DC1: convergence reached after 2 iterations
 checker notice, variable `VBE.I' in equation `Ib' not yet defined
 checker notice, variable `VCE.I' in equation `Ic' not yet defined
 checker notice, variable `VSUB.I' in equation `Isub' not yet defined
-NOTIFY: SW1: running netlist for Vbe = 0.14
-NOTIFY: DC1: creating node list for DC analysis
-NOTIFY: DC1: solving DC netlist
-NOTIFY: DC1: convergence reached after 2 iterations
 checker notice, variable `VBE.I' in equation `Ib' not yet defined
 checker notice, variable `VCE.I' in equation `Ic' not yet defined
 checker notice, variable `VSUB.I' in equation `Isub' not yet defined
-NOTIFY: SW1: running netlist for Vbe = 0.145
-NOTIFY: DC1: creating node list for DC analysis
-NOTIFY: DC1: solving DC netlist
-NOTIFY: DC1: convergence reached after 2 iterations
 checker notice, variable `VBE.I' in equation `Ib' not yet defined
 checker notice, variable `VCE.I' in equation `Ic' not yet defined
 checker notice, variable `VSUB.I' in equation `Isub' not yet defined
-NOTIFY: SW1: running netlist for Vbe = 0.15
-NOTIFY: DC1: creating node list for DC analysis
-NOTIFY: DC1: solving DC netlist
-NOTIFY: DC1: convergence reached after 2 iterations
 checker notice, variable `VBE.I' in equation `Ib' not yet defined
 checker notice, variable `VCE.I' in equation `Ic' not yet defined
 checker notice, variable `VSUB.I' in equation `Isub' not yet defined
-NOTIFY: SW1: running netlist for Vbe = 0.155
-NOTIFY: DC1: creating node list for DC analysis
-NOTIFY: DC1: solving DC netlist
-NOTIFY: DC1: convergence reached after 2 iterations
 checker notice, variable `VBE.I' in equation `Ib' not yet defined
 checker notice, variable `VCE.I' in equation `Ic' not yet defined
 checker notice, variable `VSUB.I' in equation `Isub' not yet defined
-NOTIFY: SW1: running netlist for Vbe = 0.16
-NOTIFY: DC1: creating node list for DC analysis
-NOTIFY: DC1: solving DC netlist
-NOTIFY: DC1: convergence reached after 2 iterations
 checker notice, variable `VBE.I' in equation `Ib' not yet defined
 checker notice, variable `VCE.I' in equation `Ic' not yet defined
 checker notice, variable `VSUB.I' in equation `Isub' not yet defined
-NOTIFY: SW1: running netlist for Vbe = 0.165
-NOTIFY: DC1: creating node list for DC analysis
-NOTIFY: DC1: solving DC netlist
-NOTIFY: DC1: convergence reached after 2 iterations
 checker notice, variable `VBE.I' in equation `Ib' not yet defined
 checker notice, variable `VCE.I' in equation `Ic' not yet defined
 checker notice, variable `VSUB.I' in equation `Isub' not yet defined
-NOTIFY: SW1: running netlist for Vbe = 0.17
-NOTIFY: DC1: creating node list for DC analysis
-NOTIFY: DC1: solving DC netlist
-NOTIFY: DC1: convergence reached after 2 iterations
 checker notice, variable `VBE.I' in equation `Ib' not yet defined
 checker notice, variable `VCE.I' in equation `Ic' not yet defined
 checker notice, variable `VSUB.I' in equation `Isub' not yet defined
-NOTIFY: SW1: running netlist for Vbe = 0.175
-NOTIFY: DC1: creating node list for DC analysis
-NOTIFY: DC1: solving DC netlist
-NOTIFY: DC1: convergence reached after 2 iterations
 checker notice, variable `VBE.I' in equation `Ib' not yet defined
 checker notice, variable `VCE.I' in equation `Ic' not yet defined
 checker notice, variable `VSUB.I' in equation `Isub' not yet defined
-NOTIFY: SW1: running netlist for Vbe = 0.18
-NOTIFY: DC1: creating node list for DC analysis
-NOTIFY: DC1: solving DC netlist
-NOTIFY: DC1: convergence reached after 2 iterations
 checker notice, variable `VBE.I' in equation `Ib' not yet defined
 checker notice, variable `VCE.I' in equation `Ic' not yet defined
 checker notice, variable `VSUB.I' in equation `Isub' not yet defined
-NOTIFY: SW1: running netlist for Vbe = 0.185
-NOTIFY: DC1: creating node list for DC analysis
-NOTIFY: DC1: solving DC netlist
-NOTIFY: DC1: convergence reached after 2 iterations
 checker notice, variable `VBE.I' in equation `Ib' not yet defined
 checker notice, variable `VCE.I' in equation `Ic' not yet defined
 checker notice, variable `VSUB.I' in equation `Isub' not yet defined
-NOTIFY: SW1: running netlist for Vbe = 0.19
-NOTIFY: DC1: creating node list for DC analysis
-NOTIFY: DC1: solving DC netlist
-NOTIFY: DC1: convergence reached after 3 iterations
 checker notice, variable `VBE.I' in equation `Ib' not yet defined
 checker notice, variable `VCE.I' in equation `Ic' not yet defined
 checker notice, variable `VSUB.I' in equation `Isub' not yet defined
-NOTIFY: SW1: running netlist for Vbe = 0.195
-NOTIFY: DC1: creating node list for DC analysis
-NOTIFY: DC1: solving DC netlist
-NOTIFY: DC1: convergence reached after 3 iterations
 checker notice, variable `VBE.I' in equation `Ib' not yet defined
 checker notice, variable `VCE.I' in equation `Ic' not yet defined
 checker notice, variable `VSUB.I' in equation `Isub' not yet defined
-NOTIFY: SW1: running netlist for Vbe = 0.2
-NOTIFY: DC1: creating node list for DC analysis
-NOTIFY: DC1: solving DC netlist
-NOTIFY: DC1: convergence reached after 3 iterations
 checker notice, variable `VBE.I' in equation `Ib' not yet defined
 checker notice, variable `VCE.I' in equation `Ic' not yet defined
 checker notice, variable `VSUB.I' in equation `Isub' not yet defined
-NOTIFY: SW1: running netlist for Vbe = 0.205
-NOTIFY: DC1: creating node list for DC analysis
-NOTIFY: DC1: solving DC netlist
-NOTIFY: DC1: convergence reached after 3 iterations
 checker notice, variable `VBE.I' in equation `Ib' not yet defined
 checker notice, variable `VCE.I' in equation `Ic' not yet defined
 checker notice, variable `VSUB.I' in equation `Isub' not yet defined
-NOTIFY: SW1: running netlist for Vbe = 0.21
-NOTIFY: DC1: creating node list for DC analysis
-NOTIFY: DC1: solving DC netlist
-NOTIFY: DC1: convergence reached after 3 iterations
 checker notice, variable `VBE.I' in equation `Ib' not yet defined
 checker notice, variable `VCE.I' in equation `Ic' not yet defined
 checker notice, variable `VSUB.I' in equation `Isub' not yet defined
-NOTIFY: SW1: running netlist for Vbe = 0.215
-NOTIFY: DC1: creating node list for DC analysis
-NOTIFY: DC1: solving DC netlist
-NOTIFY: DC1: convergence reached after 3 iterations
 checker notice, variable `VBE.I' in equation `Ib' not yet defined
 checker notice, variable `VCE.I' in equation `Ic' not yet defined
 checker notice, variable `VSUB.I' in equation `Isub' not yet defined
-NOTIFY: SW1: running netlist for Vbe = 0.22
-NOTIFY: DC1: creating node list for DC analysis
-NOTIFY: DC1: solving DC netlist
-NOTIFY: DC1: convergence reached after 3 iterations
 checker notice, variable `VBE.I' in equation `Ib' not yet defined
 checker notice, variable `VCE.I' in equation `Ic' not yet defined
 checker notice, variable `VSUB.I' in equation `Isub' not yet defined
-NOTIFY: SW1: running netlist for Vbe = 0.225
-NOTIFY: DC1: creating node list for DC analysis
-NOTIFY: DC1: solving DC netlist
-NOTIFY: DC1: convergence reached after 3 iterations
 checker notice, variable `VBE.I' in equation `Ib' not yet defined
 checker notice, variable `VCE.I' in equation `Ic' not yet defined
 checker notice, variable `VSUB.I' in equation `Isub' not yet defined
-NOTIFY: SW1: running netlist for Vbe = 0.23
-NOTIFY: DC1: creating node list for DC analysis
-NOTIFY: DC1: solving DC netlist
-NOTIFY: DC1: convergence reached after 3 iterations
 checker notice, variable `VBE.I' in equation `Ib' not yet defined
 checker notice, variable `VCE.I' in equation `Ic' not yet defined
 checker notice, variable `VSUB.I' in equation `Isub' not yet defined
-NOTIFY: SW1: running netlist for Vbe = 0.235
-NOTIFY: DC1: creating node list for DC analysis
-NOTIFY: DC1: solving DC netlist
-NOTIFY: DC1: convergence reached after 3 iterations
 checker notice, variable `VBE.I' in equation `Ib' not yet defined
 checker notice, variable `VCE.I' in equation `Ic' not yet defined
 checker notice, variable `VSUB.I' in equation `Isub' not yet defined
-NOTIFY: SW1: running netlist for Vbe = 0.24
-NOTIFY: DC1: creating node list for DC analysis
-NOTIFY: DC1: solving DC netlist
-NOTIFY: DC1: convergence reached after 3 iterations
 checker notice, variable `VBE.I' in equation `Ib' not yet defined
 checker notice, variable `VCE.I' in equation `Ic' not yet defined
 checker notice, variable `VSUB.I' in equation `Isub' not yet defined
-NOTIFY: SW1: running netlist for Vbe = 0.245
-NOTIFY: DC1: creating node list for DC analysis
-NOTIFY: DC1: solving DC netlist
-NOTIFY: DC1: convergence reached after 3 iterations
 checker notice, variable `VBE.I' in equation `Ib' not yet defined
 checker notice, variable `VCE.I' in equation `Ic' not yet defined
 checker notice, variable `VSUB.I' in equation `Isub' not yet defined
-NOTIFY: SW1: running netlist for Vbe = 0.25
-NOTIFY: DC1: creating node list for DC analysis
-NOTIFY: DC1: solving DC netlist
-NOTIFY: DC1: convergence reached after 3 iterations
 checker notice, variable `VBE.I' in equation `Ib' not yet defined
 checker notice, variable `VCE.I' in equation `Ic' not yet defined
 checker notice, variable `VSUB.I' in equation `Isub' not yet defined
-NOTIFY: SW1: running netlist for Vbe = 0.255
-NOTIFY: DC1: creating node list for DC analysis
-NOTIFY: DC1: solving DC netlist
-NOTIFY: DC1: convergence reached after 3 iterations
 checker notice, variable `VBE.I' in equation `Ib' not yet defined
 checker notice, variable `VCE.I' in equation `Ic' not yet defined
 checker notice, variable `VSUB.I' in equation `Isub' not yet defined
-NOTIFY: SW1: running netlist for Vbe = 0.26
-NOTIFY: DC1: creating node list for DC analysis
-NOTIFY: DC1: solving DC netlist
-NOTIFY: DC1: convergence reached after 3 iterations
 checker notice, variable `VBE.I' in equation `Ib' not yet defined
 checker notice, variable `VCE.I' in equation `Ic' not yet defined
 checker notice, variable `VSUB.I' in equation `Isub' not yet defined
-NOTIFY: SW1: running netlist for Vbe = 0.265
-NOTIFY: DC1: creating node list for DC analysis
-NOTIFY: DC1: solving DC netlist
-NOTIFY: DC1: convergence reached after 3 iterations
 checker notice, variable `VBE.I' in equation `Ib' not yet defined
 checker notice, variable `VCE.I' in equation `Ic' not yet defined
 checker notice, variable `VSUB.I' in equation `Isub' not yet defined
-NOTIFY: SW1: running netlist for Vbe = 0.27
-NOTIFY: DC1: creating node list for DC analysis
-NOTIFY: DC1: solving DC netlist
-NOTIFY: DC1: convergence reached after 3 iterations
 checker notice, variable `VBE.I' in equation `Ib' not yet defined
 checker notice, variable `VCE.I' in equation `Ic' not yet defined
 checker notice, variable `VSUB.I' in equation `Isub' not yet defined
-NOTIFY: SW1: running netlist for Vbe = 0.275
-NOTIFY: DC1: creating node list for DC analysis
-NOTIFY: DC1: solving DC netlist
-NOTIFY: DC1: convergence reached after 3 iterations
 checker notice, variable `VBE.I' in equation `Ib' not yet defined
 checker notice, variable `VCE.I' in equation `Ic' not yet defined
 checker notice, variable `VSUB.I' in equation `Isub' not yet defined
-NOTIFY: SW1: running netlist for Vbe = 0.28
-NOTIFY: DC1: creating node list for DC analysis
-NOTIFY: DC1: solving DC netlist
-NOTIFY: DC1: convergence reached after 3 iterations
 checker notice, variable `VBE.I' in equation `Ib' not yet defined
 checker notice, variable `VCE.I' in equation `Ic' not yet defined
 checker notice, variable `VSUB.I' in equation `Isub' not yet defined
-NOTIFY: SW1: running netlist for Vbe = 0.285
-NOTIFY: DC1: creating node list for DC analysis
-NOTIFY: DC1: solving DC netlist
-NOTIFY: DC1: convergence reached after 3 iterations
 checker notice, variable `VBE.I' in equation `Ib' not yet defined
 checker notice, variable `VCE.I' in equation `Ic' not yet defined
 checker notice, variable `VSUB.I' in equation `Isub' not yet defined
-NOTIFY: SW1: running netlist for Vbe = 0.29
-NOTIFY: DC1: creating node list for DC analysis
-NOTIFY: DC1: solving DC netlist
-NOTIFY: DC1: convergence reached after 3 iterations
 checker notice, variable `VBE.I' in equation `Ib' not yet defined
 checker notice, variable `VCE.I' in equation `Ic' not yet defined
 checker notice, variable `VSUB.I' in equation `Isub' not yet defined
-NOTIFY: SW1: running netlist for Vbe = 0.295
-NOTIFY: DC1: creating node list for DC analysis
-NOTIFY: DC1: solving DC netlist
-NOTIFY: DC1: convergence reached after 3 iterations
 checker notice, variable `VBE.I' in equation `Ib' not yet defined
 checker notice, variable `VCE.I' in equation `Ic' not yet defined
 checker notice, variable `VSUB.I' in equation `Isub' not yet defined
-NOTIFY: SW1: running netlist for Vbe = 0.3
-NOTIFY: DC1: creating node list for DC analysis
-NOTIFY: DC1: solving DC netlist
-NOTIFY: DC1: convergence reached after 3 iterations
 checker notice, variable `VBE.I' in equation `Ib' not yet defined
 checker notice, variable `VCE.I' in equation `Ic' not yet defined
 checker notice, variable `VSUB.I' in equation `Isub' not yet defined
-NOTIFY: SW1: running netlist for Vbe = 0.305
-NOTIFY: DC1: creating node list for DC analysis
-NOTIFY: DC1: solving DC netlist
-NOTIFY: DC1: convergence reached after 3 iterations
 checker notice, variable `VBE.I' in equation `Ib' not yet defined
 checker notice, variable `VCE.I' in equation `Ic' not yet defined
 checker notice, variable `VSUB.I' in equation `Isub' not yet defined
-NOTIFY: SW1: running netlist for Vbe = 0.31
-NOTIFY: DC1: creating node list for DC analysis
-NOTIFY: DC1: solving DC netlist
-NOTIFY: DC1: convergence reached after 3 iterations
 checker notice, variable `VBE.I' in equation `Ib' not yet defined
 checker notice, variable `VCE.I' in equation `Ic' not yet defined
 checker notice, variable `VSUB.I' in equation `Isub' not yet defined
-NOTIFY: SW1: running netlist for Vbe = 0.315
-NOTIFY: DC1: creating node list for DC analysis
-NOTIFY: DC1: solving DC netlist
-NOTIFY: DC1: convergence reached after 3 iterations
 checker notice, variable `VBE.I' in equation `Ib' not yet defined
 checker notice, variable `VCE.I' in equation `Ic' not yet defined
 checker notice, variable `VSUB.I' in equation `Isub' not yet defined
-NOTIFY: SW1: running netlist for Vbe = 0.32
-NOTIFY: DC1: creating node list for DC analysis
-NOTIFY: DC1: solving DC netlist
-NOTIFY: DC1: convergence reached after 3 iterations
 checker notice, variable `VBE.I' in equation `Ib' not yet defined
 checker notice, variable `VCE.I' in equation `Ic' not yet defined
 checker notice, variable `VSUB.I' in equation `Isub' not yet defined
-NOTIFY: SW1: running netlist for Vbe = 0.325
-NOTIFY: DC1: creating node list for DC analysis
-NOTIFY: DC1: solving DC netlist
-NOTIFY: DC1: convergence reached after 3 iterations
 checker notice, variable `VBE.I' in equation `Ib' not yet defined
 checker notice, variable `VCE.I' in equation `Ic' not yet defined
 checker notice, variable `VSUB.I' in equation `Isub' not yet defined
-NOTIFY: SW1: running netlist for Vbe = 0.33
-NOTIFY: DC1: creating node list for DC analysis
-NOTIFY: DC1: solving DC netlist
-NOTIFY: DC1: convergence reached after 3 iterations
 checker notice, variable `VBE.I' in equation `Ib' not yet defined
 checker notice, variable `VCE.I' in equation `Ic' not yet defined
 checker notice, variable `VSUB.I' in equation `Isub' not yet defined
-NOTIFY: SW1: running netlist for Vbe = 0.335
-NOTIFY: DC1: creating node list for DC analysis
-NOTIFY: DC1: solving DC netlist
-NOTIFY: DC1: convergence reached after 3 iterations
 checker notice, variable `VBE.I' in equation `Ib' not yet defined
 checker notice, variable `VCE.I' in equation `Ic' not yet defined
 checker notice, variable `VSUB.I' in equation `Isub' not yet defined
-NOTIFY: SW1: running netlist for Vbe = 0.34
-NOTIFY: DC1: creating node list for DC analysis
-NOTIFY: DC1: solving DC netlist
-NOTIFY: DC1: convergence reached after 3 iterations
 checker notice, variable `VBE.I' in equation `Ib' not yet defined
 checker notice, variable `VCE.I' in equation `Ic' not yet defined
 checker notice, variable `VSUB.I' in equation `Isub' not yet defined
-NOTIFY: SW1: running netlist for Vbe = 0.345
-NOTIFY: DC1: creating node list for DC analysis
-NOTIFY: DC1: solving DC netlist
-NOTIFY: DC1: convergence reached after 3 iterations
 checker notice, variable `VBE.I' in equation `Ib' not yet defined
 checker notice, variable `VCE.I' in equation `Ic' not yet defined
 checker notice, variable `VSUB.I' in equation `Isub' not yet defined
-NOTIFY: SW1: running netlist for Vbe = 0.35
-NOTIFY: DC1: creating node list for DC analysis
-NOTIFY: DC1: solving DC netlist
-NOTIFY: DC1: convergence reached after 3 iterations
 checker notice, variable `VBE.I' in equation `Ib' not yet defined
 checker notice, variable `VCE.I' in equation `Ic' not yet defined
 checker notice, variable `VSUB.I' in equation `Isub' not yet defined
-NOTIFY: SW1: running netlist for Vbe = 0.355
-NOTIFY: DC1: creating node list for DC analysis
-NOTIFY: DC1: solving DC netlist
-NOTIFY: DC1: convergence reached after 3 iterations
 checker notice, variable `VBE.I' in equation `Ib' not yet defined
 checker notice, variable `VCE.I' in equation `Ic' not yet defined
 checker notice, variable `VSUB.I' in equation `Isub' not yet defined
-NOTIFY: SW1: running netlist for Vbe = 0.36
-NOTIFY: DC1: creating node list for DC analysis
-NOTIFY: DC1: solving DC netlist
-NOTIFY: DC1: convergence reached after 3 iterations
 checker notice, variable `VBE.I' in equation `Ib' not yet defined
 checker notice, variable `VCE.I' in equation `Ic' not yet defined
 checker notice, variable `VSUB.I' in equation `Isub' not yet defined
-NOTIFY: SW1: running netlist for Vbe = 0.365
-NOTIFY: DC1: creating node list for DC analysis
-NOTIFY: DC1: solving DC netlist
-NOTIFY: DC1: convergence reached after 3 iterations
 checker notice, variable `VBE.I' in equation `Ib' not yet defined
 checker notice, variable `VCE.I' in equation `Ic' not yet defined
 checker notice, variable `VSUB.I' in equation `Isub' not yet defined
-NOTIFY: SW1: running netlist for Vbe = 0.37
-NOTIFY: DC1: creating node list for DC analysis
-NOTIFY: DC1: solving DC netlist
-NOTIFY: DC1: convergence reached after 3 iterations
 checker notice, variable `VBE.I' in equation `Ib' not yet defined
 checker notice, variable `VCE.I' in equation `Ic' not yet defined
 checker notice, variable `VSUB.I' in equation `Isub' not yet defined
-NOTIFY: SW1: running netlist for Vbe = 0.375
-NOTIFY: DC1: creating node list for DC analysis
-NOTIFY: DC1: solving DC netlist
-NOTIFY: DC1: convergence reached after 3 iterations
 checker notice, variable `VBE.I' in equation `Ib' not yet defined
 checker notice, variable `VCE.I' in equation `Ic' not yet defined
 checker notice, variable `VSUB.I' in equation `Isub' not yet defined
-NOTIFY: SW1: running netlist for Vbe = 0.38
-NOTIFY: DC1: creating node list for DC analysis
-NOTIFY: DC1: solving DC netlist
-NOTIFY: DC1: convergence reached after 3 iterations
 checker notice, variable `VBE.I' in equation `Ib' not yet defined
 checker notice, variable `VCE.I' in equation `Ic' not yet defined
 checker notice, variable `VSUB.I' in equation `Isub' not yet defined
-NOTIFY: SW1: running netlist for Vbe = 0.385
-NOTIFY: DC1: creating node list for DC analysis
-NOTIFY: DC1: solving DC netlist
-NOTIFY: DC1: convergence reached after 3 iterations
 checker notice, variable `VBE.I' in equation `Ib' not yet defined
 checker notice, variable `VCE.I' in equation `Ic' not yet defined
 checker notice, variable `VSUB.I' in equation `Isub' not yet defined
-NOTIFY: SW1: running netlist for Vbe = 0.39
-NOTIFY: DC1: creating node list for DC analysis
-NOTIFY: DC1: solving DC netlist
-NOTIFY: DC1: convergence reached after 3 iterations
 checker notice, variable `VBE.I' in equation `Ib' not yet defined
 checker notice, variable `VCE.I' in equation `Ic' not yet defined
 checker notice, variable `VSUB.I' in equation `Isub' not yet defined
-NOTIFY: SW1: running netlist for Vbe = 0.395
-NOTIFY: DC1: creating node list for DC analysis
-NOTIFY: DC1: solving DC netlist
-NOTIFY: DC1: convergence reached after 3 iterations
 checker notice, variable `VBE.I' in equation `Ib' not yet defined
 checker notice, variable `VCE.I' in equation `Ic' not yet defined
 checker notice, variable `VSUB.I' in equation `Isub' not yet defined
-NOTIFY: SW1: running netlist for Vbe = 0.4
-NOTIFY: DC1: creating node list for DC analysis
-NOTIFY: DC1: solving DC netlist
-NOTIFY: DC1: convergence reached after 3 iterations
 checker notice, variable `VBE.I' in equation `Ib' not yet defined
 checker notice, variable `VCE.I' in equation `Ic' not yet defined
 checker notice, variable `VSUB.I' in equation `Isub' not yet defined
-NOTIFY: SW1: running netlist for Vbe = 0.405
-NOTIFY: DC1: creating node list for DC analysis
-NOTIFY: DC1: solving DC netlist
-NOTIFY: DC1: convergence reached after 3 iterations
 checker notice, variable `VBE.I' in equation `Ib' not yet defined
 checker notice, variable `VCE.I' in equation `Ic' not yet defined
 checker notice, variable `VSUB.I' in equation `Isub' not yet defined
-NOTIFY: SW1: running netlist for Vbe = 0.41
-NOTIFY: DC1: creating node list for DC analysis
-NOTIFY: DC1: solving DC netlist
-NOTIFY: DC1: convergence reached after 3 iterations
 checker notice, variable `VBE.I' in equation `Ib' not yet defined
 checker notice, variable `VCE.I' in equation `Ic' not yet defined
 checker notice, variable `VSUB.I' in equation `Isub' not yet defined
-NOTIFY: SW1: running netlist for Vbe = 0.415
-NOTIFY: DC1: creating node list for DC analysis
-NOTIFY: DC1: solving DC netlist
-NOTIFY: DC1: convergence reached after 3 iterations
 checker notice, variable `VBE.I' in equation `Ib' not yet defined
 checker notice, variable `VCE.I' in equation `Ic' not yet defined
 checker notice, variable `VSUB.I' in equation `Isub' not yet defined
-NOTIFY: SW1: running netlist for Vbe = 0.42
-NOTIFY: DC1: creating node list for DC analysis
-NOTIFY: DC1: solving DC netlist
-NOTIFY: DC1: convergence reached after 3 iterations
 checker notice, variable `VBE.I' in equation `Ib' not yet defined
 checker notice, variable `VCE.I' in equation `Ic' not yet defined
 checker notice, variable `VSUB.I' in equation `Isub' not yet defined
-NOTIFY: SW1: running netlist for Vbe = 0.425
-NOTIFY: DC1: creating node list for DC analysis
-NOTIFY: DC1: solving DC netlist
-NOTIFY: DC1: convergence reached after 3 iterations
 checker notice, variable `VBE.I' in equation `Ib' not yet defined
 checker notice, variable `VCE.I' in equation `Ic' not yet defined
 checker notice, variable `VSUB.I' in equation `Isub' not yet defined
-NOTIFY: SW1: running netlist for Vbe = 0.43
-NOTIFY: DC1: creating node list for DC analysis
-NOTIFY: DC1: solving DC netlist
-NOTIFY: DC1: convergence reached after 3 iterations
 checker notice, variable `VBE.I' in equation `Ib' not yet defined
 checker notice, variable `VCE.I' in equation `Ic' not yet defined
 checker notice, variable `VSUB.I' in equation `Isub' not yet defined
-NOTIFY: SW1: running netlist for Vbe = 0.435
-NOTIFY: DC1: creating node list for DC analysis
-NOTIFY: DC1: solving DC netlist
-NOTIFY: DC1: convergence reached after 3 iterations
 checker notice, variable `VBE.I' in equation `Ib' not yet defined
 checker notice, variable `VCE.I' in equation `Ic' not yet defined
 checker notice, variable `VSUB.I' in equation `Isub' not yet defined
-NOTIFY: SW1: running netlist for Vbe = 0.44
-NOTIFY: DC1: creating node list for DC analysis
-NOTIFY: DC1: solving DC netlist
-NOTIFY: DC1: convergence reached after 3 iterations
 checker notice, variable `VBE.I' in equation `Ib' not yet defined
 checker notice, variable `VCE.I' in equation `Ic' not yet defined
 checker notice, variable `VSUB.I' in equation `Isub' not yet defined
-NOTIFY: SW1: running netlist for Vbe = 0.445
-NOTIFY: DC1: creating node list for DC analysis
-NOTIFY: DC1: solving DC netlist
-NOTIFY: DC1: convergence reached after 3 iterations
 checker notice, variable `VBE.I' in equation `Ib' not yet defined
 checker notice, variable `VCE.I' in equation `Ic' not yet defined
 checker notice, variable `VSUB.I' in equation `Isub' not yet defined
-NOTIFY: SW1: running netlist for Vbe = 0.45
-NOTIFY: DC1: creating node list for DC analysis
-NOTIFY: DC1: solving DC netlist
-NOTIFY: DC1: convergence reached after 3 iterations
 checker notice, variable `VBE.I' in equation `Ib' not yet defined
 checker notice, variable `VCE.I' in equation `Ic' not yet defined
 checker notice, variable `VSUB.I' in equation `Isub' not yet defined
-NOTIFY: SW1: running netlist for Vbe = 0.455
-NOTIFY: DC1: creating node list for DC analysis
-NOTIFY: DC1: solving DC netlist
-NOTIFY: DC1: convergence reached after 3 iterations
 checker notice, variable `VBE.I' in equation `Ib' not yet defined
 checker notice, variable `VCE.I' in equation `Ic' not yet defined
 checker notice, variable `VSUB.I' in equation `Isub' not yet defined
-NOTIFY: SW1: running netlist for Vbe = 0.46
-NOTIFY: DC1: creating node list for DC analysis
-NOTIFY: DC1: solving DC netlist
-NOTIFY: DC1: convergence reached after 3 iterations
 checker notice, variable `VBE.I' in equation `Ib' not yet defined
 checker notice, variable `VCE.I' in equation `Ic' not yet defined
 checker notice, variable `VSUB.I' in equation `Isub' not yet defined
-NOTIFY: SW1: running netlist for Vbe = 0.465
-NOTIFY: DC1: creating node list for DC analysis
-NOTIFY: DC1: solving DC netlist
-NOTIFY: DC1: convergence reached after 3 iterations
 checker notice, variable `VBE.I' in equation `Ib' not yet defined
 checker notice, variable `VCE.I' in equation `Ic' not yet defined
 checker notice, variable `VSUB.I' in equation `Isub' not yet defined
-NOTIFY: SW1: running netlist for Vbe = 0.47
-NOTIFY: DC1: creating node list for DC analysis
-NOTIFY: DC1: solving DC netlist
-NOTIFY: DC1: convergence reached after 3 iterations
 checker notice, variable `VBE.I' in equation `Ib' not yet defined
 checker notice, variable `VCE.I' in equation `Ic' not yet defined
 checker notice, variable `VSUB.I' in equation `Isub' not yet defined
-NOTIFY: SW1: running netlist for Vbe = 0.475
-NOTIFY: DC1: creating node list for DC analysis
-NOTIFY: DC1: solving DC netlist
-NOTIFY: DC1: convergence reached after 3 iterations
 checker notice, variable `VBE.I' in equation `Ib' not yet defined
 checker notice, variable `VCE.I' in equation `Ic' not yet defined
 checker notice, variable `VSUB.I' in equation `Isub' not yet defined
-NOTIFY: SW1: running netlist for Vbe = 0.48
-NOTIFY: DC1: creating node list for DC analysis
-NOTIFY: DC1: solving DC netlist
-NOTIFY: DC1: convergence reached after 3 iterations
 checker notice, variable `VBE.I' in equation `Ib' not yet defined
 checker notice, variable `VCE.I' in equation `Ic' not yet defined
 checker notice, variable `VSUB.I' in equation `Isub' not yet defined
-NOTIFY: SW1: running netlist for Vbe = 0.485
-NOTIFY: DC1: creating node list for DC analysis
-NOTIFY: DC1: solving DC netlist
-NOTIFY: DC1: convergence reached after 3 iterations
 checker notice, variable `VBE.I' in equation `Ib' not yet defined
 checker notice, variable `VCE.I' in equation `Ic' not yet defined
 checker notice, variable `VSUB.I' in equation `Isub' not yet defined
-NOTIFY: SW1: running netlist for Vbe = 0.49
-NOTIFY: DC1: creating node list for DC analysis
-NOTIFY: DC1: solving DC netlist
-NOTIFY: DC1: convergence reached after 3 iterations
 checker notice, variable `VBE.I' in equation `Ib' not yet defined
 checker notice, variable `VCE.I' in equation `Ic' not yet defined
 checker notice, variable `VSUB.I' in equation `Isub' not yet defined
-NOTIFY: SW1: running netlist for Vbe = 0.495
-NOTIFY: DC1: creating node list for DC analysis
-NOTIFY: DC1: solving DC netlist
-NOTIFY: DC1: convergence reached after 3 iterations
 checker notice, variable `VBE.I' in equation `Ib' not yet defined
 checker notice, variable `VCE.I' in equation `Ic' not yet defined
 checker notice, variable `VSUB.I' in equation `Isub' not yet defined
-NOTIFY: SW1: running netlist for Vbe = 0.5
-NOTIFY: DC1: creating node list for DC analysis
-NOTIFY: DC1: solving DC netlist
-NOTIFY: DC1: convergence reached after 3 iterations
 checker notice, variable `VBE.I' in equation `Ib' not yet defined
 checker notice, variable `VCE.I' in equation `Ic' not yet defined
 checker notice, variable `VSUB.I' in equation `Isub' not yet defined
-NOTIFY: SW1: running netlist for Vbe = 0.505
-NOTIFY: DC1: creating node list for DC analysis
-NOTIFY: DC1: solving DC netlist
-NOTIFY: DC1: convergence reached after 3 iterations
 checker notice, variable `VBE.I' in equation `Ib' not yet defined
 checker notice, variable `VCE.I' in equation `Ic' not yet defined
 checker notice, variable `VSUB.I' in equation `Isub' not yet defined
-NOTIFY: SW1: running netlist for Vbe = 0.51
-NOTIFY: DC1: creating node list for DC analysis
-NOTIFY: DC1: solving DC netlist
-NOTIFY: DC1: convergence reached after 3 iterations
 checker notice, variable `VBE.I' in equation `Ib' not yet defined
 checker notice, variable `VCE.I' in equation `Ic' not yet defined
 checker notice, variable `VSUB.I' in equation `Isub' not yet defined
-NOTIFY: SW1: running netlist for Vbe = 0.515
-NOTIFY: DC1: creating node list for DC analysis
-NOTIFY: DC1: solving DC netlist
-NOTIFY: DC1: convergence reached after 3 iterations
 checker notice, variable `VBE.I' in equation `Ib' not yet defined
 checker notice, variable `VCE.I' in equation `Ic' not yet defined
 checker notice, variable `VSUB.I' in equation `Isub' not yet defined
-NOTIFY: SW1: running netlist for Vbe = 0.52
-NOTIFY: DC1: creating node list for DC analysis
-NOTIFY: DC1: solving DC netlist
-NOTIFY: DC1: convergence reached after 3 iterations
 checker notice, variable `VBE.I' in equation `Ib' not yet defined
 checker notice, variable `VCE.I' in equation `Ic' not yet defined
 checker notice, variable `VSUB.I' in equation `Isub' not yet defined
-NOTIFY: SW1: running netlist for Vbe = 0.525
-NOTIFY: DC1: creating node list for DC analysis
-NOTIFY: DC1: solving DC netlist
-NOTIFY: DC1: convergence reached after 3 iterations
 checker notice, variable `VBE.I' in equation `Ib' not yet defined
 checker notice, variable `VCE.I' in equation `Ic' not yet defined
 checker notice, variable `VSUB.I' in equation `Isub' not yet defined
-NOTIFY: SW1: running netlist for Vbe = 0.53
-NOTIFY: DC1: creating node list for DC analysis
-NOTIFY: DC1: solving DC netlist
-NOTIFY: DC1: convergence reached after 3 iterations
 checker notice, variable `VBE.I' in equation `Ib' not yet defined
 checker notice, variable `VCE.I' in equation `Ic' not yet defined
 checker notice, variable `VSUB.I' in equation `Isub' not yet defined
-NOTIFY: SW1: running netlist for Vbe = 0.535
-NOTIFY: DC1: creating node list for DC analysis
-NOTIFY: DC1: solving DC netlist
-NOTIFY: DC1: convergence reached after 3 iterations
 checker notice, variable `VBE.I' in equation `Ib' not yet defined
 checker notice, variable `VCE.I' in equation `Ic' not yet defined
 checker notice, variable `VSUB.I' in equation `Isub' not yet defined
-NOTIFY: SW1: running netlist for Vbe = 0.54
-NOTIFY: DC1: creating node list for DC analysis
-NOTIFY: DC1: solving DC netlist
-NOTIFY: DC1: convergence reached after 3 iterations
 checker notice, variable `VBE.I' in equation `Ib' not yet defined
 checker notice, variable `VCE.I' in equation `Ic' not yet defined
 checker notice, variable `VSUB.I' in equation `Isub' not yet defined
-NOTIFY: SW1: running netlist for Vbe = 0.545
-NOTIFY: DC1: creating node list for DC analysis
-NOTIFY: DC1: solving DC netlist
-NOTIFY: DC1: convergence reached after 3 iterations
 checker notice, variable `VBE.I' in equation `Ib' not yet defined
 checker notice, variable `VCE.I' in equation `Ic' not yet defined
 checker notice, variable `VSUB.I' in equation `Isub' not yet defined
-NOTIFY: SW1: running netlist for Vbe = 0.55
-NOTIFY: DC1: creating node list for DC analysis
-NOTIFY: DC1: solving DC netlist
-NOTIFY: DC1: convergence reached after 3 iterations
 checker notice, variable `VBE.I' in equation `Ib' not yet defined
 checker notice, variable `VCE.I' in equation `Ic' not yet defined
 checker notice, variable `VSUB.I' in equation `Isub' not yet defined
-NOTIFY: SW1: running netlist for Vbe = 0.555
-NOTIFY: DC1: creating node list for DC analysis
-NOTIFY: DC1: solving DC netlist
-NOTIFY: DC1: convergence reached after 3 iterations
 checker notice, variable `VBE.I' in equation `Ib' not yet defined
 checker notice, variable `VCE.I' in equation `Ic' not yet defined
 checker notice, variable `VSUB.I' in equation `Isub' not yet defined
-NOTIFY: SW1: running netlist for Vbe = 0.56
-NOTIFY: DC1: creating node list for DC analysis
-NOTIFY: DC1: solving DC netlist
-NOTIFY: DC1: convergence reached after 3 iterations
 checker notice, variable `VBE.I' in equation `Ib' not yet defined
 checker notice, variable `VCE.I' in equation `Ic' not yet defined
 checker notice, variable `VSUB.I' in equation `Isub' not yet defined
-NOTIFY: SW1: running netlist for Vbe = 0.565
-NOTIFY: DC1: creating node list for DC analysis
-NOTIFY: DC1: solving DC netlist
-NOTIFY: DC1: convergence reached after 3 iterations
 checker notice, variable `VBE.I' in equation `Ib' not yet defined
 checker notice, variable `VCE.I' in equation `Ic' not yet defined
 checker notice, variable `VSUB.I' in equation `Isub' not yet defined
-NOTIFY: SW1: running netlist for Vbe = 0.57
-NOTIFY: DC1: creating node list for DC analysis
-NOTIFY: DC1: solving DC netlist
-NOTIFY: DC1: convergence reached after 3 iterations
 checker notice, variable `VBE.I' in equation `Ib' not yet defined
 checker notice, variable `VCE.I' in equation `Ic' not yet defined
 checker notice, variable `VSUB.I' in equation `Isub' not yet defined
-NOTIFY: SW1: running netlist for Vbe = 0.575
-NOTIFY: DC1: creating node list for DC analysis
-NOTIFY: DC1: solving DC netlist
-NOTIFY: DC1: convergence reached after 3 iterations
 checker notice, variable `VBE.I' in equation `Ib' not yet defined
 checker notice, variable `VCE.I' in equation `Ic' not yet defined
 checker notice, variable `VSUB.I' in equation `Isub' not yet defined
-NOTIFY: SW1: running netlist for Vbe = 0.58
-NOTIFY: DC1: creating node list for DC analysis
-NOTIFY: DC1: solving DC netlist
-NOTIFY: DC1: convergence reached after 3 iterations
 checker notice, variable `VBE.I' in equation `Ib' not yet defined
 checker notice, variable `VCE.I' in equation `Ic' not yet defined
 checker notice, variable `VSUB.I' in equation `Isub' not yet defined
-NOTIFY: SW1: running netlist for Vbe = 0.585
-NOTIFY: DC1: creating node list for DC analysis
-NOTIFY: DC1: solving DC netlist
-NOTIFY: DC1: convergence reached after 3 iterations
 checker notice, variable `VBE.I' in equation `Ib' not yet defined
 checker notice, variable `VCE.I' in equation `Ic' not yet defined
 checker notice, variable `VSUB.I' in equation `Isub' not yet defined
-NOTIFY: SW1: running netlist for Vbe = 0.59
-NOTIFY: DC1: creating node list for DC analysis
-NOTIFY: DC1: solving DC netlist
-NOTIFY: DC1: convergence reached after 3 iterations
 checker notice, variable `VBE.I' in equation `Ib' not yet defined
 checker notice, variable `VCE.I' in equation `Ic' not yet defined
 checker notice, variable `VSUB.I' in equation `Isub' not yet defined
-NOTIFY: SW1: running netlist for Vbe = 0.595
-NOTIFY: DC1: creating node list for DC analysis
-NOTIFY: DC1: solving DC netlist
-NOTIFY: DC1: convergence reached after 3 iterations
 checker notice, variable `VBE.I' in equation `Ib' not yet defined
 checker notice, variable `VCE.I' in equation `Ic' not yet defined
 checker notice, variable `VSUB.I' in equation `Isub' not yet defined
-NOTIFY: SW1: running netlist for Vbe = 0.6
-NOTIFY: DC1: creating node list for DC analysis
-NOTIFY: DC1: solving DC netlist
-NOTIFY: DC1: convergence reached after 3 iterations
 checker notice, variable `VBE.I' in equation `Ib' not yet defined
 checker notice, variable `VCE.I' in equation `Ic' not yet defined
 checker notice, variable `VSUB.I' in equation `Isub' not yet defined
-NOTIFY: SW1: running netlist for Vbe = 0.605
-NOTIFY: DC1: creating node list for DC analysis
-NOTIFY: DC1: solving DC netlist
-NOTIFY: DC1: convergence reached after 3 iterations
 checker notice, variable `VBE.I' in equation `Ib' not yet defined
 checker notice, variable `VCE.I' in equation `Ic' not yet defined
 checker notice, variable `VSUB.I' in equation `Isub' not yet defined
-NOTIFY: SW1: running netlist for Vbe = 0.61
-NOTIFY: DC1: creating node list for DC analysis
-NOTIFY: DC1: solving DC netlist
-NOTIFY: DC1: convergence reached after 3 iterations
 checker notice, variable `VBE.I' in equation `Ib' not yet defined
 checker notice, variable `VCE.I' in equation `Ic' not yet defined
 checker notice, variable `VSUB.I' in equation `Isub' not yet defined
-NOTIFY: SW1: running netlist for Vbe = 0.615
-NOTIFY: DC1: creating node list for DC analysis
-NOTIFY: DC1: solving DC netlist
-NOTIFY: DC1: convergence reached after 3 iterations
 checker notice, variable `VBE.I' in equation `Ib' not yet defined
 checker notice, variable `VCE.I' in equation `Ic' not yet defined
 checker notice, variable `VSUB.I' in equation `Isub' not yet defined
-NOTIFY: SW1: running netlist for Vbe = 0.62
-NOTIFY: DC1: creating node list for DC analysis
-NOTIFY: DC1: solving DC netlist
-NOTIFY: DC1: convergence reached after 3 iterations
 checker notice, variable `VBE.I' in equation `Ib' not yet defined
 checker notice, variable `VCE.I' in equation `Ic' not yet defined
 checker notice, variable `VSUB.I' in equation `Isub' not yet defined
-NOTIFY: SW1: running netlist for Vbe = 0.625
-NOTIFY: DC1: creating node list for DC analysis
-NOTIFY: DC1: solving DC netlist
-NOTIFY: DC1: convergence reached after 3 iterations
 checker notice, variable `VBE.I' in equation `Ib' not yet defined
 checker notice, variable `VCE.I' in equation `Ic' not yet defined
 checker notice, variable `VSUB.I' in equation `Isub' not yet defined
-NOTIFY: SW1: running netlist for Vbe = 0.63
-NOTIFY: DC1: creating node list for DC analysis
-NOTIFY: DC1: solving DC netlist
-NOTIFY: DC1: convergence reached after 3 iterations
 checker notice, variable `VBE.I' in equation `Ib' not yet defined
 checker notice, variable `VCE.I' in equation `Ic' not yet defined
 checker notice, variable `VSUB.I' in equation `Isub' not yet defined
-NOTIFY: SW1: running netlist for Vbe = 0.635
-NOTIFY: DC1: creating node list for DC analysis
-NOTIFY: DC1: solving DC netlist
-NOTIFY: DC1: convergence reached after 3 iterations
 checker notice, variable `VBE.I' in equation `Ib' not yet defined
 checker notice, variable `VCE.I' in equation `Ic' not yet defined
 checker notice, variable `VSUB.I' in equation `Isub' not yet defined
-NOTIFY: SW1: running netlist for Vbe = 0.64
-NOTIFY: DC1: creating node list for DC analysis
-NOTIFY: DC1: solving DC netlist
-NOTIFY: DC1: convergence reached after 3 iterations
 checker notice, variable `VBE.I' in equation `Ib' not yet defined
 checker notice, variable `VCE.I' in equation `Ic' not yet defined
 checker notice, variable `VSUB.I' in equation `Isub' not yet defined
-NOTIFY: SW1: running netlist for Vbe = 0.645
-NOTIFY: DC1: creating node list for DC analysis
-NOTIFY: DC1: solving DC netlist
-NOTIFY: DC1: convergence reached after 3 iterations
 checker notice, variable `VBE.I' in equation `Ib' not yet defined
 checker notice, variable `VCE.I' in equation `Ic' not yet defined
 checker notice, variable `VSUB.I' in equation `Isub' not yet defined
-NOTIFY: SW1: running netlist for Vbe = 0.65
-NOTIFY: DC1: creating node list for DC analysis
-NOTIFY: DC1: solving DC netlist
-NOTIFY: DC1: convergence reached after 3 iterations
 checker notice, variable `VBE.I' in equation `Ib' not yet defined
 checker notice, variable `VCE.I' in equation `Ic' not yet defined
 checker notice, variable `VSUB.I' in equation `Isub' not yet defined
-NOTIFY: SW1: running netlist for Vbe = 0.655
-NOTIFY: DC1: creating node list for DC analysis
-NOTIFY: DC1: solving DC netlist
-NOTIFY: DC1: convergence reached after 3 iterations
 checker notice, variable `VBE.I' in equation `Ib' not yet defined
 checker notice, variable `VCE.I' in equation `Ic' not yet defined
 checker notice, variable `VSUB.I' in equation `Isub' not yet defined
-NOTIFY: SW1: running netlist for Vbe = 0.66
-NOTIFY: DC1: creating node list for DC analysis
-NOTIFY: DC1: solving DC netlist
-NOTIFY: DC1: convergence reached after 3 iterations
 checker notice, variable `VBE.I' in equation `Ib' not yet defined
 checker notice, variable `VCE.I' in equation `Ic' not yet defined
 checker notice, variable `VSUB.I' in equation `Isub' not yet defined
-NOTIFY: SW1: running netlist for Vbe = 0.665
-NOTIFY: DC1: creating node list for DC analysis
-NOTIFY: DC1: solving DC netlist
-NOTIFY: DC1: convergence reached after 3 iterations
 checker notice, variable `VBE.I' in equation `Ib' not yet defined
 checker notice, variable `VCE.I' in equation `Ic' not yet defined
 checker notice, variable `VSUB.I' in equation `Isub' not yet defined
-NOTIFY: SW1: running netlist for Vbe = 0.67
-NOTIFY: DC1: creating node list for DC analysis
-NOTIFY: DC1: solving DC netlist
-NOTIFY: DC1: convergence reached after 3 iterations
 checker notice, variable `VBE.I' in equation `Ib' not yet defined
 checker notice, variable `VCE.I' in equation `Ic' not yet defined
 checker notice, variable `VSUB.I' in equation `Isub' not yet defined
-NOTIFY: SW1: running netlist for Vbe = 0.675
-NOTIFY: DC1: creating node list for DC analysis
-NOTIFY: DC1: solving DC netlist
-NOTIFY: DC1: convergence reached after 3 iterations
 checker notice, variable `VBE.I' in equation `Ib' not yet defined
 checker notice, variable `VCE.I' in equation `Ic' not yet defined
 checker notice, variable `VSUB.I' in equation `Isub' not yet defined
-NOTIFY: SW1: running netlist for Vbe = 0.68
-NOTIFY: DC1: creating node list for DC analysis
-NOTIFY: DC1: solving DC netlist
-NOTIFY: DC1: convergence reached after 4 iterations
 checker notice, variable `VBE.I' in equation `Ib' not yet defined
 checker notice, variable `VCE.I' in equation `Ic' not yet defined
 checker notice, variable `VSUB.I' in equation `Isub' not yet defined
-NOTIFY: SW1: running netlist for Vbe = 0.685
-NOTIFY: DC1: creating node list for DC analysis
-NOTIFY: DC1: solving DC netlist
-NOTIFY: DC1: convergence reached after 4 iterations
 checker notice, variable `VBE.I' in equation `Ib' not yet defined
 checker notice, variable `VCE.I' in equation `Ic' not yet defined
 checker notice, variable `VSUB.I' in equation `Isub' not yet defined
-NOTIFY: SW1: running netlist for Vbe = 0.69
-NOTIFY: DC1: creating node list for DC analysis
-NOTIFY: DC1: solving DC netlist
-NOTIFY: DC1: convergence reached after 4 iterations
 checker notice, variable `VBE.I' in equation `Ib' not yet defined
 checker notice, variable `VCE.I' in equation `Ic' not yet defined
 checker notice, variable `VSUB.I' in equation `Isub' not yet defined
-NOTIFY: SW1: running netlist for Vbe = 0.695
-NOTIFY: DC1: creating node list for DC analysis
-NOTIFY: DC1: solving DC netlist
-NOTIFY: DC1: convergence reached after 4 iterations
 checker notice, variable `VBE.I' in equation `Ib' not yet defined
 checker notice, variable `VCE.I' in equation `Ic' not yet defined
 checker notice, variable `VSUB.I' in equation `Isub' not yet defined
-NOTIFY: SW1: running netlist for Vbe = 0.7
-NOTIFY: DC1: creating node list for DC analysis
-NOTIFY: DC1: solving DC netlist
-NOTIFY: DC1: convergence reached after 4 iterations
 checker notice, variable `VBE.I' in equation `Ib' not yet defined
 checker notice, variable `VCE.I' in equation `Ic' not yet defined
 checker notice, variable `VSUB.I' in equation `Isub' not yet defined
-NOTIFY: SW1: running netlist for Vbe = 0.705
-NOTIFY: DC1: creating node list for DC analysis
-NOTIFY: DC1: solving DC netlist
-NOTIFY: DC1: convergence reached after 4 iterations
 checker notice, variable `VBE.I' in equation `Ib' not yet defined
 checker notice, variable `VCE.I' in equation `Ic' not yet defined
 checker notice, variable `VSUB.I' in equation `Isub' not yet defined
-NOTIFY: SW1: running netlist for Vbe = 0.71
-NOTIFY: DC1: creating node list for DC analysis
-NOTIFY: DC1: solving DC netlist
-NOTIFY: DC1: convergence reached after 4 iterations
 checker notice, variable `VBE.I' in equation `Ib' not yet defined
 checker notice, variable `VCE.I' in equation `Ic' not yet defined
 checker notice, variable `VSUB.I' in equation `Isub' not yet defined
-NOTIFY: SW1: running netlist for Vbe = 0.715
-NOTIFY: DC1: creating node list for DC analysis
-NOTIFY: DC1: solving DC netlist
-NOTIFY: DC1: convergence reached after 4 iterations
 checker notice, variable `VBE.I' in equation `Ib' not yet defined
 checker notice, variable `VCE.I' in equation `Ic' not yet defined
 checker notice, variable `VSUB.I' in equation `Isub' not yet defined
-NOTIFY: SW1: running netlist for Vbe = 0.72
-NOTIFY: DC1: creating node list for DC analysis
-NOTIFY: DC1: solving DC netlist
-NOTIFY: DC1: convergence reached after 4 iterations
 checker notice, variable `VBE.I' in equation `Ib' not yet defined
 checker notice, variable `VCE.I' in equation `Ic' not yet defined
 checker notice, variable `VSUB.I' in equation `Isub' not yet defined
-NOTIFY: SW1: running netlist for Vbe = 0.725
-NOTIFY: DC1: creating node list for DC analysis
-NOTIFY: DC1: solving DC netlist
-NOTIFY: DC1: convergence reached after 4 iterations
 checker notice, variable `VBE.I' in equation `Ib' not yet defined
 checker notice, variable `VCE.I' in equation `Ic' not yet defined
 checker notice, variable `VSUB.I' in equation `Isub' not yet defined
-NOTIFY: SW1: running netlist for Vbe = 0.73
-NOTIFY: DC1: creating node list for DC analysis
-NOTIFY: DC1: solving DC netlist
-NOTIFY: DC1: convergence reached after 4 iterations
 checker notice, variable `VBE.I' in equation `Ib' not yet defined
 checker notice, variable `VCE.I' in equation `Ic' not yet defined
 checker notice, variable `VSUB.I' in equation `Isub' not yet defined
-NOTIFY: SW1: running netlist for Vbe = 0.735
-NOTIFY: DC1: creating node list for DC analysis
-NOTIFY: DC1: solving DC netlist
-NOTIFY: DC1: convergence reached after 4 iterations
 checker notice, variable `VBE.I' in equation `Ib' not yet defined
 checker notice, variable `VCE.I' in equation `Ic' not yet defined
 checker notice, variable `VSUB.I' in equation `Isub' not yet defined
-NOTIFY: SW1: running netlist for Vbe = 0.74
-NOTIFY: DC1: creating node list for DC analysis
-NOTIFY: DC1: solving DC netlist
-NOTIFY: DC1: convergence reached after 4 iterations
 checker notice, variable `VBE.I' in equation `Ib' not yet defined
 checker notice, variable `VCE.I' in equation `Ic' not yet defined
 checker notice, variable `VSUB.I' in equation `Isub' not yet defined
-NOTIFY: SW1: running netlist for Vbe = 0.745
-NOTIFY: DC1: creating node list for DC analysis
-NOTIFY: DC1: solving DC netlist
-NOTIFY: DC1: convergence reached after 4 iterations
 checker notice, variable `VBE.I' in equation `Ib' not yet defined
 checker notice, variable `VCE.I' in equation `Ic' not yet defined
 checker notice, variable `VSUB.I' in equation `Isub' not yet defined
-NOTIFY: SW1: running netlist for Vbe = 0.75
-NOTIFY: DC1: creating node list for DC analysis
-NOTIFY: DC1: solving DC netlist
-NOTIFY: DC1: convergence reached after 4 iterations
 checker notice, variable `VBE.I' in equation `Ib' not yet defined
 checker notice, variable `VCE.I' in equation `Ic' not yet defined
 checker notice, variable `VSUB.I' in equation `Isub' not yet defined
-NOTIFY: SW1: running netlist for Vbe = 0.755
-NOTIFY: DC1: creating node list for DC analysis
-NOTIFY: DC1: solving DC netlist
-NOTIFY: DC1: convergence reached after 4 iterations
 checker notice, variable `VBE.I' in equation `Ib' not yet defined
 checker notice, variable `VCE.I' in equation `Ic' not yet defined
 checker notice, variable `VSUB.I' in equation `Isub' not yet defined
-NOTIFY: SW1: running netlist for Vbe = 0.76
-NOTIFY: DC1: creating node list for DC analysis
-NOTIFY: DC1: solving DC netlist
-NOTIFY: DC1: convergence reached after 4 iterations
 checker notice, variable `VBE.I' in equation `Ib' not yet defined
 checker notice, variable `VCE.I' in equation `Ic' not yet defined
 checker notice, variable `VSUB.I' in equation `Isub' not yet defined
-NOTIFY: SW1: running netlist for Vbe = 0.765
-NOTIFY: DC1: creating node list for DC analysis
-NOTIFY: DC1: solving DC netlist
-NOTIFY: DC1: convergence reached after 4 iterations
 checker notice, variable `VBE.I' in equation `Ib' not yet defined
 checker notice, variable `VCE.I' in equation `Ic' not yet defined
 checker notice, variable `VSUB.I' in equation `Isub' not yet defined
-NOTIFY: SW1: running netlist for Vbe = 0.77
-NOTIFY: DC1: creating node list for DC analysis
-NOTIFY: DC1: solving DC netlist
-NOTIFY: DC1: convergence reached after 4 iterations
 checker notice, variable `VBE.I' in equation `Ib' not yet defined
 checker notice, variable `VCE.I' in equation `Ic' not yet defined
 checker notice, variable `VSUB.I' in equation `Isub' not yet defined
-NOTIFY: SW1: running netlist for Vbe = 0.775
-NOTIFY: DC1: creating node list for DC analysis
-NOTIFY: DC1: solving DC netlist
-NOTIFY: DC1: convergence reached after 4 iterations
 checker notice, variable `VBE.I' in equation `Ib' not yet defined
 checker notice, variable `VCE.I' in equation `Ic' not yet defined
 checker notice, variable `VSUB.I' in equation `Isub' not yet defined
-NOTIFY: SW1: running netlist for Vbe = 0.78
-NOTIFY: DC1: creating node list for DC analysis
-NOTIFY: DC1: solving DC netlist
-NOTIFY: DC1: convergence reached after 4 iterations
 checker notice, variable `VBE.I' in equation `Ib' not yet defined
 checker notice, variable `VCE.I' in equation `Ic' not yet defined
 checker notice, variable `VSUB.I' in equation `Isub' not yet defined
-NOTIFY: SW1: running netlist for Vbe = 0.785
-NOTIFY: DC1: creating node list for DC analysis
-NOTIFY: DC1: solving DC netlist
-NOTIFY: DC1: convergence reached after 4 iterations
 checker notice, variable `VBE.I' in equation `Ib' not yet defined
 checker notice, variable `VCE.I' in equation `Ic' not yet defined
 checker notice, variable `VSUB.I' in equation `Isub' not yet defined
-NOTIFY: SW1: running netlist for Vbe = 0.79
-NOTIFY: DC1: creating node list for DC analysis
-NOTIFY: DC1: solving DC netlist
-NOTIFY: DC1: convergence reached after 4 iterations
 checker notice, variable `VBE.I' in equation `Ib' not yet defined
 checker notice, variable `VCE.I' in equation `Ic' not yet defined
 checker notice, variable `VSUB.I' in equation `Isub' not yet defined
-NOTIFY: SW1: running netlist for Vbe = 0.795
-NOTIFY: DC1: creating node list for DC analysis
-NOTIFY: DC1: solving DC netlist
-NOTIFY: DC1: convergence reached after 4 iterations
 checker notice, variable `VBE.I' in equation `Ib' not yet defined
 checker notice, variable `VCE.I' in equation `Ic' not yet defined
 checker notice, variable `VSUB.I' in equation `Isub' not yet defined
-NOTIFY: SW1: running netlist for Vbe = 0.8
-NOTIFY: DC1: creating node list for DC analysis
-NOTIFY: DC1: solving DC netlist
-NOTIFY: DC1: convergence reached after 4 iterations
 checker notice, variable `VBE.I' in equation `Ib' not yet defined
 checker notice, variable `VCE.I' in equation `Ic' not yet defined
 checker notice, variable `VSUB.I' in equation `Isub' not yet defined
-NOTIFY: SW1: running netlist for Vbe = 0.805
-NOTIFY: DC1: creating node list for DC analysis
-NOTIFY: DC1: solving DC netlist
-NOTIFY: DC1: convergence reached after 4 iterations
 checker notice, variable `VBE.I' in equation `Ib' not yet defined
 checker notice, variable `VCE.I' in equation `Ic' not yet defined
 checker notice, variable `VSUB.I' in equation `Isub' not yet defined
-NOTIFY: SW1: running netlist for Vbe = 0.81
-NOTIFY: DC1: creating node list for DC analysis
-NOTIFY: DC1: solving DC netlist
-NOTIFY: DC1: convergence reached after 4 iterations
 checker notice, variable `VBE.I' in equation `Ib' not yet defined
 checker notice, variable `VCE.I' in equation `Ic' not yet defined
 checker notice, variable `VSUB.I' in equation `Isub' not yet defined
-NOTIFY: SW1: running netlist for Vbe = 0.815
-NOTIFY: DC1: creating node list for DC analysis
-NOTIFY: DC1: solving DC netlist
-NOTIFY: DC1: convergence reached after 5 iterations
 checker notice, variable `VBE.I' in equation `Ib' not yet defined
 checker notice, variable `VCE.I' in equation `Ic' not yet defined
 checker notice, variable `VSUB.I' in equation `Isub' not yet defined
-NOTIFY: SW1: running netlist for Vbe = 0.82
-NOTIFY: DC1: creating node list for DC analysis
-NOTIFY: DC1: solving DC netlist
-NOTIFY: DC1: convergence reached after 5 iterations
 checker notice, variable `VBE.I' in equation `Ib' not yet defined
 checker notice, variable `VCE.I' in equation `Ic' not yet defined
 checker notice, variable `VSUB.I' in equation `Isub' not yet defined
-NOTIFY: SW1: running netlist for Vbe = 0.825
-NOTIFY: DC1: creating node list for DC analysis
-NOTIFY: DC1: solving DC netlist
-NOTIFY: DC1: convergence reached after 5 iterations
 checker notice, variable `VBE.I' in equation `Ib' not yet defined
 checker notice, variable `VCE.I' in equation `Ic' not yet defined
 checker notice, variable `VSUB.I' in equation `Isub' not yet defined
-NOTIFY: SW1: running netlist for Vbe = 0.83
-NOTIFY: DC1: creating node list for DC analysis
-NOTIFY: DC1: solving DC netlist
-NOTIFY: DC1: convergence reached after 5 iterations
 checker notice, variable `VBE.I' in equation `Ib' not yet defined
 checker notice, variable `VCE.I' in equation `Ic' not yet defined
 checker notice, variable `VSUB.I' in equation `Isub' not yet defined
-NOTIFY: SW1: running netlist for Vbe = 0.835
-NOTIFY: DC1: creating node list for DC analysis
-NOTIFY: DC1: solving DC netlist
-NOTIFY: DC1: convergence reached after 5 iterations
 checker notice, variable `VBE.I' in equation `Ib' not yet defined
 checker notice, variable `VCE.I' in equation `Ic' not yet defined
 checker notice, variable `VSUB.I' in equation `Isub' not yet defined
-NOTIFY: SW1: running netlist for Vbe = 0.84
-NOTIFY: DC1: creating node list for DC analysis
-NOTIFY: DC1: solving DC netlist
-NOTIFY: DC1: convergence reached after 5 iterations
 checker notice, variable `VBE.I' in equation `Ib' not yet defined
 checker notice, variable `VCE.I' in equation `Ic' not yet defined
 checker notice, variable `VSUB.I' in equation `Isub' not yet defined
-NOTIFY: SW1: running netlist for Vbe = 0.845
-NOTIFY: DC1: creating node list for DC analysis
-NOTIFY: DC1: solving DC netlist
-NOTIFY: DC1: convergence reached after 5 iterations
 checker notice, variable `VBE.I' in equation `Ib' not yet defined
 checker notice, variable `VCE.I' in equation `Ic' not yet defined
 checker notice, variable `VSUB.I' in equation `Isub' not yet defined
-NOTIFY: SW1: running netlist for Vbe = 0.85
-NOTIFY: DC1: creating node list for DC analysis
-NOTIFY: DC1: solving DC netlist
-NOTIFY: DC1: convergence reached after 5 iterations
 checker notice, variable `VBE.I' in equation `Ib' not yet defined
 checker notice, variable `VCE.I' in equation `Ic' not yet defined
 checker notice, variable `VSUB.I' in equation `Isub' not yet defined
-NOTIFY: SW1: running netlist for Vbe = 0.855
-NOTIFY: DC1: creating node list for DC analysis
-NOTIFY: DC1: solving DC netlist
-NOTIFY: DC1: convergence reached after 5 iterations
 checker notice, variable `VBE.I' in equation `Ib' not yet defined
 checker notice, variable `VCE.I' in equation `Ic' not yet defined
 checker notice, variable `VSUB.I' in equation `Isub' not yet defined
-NOTIFY: SW1: running netlist for Vbe = 0.86
-NOTIFY: DC1: creating node list for DC analysis
-NOTIFY: DC1: solving DC netlist
-NOTIFY: DC1: convergence reached after 4 iterations
 checker notice, variable `VBE.I' in equation `Ib' not yet defined
 checker notice, variable `VCE.I' in equation `Ic' not yet defined
 checker notice, variable `VSUB.I' in equation `Isub' not yet defined
-NOTIFY: SW1: running netlist for Vbe = 0.865
-NOTIFY: DC1: creating node list for DC analysis
-NOTIFY: DC1: solving DC netlist
-NOTIFY: DC1: convergence reached after 4 iterations
 checker notice, variable `VBE.I' in equation `Ib' not yet defined
 checker notice, variable `VCE.I' in equation `Ic' not yet defined
 checker notice, variable `VSUB.I' in equation `Isub' not yet defined
-NOTIFY: SW1: running netlist for Vbe = 0.87
-NOTIFY: DC1: creating node list for DC analysis
-NOTIFY: DC1: solving DC netlist
-NOTIFY: DC1: convergence reached after 5 iterations
 checker notice, variable `VBE.I' in equation `Ib' not yet defined
 checker notice, variable `VCE.I' in equation `Ic' not yet defined
 checker notice, variable `VSUB.I' in equation `Isub' not yet defined
-NOTIFY: SW1: running netlist for Vbe = 0.875
-NOTIFY: DC1: creating node list for DC analysis
-NOTIFY: DC1: solving DC netlist
-NOTIFY: DC1: convergence reached after 5 iterations
 checker notice, variable `VBE.I' in equation `Ib' not yet defined
 checker notice, variable `VCE.I' in equation `Ic' not yet defined
 checker notice, variable `VSUB.I' in equation `Isub' not yet defined
-NOTIFY: SW1: running netlist for Vbe = 0.88
-NOTIFY: DC1: creating node list for DC analysis
-NOTIFY: DC1: solving DC netlist
-NOTIFY: DC1: convergence reached after 5 iterations
 checker notice, variable `VBE.I' in equation `Ib' not yet defined
 checker notice, variable `VCE.I' in equation `Ic' not yet defined
 checker notice, variable `VSUB.I' in equation `Isub' not yet defined
-NOTIFY: SW1: running netlist for Vbe = 0.885
-NOTIFY: DC1: creating node list for DC analysis
-NOTIFY: DC1: solving DC netlist
-NOTIFY: DC1: convergence reached after 5 iterations
 checker notice, variable `VBE.I' in equation `Ib' not yet defined
 checker notice, variable `VCE.I' in equation `Ic' not yet defined
 checker notice, variable `VSUB.I' in equation `Isub' not yet defined
-NOTIFY: SW1: running netlist for Vbe = 0.89
-NOTIFY: DC1: creating node list for DC analysis
-NOTIFY: DC1: solving DC netlist
-NOTIFY: DC1: convergence reached after 5 iterations
 checker notice, variable `VBE.I' in equation `Ib' not yet defined
 checker notice, variable `VCE.I' in equation `Ic' not yet defined
 checker notice, variable `VSUB.I' in equation `Isub' not yet defined
-NOTIFY: SW1: running netlist for Vbe = 0.895
-NOTIFY: DC1: creating node list for DC analysis
-NOTIFY: DC1: solving DC netlist
-NOTIFY: DC1: convergence reached after 5 iterations
 checker notice, variable `VBE.I' in equation `Ib' not yet defined
 checker notice, variable `VCE.I' in equation `Ic' not yet defined
 checker notice, variable `VSUB.I' in equation `Isub' not yet defined
-NOTIFY: SW1: running netlist for Vbe = 0.9
-NOTIFY: DC1: creating node list for DC analysis
-NOTIFY: DC1: solving DC netlist
-NOTIFY: DC1: convergence reached after 6 iterations
 checker notice, variable `VBE.I' in equation `Ib' not yet defined
 checker notice, variable `VCE.I' in equation `Ic' not yet defined
 checker notice, variable `VSUB.I' in equation `Isub' not yet defined
-NOTIFY: SW1: running netlist for Vbe = 0.905
-NOTIFY: DC1: creating node list for DC analysis
-NOTIFY: DC1: solving DC netlist
-NOTIFY: DC1: convergence reached after 6 iterations
 checker notice, variable `VBE.I' in equation `Ib' not yet defined
 checker notice, variable `VCE.I' in equation `Ic' not yet defined
 checker notice, variable `VSUB.I' in equation `Isub' not yet defined
-NOTIFY: SW1: running netlist for Vbe = 0.91
-NOTIFY: DC1: creating node list for DC analysis
-NOTIFY: DC1: solving DC netlist
-NOTIFY: DC1: convergence reached after 6 iterations
 checker notice, variable `VBE.I' in equation `Ib' not yet defined
 checker notice, variable `VCE.I' in equation `Ic' not yet defined
 checker notice, variable `VSUB.I' in equation `Isub' not yet defined
-NOTIFY: SW1: running netlist for Vbe = 0.915
-NOTIFY: DC1: creating node list for DC analysis
-NOTIFY: DC1: solving DC netlist
-NOTIFY: DC1: convergence reached after 6 iterations
 checker notice, variable `VBE.I' in equation `Ib' not yet defined
 checker notice, variable `VCE.I' in equation `Ic' not yet defined
 checker notice, variable `VSUB.I' in equation `Isub' not yet defined
-NOTIFY: SW1: running netlist for Vbe = 0.92
-NOTIFY: DC1: creating node list for DC analysis
-NOTIFY: DC1: solving DC netlist
-NOTIFY: DC1: convergence reached after 6 iterations
 checker notice, variable `VBE.I' in equation `Ib' not yet defined
 checker notice, variable `VCE.I' in equation `Ic' not yet defined
 checker notice, variable `VSUB.I' in equation `Isub' not yet defined
-NOTIFY: SW1: running netlist for Vbe = 0.925
-NOTIFY: DC1: creating node list for DC analysis
-NOTIFY: DC1: solving DC netlist
-NOTIFY: DC1: convergence reached after 6 iterations
 checker notice, variable `VBE.I' in equation `Ib' not yet defined
 checker notice, variable `VCE.I' in equation `Ic' not yet defined
 checker notice, variable `VSUB.I' in equation `Isub' not yet defined
-NOTIFY: SW1: running netlist for Vbe = 0.93
-NOTIFY: DC1: creating node list for DC analysis
-NOTIFY: DC1: solving DC netlist
-NOTIFY: DC1: convergence reached after 6 iterations
 checker notice, variable `VBE.I' in equation `Ib' not yet defined
 checker notice, variable `VCE.I' in equation `Ic' not yet defined
 checker notice, variable `VSUB.I' in equation `Isub' not yet defined
-NOTIFY: SW1: running netlist for Vbe = 0.935
-NOTIFY: DC1: creating node list for DC analysis
-NOTIFY: DC1: solving DC netlist
-NOTIFY: DC1: convergence reached after 6 iterations
 checker notice, variable `VBE.I' in equation `Ib' not yet defined
 checker notice, variable `VCE.I' in equation `Ic' not yet defined
 checker notice, variable `VSUB.I' in equation `Isub' not yet defined
-NOTIFY: SW1: running netlist for Vbe = 0.94
-NOTIFY: DC1: creating node list for DC analysis
-NOTIFY: DC1: solving DC netlist
-NOTIFY: DC1: convergence reached after 7 iterations
 checker notice, variable `VBE.I' in equation `Ib' not yet defined
 checker notice, variable `VCE.I' in equation `Ic' not yet defined
 checker notice, variable `VSUB.I' in equation `Isub' not yet defined
-NOTIFY: SW1: running netlist for Vbe = 0.945
-NOTIFY: DC1: creating node list for DC analysis
-NOTIFY: DC1: solving DC netlist
-NOTIFY: DC1: convergence reached after 7 iterations
 checker notice, variable `VBE.I' in equation `Ib' not yet defined
 checker notice, variable `VCE.I' in equation `Ic' not yet defined
 checker notice, variable `VSUB.I' in equation `Isub' not yet defined
-NOTIFY: SW1: running netlist for Vbe = 0.95
-NOTIFY: DC1: creating node list for DC analysis
-NOTIFY: DC1: solving DC netlist
-NOTIFY: DC1: convergence reached after 7 iterations
 checker notice, variable `VBE.I' in equation `Ib' not yet defined
 checker notice, variable `VCE.I' in equation `Ic' not yet defined
 checker notice, variable `VSUB.I' in equation `Isub' not yet defined
-NOTIFY: SW1: running netlist for Vbe = 0.955
-NOTIFY: DC1: creating node list for DC analysis
-NOTIFY: DC1: solving DC netlist
-NOTIFY: DC1: convergence reached after 7 iterations
 checker notice, variable `VBE.I' in equation `Ib' not yet defined
 checker notice, variable `VCE.I' in equation `Ic' not yet defined
 checker notice, variable `VSUB.I' in equation `Isub' not yet defined
-NOTIFY: SW1: running netlist for Vbe = 0.96
-NOTIFY: DC1: creating node list for DC analysis
-NOTIFY: DC1: solving DC netlist
-NOTIFY: DC1: convergence reached after 6 iterations
 checker notice, variable `VBE.I' in equation `Ib' not yet defined
 checker notice, variable `VCE.I' in equation `Ic' not yet defined
 checker notice, variable `VSUB.I' in equation `Isub' not yet defined
-NOTIFY: SW1: running netlist for Vbe = 0.965
-NOTIFY: DC1: creating node list for DC analysis
-NOTIFY: DC1: solving DC netlist
-NOTIFY: DC1: convergence reached after 6 iterations
 checker notice, variable `VBE.I' in equation `Ib' not yet defined
 checker notice, variable `VCE.I' in equation `Ic' not yet defined
 checker notice, variable `VSUB.I' in equation `Isub' not yet defined
-NOTIFY: SW1: running netlist for Vbe = 0.97
-NOTIFY: DC1: creating node list for DC analysis
-NOTIFY: DC1: solving DC netlist
-NOTIFY: DC1: convergence reached after 6 iterations
 checker notice, variable `VBE.I' in equation `Ib' not yet defined
 checker notice, variable `VCE.I' in equation `Ic' not yet defined
 checker notice, variable `VSUB.I' in equation `Isub' not yet defined
-NOTIFY: SW1: running netlist for Vbe = 0.975
-NOTIFY: DC1: creating node list for DC analysis
-NOTIFY: DC1: solving DC netlist
-NOTIFY: DC1: convergence reached after 6 iterations
 checker notice, variable `VBE.I' in equation `Ib' not yet defined
 checker notice, variable `VCE.I' in equation `Ic' not yet defined
 checker notice, variable `VSUB.I' in equation `Isub' not yet defined
-NOTIFY: SW1: running netlist for Vbe = 0.98
-NOTIFY: DC1: creating node list for DC analysis
-NOTIFY: DC1: solving DC netlist
-NOTIFY: DC1: convergence reached after 6 iterations
 checker notice, variable `VBE.I' in equation `Ib' not yet defined
 checker notice, variable `VCE.I' in equation `Ic' not yet defined
 checker notice, variable `VSUB.I' in equation `Isub' not yet defined
-NOTIFY: SW1: running netlist for Vbe = 0.985
-NOTIFY: DC1: creating node list for DC analysis
-NOTIFY: DC1: solving DC netlist
-NOTIFY: DC1: convergence reached after 6 iterations
 checker notice, variable `VBE.I' in equation `Ib' not yet defined
 checker notice, variable `VCE.I' in equation `Ic' not yet defined
 checker notice, variable `VSUB.I' in equation `Isub' not yet defined
-NOTIFY: SW1: running netlist for Vbe = 0.99
-NOTIFY: DC1: creating node list for DC analysis
-NOTIFY: DC1: solving DC netlist
-NOTIFY: DC1: convergence reached after 5 iterations
 checker notice, variable `VBE.I' in equation `Ib' not yet defined
 checker notice, variable `VCE.I' in equation `Ic' not yet defined
 checker notice, variable `VSUB.I' in equation `Isub' not yet defined
-NOTIFY: SW1: running netlist for Vbe = 0.995
-NOTIFY: DC1: creating node list for DC analysis
-NOTIFY: DC1: solving DC netlist
-NOTIFY: DC1: convergence reached after 5 iterations
 checker notice, variable `VBE.I' in equation `Ib' not yet defined
 checker notice, variable `VCE.I' in equation `Ic' not yet defined
 checker notice, variable `VSUB.I' in equation `Isub' not yet defined
-NOTIFY: SW1: running netlist for Vbe = 1
-NOTIFY: DC1: creating node list for DC analysis
-NOTIFY: DC1: solving DC netlist
-NOTIFY: DC1: convergence reached after 5 iterations
 checker notice, variable `VBE.I' in equation `Ib' not yet defined
 checker notice, variable `VCE.I' in equation `Ic' not yet defined
 checker notice, variable `VSUB.I' in equation `Isub' not yet defined
-NOTIFY: SW1: running netlist for Vbe = 1.005
-NOTIFY: DC1: creating node list for DC analysis
-NOTIFY: DC1: solving DC netlist
-NOTIFY: DC1: convergence reached after 5 iterations
 checker notice, variable `VBE.I' in equation `Ib' not yet defined
 checker notice, variable `VCE.I' in equation `Ic' not yet defined
 checker notice, variable `VSUB.I' in equation `Isub' not yet defined
-NOTIFY: SW1: running netlist for Vbe = 1.01
-NOTIFY: DC1: creating node list for DC analysis
-NOTIFY: DC1: solving DC netlist
-NOTIFY: DC1: convergence reached after 5 iterations
 checker notice, variable `VBE.I' in equation `Ib' not yet defined
 checker notice, variable `VCE.I' in equation `Ic' not yet defined
 checker notice, variable `VSUB.I' in equation `Isub' not yet defined
-NOTIFY: SW1: running netlist for Vbe = 1.015
-NOTIFY: DC1: creating node list for DC analysis
-NOTIFY: DC1: solving DC netlist
-NOTIFY: DC1: convergence reached after 5 iterations
 checker notice, variable `VBE.I' in equation `Ib' not yet defined
 checker notice, variable `VCE.I' in equation `Ic' not yet defined
 checker notice, variable `VSUB.I' in equation `Isub' not yet defined
-NOTIFY: SW1: running netlist for Vbe = 1.02
-NOTIFY: DC1: creating node list for DC analysis
-NOTIFY: DC1: solving DC netlist
-NOTIFY: DC1: convergence reached after 5 iterations
 checker notice, variable `VBE.I' in equation `Ib' not yet defined
 checker notice, variable `VCE.I' in equation `Ic' not yet defined
 checker notice, variable `VSUB.I' in equation `Isub' not yet defined
-NOTIFY: SW1: running netlist for Vbe = 1.025
-NOTIFY: DC1: creating node list for DC analysis
-NOTIFY: DC1: solving DC netlist
-NOTIFY: DC1: convergence reached after 6 iterations
 checker notice, variable `VBE.I' in equation `Ib' not yet defined
 checker notice, variable `VCE.I' in equation `Ic' not yet defined
 checker notice, variable `VSUB.I' in equation `Isub' not yet defined
-NOTIFY: SW1: running netlist for Vbe = 1.03
-NOTIFY: DC1: creating node list for DC analysis
-NOTIFY: DC1: solving DC netlist
-NOTIFY: DC1: convergence reached after 6 iterations
 checker notice, variable `VBE.I' in equation `Ib' not yet defined
 checker notice, variable `VCE.I' in equation `Ic' not yet defined
 checker notice, variable `VSUB.I' in equation `Isub' not yet defined
-NOTIFY: SW1: running netlist for Vbe = 1.035
-NOTIFY: DC1: creating node list for DC analysis
-NOTIFY: DC1: solving DC netlist
-NOTIFY: DC1: convergence reached after 6 iterations
 checker notice, variable `VBE.I' in equation `Ib' not yet defined
 checker notice, variable `VCE.I' in equation `Ic' not yet defined
 checker notice, variable `VSUB.I' in equation `Isub' not yet defined
-NOTIFY: SW1: running netlist for Vbe = 1.04
-NOTIFY: DC1: creating node list for DC analysis
-NOTIFY: DC1: solving DC netlist
-NOTIFY: DC1: convergence reached after 6 iterations
 checker notice, variable `VBE.I' in equation `Ib' not yet defined
 checker notice, variable `VCE.I' in equation `Ic' not yet defined
 checker notice, variable `VSUB.I' in equation `Isub' not yet defined
-NOTIFY: SW1: running netlist for Vbe = 1.045
-NOTIFY: DC1: creating node list for DC analysis
-NOTIFY: DC1: solving DC netlist
-NOTIFY: DC1: convergence reached after 6 iterations
 checker notice, variable `VBE.I' in equation `Ib' not yet defined
 checker notice, variable `VCE.I' in equation `Ic' not yet defined
 checker notice, variable `VSUB.I' in equation `Isub' not yet defined
-NOTIFY: SW1: running netlist for Vbe = 1.05
-NOTIFY: DC1: creating node list for DC analysis
-NOTIFY: DC1: solving DC netlist
-NOTIFY: DC1: convergence reached after 6 iterations
 checker notice, variable `VBE.I' in equation `Ib' not yet defined
 checker notice, variable `VCE.I' in equation `Ic' not yet defined
 checker notice, variable `VSUB.I' in equation `Isub' not yet defined
-NOTIFY: SW1: running netlist for Vbe = 1.055
-NOTIFY: DC1: creating node list for DC analysis
-NOTIFY: DC1: solving DC netlist
-NOTIFY: DC1: convergence reached after 6 iterations
 checker notice, variable `VBE.I' in equation `Ib' not yet defined
 checker notice, variable `VCE.I' in equation `Ic' not yet defined
 checker notice, variable `VSUB.I' in equation `Isub' not yet defined
-NOTIFY: SW1: running netlist for Vbe = 1.06
-NOTIFY: DC1: creating node list for DC analysis
-NOTIFY: DC1: solving DC netlist
-NOTIFY: DC1: convergence reached after 6 iterations
 checker notice, variable `VBE.I' in equation `Ib' not yet defined
 checker notice, variable `VCE.I' in equation `Ic' not yet defined
 checker notice, variable `VSUB.I' in equation `Isub' not yet defined
-NOTIFY: SW1: running netlist for Vbe = 1.065
-NOTIFY: DC1: creating node list for DC analysis
-NOTIFY: DC1: solving DC netlist
-NOTIFY: DC1: convergence reached after 5 iterations
 checker notice, variable `VBE.I' in equation `Ib' not yet defined
 checker notice, variable `VCE.I' in equation `Ic' not yet defined
 checker notice, variable `VSUB.I' in equation `Isub' not yet defined
-NOTIFY: SW1: running netlist for Vbe = 1.07
-NOTIFY: DC1: creating node list for DC analysis
-NOTIFY: DC1: solving DC netlist
-NOTIFY: DC1: convergence reached after 5 iterations
 checker notice, variable `VBE.I' in equation `Ib' not yet defined
 checker notice, variable `VCE.I' in equation `Ic' not yet defined
 checker notice, variable `VSUB.I' in equation `Isub' not yet defined
-NOTIFY: SW1: running netlist for Vbe = 1.075
-NOTIFY: DC1: creating node list for DC analysis
-NOTIFY: DC1: solving DC netlist
-NOTIFY: DC1: convergence reached after 5 iterations
 checker notice, variable `VBE.I' in equation `Ib' not yet defined
 checker notice, variable `VCE.I' in equation `Ic' not yet defined
 checker notice, variable `VSUB.I' in equation `Isub' not yet defined
-NOTIFY: SW1: running netlist for Vbe = 1.08
-NOTIFY: DC1: creating node list for DC analysis
-NOTIFY: DC1: solving DC netlist
-NOTIFY: DC1: convergence reached after 5 iterations
 checker notice, variable `VBE.I' in equation `Ib' not yet defined
 checker notice, variable `VCE.I' in equation `Ic' not yet defined
 checker notice, variable `VSUB.I' in equation `Isub' not yet defined
-NOTIFY: SW1: running netlist for Vbe = 1.085
-NOTIFY: DC1: creating node list for DC analysis
-NOTIFY: DC1: solving DC netlist
-NOTIFY: DC1: convergence reached after 5 iterations
 checker notice, variable `VBE.I' in equation `Ib' not yet defined
 checker notice, variable `VCE.I' in equation `Ic' not yet defined
 checker notice, variable `VSUB.I' in equation `Isub' not yet defined
-NOTIFY: SW1: running netlist for Vbe = 1.09
-NOTIFY: DC1: creating node list for DC analysis
-NOTIFY: DC1: solving DC netlist
-NOTIFY: DC1: convergence reached after 5 iterations
 checker notice, variable `VBE.I' in equation `Ib' not yet defined
 checker notice, variable `VCE.I' in equation `Ic' not yet defined
 checker notice, variable `VSUB.I' in equation `Isub' not yet defined
-NOTIFY: SW1: running netlist for Vbe = 1.095
-NOTIFY: DC1: creating node list for DC analysis
-NOTIFY: DC1: solving DC netlist
-NOTIFY: DC1: convergence reached after 5 iterations
 checker notice, variable `VBE.I' in equation `Ib' not yet defined
 checker notice, variable `VCE.I' in equation `Ic' not yet defined
 checker notice, variable `VSUB.I' in equation `Isub' not yet defined
-NOTIFY: SW1: running netlist for Vbe = 1.1
-NOTIFY: DC1: creating node list for DC analysis
-NOTIFY: DC1: solving DC netlist
-NOTIFY: DC1: convergence reached after 5 iterations

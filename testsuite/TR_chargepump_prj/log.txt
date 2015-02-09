@@ -1,13 +1,5 @@
 parsing netlist...
 checking netlist...
-subcircuit root
-  C:C1 gnd Source C="1e-11F"
-  R:R1 Source _net0 R="10000" Temp="26.85" Tc1="0" Tc2="0" Tnom="26.85"
-  MOSFET:T1 Gate Drain Source _net1 Type="nfet" Vt0="0.7V" Kp="5e-05" Gamma="0.96" Phi="0.5763V" Lambda="0" Rd="0Ohm" Rs="0Ohm" Rg="0Ohm" Is="0A" N="1" W="3.5e-06m" L="5.5e-06m" Ld="5e-07" Tox="5e-08" Cgso="0" Cgdo="0" Cgbo="0" Cbd="0F" Cbs="0F" Pb="0.7V" Mj="0.5" Fc="0.5" Cjsw="5e-11" Mjsw="0.33" Tt="0s" Nsub="1e+16" Nss="0" Tpg="1" Uo="600" Rsh="20" Nrd="1" Nrs="1" Cj="0.0001" Js="1e-08" Ad="1e-10" As="1e-10" Pd="5e-05" Ps="5e-05" Kf="0" Af="1" Ffe="1" Temp="26.85" Tnom="26.85"
-  Vac:V1 Gate gnd U="5V" f="1e+07Hz" Phase="0" Theta="0"
-  Vac:V3 _net1 gnd U="-5V" f="1e+07Hz" Phase="0" Theta="0"
-  Vac:V2 Drain _net0 U="5V" f="1e+07Hz" Phase="0" Theta="0"
-  TR:TR1 Type="lin" Start="0s" Stop="2e-06s" Points="200" IntegrationMethod="Trapezoidal" Order="2" InitialStep="1e-09s" MinStep="1e-16" MaxIter="150" reltol="0.001" abstol="1e-12A" vntol="1e-06V" Temp="26.85" LTEreltol="0.001" LTEabstol="1e-06" LTEfactor="1" Solver="CroutLU" relaxTSR="no" initialDC="yes" MaxStep="0"
 netlist content
       1 MOSFET instances
       1 C instances
@@ -15,11 +7,5 @@ netlist content
       3 Vac instances
       1 TR instances
 creating netlist...
-NOTIFY: Cox=1.08774e-14, Beta=3.88889e-05 Ga=0.96, Phi=0.5763, Vto=0.7
-NOTIFY: TR1: creating node list for initial DC analysis
-NOTIFY: TR1: solving initial DC netlist
-NOTIFY: Cox=1.08774e-14, Beta=3.88889e-05 Ga=0.96, Phi=0.5763, Vto=0.7
-NOTIFY: TR1: creating node list for transient analysis
-NOTIFY: TR1: solving transient netlist
-NOTIFY: TR1: average time-step 8.32986e-10, 270 rejections
-NOTIFY: TR1: average NR-iterations 3.14202, 0 non-convergences
+NOTIFY: TR1: average time-step 8.21355e-10, 282 rejections
+NOTIFY: TR1: average NR-iterations 3.11786, 0 non-convergences

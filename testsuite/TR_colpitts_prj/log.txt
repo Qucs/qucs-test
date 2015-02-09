@@ -1,16 +1,5 @@
 parsing netlist...
 checking netlist...
-subcircuit root
-  C:C3 _net0 Output C="1e-09F"
-  R:R2 gnd Output R="500Ohm" Temp="26.85" Tc1="0" Tc2="0" Tnom="26.85"
-  Vdc:V1 _net1 gnd U="10V"
-  L:L1 gnd _net2 L="0.0001H"
-  JFET:T1 _net2 _net3 _net0 Type="nfet" Vt0="-0.8V" Beta="0.005" Lambda="0" Rd="0" Rs="0" Is="1e-14" N="1" Isr="1e-14" Nr="2" Cgs="0" Cgd="0" Pb="1" Fc="0.5" M="0.5" Kf="0" Af="1" Ffe="1" Temp="26.85" Xti="3" Vt0tc="0" Betatce="0" Tnom="26.85" Area="1"
-  R:R1 gnd _net0 R="500Ohm" Temp="26.85" Tc1="0" Tc2="0" Tnom="26.85"
-  C:C2 gnd _net0 C="5e-10F"
-  C:C1 _net0 _net2 C="5e-10F"
-  R:R3 _net3 _net1 R="5000Ohm" Temp="26.85" Tc1="0" Tc2="0" Tnom="26.85"
-  TR:TR1 Type="lin" Start="0" Stop="1e-05s" Points="300" IntegrationMethod="Trapezoidal" Order="2" InitialStep="1e-09s" MinStep="1e-16" MaxIter="150" reltol="0.001" abstol="1e-12A" vntol="1e-06V" Temp="26.85" LTEreltol="0.001" LTEabstol="1e-06" LTEfactor="1" Solver="CroutLU" relaxTSR="no" initialDC="yes" MaxStep="0"
 netlist content
       1 JFET instances
       3 C instances
@@ -19,9 +8,5 @@ netlist content
       1 Vdc instances
       1 TR instances
 creating netlist...
-NOTIFY: TR1: creating node list for initial DC analysis
-NOTIFY: TR1: solving initial DC netlist
-NOTIFY: TR1: creating node list for transient analysis
-NOTIFY: TR1: solving transient netlist
 NOTIFY: TR1: average time-step 1.10497e-08, 298 rejections
 NOTIFY: TR1: average NR-iterations 2.65856, 0 non-convergences

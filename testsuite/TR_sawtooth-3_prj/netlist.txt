@@ -1,4 +1,4 @@
-# Qucs 0.0.18  /Users/guilherme/git/qucs-test/testsuite/TR_sawtooth-3_prj/sawtooth-3.sch
+# Qucs 0.0.17  /Users/guitorri/.qucs/TR_sawtooth-3_prj/sawtooth-3.sch
 
 R:RfT1 VfT2 Vf R="1000" Temp="26.85" Tc1="0.0" Tc2="0.0" Tnom="26.85"
 R:RfL2 _net0 Vf R="20" Temp="26.85" Tc1="0.0" Tc2="0.0" Tnom="26.85"
@@ -9,4 +9,4 @@ R:RfT2 VfT1 Vf R="1000" Temp="26.85" Tc1="0.0" Tc2="0.0" Tnom="26.85"
 C:Cp2 _net0 VfT1 C="100nF" V=""
 C:Cp1 VfT2 _net1 C="100nF" V=""
 Vdc:V1 Vf gnd U="4 V"
-.TR:Transient Type="lin" Start="0" Stop="500 us" Points="501" IntegrationMethod="Trapezoidal" Order="2" InitialStep="1 ns" MinStep="1e-16" MaxIter="150" reltol="0.001" abstol="1 pA" vntol="1 uV" Temp="26.85" LTEreltol="1e-3" LTEabstol="1e-6" LTEfactor="1" Solver="CroutLU" relaxTSR="no" initialDC="yes" MaxStep="0"
+.TR:Transient Type="lin" Start="0" Stop="500 us" Points="501" IntegrationMethod="Trapezoidal" Order="2" InitialStep="1 ns" MinStep="1e-10" MaxIter="150" reltol="0.001" abstol="1 pA" vntol="1 uV" Temp="26.85" LTEreltol="1e-3" LTEabstol="1e-6" LTEfactor="1" Solver="CroutLU" relaxTSR="no" initialDC="yes" MaxStep="0"

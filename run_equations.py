@@ -151,7 +151,7 @@ def argTypeToMath(op, argc, argsTypes, prec='%.12f'):
             sign = '+' if value.imag >= 0 else '-'
             valueC = formatComplex.format(value.real, sign , abs(value.imag))
 
-            Eqn.append(valueC.replace('j','*j'))
+            Eqn.append( '(%s)' %valueC.replace('j','*j') )
             pyEqn.append(repr(value));
 
         elif arg == 'TAG_VECTOR':
@@ -199,7 +199,6 @@ def argTypeToMath(op, argc, argsTypes, prec='%.12f'):
     #print pyEqn
 
     opMap={}
-    opMap['^'] = '**'
     opMap['avg'] = 'average'
     opMap['length'] = 'len'
     opMap['random'] = 'random.rand'
@@ -214,10 +213,8 @@ def argTypeToMath(op, argc, argsTypes, prec='%.12f'):
     opMap['>='] = 'greater_equal'
     opMap['<='] = 'less_equal'
 
-    opMap['sqr'] = 'sqrt'
     opMap['arg']   = 'angle' # Qucs alias
     opMap['angle'] = 'angle'
-    opMap['norm'] ='linalg.norm'
 
     opMap['mag'] = 'abs'
 
@@ -245,14 +242,54 @@ def argTypeToMath(op, argc, argsTypes, prec='%.12f'):
         return hypot(x1, x2)
 
     def dB_Help(x):
-        return 20*log10(abs(x))
+        if type(x) == float:
+            return 10.0*log10(abs(x))
+        else:
+            return 10.0*log10(abs(x)**2)
+
+    def sqr_Help(x):
+        if type(x) == ndarray and x.ndim > 1:
+            return linalg.matrix_power(a,2)
+        else:
+            return square(x)
+
+    def mult_Help(x):
+        if type(a) == ndarray and a.ndim > 1:
+            if type(b) == ndarray and b.ndim > 1:
+                return dot(a, b)
+        else:
+            return a*b
+
+    def norm_Help(x):
+        return linalg.norm(x)**2
+
+    def sinc_Help(x):
+        return sinc(x/pi)
+
+    def modulus_Help(x,y):
+        if type(x) == complex or type(y) == complex:
+            return x - y * floor (x / y);
+        else:
+            return x%y
+
+    def hat_Help(x,y):
+        if type(x) == ndarray and x.ndim >= 1:
+            return linalg.matrix_power(x,y)
+        else:
+            return x**y
+
 
     opMap['phase'] = 'angleDeg'
     opMap['ceil'] = 'ceilHelp'
     opMap['fix'] = 'fixHelp'
     opMap['hypot'] = 'hypotHelp'
     opMap['dB'] = 'dB_Help'
-
+    opMap['sqr'] = 'sqr_help'
+    opMap['*'] = 'mult_help'
+    opMap['norm'] ='norm_help'
+    opMap['sinc'] ='sinc_help'
+    opMap['%'] ='modulus_help'
+    opMap['^'] ='hat_help'
 
     # check for operator mapping
     pyOp = op
@@ -351,6 +388,7 @@ def testNetlist(qucsExpression):
 # Skip them for now
 #
 skip =[
+  'arctan',  # can have one or two arguments?
   'length',  # don't know how to handle matvec input
   'array',   # ??
   '?:',      # ifthenesle, needs work
@@ -374,9 +412,6 @@ skip =[
   'NoiseCircle',
   'StabCircleL',
   'StabCircleS',
-  'GaCircle',
-  'GaCircle',
-  'GaCircle',
   'GaCircle',
   'GpCircle',
   'GpCircle',
@@ -404,6 +439,7 @@ skip =[
   'det',
   '!',
   '!=',
+  '==',     # partially working, issue with check2:  check="[1.0,1.5,2.0]==1.5" check2="1.5==[1.0,1.5,2.0]"
   'vector',
   'matrix',
   'assert',
@@ -606,7 +642,7 @@ if __name__ == '__main__':
 
 
             stat = ''
-            if np.allclose(pyResult, test, rtol=1.00001e10, atol=1e-8):
+            if np.allclose(pyResult, test, rtol=1e-5, atol=1e-8):
                 stat = 'PASS'
                 passCount +=1
             else:

@@ -2,25 +2,6 @@ parsing netlist...
 checking netlist...
 checker notice, variable `Output.v' in equation `Ampl' not yet defined
 checker notice, variable `Output.v' in equation `Phase' not yet defined
-subcircuit root
-  R:R2 _net0 _net1 R="10000" Temp="26.85" Tc1="0" Tc2="0" Tnom="26.85"
-  R:R1 _net1 _net2 R="10000" Temp="26.85" Tc1="0" Tc2="0" Tnom="26.85"
-  OpAmp:OP1 _net3 _net2 _net3 G="1e+06" Umax="15V"
-  C:C4 gnd _net2 C="2.962e-08"
-  C:C1 _net1 _net3 C="6.86e-08"
-  Vac:V1 _net0 gnd U="1V" f="1e+09Hz" Phase="0" Theta="0"
-  R:R3 _net3 _net4 R="10000" Temp="26.85" Tc1="0" Tc2="0" Tnom="26.85"
-  R:R4 _net4 _net5 R="10000" Temp="26.85" Tc1="0" Tc2="0" Tnom="26.85"
-  OpAmp:OP2 _net6 _net5 _net6 G="1e+06" Umax="15V"
-  C:C5 gnd _net5 C="4.85e-09"
-  C:C2 _net4 _net6 C="9.37e-08"
-  R:R5 _net6 _net7 R="10000" Temp="26.85" Tc1="0" Tc2="0" Tnom="26.85"
-  R:R6 _net7 _net8 R="10000" Temp="26.85" Tc1="0" Tc2="0" Tnom="26.85"
-  OpAmp:OP3 Output _net8 Output G="1e+06" Umax="15V"
-  C:C6 gnd _net8 C="1e-09"
-  C:C3 _net7 Output C="2.56e-07"
-  AC:AC1 Type="log" Start="1Hz" Stop="10000Hz" Points="201" Noise="no"
-  DC:DC1 Temp="26.85" reltol="0.001" abstol="1e-12A" vntol="1e-06V" saveOPs="no" MaxIter="150" saveAll="no" convHelper="none" Solver="CroutLU"
 netlist content
       1 AC instances
       6 C instances
@@ -31,10 +12,5 @@ netlist content
 creating netlist...
 checker notice, variable `Output.v' in equation `Ampl' not yet defined
 checker notice, variable `Output.v' in equation `Phase' not yet defined
-NOTIFY: DC1: creating node list for DC analysis
-NOTIFY: DC1: solving DC netlist
-NOTIFY: DC1: convergence reached after 2 iterations
 checker notice, variable `Output.v' in equation `Ampl' not yet defined
 checker notice, variable `Output.v' in equation `Phase' not yet defined
-NOTIFY: AC1: creating node list for AC analysis
-NOTIFY: AC1: solving AC netlist

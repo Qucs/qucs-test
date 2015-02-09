@@ -2,30 +2,6 @@ parsing netlist...
 checking netlist...
 checker notice, variable `S' in equation `dB_S21' not yet defined
 checker notice, variable `S' in equation `dB_S11' not yet defined
-subcircuit root
-  MCOUPLED:MS1 _net0 _net1 _net2 _net3 Subst="Subst1" W="0.000384m" L="0.00524m" S="0.000482m" Model="Kirschning" DispModel="Kirschning" Temp="26.85"
-  MCOUPLED:MS2 _net4 _net5 _net6 _net7 Subst="Subst1" W="0.00108m" L="0.00472m" S="0.000712m" Model="Kirschning" DispModel="Kirschning" Temp="26.85"
-  MSTEP:MS17 _net6 _net8 Subst="Subst1" W1="0.00108m" W2="0.0013m" MSModel="Hammerstad" MSDispModel="Kirschning"
-  MSTEP:MS16 _net4 _net2 Subst="Subst1" W1="0.00108m" W2="0.000384m" MSModel="Hammerstad" MSDispModel="Kirschning"
-  MCOUPLED:MS3 _net8 _net9 _net10 _net11 Subst="Subst1" W="0.0013" L="0.00503m" S="0.000913m" Model="Kirschning" DispModel="Kirschning" Temp="26.85"
-  MSTEP:MS18 _net12 _net10 Subst="Subst1" W1="0.00108m" W2="0.0013m" MSModel="Hammerstad" MSDispModel="Kirschning"
-  MOPEN:MS13 _net11 Subst="Subst1" W="0.0013m" MSModel="Hammerstad" MSDispModel="Kirschning" Model="Kirschning"
-  MOPEN:MS14 _net13 Subst="Subst1" W="0.00108m" MSModel="Hammerstad" MSDispModel="Kirschning" Model="Kirschning"
-  MCOUPLED:MS4 _net12 _net14 _net15 _net13 Subst="Subst1" W="0.00108m" L="0.00472m" S="0.000712m" Model="Kirschning" DispModel="Kirschning" Temp="26.85"
-  MSTEP:MS19 _net15 _net16 Subst="Subst1" W1="0.00108m" W2="0.000384m" MSModel="Hammerstad" MSDispModel="Kirschning"
-  MCOUPLED:MS5 _net16 _net17 _net18 _net19 Subst="Subst1" W="0.000384m" L="0.00524m" S="0.000482m" Model="Kirschning" DispModel="Kirschning" Temp="26.85"
-  MOPEN:MS9 _net17 Subst="Subst1" W="0.000384m" MSModel="Hammerstad" MSDispModel="Kirschning" Model="Kirschning"
-  Pac:P2 _net18 gnd Num="2" Z="50Ohm" P="0.001" f="1e+10Hz" Temp="26.85"
-  Pac:P1 _net0 gnd Num="1" Z="50Ohm" P="0.001" f="1e+10Hz" Temp="26.85"
-  SUBST:Subst1 er="2.56" h="0.00076m" t="1.8e-05m" tand="0.003" rho="2.2e-08" D="100"
-  MOPEN:MS11 _net3 Subst="Subst1" W="0.000384m" MSModel="Hammerstad" MSDispModel="Kirschning" Model="Kirschning"
-  MOPEN:MS12 _net7 Subst="Subst1" W="0.00108m" MSModel="Hammerstad" MSDispModel="Kirschning" Model="Kirschning"
-  MOPEN:MS15 _net19 Subst="Subst1" W="0.000384m" MSModel="Hammerstad" MSDispModel="Kirschning" Model="Kirschning"
-  MOPEN:MS10 _net1 Subst="Subst1" W="0.000384m" MSModel="Hammerstad" MSDispModel="Kirschning" Model="Kirschning"
-  MOPEN:MS6 _net5 Subst="Subst1" W="0.00108m" MSModel="Hammerstad" MSDispModel="Kirschning" Model="Kirschning"
-  MOPEN:MS7 _net9 Subst="Subst1" W="0.0013m" MSModel="Hammerstad" MSDispModel="Kirschning" Model="Kirschning"
-  MOPEN:MS8 _net14 Subst="Subst1" W="0.00108m" MSModel="Hammerstad" MSDispModel="Kirschning" Model="Kirschning"
-  SP:SP1 Type="lin" Start="5e+09Hz" Stop="1.5e+10Hz" Points="150" Noise="no" NoiseIP="1" NoiseOP="2" saveCVs="no" saveAll="no"
 netlist content
       5 MCOUPLED instances
      10 MOPEN instances
@@ -36,7 +12,3 @@ netlist content
 creating netlist...
 checker notice, variable `S' in equation `dB_S21' not yet defined
 checker notice, variable `S' in equation `dB_S11' not yet defined
-NOTIFY: SP1: preparing circuit for analysis
-NOTIFY: SP1: inserted 0 tees, 0 crosses, 0 opens and 2 grounds
-NOTIFY: SP1: creating sorted nodelist for SP analysis
-NOTIFY: SP1: solving SP netlist

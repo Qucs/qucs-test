@@ -1,37 +1,7 @@
-Output:
--------
-
-Starting new simulation on Fri 06. Dec 2013 at 17:15:21:337
-
-creating netlist... done.
 parsing netlist...
 checking netlist...
 checker notice, variable `Vout.v' in equation `y1' not yet defined
 checker notice, variable `Vout.v' in equation `y2' not yet defined
-subcircuit root
-  VCVS:opa227.OPA227_2.SRC1 _net3 opa227.OPA227_2._net2 gnd _net4 G="1e+08" T="0"
-  C:opa227.OPA227_2.C1 gnd opa227.OPA227_2._net0 C="0.00198944F"
-  R:opa227.OPA227_2.R1 opa227.OPA227_2._net2 opa227.OPA227_2._net0 R="1000Ohm" Temp="26.85" Tc1="0" Tc2="0" Tnom="26.85"
-  VCVS:opa227.OPA227_2.SRC2 opa227.OPA227_2._net0 Vout gnd gnd G="1" T="0"
-  VCVS:opa227.OPA227_1.SRC1 _net0 opa227.OPA227_1._net2 gnd _net1 G="1e+08" T="0"
-  C:opa227.OPA227_1.C1 gnd opa227.OPA227_1._net0 C="0.00198944F"
-  R:opa227.OPA227_1.R1 opa227.OPA227_1._net2 opa227.OPA227_1._net0 R="1000Ohm" Temp="26.85" Tc1="0" Tc2="0" Tnom="26.85"
-  VCVS:opa227.OPA227_1.SRC2 opa227.OPA227_1._net0 _net2 gnd gnd G="1" T="0"
-  C:C1 Vin _net0 C="1e-07F"
-  R:R2 gnd _net1 R="10000Ohm" Temp="26.85" Tc1="0" Tc2="0" Tnom="26.85"
-  R:R5 gnd _net4 R="10000Ohm" Temp="26.85" Tc1="0" Tc2="0" Tnom="26.85"
-  AC:AC1 Type="log" Start="10Hz" Stop="1e+06Hz" Points="1000" Noise="no"
-  Vac:V1 Vin gnd U="1V" f="1000Hz" Phase="0" Theta="0"
-  R:R1 _net1 _net2 R="10000Ohm" Temp="26.85" Tc1="0" Tc2="0" Tnom="26.85"
-  R:R4 _net4 Vout R="10000Ohm" Temp="26.85" Tc1="0" Tc2="0" Tnom="26.85"
-  C:C2 gnd _net3 C="1e-07F"
-  R:R3 _net0 gnd R="1591Ohm" Temp="26.85" Tc1="0" Tc2="0" Tnom="26.85"
-  R:R6 _net2 _net3 R="1.59Ohm" Temp="26.85" Tc1="0" Tc2="0" Tnom="26.85"
-subcircuit opa227
-  VCVS:SRC2 _net0 _net1 gnd gnd G="1" T="0"
-  R:R1 _net2 _net0 R="1000Ohm" Temp="26.85" Tc1="0" Tc2="0" Tnom="26.85"
-  C:C1 gnd _net0 C="0.00198944F"
-  VCVS:SRC1 _net3 _net2 gnd _net4 G="1e+08" T="0"
 netlist content
       1 AC instances
       4 C instances
@@ -41,16 +11,3 @@ netlist content
 creating netlist...
 checker notice, variable `Vout.v' in equation `y1' not yet defined
 checker notice, variable `Vout.v' in equation `y2' not yet defined
-NOTIFY: AC1: creating node list for AC analysis
-NOTIFY: AC1: solving AC netlist
-
-Simulation ended on Fri 06. Dec 2013 at 17:15:21:630
-Ready.
-
-
-
-
-Errors:
--------
-
-

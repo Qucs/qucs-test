@@ -1,17 +1,54 @@
 # Qucs testing scripts.
 
 
-Objective: test the Qucs frond and back ends.
+Objective: test the Qucs (GUI) and Qucsator (simulator).
 
 The test projects under the `testsuite` directory are all run by default.
 
 To skip failing projects use the `--skip` option with a list of projects to be ignored.
 
 
+## Options: `python run.py -h`
+
+```
+usage: run.py [-h] [--prefix PREFIX] [--qucs] [--qucsator] [-p]
+              [--add-test ADD_TEST] [--skip SKIP] [--project PROJECT]
+              [--compare-qucsator COMPARE_QUCSATOR [COMPARE_QUCSATOR ...]]
+              [-v [VERBOSE]] [--reset] [--timeout TIMEOUT]
+
+Qucs testing script.
+
+optional arguments:
+  -h, --help            show this help message and exit
+  --prefix PREFIX       prefix of installed Qucs (default: /usr/local/bin/)
+  --qucs                run qucs tests
+  --qucsator            run qucsator tests
+  -p                    run qucs and prints the schematic to file
+  --add-test ADD_TEST   add schematic to the testsuite
+  --skip SKIP           file listing skipped test projects
+  --project PROJECT     path to a test project
+  --compare-qucsator COMPARE_QUCSATOR [COMPARE_QUCSATOR ...]
+                        two full paths to directories containing qucsator
+                        binaries for comparison test
+  -v [VERBOSE], --verbose [VERBOSE]
+                        increase verbosity: 0 = progress and errors, 1 = all
+                        info. Default is low verbosity.
+  --reset               Reset (overwrite) data and log files of test
+                        projects.Run qucsator given with --prefix.
+  --timeout TIMEOUT     Abort test if longer that timeout (default: 15 s).
+```
+
+## Outputs
+
+ * The script is rather verbose and the progress is printed to the terminal (with colors, yeah!).
+
+ * A table with the run project, Qucs schematic version and simulation runtim is saved automatically and time-stamped.
+
+ * A report table with all components available to Qucs and the coverage with respect to the types of simulations.
 
 ## Running the test suite
 
-Example of running the test-suite while skipping a few test projects:
+Example of running the test-suite for Qucsator while skipping a few test projects:
 
 ```
 $python run.py --prefix /home/user/local/qucs-master/bin/ --skip skip.txt --qucsator
@@ -32,50 +69,21 @@ $python run.py --prefix /home/user/local/qucs-master/bin/ --skip skip_print.txt 
 $python run.py --prefix /home/user/local/qucs-master/bin/ --p --project AC_SW_resonance_prj
 ```
 
-Options:
-
- * `--qucs` runs the schematic to netlist conversion.
-
- * `--qucsator` runs the simulator.
-
- * `--add-test [schematic].sch` adds a schematic as a test-project into the test-set.
-
-    * it will attempt to initialize/create the reference netlist, reference results and log files.
-
- * `--skip [file]` will skip the projects listed in the [file].
-
-    * current format: PROJECT_NAME, Any comment (project name should end with a ',')
-
- * `--project [project directory from testset]` will run a single test from the set.
-
- * `--compare-qucsator [prefix/one prefix/two prefix/three]` runs multipe qucsator simulators.
-
-    * The simulator found in each supplied directory is run on all on the projects for comparison.
-
- * `--verbose [0|1]` increase verbosity: 0 = progress and errors, 1 = all info.
-
-Outputs:
-
- * The script is rather verbose and the progress is printed to the terminal (with colors, yeah!).
-
- * A table with the run project, Qucs schematic version and simulation runtim is saved automatically and time-stamped.
-
- * A report table with all components available to Qucs and the coverage with respect to the types of simulations.
 
 
 ## Running the Qucs equations tests
 
-Qucs is featured with an equation system directly on the schematic area.
+Qucs is featured with an equation system available in the schematic area.
 
-The script below tests seveal of the built-in functions.
+The script below tests several of the built-in functions.
 
 In short, it works as follows:
 
 - For each entry in src/application.h.
 - Generate random (or constrained) arguments (double, complex, matrix...)
-- Create a test equation and computes the expected result.
+- Create a test equation and computes the expected result (with Python and Numpy).
 - Save test equation into a netlist
-- Run the netlist and read the simulator output
+- Run the netlist and read the simulator output.
 - Compare simulator output to the expected result.
 
 Run it with:
@@ -174,6 +182,7 @@ $qucsator -i netlist.txt -o result.dat
  * Tests should exercise corners that are crucial for stable releases.
  * Before releasing, the test set should be run with no regressions.
  * Git can be used to version test result (timing history?)
+ * Use `git diff -G '^([^#])'` to ignore the changes on the header line of the netlist files.
 
 
 # Test-case

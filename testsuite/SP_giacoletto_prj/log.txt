@@ -1,17 +1,5 @@
 parsing netlist...
 checking netlist...
-subcircuit root
-  L:L1 _net0 _net1 L="1.5e-09H"
-  R:R2 gnd _net2 R="66.7Ohm" Temp="26.85" Tc1="0" Tc2="0" Tnom="26.85"
-  C:C1 gnd _net2 C="3.882e-11F"
-  R:R1 _net1 _net2 R="45Ohm" Temp="26.85" Tc1="0" Tc2="0" Tnom="26.85"
-  VCCS:SRC1 _net2 _net3 gnd gnd G="1.2S" T="0"
-  L:L2 _net3 _net4 L="1.5e-09H"
-  C:C2 _net2 _net3 C="1e-13F"
-  C:C3 _net1 _net3 C="6.5e-13F"
-  Pac:P2 _net0 gnd Num="1" Z="50Ohm" P="0.001" f="1e+09Hz" Temp="26.85"
-  Pac:P1 _net4 gnd Num="2" Z="50Ohm" P="0.001" f="1e+09Hz" Temp="26.85"
-  SP:SP1 Type="lin" Start="1e+08Hz" Stop="1.1e+09Hz" Points="110" Noise="no" NoiseIP="1" NoiseOP="2" saveCVs="no" saveAll="no"
 netlist content
       3 C instances
       2 L instances
@@ -20,7 +8,3 @@ netlist content
       1 VCCS instances
       1 SP instances
 creating netlist...
-NOTIFY: SP1: preparing circuit for analysis
-NOTIFY: SP1: inserted 2 tees, 2 crosses, 0 opens and 6 grounds
-NOTIFY: SP1: creating sorted nodelist for SP analysis
-NOTIFY: SP1: solving SP netlist

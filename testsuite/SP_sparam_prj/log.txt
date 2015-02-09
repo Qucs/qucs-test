@@ -1,22 +1,7 @@
-Output:
--------
-
-Starting new simulation on Sat 06. Jul 2013 at 14:56:23:022
-
-creating netlist... done.
 parsing netlist...
 checking netlist...
 checker notice, variable `S' in equation `dBS21' not yet defined
 checker notice, variable `S' in equation `dBS11' not yet defined
-subcircuit root
-  Pac:P1 _net0 gnd Num="1" Z="50Ohm" P="0.001" f="1e+09Hz" Temp="26.85"
-  C:C1 gnd _net0 C="6.796e-12F"
-  L:L1 _net0 _net1 L="8.683e-09H"
-  C:C2 gnd _net1 C="9.552e-12F"
-  L:L2 _net1 _net2 L="8.683e-09H"
-  Pac:P2 _net2 gnd Num="2" Z="50Ohm" P="0.001" f="1e+09Hz" Temp="26.85"
-  SP:SP1 Type="log" Start="1e+08Hz" Stop="2e+09Hz" Points="601" Noise="no" NoiseIP="1" NoiseOP="2" saveCVs="no" saveAll="no"
-  C:C3 gnd _net2 C="6.796e-12F"
 netlist content
       3 C instances
       2 L instances
@@ -25,18 +10,3 @@ netlist content
 creating netlist...
 checker notice, variable `S' in equation `dBS21' not yet defined
 checker notice, variable `S' in equation `dBS11' not yet defined
-NOTIFY: SP1: preparing circuit for analysis
-NOTIFY: SP1: inserted 3 tees, 0 crosses, 0 opens and 5 grounds
-NOTIFY: SP1: creating sorted nodelist for SP analysis
-NOTIFY: SP1: solving SP netlist
-
-Simulation ended on Sat 06. Jul 2013 at 14:56:23:105
-Ready.
-
-
-
-
-Errors:
--------
-
-

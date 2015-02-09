@@ -1,18 +1,5 @@
 parsing netlist...
 checking netlist...
-subcircuit root
-  Diode:D1 _net0 gnd Is="1e-15A" N="1" Cj0="1e-14F" M="0.5" Vj="0.7V" Fc="0.5" Cp="0F" Isr="0" Nr="2" Rs="0Ohm" Tt="0s" Ikf="0" Kf="0" Af="1" Ffe="1" Bv="0" Ibv="0.001A" Temp="26.85" Xti="3" Eg="1.11" Tbv="0" Trs="0" Ttt1="0" Ttt2="0" Tm1="0" Tm2="0" Tnom="26.85" Area="1"
-  Diode:D2 _net1 _net0 Is="1e-15A" N="1" Cj0="1e-14F" M="0.5" Vj="0.7V" Fc="0.5" Cp="0F" Isr="0" Nr="2" Rs="0Ohm" Tt="0s" Ikf="0" Kf="0" Af="1" Ffe="1" Bv="0" Ibv="0.001A" Temp="26.85" Xti="3" Eg="1.11" Tbv="0" Trs="0" Ttt1="0" Ttt2="0" Tm1="0" Tm2="0" Tnom="26.85" Area="1"
-  C:C1 _net0 Input C="1e-06F"
-  C:C2 _net1 gnd C="1e-06F"
-  Diode:D3 _net2 _net1 Is="1e-15A" N="1" Cj0="1e-14F" M="0.5" Vj="0.7V" Fc="0.5" Cp="0F" Isr="0" Nr="2" Rs="0Ohm" Tt="0s" Ikf="0" Kf="0" Af="1" Ffe="1" Bv="0" Ibv="0.001A" Temp="26.85" Xti="3" Eg="1.11" Tbv="0" Trs="0" Ttt1="0" Ttt2="0" Tm1="0" Tm2="0" Tnom="26.85" Area="1"
-  Diode:D4 Output _net2 Is="1e-15A" N="1" Cj0="1e-14F" M="0.5" Vj="0.7V" Fc="0.5" Cp="0F" Isr="0" Nr="2" Rs="0Ohm" Tt="0s" Ikf="0" Kf="0" Af="1" Ffe="1" Bv="0" Ibv="0.001A" Temp="26.85" Xti="3" Eg="1.11" Tbv="0" Trs="0" Ttt1="0" Ttt2="0" Tm1="0" Tm2="0" Tnom="26.85" Area="1"
-  C:C3 _net2 _net0 C="1e-06F"
-  C:C4 Output _net1 C="1e-06F"
-  R:R_load gnd Output R="100000Ohm" Temp="26.85" Tc1="0" Tc2="0" Tnom="26.85"
-  R:R1 _net3 Input R="1Ohm" Temp="26.85" Tc1="0" Tc2="0" Tnom="26.85"
-  Vac:V1 _net3 gnd U="10V" f="1000Hz" Phase="0" Theta="0"
-  TR:TR1 Type="lin" Start="0" Stop="0.03s" Points="300" IntegrationMethod="Trapezoidal" Order="2" InitialStep="1e-09s" MinStep="1e-16" MaxIter="150" reltol="0.001" abstol="1e-12A" vntol="1e-06V" Temp="26.85" LTEreltol="0.001" LTEabstol="1e-06" LTEfactor="1" Solver="CroutLU" relaxTSR="no" initialDC="yes" MaxStep="0"
 netlist content
       4 Diode instances
       4 C instances
@@ -20,9 +7,5 @@ netlist content
       1 Vac instances
       1 TR instances
 creating netlist...
-NOTIFY: TR1: creating node list for initial DC analysis
-NOTIFY: TR1: solving initial DC netlist
-NOTIFY: TR1: creating node list for transient analysis
-NOTIFY: TR1: solving transient netlist
-NOTIFY: TR1: average time-step 5.57103e-06, 850 rejections
-NOTIFY: TR1: average NR-iterations 3.06611, 0 non-convergences
+NOTIFY: TR1: average time-step 5.58451e-06, 889 rejections
+NOTIFY: TR1: average NR-iterations 3.13179, 0 non-convergences

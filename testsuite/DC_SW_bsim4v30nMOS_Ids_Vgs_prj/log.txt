@@ -1,7 +1,3 @@
-project location: 
-modules to load: 0
-factorycreate.size() is 0
-factorycreate has registered:
 parsing netlist...
 checking netlist...
 netlist content

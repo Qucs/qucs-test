@@ -3,13 +3,6 @@ checking netlist...
 checker notice, variable `S' in equation `dBS21_3rd' not yet defined
 checker notice, variable `S' in equation `gain_phase' not yet defined
 checker notice, variable `frequency' in equation `group_delay' not yet defined
-subcircuit root
-  C:C1 gnd _net0 C="3.901e-11F"
-  L:L1 _net0 _net1 L="2.809e-07H"
-  C:C2 gnd _net1 C="3.901e-11F"
-  Pac:P1 _net0 gnd Num="1" Z="60Ohm" P="0.001" f="1e+09Hz" Temp="26.85"
-  SP:SP1 Type="log" Start="1e+06Hz" Stop="2e+08Hz" Points="458" Noise="no" NoiseIP="1" NoiseOP="2" saveCVs="no" saveAll="no"
-  Pac:P2 _net1 gnd Num="2" Z="60Ohm" P="0.001" f="1e+09Hz" Temp="26.85"
 netlist content
       2 C instances
       1 L instances
@@ -19,7 +12,3 @@ creating netlist...
 checker notice, variable `S' in equation `dBS21_3rd' not yet defined
 checker notice, variable `S' in equation `gain_phase' not yet defined
 checker notice, variable `frequency' in equation `group_delay' not yet defined
-NOTIFY: SP1: preparing circuit for analysis
-NOTIFY: SP1: inserted 2 tees, 0 crosses, 0 opens and 4 grounds
-NOTIFY: SP1: creating sorted nodelist for SP analysis
-NOTIFY: SP1: solving SP netlist
