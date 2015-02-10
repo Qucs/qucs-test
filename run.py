@@ -791,7 +791,7 @@ if __name__ == '__main__':
         prefix = os.path.join('/usr/local/bin/')
 
 
-    if (args.qucs or args.p or args.reset):
+    if (args.qucs or args.p):
         if os.path.isfile(os.path.join(prefix[0], 'qucs')):
             print pb('Found Qucs in: %s' %(prefix))
         else:
