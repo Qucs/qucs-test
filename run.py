@@ -123,7 +123,8 @@ def get_qucsator_version(prefix):
     :param prefix: path to qucsator executable
     :return: the version tag of qucsator
     '''
-    cmd = [prefix + "qucsator", "-v"]
+    ext = '' if os.name != 'nt' else '.exe'
+    cmd = [prefix + "qucsator"+ext, "-v"]
     p = subprocess.Popen(cmd, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
     version = p.stdout.readlines()[0].strip()
     return version
@@ -477,7 +478,8 @@ def run_simulation(proj, sim_report={}, prefix=''):
     sim_report['version'] = get_sch_version(schematic)
 
     output_dataset = "test_"+name+".dat"
-    cmd = [prefix + "qucsator", "-i", input_net, "-o", output_dataset]
+    ext = '' if os.name != 'nt' else '.exe'
+    cmd = [prefix + "qucsator"+ext, "-i", input_net, "-o", output_dataset]
     print 'Running : ', ' '.join(cmd)
 
     # TODO run a few times, record average, add to report
@@ -792,14 +794,15 @@ if __name__ == '__main__':
 
 
     if (args.qucs or args.p):
-        if os.path.isfile(os.path.join(prefix[0], 'qucs')):
+        ext = '' if os.name != 'nt' else '.exe'
+        if os.path.isfile(os.path.join(prefix[0], 'qucs'+ext)):
             print pb('Found Qucs in: %s' %(prefix))
         else:
             sys.exit(pr('Oh dear, Qucs not found in: %s' %(prefix)))
 
     if (args.qucsator or args.reset):
-
-        if os.path.isfile(os.path.join(prefix[0], 'qucsator')):
+        ext = '' if os.name != 'nt' else '.exe'
+        if os.path.isfile(os.path.join(prefix[0], 'qucsator'+ext)):
             print pb('Found Qucsator in: %s' %(prefix))
         else:
             sys.exit(pr('Oh dear, Qucsator not found in: %s' %(prefix)))
@@ -812,7 +815,8 @@ if __name__ == '__main__':
         print pb('Comparing the following qucsators:')
 
         for qp in prefix:
-            if os.path.isfile(os.path.join(qp, 'qucsator')):
+            ext = '' if os.name != 'nt' else '.exe'
+            if os.path.isfile(os.path.join(qp, 'qucsator'+ext)):
                 print pb('%s' %(qp))
             else:
                 sys.exit(pr("No qucsator binary found in: %s" %(qp)))
