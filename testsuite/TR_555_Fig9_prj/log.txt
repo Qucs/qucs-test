@@ -1,18 +1,36 @@
-parsing netlist...
-checking netlist...
-netlist content
-      2 Inv instances
-      2 Idc instances
-      9 C instances
-      1 VCVS instances
-      1 BJT instances
-      1 OR instances
-     15 R instances
-      1 Vpulse instances
-      2 OpAmp instances
-      1 Vdc instances
-      2 NOR instances
-      1 TR instances
-creating netlist...
-NOTIFY: TR1: average time-step 3.09502e-08, 4875 rejections
-NOTIFY: TR1: average NR-iterations 2.55607, 0 non-convergences
+Output:
+-------
+
+Starting new simulation on Di. 10. Feb 2015 at 16:52:14
+Starting new simulation on Di. 10. Feb 2015 at 16:52:14
+Starting new simulation on Di. 10. Feb 2015 at 16:52:14
+Starting new simulation on Di. 10. Feb 2015 at 16:52:14
+Starting new simulation on Di. 10. Feb 2015 at 16:52:14
+Starting new simulation on Di. 10. Feb 2015 at 16:52:14
+Starting new simulation on Di. 10. Feb 2015 at 16:52:14
+Starting new simulation on Di. 10. Feb 2015 at 16:52:14
+Starting new simulation on Di. 10. Feb 2015 at 16:52:14
+Starting new simulation on Di. 10. Feb 2015 at 16:52:14
+Starting new simulation on Di. 10. Feb 2015 at 16:52:14
+Starting new simulation on Di. 10. Feb 2015 at 16:52:14
+Starting new simulation on Di. 10. Feb 2015 at 16:52:14
+Starting new simulation on Di. 10. Feb 2015 at 16:52:14
+Starting new simulation on Di. 10. Feb 2015 at 16:52:14
+Starting new simulation on Di. 10. Feb 2015 at 16:52:14
+Starting new simulation on Di. 10. Feb 2015 at 16:52:14
+Starting new simulation on Di. 10. Feb 2015 at 16:52:14
+Starting new simulation on Di. 10. Feb 2015 at 16:52:14
+Starting new simulation on Di. 10. Feb 2015 at 16:52:14
+Starting new simulation on Di. 10. Feb 2015 at 16:52:14
+Starting new simulation on Di. 10. Feb 2015 at 16:52:14
+Starting new simulation on Di. 10. Feb 2015 at 16:52:14
+Starting new simulation on Di. 10. Feb 2015 at 16:52:14
+Starting new simulation on Di. 10. Feb 2015 at 16:52:14
+Starting new simulation on Di. 10. Feb 2015 at 16:52:14
+
+
+
+Errors:
+-------
+
+
