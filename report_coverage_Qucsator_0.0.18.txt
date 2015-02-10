@@ -8,8 +8,8 @@ Component          | Simulations Covered
 ----------------------------------------
 Amplifier          |  ---       
 Attenuator         |  ---       
-BiasT              |  ---       
-Capacitor          | AC, TR, SP, SW, DC 
+BiasT              | SP, DC     
+Capacitor          | AC, SW, SP, TR, DC 
 Circulator         |  ---       
 Coupler            |  ---       
 Ground             |  ---       
@@ -19,6 +19,7 @@ Inductor           | AC, TR, SP, SW, DC
 Isolator           |  ---       
 Mutual             |  ---       
 Mutual2            |  ---       
+MutualX            |  ---       
 Phaseshifter       |  ---       
 RFedd              |  ---       
 RFedd2P            |  ---       
@@ -37,19 +38,19 @@ Component          | Simulations Covered
 ----------------------------------------
 AM_Modulator       |  ---       
 Ampere_ac          | TR, DC     
-Ampere_dc          | SW, AC, TR, DC 
+Ampere_dc          | AC, TR, SW, DC 
 Ampere_noise       |  ---       
-CCCS               |  ---       
-CCVS               |  ---       
+CCCS               | AC, TR, DC 
+CCVS               | AC, TR, DC 
 Noise_ii           |  ---       
 Noise_iv           |  ---       
 Noise_vv           |  ---       
 PM_Modulator       |  ---       
 Source_ac          | AC, SP, DC 
-VCCS               | SP         
-VCVS               | AC         
-Volt_ac            | AC, HB, TR, SP, SW, DC 
-Volt_dc            | AC, TR, SP, SW, DC 
+VCCS               | AC, SP, TR, DC 
+VCVS               | AC, TR     
+Volt_ac            | AC, HB, SW, SP, TR, DC 
+Volt_dc            | AC, SW, SP, TR, DC 
 Volt_noise         |  ---       
 iExp               |  ---       
 iFile              |  ---       
@@ -103,8 +104,8 @@ Component          | Simulations Covered
 ----------------------------------------
 BJT                |  ---       
 Diac               |  ---       
-Diode              | AC, HB, TR, SP, SW, DC 
-EqnDefined         |  ---       
+Diode              | AC, HB, SW, SP, TR, DC 
+EqnDefined         | AC, TR, DC 
 JFET               | TR         
 MOSFET             |  ---       
 OpAmp              | AC, SP, TR, DC 
@@ -128,7 +129,7 @@ hic2_full          |  ---
 hicumL0V1p2        |  ---       
 hicumL0V1p2g       |  ---       
 hicumL0V1p3        |  ---       
-hicumL2V2p1        |  ---       
+hicumL2V2p1        | SP, DC     
 hicumL2V2p23       |  ---       
 hicumL2V2p24       |  ---       
 hicumL2V2p31n      |  ---       
@@ -138,6 +139,7 @@ nigbt              |  ---
 photodiode         |  ---       
 phototransistor    |  ---       
 potentiometer      |  ---       
+vcresistor         |  ---       
 ----------------------------------------
 ### Kind: DIGITAL
 ----------------------------------------
@@ -150,10 +152,10 @@ Digi_Source        |  ---
 JK_FlipFlop        |  ---       
 Logical_AND        |  ---       
 Logical_Buf        |  ---       
-Logical_Inv        |  ---       
+Logical_Inv        | TR         
 Logical_NAND       |  ---       
-Logical_NOR        |  ---       
-Logical_OR         |  ---       
+Logical_NOR        | TR         
+Logical_OR         | TR         
 Logical_XNOR       |  ---       
 Logical_XOR        |  ---       
 RS_FlipFlop        |  ---       
@@ -190,8 +192,8 @@ tff_SR             |  ---
 Component          | Simulations Covered 
 ----------------------------------------
 SParamFile         |  ---       
-SpiceFile          | TR, SW, DC 
-Subcircuit         | AC, TR, SP, SW, DC 
+SpiceFile          |  ---       
+Subcircuit         | AC, SW, SP, TR, DC 
 ----------------------------------------
 ----------------------------------------
 All Available Simulations:
