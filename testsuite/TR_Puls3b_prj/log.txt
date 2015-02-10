@@ -1,27 +1,11 @@
-Output:
--------
-
-Starting new simulation on Di. 10. Feb 2015 at 16:43:32
-Starting new simulation on Di. 10. Feb 2015 at 16:43:32
-Starting new simulation on Di. 10. Feb 2015 at 16:43:32
-Starting new simulation on Di. 10. Feb 2015 at 16:43:32
-Starting new simulation on Di. 10. Feb 2015 at 16:43:32
-Starting new simulation on Di. 10. Feb 2015 at 16:43:32
-Starting new simulation on Di. 10. Feb 2015 at 16:43:32
-Starting new simulation on Di. 10. Feb 2015 at 16:43:32
-Starting new simulation on Di. 10. Feb 2015 at 16:43:32
-Starting new simulation on Di. 10. Feb 2015 at 16:43:32
-Starting new simulation on Di. 10. Feb 2015 at 16:43:32
-Starting new simulation on Di. 10. Feb 2015 at 16:43:32
-Starting new simulation on Di. 10. Feb 2015 at 16:43:32
-Starting new simulation on Di. 10. Feb 2015 at 16:43:32
-Starting new simulation on Di. 10. Feb 2015 at 16:43:32
-Starting new simulation on Di. 10. Feb 2015 at 16:43:32
-Starting new simulation on Di. 10. Feb 2015 at 16:43:32
-
-
-
-Errors:
--------
-
-
+parsing netlist...
+checking netlist...
+netlist content
+      2 Switch instances
+      2 C instances
+      3 R instances
+      2 Vdc instances
+      1 TR instances
+creating netlist...
+NOTIFY: TR1: average time-step 1.64609e-10, 403 rejections
+NOTIFY: TR1: average NR-iterations 2.66337, 0 non-convergences

@@ -10,5 +10,5 @@ netlist content
       1 Vdc instances
       1 TR instances
 creating netlist...
-NOTIFY: TR1: average time-step 1.06458e-09, 505 rejections
-NOTIFY: TR1: average NR-iterations 3.38573, 0 non-convergences
+NOTIFY: TR1: average time-step 1.0453e-09, 489 rejections
+NOTIFY: TR1: average NR-iterations 3.3554, 0 non-convergences

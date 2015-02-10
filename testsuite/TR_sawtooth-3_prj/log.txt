@@ -7,5 +7,5 @@ netlist content
       1 Vdc instances
       1 TR instances
 creating netlist...
-NOTIFY: Transient: average time-step 1.8423e-07, 646 rejections
-NOTIFY: Transient: average NR-iterations 3.30177, 0 non-convergences
+NOTIFY: Transient: average time-step 1.8457e-07, 694 rejections
+NOTIFY: Transient: average NR-iterations 3.35031, 0 non-convergences

@@ -7,5 +7,5 @@ netlist content
       2 Vac instances
       1 TR instances
 creating netlist...
-NOTIFY: TR1: average time-step 5.29942e-07, 338 rejections
-NOTIFY: TR1: average NR-iterations 3.57817, 0 non-convergences
+NOTIFY: TR1: average time-step 5.29661e-07, 339 rejections
+NOTIFY: TR1: average NR-iterations 3.57839, 0 non-convergences

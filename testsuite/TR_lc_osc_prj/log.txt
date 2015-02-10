@@ -14,5 +14,5 @@ creating netlist...
 checker notice, variable `neg.Vt' in equation `Vout' not yet defined
 checker notice, variable `pos.Vt' in equation `Vout' not yet defined
 checker notice, variable `time' in equation `Spectrum' not yet defined
-NOTIFY: TR1: average time-step 1.93498e-12, 365 rejections
-NOTIFY: TR1: average NR-iterations 2.90983, 0 non-convergences
+NOTIFY: TR1: average time-step 1.93573e-12, 387 rejections
+NOTIFY: TR1: average NR-iterations 2.93186, 0 non-convergences
