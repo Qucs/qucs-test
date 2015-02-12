@@ -517,6 +517,7 @@ def run_simulation(proj, sim_report={}, prefix=''):
 
 
     # perform comparison
+    # TODO make a function out of this.
     else:
         ref_dataset = get_sch_dataset(schematic)
         if not os.path.isfile(ref_dataset):
@@ -550,7 +551,7 @@ def run_simulation(proj, sim_report={}, prefix=''):
                     ref_trace  = ref_data[name]
                     test_trace = test_data[name]
 
-                    if not np.allclose(ref_trace, test_trace, rtol=1e-05, atol=1e-08):
+                    if not np.allclose(ref_trace, test_trace, rtol=rtol, atol=atol):
                         print pr('  Failed %s' %(name))
                         failed.append(name)
                         sim_report['status'] = 'FAIL'
@@ -764,6 +765,14 @@ def parse_options():
     parser.add_argument('--timeout', type=int, default=60,
                        help='Abort test if longer that timeout (default: 60 s).')
 
+    parser.add_argument('--rtol', type=float, default=1e-5,
+                       help='Set the element-wise relative tolerace (default 1e-5).\n'
+                            'See: Numpy allclose function.')
+
+    parser.add_argument('--atol', type=float, default=1e-8,
+                       help='Set the element-wise absolute tolerace (default 1e-8).\n'
+                            'See: Numpy allclose function.')
+
     args = parser.parse_args()
     return args
 
@@ -775,7 +784,10 @@ if __name__ == '__main__':
     #print(args)
 
 
+    # set global values, default or overrides
     maxTime = args.timeout
+    rtol = args.rtol
+    atol = args.atol
 
 
     # simple verbose printer
