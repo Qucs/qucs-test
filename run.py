@@ -33,6 +33,7 @@ from qucstest.netlist import *
 from qucstest.report import *
 import qucstest.qucsdata as qucsdata
 from qucstest.qucsator import *
+from qucstest.qucsgui import *
 
 #http://stackoverflow.com/questions/1191374/subprocess-with-timeout
 class Command(object):
@@ -71,20 +72,6 @@ class Command(object):
             vprint( pb('  Return code: %i' %self.retcode) )
 
 
-def get_qucs_version(prefix):
-    '''
-    Run Qucs-GUI and return its version string.
-
-    :param prefix: path to qucsator executable
-    :return: the version tag of qucsator
-    '''
-    cmd = [prefix + "qucs", "-v"]
-    p = subprocess.Popen(cmd, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
-    version = p.stdout.readlines()[0].strip()
-    return version
-
-
-
 def get_subdirs(dir):
     '''
     Return a list of names of subdirectories.
@@ -96,26 +83,6 @@ def get_subdirs(dir):
             if os.path.isdir(os.path.join(dir, name))]
 
 
-def sch2net (input_sch, output_net, prefix):
-    '''
-    Convert sch to netlist.
-    Run Qucs-GUI, convert schematic into netlist.
-
-    :param input_sch: path to input schematic
-    :param output_net: path to generated netlist
-    :param prefix: previx where qucs can be found
-    '''
-    print pb("Converting schematic to netlist.")
-    cmd = [os.path.join(prefix,"qucs"), "-n", "-i", input_sch, "-o", output_net]
-    print 'Running [qucs]: ', ' '.join(cmd)
-    p = subprocess.Popen(cmd, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
-    retval = p.wait()
-    # report issues if any
-    if retval:
-        print 'Return code: ', retval
-        for line in p.stdout.readlines():
-            print line,
-        sys.exit('Error on sch2net.')
 
 def result_compare(ref_dataset, test_dataset, sim_report = {}):
     '''
