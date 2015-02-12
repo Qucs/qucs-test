@@ -32,6 +32,7 @@ from qucstest.schematic import *
 from qucstest.netlist import *
 from qucstest.report import *
 import qucstest.qucsdata as qucsdata
+from qucstest.qucsator import *
 
 #http://stackoverflow.com/questions/1191374/subprocess-with-timeout
 class Command(object):
@@ -70,19 +71,6 @@ class Command(object):
             vprint( pb('  Return code: %i' %self.retcode) )
 
 
-def get_qucsator_version(prefix):
-    '''
-    Run Qucsator and return its version string.
-
-    :param prefix: path to qucsator executable
-    :return: the version tag of qucsator
-    '''
-    ext = '' if os.name != 'nt' else '.exe'
-    cmd = [prefix + "qucsator"+ext, "-v"]
-    p = subprocess.Popen(cmd, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
-    version = p.stdout.readlines()[0].strip()
-    return version
-
 def get_qucs_version(prefix):
     '''
     Run Qucs-GUI and return its version string.
@@ -95,33 +83,6 @@ def get_qucs_version(prefix):
     version = p.stdout.readlines()[0].strip()
     return version
 
-
-
-def get_registed_models(prefix):
-    '''
-    Query qucsator for defined components. Option -l (debug mode only?).
-    Definitions also listed in qucsdefs.h
-
-    :param prefix: path containing qucsator executable
-    :return: list of registered components
-    '''
-    cmd = [prefix + "qucsator", "-l"]
-    p = subprocess.Popen(cmd, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
-    listing = p.stdout.readlines()
-
-    registered=[]
-    defs = False
-    for line in listing:
-        if 'struct define_t qucs_definition_available' in line:
-            defs = True
-        if defs:
-            if 'def_' in line:
-                model=line.strip()
-                model=model.strip(',')
-                model=model[4:]
-                registered.append(model)
-    registered.sort()
-    return registered
 
 
 def get_subdirs(dir):
