@@ -3,3 +3,4 @@
 """
 
 from .colors import *
+from .schematic import *
