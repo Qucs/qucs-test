@@ -6,3 +6,4 @@ from .colors import *
 from .schematic import *
 from .netlist import *
 from .report import *
+from .qucsdata import *

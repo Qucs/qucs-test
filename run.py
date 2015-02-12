@@ -26,13 +26,12 @@ import threading
 import time
 from distutils.version import LooseVersion
 
-# Qucsator data parser
-import parse_result as parse
 
 from qucstest.colors import pb, pg, pr, py
 from qucstest.schematic import *
 from qucstest.netlist import *
 from qucstest.report import *
+import qucstest.qucsdata as qucsdata
 
 #http://stackoverflow.com/questions/1191374/subprocess-with-timeout
 class Command(object):
@@ -179,10 +178,10 @@ def result_compare(ref_dataset, test_dataset, sim_report = {}):
     failed=[]
 
     vprint( pb('load data %s' %(ref_dataset)) )
-    ref_data = parse.parse_file(ref_dataset)
+    ref_data = qucsdata.parse_file(ref_dataset)
 
     vprint( pb('load data %s' %(test_dataset)) )
-    test_data = parse.parse_file(test_dataset)
+    test_data = qucsdata.parse_file(test_dataset)
 
     vprint( pb('Comparing dependent variables') )
 
