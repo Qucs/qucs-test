@@ -8,3 +8,4 @@ from .netlist import *
 from .report import *
 from .qucsdata import *
 from .qucsator import *
+from .qucsgui import *
