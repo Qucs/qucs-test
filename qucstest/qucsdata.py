@@ -1,3 +1,7 @@
+"""
+Module to handle the qucsdata result file.
+"""
+
 import re
 import numpy as np
 
