@@ -433,6 +433,54 @@ def sch2net (input_sch, output_net, prefix):
             print line,
         sys.exit('Error on sch2net.')
 
+def result_compare(ref_dataset, test_dataset, sim_report = {}):
+    '''
+    Compare two datasets for numerical differences.
+
+    :param ref_dataset : reference dataset
+    :param test_dataset: test dataset
+    :return sim_report: new of modified dict with status
+    '''
+    if not os.path.isfile(ref_dataset):
+        sys.exit('No reference dataset: %s' %ref_dataset)
+    if not os.path.isfile(test_dataset):
+        sys.exit('No test dataset: %s' %rest_dataset)
+
+    # TODO failed also catches if the solver didn't run, output_dataset will be empty,
+    # it will fail the comparison
+
+    # let's compare results
+
+    # list of failed variable comparisons
+    failed=[]
+
+    vprint( pb('load data %s' %(ref_dataset)) )
+    ref_data = parse.parse_file(ref_dataset)
+
+    vprint( pb('load data %s' %(test_dataset)) )
+    test_data = parse.parse_file(test_dataset)
+
+    vprint( pb('Comparing dependent variables') )
+
+    for name, kind in ref_data['variables'].items():
+        if kind == 'dep':
+            #print name
+            ref_trace  = ref_data[name]
+            test_trace = test_data[name]
+
+            if not np.allclose(ref_trace, test_trace, rtol=rtol, atol=atol):
+                print pr('  Failed %s' %(name))
+                failed.append(name)
+                sim_report['status'] = 'FAIL'
+            else:
+                vprint( pg('  Passed %s' %(name)) )
+                sim_report['status'] = 'PASS'
+
+    # keep list of variables that failed comparison
+    if failed:
+        sim_report['fail_comp'] = [failed]
+
+    return sim_report
 
 def run_simulation(proj, sim_report={}, prefix=''):
     '''
@@ -504,6 +552,10 @@ def run_simulation(proj, sim_report={}, prefix=''):
     vprint( pb('Runtime: %f' %runtime) )
 
     if (command.timeout):
+
+        # mark project as timed out
+        sim_report['timeout'] = command.timeout
+
         errout = 'error_timeout.txt'
         print pr('Failed with timeout, saving: \n   %s/%s' %(proj_dir, errout))
         with open(errout, 'w') as myFile:
@@ -518,69 +570,12 @@ def run_simulation(proj, sim_report={}, prefix=''):
 
     # perform comparison
     # TODO make a function out of this.
-    else:
+
+    # perform result comparison
+    if (not command.timeout or not command.returncode):
+
         ref_dataset = get_sch_dataset(schematic)
-        if not os.path.isfile(ref_dataset):
-            print (pr('Bad skipping comparison, missing reference output'))
-            sim_report['fail_comp'] = 'No reference output to compare'
-            # step out
-            os.chdir(tests_dir)
-            return sim_report
-
-        # TODO failed also catches if the solver didn't run, output_dataset will be empty,
-        # it will fail the comparison
-
-        # let's compare results
-
-        # list of failed variable comparisons
-        failed=[]
-        if not command.timeout:
-            vprint( pb('load data %s' %(ref_dataset)) )
-            ref_data = parse.parse_file(ref_dataset)
-
-            vprint( pb('load data %s' %(output_dataset)) )
-            test_data = parse.parse_file(output_dataset)
-
-            #print ref_data['variables']
-
-            vprint( pb('Comparing dependent variables') )
-
-            for name, kind in ref_data['variables'].items():
-                if kind == 'dep':
-                    #print name
-                    ref_trace  = ref_data[name]
-                    test_trace = test_data[name]
-
-                    if not np.allclose(ref_trace, test_trace, rtol=rtol, atol=atol):
-                        print pr('  Failed %s' %(name))
-                        failed.append(name)
-                        sim_report['status'] = 'FAIL'
-                    else:
-                        vprint( pg('  Passed %s' %(name)) )
-                        sim_report['status'] = 'PASS'
-
-
-        # keep list of variables that failed comparison
-        if failed:
-            sim_report['fail_comp'] = [failed]
-
-        # mark project as timed out
-        if command.timeout:
-            sim_report['timeout'] = command.timeout
-
-
-        # In case of failure or timeout, save the log and error ouputs
-        if (failed or command.timeout):
-
-            logout = 'fail_log.txt'
-            print pr('failed %s saving: \n   %s/%s' %(proj, proj_dir, logout))
-            with open(logout, 'w') as myFile:
-                myFile.write(command.out)
-
-            errout = 'fail_error.txt'
-            print pr('failed %s saving: \n   %s/%s' %(proj, proj_dir, errout))
-            with open(errout, 'w') as myFile:
-                myFile.write(command.err)
+        sim_report = result_compare(ref_dataset, output_dataset, sim_report)
 
     # TODO add timestamp into qucsator. Or time the call.
     # qucs creates the log.txt with time start and time end.
