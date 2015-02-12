@@ -5,7 +5,6 @@ Module to handle the qucsdata result file.
 import re
 import numpy as np
 
-
 '''
 The matrix part is a bit of hack!! Sorry
 '''

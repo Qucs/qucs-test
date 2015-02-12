@@ -1,16 +1,10 @@
 #!/usr/bin/env python
 
 '''
-
   Notes:
   * it skips subcircut marker '.Def'
   * there is no indication that a Spice file is translated into the netlist.
     The only hint is the '_cir' appended tot he definition .DEF, which is skiped
-
-  TODO
-  - create a schematic parser with getters
-  - create a netlist parser with getters
-  - copy also display files on add-project?
 
 '''
 
@@ -34,6 +28,64 @@ from qucstest.report import *
 import qucstest.qucsdata as qucsdata
 from qucstest.qucsator import *
 from qucstest.qucsgui import *
+
+
+class Test:
+   '''
+   Object used to store information related to a test.
+   '''
+   def __init__(self, name):
+       # test name (the project directory name)
+       self.name = name
+       # full path to the project
+       self.path = ''
+       # name of the source schematic
+       self.schematic = ''
+       # version of the schematic
+       self.version= ''
+       # default dataset on schematic
+       self.dataset = ''
+       # reference netlist (typically the basename as the schematic)
+       self.netlist = ''
+       # list of components being simulated
+       self.comp_types = []
+       # list of simulations being performed
+       self.sim_types = []
+       # test status [PASS, FAIL, NUM_FAIL, TIMEOUT]
+       self.status = ''
+       # time it took to run the test
+       self.runtime = ''
+       # message related to status
+       self.message = ''
+       # list of traces that resulted in NUM_FAIL
+       self.failed_traces = []
+
+   def debug(self):
+       print 'name         :', self.name
+       print 'schematic    :', self.schematic
+       print 'version      :', self.version
+       print 'dataset      :', self.dataset
+       print 'netlist      :', self.netlist
+       print 'comp_types   :', self.comp_types
+       print 'sim_types    :', self.sim_types
+       print 'status       :', self.status
+       print 'runtime      :', self.runtime
+       print 'message      :', self.message
+       print 'failed_traces:', self.failed_traces
+
+   def getSchematic(self):
+       if not self.schematic:
+           # get schematic name from direcitory name
+           # trim the simulation types
+           sim_types= ['DC_', 'AC_', 'TR_', 'SP_', 'SW_']
+           name = self.name
+           for sim in sim_types:
+               if sim in name:
+                   name=name[3:]
+           self.schematic = name[:-4]+'.sch'
+       return self.schematic
+
+
 
 #http://stackoverflow.com/questions/1191374/subprocess-with-timeout
 class Command(object):
@@ -84,13 +136,13 @@ def get_subdirs(dir):
 
 
 
-def result_compare(ref_dataset, test_dataset, sim_report = {}):
+def compare_datasets(ref_dataset, test_dataset):
     '''
     Compare two datasets for numerical differences.
 
     :param ref_dataset : reference dataset
     :param test_dataset: test dataset
-    :return sim_report: new of modified dict with status
+    :return failed: list of traces that failed numerical check
     '''
     if not os.path.isfile(ref_dataset):
         sys.exit('No reference dataset: %s' %ref_dataset)
@@ -122,68 +174,56 @@ def result_compare(ref_dataset, test_dataset, sim_report = {}):
             if not np.allclose(ref_trace, test_trace, rtol=rtol, atol=atol):
                 print pr('  Failed %s' %(name))
                 failed.append(name)
-                sim_report['status'] = 'FAIL'
             else:
                 vprint( pg('  Passed %s' %(name)) )
-                sim_report['status'] = 'PASS'
 
-    # keep list of variables that failed comparison
-    if failed:
-        sim_report['fail_comp'] = [failed]
+    return failed
 
-    return sim_report
-
-def run_simulation(proj, sim_report={}, prefix=''):
+def run_simulation(test, qucspath):
     '''
     Run simulation from reference netlist and compare outputs (dat, log)
 
     :param proj: directory containit test
     :param prefix: path containint qucsator
-    :return sim_report:
     '''
 
-    name = proj.strip(os.sep)
+    name = test.getSchematic()
 
-    # get schematic name from direcitory name
-    # trim the simulation types
-    sim_types= ['DC_', 'AC_', 'TR_', 'SP_', 'SW_']
-    for sim in sim_types:
-        if sim in name:
-            name=name[3:]
 
-    name = name[:-4]
-    tests_dir = os.getcwd()
+    test_dir = os.getcwd()
 
-    proj_dir = os.path.join(tests_dir, 'testsuite', proj)
+    proj_dir = os.path.join(test_dir, 'testsuite', test.name)
+    test.path = proj_dir
     print '\nProject : ', proj_dir
 
-    # cd into project
-    os.chdir(proj_dir)
 
-    input_net = "netlist.txt"
-
+    input_net = os.path.join(proj_dir, "netlist.txt")
     if not os.path.isfile(input_net):
         sys.exit('Input netlist not found')
 
     # fetch types of simulation an types of components
     comps = get_net_components(input_net)
     sim = get_net_simulations(input_net)
-    sim_report['comp_types'] = comps
-    sim_report['sim_types'] = sim
+
+    test.comp_types = comps
+    test.sim_types = sim
 
     # get the Qucs Schematic version from the schematic
-    schematic = os.path.join(proj_dir, name+'.sch')
+    schematic = os.path.join(proj_dir, test.schematic)
 
-    sim_report['version'] = get_sch_version(schematic)
+    test.version = get_sch_version(schematic)
 
-    output_dataset = "test_"+name+".dat"
+    test.dataset =  get_sch_dataset(schematic)
+
+    output_dataset = os.path.join(proj_dir, "test_"+test.dataset)
+
     ext = '' if os.name != 'nt' else '.exe'
-    cmd = [prefix + "qucsator"+ext, "-i", input_net, "-o", output_dataset]
+    cmd = [os.path.join(qucspath, "qucsator"+ext), "-i", input_net, "-o", output_dataset]
     print 'Running : ', ' '.join(cmd)
 
     # TODO run a few times, record average, add to report
-    tic = time.time()
     # call the solver in a subprocess, set the timeout
+    tic = time.time()
     command = Command(cmd)
     command.run(timeout=maxTime)
     toc = time.time()
@@ -191,21 +231,18 @@ def run_simulation(proj, sim_report={}, prefix=''):
 
     # If return code, ignore time
     if command.retcode:
-        sim_report['runtime'] = 'FAIL CODE %i' %command.retcode
-        sim_report['status'] = 'FAIL'
+        test.status = 'FAIL'
+        test.message = 'FAIL CODE %i' %command.retcode
     elif command.timeout:
-        sim_report['runtime'] = 'TIMEOUT'
-        sim_report['status'] = 'FAIL'
+        test.status = 'FAIL'
+        test.message = 'TIMEOUT'
     else:
-        sim_report['runtime'] = '%f' %runtime
-
+        test.status = 'PASS'
+        test.runtime = '%f' %runtime
 
     vprint( pb('Runtime: %f' %runtime) )
 
     if (command.timeout):
-
-        # mark project as timed out
-        sim_report['timeout'] = command.timeout
 
         errout = 'error_timeout.txt'
         print pr('Failed with timeout, saving: \n   %s/%s' %(proj_dir, errout))
@@ -224,17 +261,14 @@ def run_simulation(proj, sim_report={}, prefix=''):
 
     # perform result comparison
     if (not command.timeout or not command.returncode):
+        ref_dataset = os.path.join(proj_dir, get_sch_dataset(schematic))
 
-        ref_dataset = get_sch_dataset(schematic)
-        sim_report = result_compare(ref_dataset, output_dataset, sim_report)
+        numerical_diff = compare_datasets(ref_dataset, output_dataset)
+        if numerical_diff:
+            test.failed_traces = numerical_diff
+            test.status = 'NUM_FAIL'
 
-    # TODO add timestamp into qucsator. Or time the call.
-    # qucs creates the log.txt with time start and time end.
-
-    # step out
-    os.chdir(tests_dir)
-
-    return sim_report
+    return
 
 
 def add_test_project(sch):
@@ -452,7 +486,7 @@ if __name__ == '__main__':
             for line in fp:
                 proj = line.split(',')[0]
                 if proj in testsuite:
-                    print py('Including %s' %proj)
+                    print pg('Including %s' %proj)
                     include.append(proj)
         if include:
             testsuite = include
@@ -544,58 +578,45 @@ if __name__ == '__main__':
         # collect all reports, sim_collect will be a list of dicts,
         # one list for each qpath. Each dict contains the report output
         # for each simulationperformed
-        sim_collect = []
+        #sim_collect = []
         # fail will be a list of lists, one for each qpath. Each sub-list
         # contains information on failed tests
-        fail = []
-        for n, qp in enumerate (prefix):
+        #fail = []
 
-            fail.append ([])
+        collect_tests = []
+        # loop over prefixes
+        for qucspath in prefix:
 
-            sim_collect.append({})
-
+            tests = []
             # loop over testsuite
-            # messages are added to the dict, project as key
-
-            for test in testsuite:
-                sim_report = {}
-                sim_report = run_simulation(test, sim_report, qp)
-                if 'fail_comp' in sim_report.keys():
-                    fail[n].append(test)
-
-                # if any fail, change retur status
-                if sim_report['status'] == 'FAIL':
-                    returnStatus = -1
-
-                # keep reports
-                sim_collect[n][test] = sim_report
-
+            for project in testsuite:
+                test = Test(project)
+                run_simulation(test, qucspath)
+                tests.append(test)
+            collect_tests.append(tests)
 
         print '\n'
         print pb('############################################')
         print pb('#  Report simulation result comparison     #')
 
-        for n, qp in enumerate (prefix):
-            if len(fail[n]):
-                print pr('--> WARNING !! Found numerical differences for {}qucsator'.format (qp))
-                for item in fail[n]:
-                    print pr(item)
-                    # flag numerical difference as error
-                    sim_collect[n][item]['status']='FAIL NUM'
+        for indx, qucspath in enumerate (prefix):
+            print pb('--> Simulator location: %s' %(qucspath))
+
+            for test in collect_tests[indx]:
+                if test.status == "NUM_FAIL":
+                    print pr('WARNING! Numerical differences! Project [%s], traces %s' %(test.name, test.failed_traces))
                     returnStatus = -1
-                    pprint.pprint(sim_collect[n][item])
-            else:
-                print pg('--> No significant numerical differences found.')
+
+        if not returnStatus:
+            print pg('--> No significant numerical differences found.')
 
         print pb('#                                          #')
         print pb('############################################')
 
-        # TODO get Git branch and hash, append to filename
-        # example for Qucs repo: [tag - added commits - last commit hash (skip g, 2b48407)]
-        #label = subprocess.check_output(["git", "describe"])
-        #labe ==> qucs-0.0.17-234-g2b48407
 
-        print py('Qucsator report')
+        print pg('************************')
+        print pg('* Qucsator test report *')
+        print pg('************************')
 
         if args.compare_qucsator:
             table_name = 'qucsator_comparison_' + timestamp() + '_sim_results.txt'
@@ -606,30 +627,24 @@ if __name__ == '__main__':
             footer  = 'Qucsator versions:   '
             for qp in prefix:
                 footer += get_qucsator_version(qp) + ' : '
-
-            footer += '\nBinary Locations:'
+            footer += '\n\nBinary Locations:'
             for qp in prefix:
                 footer += '\n' + qp
-
             footer += '\n'
-
         else:
-            footer  = 'Qucsator version:   '  + get_qucsator_version(qp) + ' '
-
+            footer  = 'Qucsator version:   '  + get_qucsator_version(qucspath) + ' '
 
         footer += '\n'
         footer += 'Report produced on: ' + timestamp("%Y-%m-%d %H:%M:%S") + '\n'
 
         # Print simulation report to scress and save to table_name
-        report_status(sim_collect, table_name, footer)
+        report_status(collect_tests, table_name, footer)
 
         # Report tested/untested devices
-
         # data from simulation
-        for n, qp in enumerate (prefix):
-            datafile = 'qucs_components_data.p'
-            report_name = 'report_coverage_%s.txt' %(get_qucsator_version(qp).replace(' ','_'))
-            report_coverage(sim_collect[n], datafile, report_name)
+        datafile = 'qucs_components_data.p'
+        report_name = 'report_coverage_%s.txt' %(timestamp())
+        report_coverage(collect_tests, datafile, report_name)
 
     #
     # Add schematic as test-project and initialize its netlist, result and log files

@@ -7,20 +7,18 @@ import os
 import pickle
 
 
-def report_status(reports, savename='', footer=''):
+def report_status(collection, savename='', footer=''):
     '''
     Print a table with test resuts. It can also write to file.
 
-    :param reports: data collected during tests.
+    :param collection: data collected during tests.
     :param savename: name used to save the table to a text file.
     :param footer: custom footer appended to the table.
     :return: None
     '''
-    keys = reports[0].keys()
-    keys.sort()
     header = '%-30s | %-15s ' %('Project', 'Schem. Version')
 
-    for rp in reports:
+    for testrun in collection:
         header += ' |   Sim. Runtime     '
 
     line = '-'*len(header)
@@ -34,22 +32,49 @@ def report_status(reports, savename='', footer=''):
     print line
     print header
     print line
-    for key in keys:
-        proj_stat = '%-30s | %-15s  ' %(key, str(reports[0][key]['version']))
-        for rp in reports:
-            status = rp[key]['status']
-            if 'NUM' in status:
-                proj_stat += '| %-10s' %(str(rp[key]['runtime']))
-                proj_stat += '%s' %('NUM_FAIL  ')
-            elif status == 'FAIL':
-                proj_stat += '| %-20s' %(status)
-            else:
-                proj_stat += '| %-20s' %(str(rp[key]['runtime']))
 
+    names = []
+    versions = []
+    results = []
+
+    # 1- name column
+    # 2- version column
+    for test in collection[0]:
+        names.append(test.name)
+        versions.append(test.version)
+
+    results = []
+    for run in collection:
+        runtime = []
+        status = []
+        for test in run:
+            runtime.append(test.runtime)
+            status.append(test.status)
+        results.append( (status, runtime) )
+
+    # 3- concatenate name, version, [status]*
+    for idx in range(len(names)):
+        name = names[idx]
+        version = versions[idx]
+        proj_stat = '%-30s | %-15s  ' %(name, version)
+        for status, runtime in results:
+            stat = status[idx]
+            time = runtime[idx]
+
+            if 'NUM_FAIL' in stat:
+                proj_stat += '| %-10s' %(str(time))
+                proj_stat += '%s' %('NUM_FAIL  ')
+            elif stat == 'FAIL':
+                proj_stat += '| %-20s' %(stat)
+            else:
+                proj_stat += '| %-20s' %(str(time))
+
+        # report line
         print proj_stat
 
         if savename:
             f.write(proj_stat+'\n')
+
 
     if footer:
         print line
@@ -61,28 +86,28 @@ def report_status(reports, savename='', footer=''):
         print line
         f.write(line+'\n')
         f.close()
-        print py("Saved report to table: %s " %savename)
+        print pg("Saved simulation report: %s " %savename)
 
 
-def report_coverage(sim_collect, datafile, report_name=''):
+def report_coverage(collection, datafile, report_name=''):
     '''
     Report component coverage with given tests.
 
-    :param sim_collect: data collected while running testsuite
+    :param collection: data collected while running testsuite
     :param datafile: file containing data from cpp source files
     :param report_name: name used to save the report
     :return: string containing the report
     '''
 
-    # flattens into each component the types of simulations covered
+    # flatten for component the types of simulations covered
     # tested[component as key] = list of simulations
     tested = {}
-    for key in sim_collect:
-        sim_data = sim_collect[key]
-        for comp in sim_data['comp_types']:
+    testrun = collection[0]
+    for test in testrun:
+        for comp in test.comp_types:
             if comp not in tested:
                 tested[comp] = list()
-            tested[comp] = list(set(tested[comp])|set(sim_data['sim_types']))
+            tested[comp] = list(set(tested[comp])|set(test.sim_types))
 
     # data from source files
     # Load the dictionary back from the pickle file.
@@ -139,7 +164,7 @@ def report_coverage(sim_collect, datafile, report_name=''):
 
     # save to file?
     if report_name:
-        print py('\nSaving coverage table: %s' %(report_name) )
+        print pg('Saved coverage report: %s' %(report_name) )
         with open(report_name, 'w') as rep_file:
             rep_file.write(cov_report)
 
