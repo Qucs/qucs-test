@@ -743,8 +743,8 @@ def parse_options():
     parser.add_argument('--add-test', type=str,
                        help='add schematic to the testsuite')
 
-    parser.add_argument('--skip', type=str,
-                       help='file listing skipped test projects')
+    parser.add_argument('--exclude', type=str,
+                       help='file listing projects excluded from test')
 
     parser.add_argument('--project', type=str,
                        help='path to a test project')
@@ -842,8 +842,8 @@ if __name__ == '__main__':
 
     # TODO read list of: skip, testshort, testlong
 
-    if args.skip:
-        skip = args.skip
+    if args.exclude:
+        skip = args.exclude
         with open(skip) as fp:
             for line in fp:
                 skip_proj = line.split(',')[0]
