@@ -123,7 +123,8 @@ def get_qucsator_version(prefix):
     :param prefix: path to qucsator executable
     :return: the version tag of qucsator
     '''
-    cmd = [prefix + "qucsator", "-v"]
+    ext = '' if os.name != 'nt' else '.exe'
+    cmd = [prefix + "qucsator"+ext, "-v"]
     p = subprocess.Popen(cmd, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
     version = p.stdout.readlines()[0].strip()
     return version
@@ -477,7 +478,8 @@ def run_simulation(proj, sim_report={}, prefix=''):
     sim_report['version'] = get_sch_version(schematic)
 
     output_dataset = "test_"+name+".dat"
-    cmd = [prefix + "qucsator", "-i", input_net, "-o", output_dataset]
+    ext = '' if os.name != 'nt' else '.exe'
+    cmd = [prefix + "qucsator"+ext, "-i", input_net, "-o", output_dataset]
     print 'Running : ', ' '.join(cmd)
 
     # TODO run a few times, record average, add to report
@@ -515,6 +517,7 @@ def run_simulation(proj, sim_report={}, prefix=''):
 
 
     # perform comparison
+    # TODO make a function out of this.
     else:
         ref_dataset = get_sch_dataset(schematic)
         if not os.path.isfile(ref_dataset):
@@ -548,7 +551,7 @@ def run_simulation(proj, sim_report={}, prefix=''):
                     ref_trace  = ref_data[name]
                     test_trace = test_data[name]
 
-                    if not np.allclose(ref_trace, test_trace, rtol=1e-05, atol=1e-08):
+                    if not np.allclose(ref_trace, test_trace, rtol=rtol, atol=atol):
                         print pr('  Failed %s' %(name))
                         failed.append(name)
                         sim_report['status'] = 'FAIL'
@@ -762,6 +765,14 @@ def parse_options():
     parser.add_argument('--timeout', type=int, default=60,
                        help='Abort test if longer that timeout (default: 60 s).')
 
+    parser.add_argument('--rtol', type=float, default=1e-5,
+                       help='Set the element-wise relative tolerace (default 1e-5).\n'
+                            'See: Numpy allclose function.')
+
+    parser.add_argument('--atol', type=float, default=1e-8,
+                       help='Set the element-wise absolute tolerace (default 1e-8).\n'
+                            'See: Numpy allclose function.')
+
     args = parser.parse_args()
     return args
 
@@ -773,7 +784,10 @@ if __name__ == '__main__':
     #print(args)
 
 
+    # set global values, default or overrides
     maxTime = args.timeout
+    rtol = args.rtol
+    atol = args.atol
 
 
     # simple verbose printer
@@ -791,15 +805,16 @@ if __name__ == '__main__':
         prefix = os.path.join('/usr/local/bin/')
 
 
-    if (args.qucs or args.p or args.reset):
-        if os.path.isfile(os.path.join(prefix[0], 'qucs')):
+    if (args.qucs or args.p):
+        ext = '' if os.name != 'nt' else '.exe'
+        if os.path.isfile(os.path.join(prefix[0], 'qucs'+ext)):
             print pb('Found Qucs in: %s' %(prefix))
         else:
             sys.exit(pr('Oh dear, Qucs not found in: %s' %(prefix)))
 
     if (args.qucsator or args.reset):
-
-        if os.path.isfile(os.path.join(prefix[0], 'qucsator')):
+        ext = '' if os.name != 'nt' else '.exe'
+        if os.path.isfile(os.path.join(prefix[0], 'qucsator'+ext)):
             print pb('Found Qucsator in: %s' %(prefix))
         else:
             sys.exit(pr('Oh dear, Qucsator not found in: %s' %(prefix)))
@@ -812,7 +827,8 @@ if __name__ == '__main__':
         print pb('Comparing the following qucsators:')
 
         for qp in prefix:
-            if os.path.isfile(os.path.join(qp, 'qucsator')):
+            ext = '' if os.name != 'nt' else '.exe'
+            if os.path.isfile(os.path.join(qp, 'qucsator'+ext)):
                 print pb('%s' %(qp))
             else:
                 sys.exit(pr("No qucsator binary found in: %s" %(qp)))

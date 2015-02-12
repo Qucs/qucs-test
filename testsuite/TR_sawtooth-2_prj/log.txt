@@ -8,5 +8,5 @@ netlist content
       2 NodeSet instances
       1 TR instances
 creating netlist...
-NOTIFY: TR1: average time-step 6.87868e-09, 216 rejections
-NOTIFY: TR1: average NR-iterations 5.22887, 60 non-convergences
+NOTIFY: TR1: average time-step 6.86452e-09, 258 rejections
+NOTIFY: TR1: average NR-iterations 4.85802, 74 non-convergences
