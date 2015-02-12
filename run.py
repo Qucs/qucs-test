@@ -746,6 +746,9 @@ def parse_options():
     parser.add_argument('--exclude', type=str,
                        help='file listing projects excluded from test')
 
+    parser.add_argument('--include', type=str,
+                       help='file of project selected for test')
+
     parser.add_argument('--project', type=str,
                        help='path to a test project')
 
@@ -851,6 +854,17 @@ if __name__ == '__main__':
                     print py('Skipping %s' %skip_proj)
                     testsuite.remove(skip_proj)
 
+    if args.include:
+        add = args.include
+        include = []
+        with open(add) as fp:
+            for line in fp:
+                proj = line.split(',')[0]
+                if proj in testsuite:
+                    print py('Including %s' %proj)
+                    include.append(proj)
+        if include:
+            testsuite = include
 
     # Toggle if any test fail
     returnStatus = 0
