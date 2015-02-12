@@ -14,7 +14,7 @@ def get_qucsator_version(prefix):
     :return: the version tag of qucsator
     '''
     ext = '' if os.name != 'nt' else '.exe'
-    cmd = [prefix + "qucsator"+ext, "-v"]
+    cmd = [os.path.join(prefix,"qucsator"+ext), "-v"]
     p = subprocess.Popen(cmd, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
     version = p.stdout.readlines()[0].strip()
     return version
@@ -28,7 +28,8 @@ def get_registed_models(prefix):
     :param prefix: path containing qucsator executable
     :return: list of registered components
     '''
-    cmd = [prefix + "qucsator", "-l"]
+    ext = '' if os.name != 'nt' else '.exe'
+    cmd = [os.path.join(prefix,"qucsator"+ext), "-l"]
     p = subprocess.Popen(cmd, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
     listing = p.stdout.readlines()
 
