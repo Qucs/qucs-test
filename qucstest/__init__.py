@@ -4,3 +4,4 @@
 
 from .colors import *
 from .schematic import *
+from .netlist import *
