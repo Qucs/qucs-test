@@ -25,7 +25,7 @@ from qucstest.colors import pb, pg, pr, py
 from qucstest.schematic import *
 from qucstest.netlist import *
 from qucstest.report import *
-import qucstest.qucsdata as qucsdata
+from qucstest.qucsdata import QucsData
 from qucstest.qucsator import *
 from qucstest.qucsgui import *
 
@@ -158,24 +158,22 @@ def compare_datasets(ref_dataset, test_dataset):
     failed=[]
 
     vprint( pb('load data %s' %(ref_dataset)) )
-    ref_data = qucsdata.parse_file(ref_dataset)
+    ref = QucsData(ref_dataset)
 
     vprint( pb('load data %s' %(test_dataset)) )
-    test_data = qucsdata.parse_file(test_dataset)
+    test = QucsData(test_dataset)
 
     vprint( pb('Comparing dependent variables') )
 
-    for name, kind in ref_data['variables'].items():
-        if kind == 'dep':
-            #print name
-            ref_trace  = ref_data[name]
-            test_trace = test_data[name]
+    for name in ref.dependent.keys():
+        ref_trace  = ref.data[name]
+        test_trace = test.data[name]
 
-            if not np.allclose(ref_trace, test_trace, rtol=rtol, atol=atol):
-                print pr('  Failed %s' %(name))
-                failed.append(name)
-            else:
-                vprint( pg('  Passed %s' %(name)) )
+        if not np.allclose(ref_trace, test_trace, rtol=rtol, atol=atol):
+            print pr('  Failed %s' %(name))
+            failed.append(name)
+        else:
+            vprint( pg('  Passed %s' %(name)) )
 
     return failed
 
