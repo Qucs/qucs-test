@@ -177,6 +177,7 @@ def compare_datasets(ref_dataset, test_dataset):
 
     return failed
 
+
 def run_simulation(test, qucspath):
     '''
     Run simulation from reference netlist and compare outputs (dat, log)
@@ -210,7 +211,6 @@ def run_simulation(test, qucspath):
     schematic = os.path.join(proj_dir, test.schematic)
 
     test.version = get_sch_version(schematic)
-
     test.dataset =  get_sch_dataset(schematic)
 
     output_dataset = os.path.join(proj_dir, "test_"+test.dataset)
@@ -219,7 +219,7 @@ def run_simulation(test, qucspath):
     cmd = [os.path.join(qucspath, "qucsator"+ext), "-i", input_net, "-o", output_dataset]
     print 'Running : ', ' '.join(cmd)
 
-    # TODO run a few times, record average, add to report
+    # TODO run a few times, record average/best of 3
     # call the solver in a subprocess, set the timeout
     tic = time.time()
     command = Command(cmd)
@@ -252,10 +252,6 @@ def run_simulation(test, qucspath):
         print pr('Failed with error code, saving: \n   %s/%s' %(proj_dir, errout))
         with open(errout, 'w') as myFile:
             myFile.write(command.err)
-
-
-    # perform comparison
-    # TODO make a function out of this.
 
     # perform result comparison
     if (not command.timeout or not command.returncode):
@@ -729,8 +725,6 @@ if __name__ == '__main__':
 
             # save log.txt
             # FIXME log reports different details if release/debug mode
-            # FIXME note that Qucs-gui adds a timestamp to the the log
-            #       running Qucsator it does not the same header/footer
             logout = os.path.join(dest_dir,'log.txt')
             #print pb('Initializing %s saving: \n   %s' %(sch, logout))
             with open(logout, 'w') as myFile:
