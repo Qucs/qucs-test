@@ -9,6 +9,7 @@
 '''
 
 import argparse
+import logging
 import datetime
 import numpy as np
 import os
@@ -102,13 +103,13 @@ class Command(object):
 
     def run(self, timeout):
         def target():
-            vprint( pb('Thread started') )
+            logger.debug( pb('Thread started') )
             self.process = subprocess.Popen(self.cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
             out, err = self.process.communicate()
             # keep the stdout and stderr
             self.out = out
             self.err = err
-            vprint( pb('Thread finished') )
+            logger.debug( pb('Thread finished') )
 
         thread = threading.Thread(target=target)
         thread.start()
@@ -121,9 +122,9 @@ class Command(object):
             thread.join()
         self.retcode =  self.process.returncode
         if self.retcode:
-            print pr('  Return code: %i' %self.retcode)
+            logger.warn( pr('Process return code: %i' %self.retcode) )
         else:
-            vprint( pb('  Return code: %i' %self.retcode) )
+            logger.info( pb('Process return code: %i' %self.retcode) )
 
 
 def get_subdirs(dir):
@@ -164,13 +165,13 @@ def compare_datasets(ref_dataset, test_dataset, rtol=1e-5, atol=1e-8):
     # list of failed variable comparisons
     failed=[]
 
-    print pb('load data %s' %(ref_dataset))
+    logger.info( pb('load data %s' %(ref_dataset)) )
     ref = QucsData(ref_dataset)
 
-    print pb('load data %s' %(test_dataset))
+    logger.info( pb('load data %s' %(test_dataset)) )
     test = QucsData(test_dataset)
 
-    print pb('Comparing dependent variables [rtol=%s, atol=%s]' %(rtol,atol))
+    logger.info( pb('Comparing dependent variables [rtol=%s, atol=%s]' %(rtol,atol)) )
 
     for name in ref.dependent.keys():
         ref_trace  = ref.data[name]
@@ -178,10 +179,10 @@ def compare_datasets(ref_dataset, test_dataset, rtol=1e-5, atol=1e-8):
 
         # check: abs(test - ref) <= (atol + rtol * ref)
         if not np.allclose(test_trace, ref_trace, rtol=rtol, atol=atol):
-            print pr('  Failed %s' %(name))
+            logger.warning( pr('  Failed %s' %(name)) )
             failed.append(name)
         else:
-            print pg('  Passed %s' %(name))
+            logger.info(pg('  Passed %s' %(name)) )
 
     return failed
 
@@ -247,7 +248,7 @@ def run_simulation(test, qucspath, plot_interactive=False):
         test.status = 'PASS'
         test.runtime = '%f' %runtime
 
-    vprint( pb('Runtime: %f' %runtime) )
+    logger.info( pb('Runtime: %f' %runtime) )
 
     if (command.timeout):
 
@@ -381,8 +382,7 @@ def parse_options():
                              'qucsator binaries for comparison test')
 
     parser.add_argument("-v", "--verbose", const=1, default=0, type=int, nargs="?",
-                        help="increase verbosity: 0 = progress and errors, 1 = all info. "
-                             "Default is low verbosity.")
+                    help="increase verbosity: 0 = only warnings, 1 = info, 2 = debug. No number means info. Default is no verbosity.")
 
     parser.add_argument('--reset',
                        action='store_true',
@@ -421,11 +421,16 @@ if __name__ == '__main__':
     atol = args.atol
 
 
-    # simple verbose printer
-    # TODO use logging module?
-    def vprint(msg):
-        if (args.verbose == 1):
-            print msg
+    # setup logger
+    logger = logging.getLogger()
+    logging.basicConfig(format='%(levelname)s:%(message)s')
+    if args.verbose == 0:
+        logger.setLevel(logging.WARN)
+    elif args.verbose == 1:
+        logger.setLevel(logging.INFO)
+    elif args.verbose == 2:
+        logger.setLevel(logging.DEBUG)
+
 
     # TODO improve the discovery of qucs, qucator
     if args.prefix:
@@ -455,7 +460,7 @@ if __name__ == '__main__':
 
         prefix = args.compare_qucsator
 
-        print pb('Comparing the following qucsators:')
+        logger.info( pb('Comparing the following qucsators:') )
 
         for qp in prefix:
             ext = '' if os.name != 'nt' else '.exe'
@@ -609,7 +614,7 @@ if __name__ == '__main__':
 
             for test in collect_tests[indx]:
                 if test.status == "NUM_FAIL":
-                    print pr('WARNING! Numerical differences! Project [%s], traces %s' %(test.name, test.failed_traces))
+                    logger.warn(pr(' Numerical differences! Project [%s], traces %s' %(test.name, test.failed_traces)))
                     returnStatus = -1
 
         if not returnStatus:
