@@ -9,3 +9,5 @@ from .report import *
 from .qucsdata import *
 from .qucsator import *
 from .qucsgui import *
+from .figures import *
+from .misc import *

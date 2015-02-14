@@ -13,6 +13,8 @@ class QucsData:
     def __init__(self, filename):
         # source dataset
         self.filename = filename
+        # qucsator version that generated the data
+        self.version = ''
         # list of all variable names
         self.names = []
         # data[name] = array
@@ -47,7 +49,7 @@ class QucsData:
                 # header
                 r = re.match(r'\<Qucs Dataset (\d+\.\d+\.\d+)\>', line)
                 if r:
-                    version = r.group(1)
+                    self.version = r.group(1)
 
                 if '<indep' in line:
                     # independent variables
