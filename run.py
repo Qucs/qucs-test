@@ -147,7 +147,7 @@ def compare_datasets(ref_dataset, test_dataset, rtol=1e-5, atol=1e-8):
     :return failed: list of traces that failed numerical check
     '''
 
-    from qucstest.colors import *
+    from qucstest.colors import pb, pr, pg
 
     if not os.path.isfile(ref_dataset):
         sys.exit('No reference dataset: %s' %ref_dataset)
