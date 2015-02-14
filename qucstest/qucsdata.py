@@ -31,7 +31,7 @@ class QucsData:
         """
         pr  = ''
         pr += 'File name: %s\n' %self.filename
-        pr += 'names:'
+        pr += 'names:\n'
         for name in self.names:
             pr += '    \'%s\': shape %s\n' %(name, self.data[name].shape)
         pr += 'dependent: \n'
