@@ -144,6 +144,8 @@ def compare_datasets(ref_dataset, test_dataset, rtol=1e-5, atol=1e-8):
 
     :param ref_dataset : reference dataset
     :param test_dataset: test dataset
+    :param rtol: relative tolerance
+    :param atol: absolute tolerance
     :return failed: list of traces that failed numerical check
     '''
 
@@ -174,7 +176,8 @@ def compare_datasets(ref_dataset, test_dataset, rtol=1e-5, atol=1e-8):
         ref_trace  = ref.data[name]
         test_trace = test.data[name]
 
-        if not np.allclose(ref_trace, test_trace, rtol=rtol, atol=atol):
+        # check: abs(test - ref) <= (atol + rtol * ref)
+        if not np.allclose(test_trace, ref_trace, rtol=rtol, atol=atol):
             print pr('  Failed %s' %(name))
             failed.append(name)
         else:
@@ -183,12 +186,13 @@ def compare_datasets(ref_dataset, test_dataset, rtol=1e-5, atol=1e-8):
     return failed
 
 
-def run_simulation(test, qucspath):
+def run_simulation(test, qucspath, plot_interactive=False):
     '''
     Run simulation from reference netlist and compare outputs (dat, log)
 
     :param proj: directory containit test
     :param prefix: path containint qucsator
+    :param plot_interactive: plot graphs as data is compared
     '''
 
     name = test.getSchematic()
@@ -267,7 +271,14 @@ def run_simulation(test, qucspath):
             test.failed_traces = numerical_diff
             test.status = 'NUM_FAIL'
 
+        # show all traces
+        if plot_interactive:
+            plot_error(ref_dataset, output_dataset, QucsData(ref_dataset).dependent.keys(), show=plot_interactive)
+
+        # quiet save of fail numerical check
+        if numerical_diff:
             plot_error(ref_dataset, output_dataset, test.failed_traces)
+
 
     return
 
@@ -388,6 +399,10 @@ def parse_options():
     parser.add_argument('--atol', type=float, default=1e-8,
                        help='Set the element-wise absolute tolerace (default 1e-8).\n'
                             'See: Numpy allclose function.')
+
+    parser.add_argument('--plot-interactive', action='store_true',
+                       help='Plot and show error graphs interactively.\n'
+                            'Hardcopy PNG saved by default.')
 
     args = parser.parse_args()
     return args
@@ -571,6 +586,8 @@ if __name__ == '__main__':
         # contains information on failed tests
         #fail = []
 
+        show_plot = args.plot_interactive
+
         collect_tests = []
         # loop over prefixes
         for qucspath in prefix:
@@ -579,7 +596,7 @@ if __name__ == '__main__':
             # loop over testsuite
             for project in testsuite:
                 test = Test(project)
-                run_simulation(test, qucspath)
+                run_simulation(test, qucspath, show_plot)
                 tests.append(test)
             collect_tests.append(tests)
 
