@@ -264,7 +264,7 @@ def run_simulation(test, qucspath, plot_interactive=False):
             myFile.write(command.err)
 
     # perform result comparison
-    if (not command.timeout or not command.returncode):
+    if (not command.timeout) and (command.retcode==0):
         ref_dataset = os.path.join(proj_dir, get_sch_dataset(schematic))
 
         numerical_diff = compare_datasets(ref_dataset, output_dataset, rtol, atol)

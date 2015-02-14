@@ -20,7 +20,7 @@ def pb(message):
     '''
     Add blue color if message used on terminal.
     '''
-    if sys.stdout.isatty():
+    if sys.stdout.isatty() and not sys.platform=='win32':
         return bcolors.OKBLUE + message + bcolors.ENDC
     else:
         return message
@@ -29,7 +29,7 @@ def pg(message):
     '''
     Add green color if message used on terminal.
     '''
-    if sys.stdout.isatty():
+    if sys.stdout.isatty() and not sys.platform=='win32':
         return bcolors.OKGREEN + message + bcolors.ENDC
     else:
         return message
@@ -38,7 +38,7 @@ def pr(message):
     '''
     Add red color if message used on terminal.
     '''
-    if sys.stdout.isatty():
+    if sys.stdout.isatty() and not sys.platform=='win32':
         return bcolors.FAIL + message + bcolors.ENDC
     else:
         return message
@@ -47,7 +47,7 @@ def py(message):
     '''
     Add yellow color if message used on terminal.
     '''
-    if sys.stdout.isatty():
+    if sys.stdout.isatty() and not sys.platform=='win32':
         return bcolors.WARNING + message + bcolors.ENDC
     else:
         return message
