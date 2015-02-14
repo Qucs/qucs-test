@@ -28,6 +28,8 @@ from qucstest.report import *
 from qucstest.qucsdata import QucsData
 from qucstest.qucsator import *
 from qucstest.qucsgui import *
+from qucstest.figures import *
+from qucstest.misc import *
 
 
 class Test:
@@ -136,7 +138,7 @@ def get_subdirs(dir):
 
 
 
-def compare_datasets(ref_dataset, test_dataset):
+def compare_datasets(ref_dataset, test_dataset, rtol=1e-5, atol=1e-8):
     '''
     Compare two datasets for numerical differences.
 
@@ -144,6 +146,9 @@ def compare_datasets(ref_dataset, test_dataset):
     :param test_dataset: test dataset
     :return failed: list of traces that failed numerical check
     '''
+
+    from qucstest.colors import *
+
     if not os.path.isfile(ref_dataset):
         sys.exit('No reference dataset: %s' %ref_dataset)
     if not os.path.isfile(test_dataset):
@@ -157,13 +162,13 @@ def compare_datasets(ref_dataset, test_dataset):
     # list of failed variable comparisons
     failed=[]
 
-    vprint( pb('load data %s' %(ref_dataset)) )
+    print pb('load data %s' %(ref_dataset))
     ref = QucsData(ref_dataset)
 
-    vprint( pb('load data %s' %(test_dataset)) )
+    print pb('load data %s' %(test_dataset))
     test = QucsData(test_dataset)
 
-    vprint( pb('Comparing dependent variables') )
+    print pb('Comparing dependent variables [rtol=%s, atol=%s]' %(rtol,atol))
 
     for name in ref.dependent.keys():
         ref_trace  = ref.data[name]
@@ -173,7 +178,7 @@ def compare_datasets(ref_dataset, test_dataset):
             print pr('  Failed %s' %(name))
             failed.append(name)
         else:
-            vprint( pg('  Passed %s' %(name)) )
+            print pg('  Passed %s' %(name))
 
     return failed
 
@@ -257,10 +262,12 @@ def run_simulation(test, qucspath):
     if (not command.timeout or not command.returncode):
         ref_dataset = os.path.join(proj_dir, get_sch_dataset(schematic))
 
-        numerical_diff = compare_datasets(ref_dataset, output_dataset)
+        numerical_diff = compare_datasets(ref_dataset, output_dataset, rtol, atol)
         if numerical_diff:
             test.failed_traces = numerical_diff
             test.status = 'NUM_FAIL'
+
+            plot_error(ref_dataset, output_dataset, test.failed_traces)
 
     return
 
@@ -321,19 +328,6 @@ def add_test_project(sch):
             sys.exit(pr('Oops, subcircuit not found: ', src))
 
     return dest_dir
-
-
-
-
-def timestamp(timeformat="%y%m%d_%H%M%S"):
-    '''
-    Format a timestamp.
-
-    :param timeformat: format for the time-stamp.
-    :return: formated time/date format
-    '''
-    return datetime.datetime.now().strftime(timeformat)
-
 
 def parse_options():
     '''
