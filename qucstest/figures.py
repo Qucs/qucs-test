@@ -13,23 +13,25 @@ from misc import timestamp
 from qucsdata import QucsData
 
 
-def plot_error(reference, test, failed, save=True, show=False):
+def plot_error(reference, test, variables, save=True, show=False):
     """
     Plot the traces that failed numerical check along with the error.
 
     :param reference: reference dataset.
     :param test: test dataset.
-    :param failed: list of traces that will be plotted.
+    :param variables: list of traces that will be plotted.
     :param save: save image.
     :param show: show image on interactive window.
     """
     gold  = QucsData(reference)
     check = QucsData(test)
-    for label in failed:
+    for label in variables:
         a =  gold.data[label]
         b = check.data[label]
 
-        fig, ax1 = plt.subplots(figsize=(8,6))
+        f, axarr = plt.subplots(2, sharex=True)
+        ax1 = axarr[0]
+        ax2 = axarr[1]
 
         ax1.set_title('[%s vs %s] [%s]'
                      %(gold.version, check.version,
@@ -38,19 +40,28 @@ def plot_error(reference, test, failed, save=True, show=False):
         ax1.plot(a, 'b-+',  markersize=10, label='gold:'+label)
         ax1.plot(b, 'g--x', markersize=10, label='test:'+label)
         ax1.set_ylabel(label)
-        ax1.set_xlabel('steps')
         ax1.grid(True)
+        ax1.legend(loc=2, fancybox=True, framealpha=0.5)
 
-        ax2 = ax1.twinx()
-        ax2.plot(abs(a-b), 'r.-', label='abs(gold - test)')
+
+        ax2.plot(abs(a-b),   'r.-', label='abs(g-t)')
         ax2.set_ylabel('abs(gold - test)', color='r')
+        ax2.set_xlabel('step')
+        ax2.grid(True)
+        ax3 = ax2.twinx()
+        ax3.plot(abs(a-b)/a, 'm.-', label='abs(g-t)/g')
+        ax3.set_ylabel('abs(gold - test)/gold', color='m')
         for tl in ax2.get_yticklabels():
             tl.set_color('r')
+        for tl in ax3.get_yticklabels():
+            tl.set_color('m')
+        ax1.yaxis.set_major_formatter(OldScalarFormatter())
         ax2.yaxis.set_major_formatter(OldScalarFormatter())
+        ax3.yaxis.set_major_formatter(OldScalarFormatter())
 
-        h1, l1 = ax1.get_legend_handles_labels()
-        h2, l2 = ax2.get_legend_handles_labels()
-        ax1.legend(h1+h2, l1+l2, loc=2)
+        h1, l1 = ax2.get_legend_handles_labels()
+        h2, l2 = ax3.get_legend_handles_labels()
+        ax2.legend(h1+h2, l1+l2, loc=2, fancybox=True, framealpha=0.5)
         plt.tight_layout()
 
         if show:
