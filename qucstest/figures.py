@@ -31,9 +31,9 @@ def plot_error(reference, test, failed, save=True, show=False):
 
         fig, ax1 = plt.subplots(figsize=(8,6))
 
-        ax1.set_title('[%s vs %s] [%s] [%s]'
+        ax1.set_title('[%s vs %s] [%s]'
                      %(gold.version, check.version,
-                       platform.platform(), timestamp()))
+                       platform.platform()) )
 
         ax1.plot(a, 'b-+',  markersize=10, label='gold:'+label)
         ax1.plot(b, 'g--x', markersize=10, label='test:'+label)
@@ -58,7 +58,8 @@ def plot_error(reference, test, failed, save=True, show=False):
 
         if save:
             proj_dir = os.path.dirname(reference)
-            figname= os.path.join(proj_dir, platform.system() + '_fig_'+label+'.png')
+            figname = '%s_%s_%s.png' %(os.path.basename(proj_dir), platform.system(), label)
+            figname = os.path.join(proj_dir, figname)
             print 'saving', figname
             plt.savefig(figname)
 
