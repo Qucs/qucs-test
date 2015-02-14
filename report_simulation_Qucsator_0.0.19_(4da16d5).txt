@@ -1,0 +1,77 @@
+-----------------------------------------------------------------------
+Project                        | Schem. Version   |   Sim. Runtime     
+-----------------------------------------------------------------------
+AC_bandpass_prj                | 0.0.17           | 0.117056            
+AC_groupdelay_ac_prj           | 0.0.12           | 0.033771            
+AC_SW_resonance_prj            | 0.0.4            | 0.017596            
+AC_SW_swr_meter_prj            | 0.0.4            | 0.034363            
+DC_AC_active_bp_prj            | 0.0.5            | 0.016821            
+DC_AC_active_lp_prj            | 0.0.5            | 0.017307            
+DC_AC_bbv_prj                  | 0.0.5            | 0.033456            
+DC_AC_gain_prj                 | 0.0.5            | 0.034116            
+DC_AC_gyrator_prj              | 0.0.4            | 0.017339            
+DC_AC_LM358_spice_prj          | 0.0.17           | 0.266202            
+DC_AC_notch_prj                | 0.0.5            | 0.016520            
+DC_AC_selective_amp_prj        | 0.0.5            | 0.017272            
+DC_AC_SP_stab_prj              | 0.0.4            | 0.117275            
+DC_SP_HICUM-fig10_prj          | 0.0.11           | 0.066212            
+DC_SP_LPF-Balun2_prj           | 0.0.15           | 0.217478            
+DC_SP_LPF-Balun3_prj           | 0.0.15           | 0.218668            
+DC_SP_opamp_gyrator_prj        | 0.0.5            | 0.033341            
+DC_SW_bridge_prj               | 0.0.3            | 0.033057            
+DC_SW_bsim4v30nMOS_Ids_Vgs_prj | 0.0.18           | 0.117423            
+DC_SW_bsim4v30pMOS_Ids_Vgs_prj | 0.0.18           | 0.116403            
+DC_SW_charac_prj               | 0.0.4            | 0.117954            
+DC_SW_diff1_prj                | 0.0.5            | 0.115564            
+DC_SW_diode_prj                | 0.0.18           | 0.369401            
+DC_SW_fgummel_prj              | 0.0.10           | 0.032398            
+DC_SW_preregulator_prj         | 0.0.15           | 0.016997            
+DC_SW_rgummel_prj              | 0.0.10           | 0.033712            
+DC_TR_active_mixer_prj         | 0.0.4            | 0.167591            
+DC_TR_LM358_spice_prj          | 0.0.17           | 0.420529            
+DC_TR_SW_spice_BFR520_prj      | 0.0.18           | 0.166685            
+SP_bpf_10Ghz_prj               | 0.0.4            | 0.066959            
+SP_chebyshev1_5th_prj          | 0.0.3            | 0.033723            
+SP_elliptic_5th_prj            | 0.0.3            | 0.065808            
+SP_fet_noise_prj               | 0.0.5            | 0.033978            
+SP_fhr01fh_prj                 | 0.0.3            | 0.116901            
+SP_giacoletto_prj              | 0.0.3            | 0.033550            
+SP_groupdelay_sp_prj           | 0.0.12           | 0.065746            
+SP_microstrip_prj              | 0.0.4            | 0.017396            
+SP_mscoupler_prj               | 0.0.7            | 0.033726            
+SP_SmithChartTest_prj          | 0.0.12           | 0.067362            
+SP_Sparam_diagrams_prj         | 0.0.18           | 0.066531            
+SP_sparam_prj                  | 0.0.17           | 0.064844            
+SP_wilkinson_prj               | 0.0.5            | 0.016736            
+TR_555_Fig7_prj                | 0.0.17           | 1.126688            
+TR_555_Fig9_prj                | 0.0.17           | 3.655356  NUM_FAIL  
+TR_boostconverter_prj          | 0.0.15           | 0.370890            
+TR_buckboost_prj               | 0.0.15           | 0.370189            
+TR_buckconverter_prj           | 0.0.15           | 0.370439            
+TR_chargepump_prj              | 0.0.5            | 0.117506            
+TR_classic_osci_prj            | 0.0.4            | 0.116583            
+TR_colpitts_base_prj           | 0.0.5            | 0.168030  NUM_FAIL  
+TR_colpitts_prj                | 0.0.4            | 0.034825            
+TR_diode_hb_prj                | 0.0.9            | 0.033464            
+TR_fullwaverectifier_1_prj     | 0.0.15           | 0.065572            
+TR_fullwaverectifier_2_prj     | 0.0.15           | 0.066147            
+TR_gilbert_prj                 | 0.0.4            | 0.116905            
+TR_lc_osc_prj                  | 0.0.12           | 0.217982  NUM_FAIL  
+TR_lf_osci_prj                 | 0.0.4            | 0.068426            
+TR_mixer_prj                   | 0.0.4            | 0.219276            
+TR_multiplier_prj              | 0.0.4            | 0.269333  NUM_FAIL  
+TR_Puls3b_prj                  | 0.0.17           | 0.066932  NUM_FAIL  
+TR_resistor_prj                | 0.0.18           | 0.018122            
+TR_rf_osci_prj                 | 0.0.4            | 0.066870            
+TR_sawtooth-1_prj              | 0.0.10           | 0.269439            
+TR_sawtooth-2_prj              | 0.0.10           | 0.267496            
+TR_sawtooth-3_prj              | 0.0.17           | 0.269438            
+TR_sawtooth-discreet_prj       | 0.0.17           | 1.026413            
+TR_schmitt_prj                 | 0.0.5            | 0.066124            
+TR_single_balanced_prj         | 0.0.12           | 0.168493  NUM_FAIL  
+TR_supply_prj                  | 0.0.5            | 0.067027  NUM_FAIL  
+TR_sym_osci_prj                | 0.0.4            | 0.369195            
+-----------------------------------------------------------------------
+Qucsator version:   Qucsator 0.0.19 (4da16d5) 
+Report produced on: 2015-02-14 17:59:04
+-----------------------------------------------------------------------
