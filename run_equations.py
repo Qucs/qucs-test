@@ -40,6 +40,7 @@ import subprocess
 import threading
 
 from run import Command
+from qucstest.qucsdata import QucsData
 
 #http://stackoverflow.com/questions/1191374/subprocess-with-timeout
 # Strip down from run.py
@@ -502,7 +503,7 @@ implemented = [
  'TAG_DOUBLE',
  'TAG_COMPLEX',
  'TAG_VECTOR',
- 'TAG_MATRIX',  # parser hacked to support it, redo
+ #'TAG_MATRIX',  # parser hacked to support it, need work
  #'TAG_MATVEC', # don't know how to handle this
  #'TAG_CHAR',  # see 'array'
  #'TAG_STRING',  # see '+'
@@ -632,13 +633,14 @@ if __name__ == '__main__':
 
 
             # Qucsator data parser (hacked to support matrix)
-            import parse_result as parse
+            #import parse_result as parse
             if os.path.exists(outDat):
-               test_data = parse.parse_file(outDat)
+               print outDat
+               test_data = QucsData(outDat)
             else:
                print " +++  no result +++ "
 
-            test =  test_data['check']
+            test =  test_data.data['check']
 
 
             stat = ''
