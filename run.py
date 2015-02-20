@@ -134,7 +134,7 @@ def get_subdirs(dir):
     :param dir: dir to look up for subdirs.
     :return: list of subdirec
     '''
-    return [name for name in os.listdir(dir)
+    return [name for name in sorted(os.listdir(dir))
             if os.path.isdir(os.path.join(dir, name))]
 
 
