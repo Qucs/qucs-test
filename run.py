@@ -6,6 +6,9 @@
   * there is no indication that a Spice file is translated into the netlist.
     The only hint is the '_cir' appended tot he definition .DEF, which is skiped
 
+  TODO
+  * mark versions when comparing for NUM_FAIL
+
 '''
 
 import argparse
