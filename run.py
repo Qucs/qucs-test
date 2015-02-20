@@ -652,7 +652,7 @@ if __name__ == '__main__':
         footer += '\n'
         footer += 'Report produced on: ' + timestamp("%Y-%m-%d %H:%M:%S") + '\n'
 
-        # Print simulation report to scress and save to table_name
+        # Print simulation report to stdout and save to table_name
         report_status(collect_tests, table_name, footer)
 
         # Report tested/untested devices
