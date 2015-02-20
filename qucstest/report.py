@@ -64,7 +64,7 @@ def report_status(collection, savename='', footer=''):
             if 'NUM_FAIL' in stat:
                 proj_stat += '| %-10s' %(str(time))
                 proj_stat += '%s' %('NUM_FAIL  ')
-            elif stat == 'FAIL':
+            elif 'FAIL' in stat:
                 proj_stat += '| %-20s' %(stat)
             else:
                 proj_stat += '| %-20s' %(str(time))

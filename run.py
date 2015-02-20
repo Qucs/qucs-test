@@ -54,7 +54,7 @@ class Test:
        self.comp_types = []
        # list of simulations being performed
        self.sim_types = []
-       # test status [PASS, FAIL, NUM_FAIL, TIMEOUT]
+       # test status [PASS, FAIL, NUM_FAIL, TIME_FAIL]
        self.status = ''
        # time it took to run the test
        self.runtime = ''
@@ -241,8 +241,9 @@ def run_simulation(test, qucspath, plot_interactive=False):
     if command.retcode:
         test.status = 'FAIL'
         test.message = 'FAIL CODE %i' %command.retcode
-    elif command.timeout:
-        test.status = 'FAIL'
+
+    if command.timeout:
+        test.status = 'TIME_FAIL'
         test.message = 'TIMEOUT'
     else:
         test.status = 'PASS'
@@ -621,6 +622,11 @@ if __name__ == '__main__':
                 if test.status == "NUM_FAIL":
                     logger.warn(pr(' Numerical differences! Project [%s], traces %s' %(test.name, test.failed_traces)))
                     returnStatus = -1
+
+                if "FAIL" in test.status:
+                    logger.warn( 'Test: %s, Status: %s, Message %s' %(test.name, test.status, test.message))
+                    returnStatus = -1
+
 
         if not returnStatus:
             print pg('--> No significant numerical differences found.')
