@@ -1,3 +1,3 @@
 ## Project dir, Comment: it parses to the left of ','
-TR_sawtooth-discreet_prj, there are numerical difference that needs investigation
-TR_Puls3b_prj, see with guillem the problem
+TR_Puls3b_prj, the tswitch seems to be firing one step before/after
+
