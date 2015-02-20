@@ -392,12 +392,12 @@ def parse_options():
     parser.add_argument('--timeout', type=int, default=60,
                        help='Abort test if longer that timeout (default: 60 s).')
 
-    parser.add_argument('--rtol', type=float, default=1e-5,
-                       help='Set the element-wise relative tolerace (default 1e-5).\n'
+    parser.add_argument('--rtol', type=float, default=1e-1,
+                       help='Set the element-wise relative tolerace (default 1e-1).\n'
                             'See: Numpy allclose function.')
 
-    parser.add_argument('--atol', type=float, default=1e-8,
-                       help='Set the element-wise absolute tolerace (default 1e-8).\n'
+    parser.add_argument('--atol', type=float, default=1e-5,
+                       help='Set the element-wise absolute tolerace (default 1e-5).\n'
                             'See: Numpy allclose function.')
 
     parser.add_argument('--plot-interactive', action='store_true',
@@ -419,6 +419,11 @@ if __name__ == '__main__':
     maxTime = args.timeout
     rtol = args.rtol
     atol = args.atol
+
+
+    print pb('Using Max. time: %s' %str(maxTime))
+    print pb('Using rtol: %s' %str(rtol))
+    print pb('Using atol: %s' %str(atol))
 
 
     # setup logger
