@@ -194,8 +194,8 @@ def run_simulation(test, qucspath, plot_interactive=False):
     '''
     Run simulation from reference netlist and compare outputs (dat, log)
 
-    :param proj: directory containit test
-    :param prefix: path containint qucsator
+    :param test: test object containing the test info
+    :param qucspath: path containing qucsator
     :param plot_interactive: plot graphs as data is compared
     '''
 
@@ -256,14 +256,14 @@ def run_simulation(test, qucspath, plot_interactive=False):
 
     if (command.timeout):
 
-        errout = 'error_timeout.txt'
-        print pr('Failed with timeout, saving: \n   %s/%s' %(proj_dir, errout))
+        errout =  os.path.join(proj_dir, 'error_timeout.txt')
+        print pr('Failed with timeout, saving: \n   %s' % errout)
         with open(errout, 'w') as myFile:
             myFile.write(command.err)
 
     if (command.retcode):
-        errout = 'error_code.txt'
-        print pr('Failed with error code, saving: \n   %s/%s' %(proj_dir, errout))
+        errout = os.path.join(proj_dir, 'error_code.txt')
+        print pr('Failed with error code, saving: \n   %s' % errout)
         with open(errout, 'w') as myFile:
             myFile.write(command.err)
 
@@ -594,7 +594,7 @@ if __name__ == '__main__':
 
         # collect all reports, sim_collect will be a list of dicts,
         # one list for each qpath. Each dict contains the report output
-        # for each simulationperformed
+        # for each simulation performed
         #sim_collect = []
         # fail will be a list of lists, one for each qpath. Each sub-list
         # contains information on failed tests
@@ -739,7 +739,7 @@ if __name__ == '__main__':
             output_dataset = get_sch_dataset(input_sch)
             output_dataset = os.path.join(dest_dir, output_dataset)
 
-            output_net  = os.path.join(dest_dir, 'netlist.txt')
+            output_net = os.path.join(dest_dir, 'netlist.txt')
 
             # OVERWRITE reference .dat, log.txt
             print pb("Creating reference data and log files.")
