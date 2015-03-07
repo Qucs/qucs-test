@@ -244,8 +244,7 @@ def run_simulation(test, qucspath, plot_interactive=False):
     if command.retcode:
         test.status = 'FAIL'
         test.message = 'FAIL CODE %i' %command.retcode
-
-    if command.timeout:
+    elif command.timeout:
         test.status = 'TIME_FAIL'
         test.message = 'TIMEOUT'
     else:
