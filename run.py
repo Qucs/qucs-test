@@ -18,6 +18,7 @@ import numpy as np
 import os
 import pprint
 import subprocess
+import multiprocessing
 import shutil
 import sys
 import threading
@@ -129,7 +130,7 @@ class Command(object):
         else:
             logger.info( pb('Process return code: %i' %self.retcode) )
 
-
+            
 def get_subdirs(dir):
     '''
     Return a list of names of subdirectories.
@@ -283,8 +284,7 @@ def run_simulation(test, qucspath, plot_interactive=False):
         if numerical_diff:
             plot_error(ref_dataset, output_dataset, test.failed_traces)
 
-
-    return
+    return test
 
 
 def add_test_project(sch):
@@ -406,6 +406,9 @@ def parse_options():
     parser.add_argument('--plot-interactive', action='store_true',
                        help='Plot and show error graphs interactively.\n'
                             'Hardcopy PNG saved by default.')
+
+    parser.add_argument('-mp', '--processes', nargs="?", default=1, type=int, metavar='NUM',
+                       help='Use %(metavar)s processes to run the simulations (default: number of CPU cores).') # if no value is specified the default 'None' will be used
 
     args = parser.parse_args()
     return args
@@ -600,17 +603,19 @@ if __name__ == '__main__':
         #fail = []
 
         show_plot = args.plot_interactive
+        nprocs = args.processes
 
         collect_tests = []
         # loop over prefixes
         for qucspath in prefix:
 
-            tests = []
-            # loop over testsuite
-            for project in testsuite:
-                test = Test(project)
-                run_simulation(test, qucspath, show_plot)
-                tests.append(test)
+            pool = multiprocessing.Pool(nprocs) # when np=None uses cpu_count() processes
+            # prepare list of Test object to simulate
+            alltests = [Test(project) for project in testsuite]
+            testsp = [pool.apply_async(run_simulation, args=(t, qucspath, show_plot,)) for t in alltests]
+            pool.close() # this and the following line might not be needed...
+            pool.join() # wait for all simulations to finish
+            tests = [p.get() for p in testsp] # get results
             collect_tests.append(tests)
 
         print '\n'
