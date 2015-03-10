@@ -18,6 +18,7 @@ import numpy as np
 import os
 import pprint
 import subprocess
+import multiprocessing
 import shutil
 import sys
 import threading
@@ -129,7 +130,7 @@ class Command(object):
         else:
             logger.info( pb('Process return code: %i' %self.retcode) )
 
-
+            
 def get_subdirs(dir):
     '''
     Return a list of names of subdirectories.
@@ -194,8 +195,8 @@ def run_simulation(test, qucspath, plot_interactive=False):
     '''
     Run simulation from reference netlist and compare outputs (dat, log)
 
-    :param proj: directory containit test
-    :param prefix: path containint qucsator
+    :param test: test object containing the test info
+    :param qucspath: path containing qucsator
     :param plot_interactive: plot graphs as data is compared
     '''
 
@@ -244,8 +245,7 @@ def run_simulation(test, qucspath, plot_interactive=False):
     if command.retcode:
         test.status = 'FAIL'
         test.message = 'FAIL CODE %i' %command.retcode
-
-    if command.timeout:
+    elif command.timeout:
         test.status = 'TIME_FAIL'
         test.message = 'TIMEOUT'
     else:
@@ -256,14 +256,14 @@ def run_simulation(test, qucspath, plot_interactive=False):
 
     if (command.timeout):
 
-        errout = 'error_timeout.txt'
-        print pr('Failed with timeout, saving: \n   %s/%s' %(proj_dir, errout))
+        errout =  os.path.join(proj_dir, 'error_timeout.txt')
+        print pr('Failed with timeout, saving: \n   %s' % errout)
         with open(errout, 'w') as myFile:
             myFile.write(command.err)
 
     if (command.retcode):
-        errout = 'error_code.txt'
-        print pr('Failed with error code, saving: \n   %s/%s' %(proj_dir, errout))
+        errout = os.path.join(proj_dir, 'error_code.txt')
+        print pr('Failed with error code, saving: \n   %s' % errout)
         with open(errout, 'w') as myFile:
             myFile.write(command.err)
 
@@ -284,8 +284,7 @@ def run_simulation(test, qucspath, plot_interactive=False):
         if numerical_diff:
             plot_error(ref_dataset, output_dataset, test.failed_traces)
 
-
-    return
+    return test
 
 
 def add_test_project(sch):
@@ -407,6 +406,9 @@ def parse_options():
     parser.add_argument('--plot-interactive', action='store_true',
                        help='Plot and show error graphs interactively.\n'
                             'Hardcopy PNG saved by default.')
+
+    parser.add_argument('-mp', '--processes', nargs="?", default=1, type=int, metavar='NUM',
+                       help='Use %(metavar)s processes to run the simulations (default: number of CPU cores).') # if no value is specified the default 'None' will be used
 
     args = parser.parse_args()
     return args
@@ -594,24 +596,26 @@ if __name__ == '__main__':
 
         # collect all reports, sim_collect will be a list of dicts,
         # one list for each qpath. Each dict contains the report output
-        # for each simulationperformed
+        # for each simulation performed
         #sim_collect = []
         # fail will be a list of lists, one for each qpath. Each sub-list
         # contains information on failed tests
         #fail = []
 
         show_plot = args.plot_interactive
+        nprocs = args.processes
 
         collect_tests = []
         # loop over prefixes
         for qucspath in prefix:
 
-            tests = []
-            # loop over testsuite
-            for project in testsuite:
-                test = Test(project)
-                run_simulation(test, qucspath, show_plot)
-                tests.append(test)
+            pool = multiprocessing.Pool(nprocs) # when np=None uses cpu_count() processes
+            # prepare list of Test object to simulate
+            alltests = [Test(project) for project in testsuite]
+            testsp = [pool.apply_async(run_simulation, args=(t, qucspath, show_plot,)) for t in alltests]
+            pool.close() # this and the following line might not be needed...
+            pool.join() # wait for all simulations to finish
+            tests = [p.get() for p in testsp] # get results
             collect_tests.append(tests)
 
         print '\n'
@@ -739,7 +743,7 @@ if __name__ == '__main__':
             output_dataset = get_sch_dataset(input_sch)
             output_dataset = os.path.join(dest_dir, output_dataset)
 
-            output_net  = os.path.join(dest_dir, 'netlist.txt')
+            output_net = os.path.join(dest_dir, 'netlist.txt')
 
             # OVERWRITE reference .dat, log.txt
             print pb("Creating reference data and log files.")
