@@ -3,6 +3,7 @@ Module to handle calls to qucs-gui.
 """
 
 import os
+import sys
 import subprocess
 from colors import pb
 
