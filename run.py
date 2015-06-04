@@ -392,8 +392,8 @@ def parse_options():
                        help='Reset (overwrite) data and log files of test projects.'
                             'Run qucsator given with --prefix.')
 
-    parser.add_argument('--timeout', type=int, default=60,
-                       help='Abort test if longer that timeout (default: 60 s).')
+    parser.add_argument('--timeout', type=int, default=90,
+                       help='Abort test if longer that timeout (default: 90 s).')
 
     parser.add_argument('--rtol', type=float, default=1e-1,
                        help='Set the element-wise relative tolerace (default 1e-1).\n'
