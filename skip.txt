@@ -1,4 +1,3 @@
 ## Project dir, Comment: it parses to the left of ','
-TR_Puls3b_prj, the tswitch seems to be firing one step before/after
 TR_555_Fig9_prj, timeout if code in -O0 timed out 60 s
 
