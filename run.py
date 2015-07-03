@@ -678,6 +678,9 @@ if __name__ == '__main__':
     # Add schematic as test-project and initialize its netlist, result and log files
     #
     if args.add_test:
+        if not args.prefix:
+          sys.exit("Prefix required to add new test projects")
+
         sch = args.add_test
         if os.path.exists(sch):
 
