@@ -2,6 +2,7 @@
 Module to handle a Qucs Schematic file.
 """
 
+import os
 
 def get_sch_version(schematic):
     '''
@@ -57,11 +58,13 @@ def get_sch_subcircuits(sch):
 
     def crawl(sch):
         sub_files = []
+        print sch
         with open(sch) as fp:
             for line in fp:
+                # <Sub Curtice1 1 210 120 20 -46 0 0 "curtice_1.sch" [other params] >
                 if '<Sub ' in line:
                     # subcircuit filename, no quotes
-                    sub_file = line.split(' ')[-2][1:-1]
+                    sub_file = line.strip().split(' ')[9][1:-1]
                     sub_file = os.path.join(os.path.dirname(sch), sub_file)
                     sub_files.append(sub_file)
         return sub_files
