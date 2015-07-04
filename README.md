@@ -12,9 +12,11 @@ To skip failing projects use the `--skip` option with a list of projects to be i
 
 ```
 usage: run.py [-h] [--prefix PREFIX] [--qucs] [--qucsator] [-p]
-              [--add-test ADD_TEST] [--skip SKIP] [--project PROJECT]
+              [--add-test ADD_TEST] [--exclude EXCLUDE] [--include INCLUDE]
+              [--project PROJECT]
               [--compare-qucsator COMPARE_QUCSATOR [COMPARE_QUCSATOR ...]]
-              [-v [VERBOSE]] [--reset] [--timeout TIMEOUT]
+              [-v [VERBOSE]] [--reset] [--timeout TIMEOUT] [--rtol RTOL]
+              [--atol ATOL] [--plot-interactive] [-mp [NUM]]
 
 Qucs testing script.
 
@@ -25,17 +27,27 @@ optional arguments:
   --qucsator            run qucsator tests
   -p                    run qucs and prints the schematic to file
   --add-test ADD_TEST   add schematic to the testsuite
-  --skip SKIP           file listing skipped test projects
+  --exclude EXCLUDE     file listing projects excluded from test
+  --include INCLUDE     file of project selected for test
   --project PROJECT     path to a test project
   --compare-qucsator COMPARE_QUCSATOR [COMPARE_QUCSATOR ...]
                         two full paths to directories containing qucsator
                         binaries for comparison test
   -v [VERBOSE], --verbose [VERBOSE]
-                        increase verbosity: 0 = progress and errors, 1 = all
-                        info. Default is low verbosity.
+                        increase verbosity: 0 = only warnings, 1 = info, 2 =
+                        debug. No number means info. Default is no verbosity.
   --reset               Reset (overwrite) data and log files of test
                         projects.Run qucsator given with --prefix.
-  --timeout TIMEOUT     Abort test if longer that timeout (default: 15 s).
+  --timeout TIMEOUT     Abort test if longer that timeout (default: 90 s).
+  --rtol RTOL           Set the element-wise relative tolerace (default 1e-1).
+                        See: Numpy allclose function.
+  --atol ATOL           Set the element-wise absolute tolerace (default 1e-5).
+                        See: Numpy allclose function.
+  --plot-interactive    Plot and show error graphs interactively. Hardcopy PNG
+                        saved by default.
+  -mp [NUM], --processes [NUM]
+                        Use NUM processes to run the simulations (default:
+                        number of CPU cores).
 ```
 
 ## Outputs
@@ -51,9 +63,14 @@ optional arguments:
 Example of running the test-suite for Qucsator while skipping a few test projects:
 
 ```
-$python run.py --prefix /home/user/local/qucs-master/bin/ --skip skip.txt --qucsator
+$python run.py --prefix /home/user/local/qucs-master/bin/ --exclude skip.txt --qucsator
 ```
 
+The test can be run using several processes in parallel, which will shorthen the overall simulation time if the machine has a multi-core processor, using the `-mp` option
+
+```
+$python run.py --prefix /home/user/local/qucs-master/bin/ --exclude skip.txt --qucsator -mp
+```
 
 ## Printing the schematic to PDF files (devel)
 
@@ -65,7 +82,7 @@ See below examples of printing schematics to file (pdf):
 
 ```
 $python run.py --prefix /home/user/local/qucs-master/bin/ --p
-$python run.py --prefix /home/user/local/qucs-master/bin/ --skip skip_print.txt -p
+$python run.py --prefix /home/user/local/qucs-master/bin/ --exclude skip_print.txt -p
 $python run.py --prefix /home/user/local/qucs-master/bin/ --p --project AC_SW_resonance_prj
 ```
 
