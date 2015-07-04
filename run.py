@@ -363,10 +363,11 @@ def parse_options():
     parser.add_argument('--qucsator',
                        action='store_true',
                        help='run qucsator tests')
-    # TODO, cannot use --print, it chockes when try to use args.print
-    parser.add_argument('-p',
+
+    parser.add_argument('-p', '--print',
                        action='store_true',
-                       help='run qucs and prints the schematic to file')
+                       help='run qucs and prints the schematic to file',
+                       dest='qprint') # as args.print will choke...
 
     parser.add_argument('--add-test', type=str,
                        help='add schematic to the testsuite')
@@ -446,22 +447,22 @@ if __name__ == '__main__':
     # TODO improve the discovery of qucs, qucator
     if args.prefix:
         #prefix = os.path.join(args.prefix, 'bin', os.sep)
-        prefix = [args.prefix]
+        prefix = args.prefix
     else:
         # TODO add default paths, build location, system locations
         prefix = os.path.join('/usr/local/bin/')
 
 
-    if (args.qucs or args.p):
+    if (args.qucs or args.qprint):
         ext = '' if os.name != 'nt' else '.exe'
-        if os.path.isfile(os.path.join(prefix[0], 'qucs'+ext)):
+        if os.path.isfile(os.path.join(prefix, 'qucs'+ext)):
             print pb('Found Qucs in: %s' %(prefix))
         else:
             sys.exit(pr('Oh dear, Qucs not found in: %s' %(prefix)))
 
     if (args.qucsator or args.reset):
         ext = '' if os.name != 'nt' else '.exe'
-        if os.path.isfile(os.path.join(prefix[0], 'qucsator'+ext)):
+        if os.path.isfile(os.path.join(prefix, 'qucsator'+ext)):
             print pb('Found Qucsator in: %s' %(prefix))
         else:
             sys.exit(pr('Oh dear, Qucsator not found in: %s' %(prefix)))
@@ -469,17 +470,18 @@ if __name__ == '__main__':
 
     if args.compare_qucsator:
 
-        prefix = args.compare_qucsator
+        prefixes = args.compare_qucsator
 
         logger.info( pb('Comparing the following qucsators:') )
 
-        for qp in prefix:
+        for qp in prefixes:
             ext = '' if os.name != 'nt' else '.exe'
             if os.path.isfile(os.path.join(qp, 'qucsator'+ext)):
                 print pb('%s' %(qp))
             else:
                 sys.exit(pr("No qucsator binary found in: %s" %(qp)))
-
+    else:
+       prefixes = [prefix]
 
     # get single project or list of test-projects
     if args.project:
@@ -551,7 +553,7 @@ if __name__ == '__main__':
 
             # skip future versions of schematic
             sch_version = get_sch_version(input_sch)
-            qucs_version = get_qucs_version(prefix[0]).split(' ')[1]
+            qucs_version = get_qucs_version(prefix).split(' ')[1]
 
             if LooseVersion(sch_version) > LooseVersion(qucs_version):
                 print pb("Warning: skipping future version of schematic")
@@ -561,7 +563,7 @@ if __name__ == '__main__':
 
             # go on to create a fresh test_netlist.txt
             test_net  = os.path.join(dest_dir, 'test_'+projName+'.txt')
-            sch2net(input_sch, test_net, prefix[0])
+            sch2net(input_sch, test_net, prefix)
 
             ref_netlist = os.path.join(dest_dir, 'netlist.txt')
 
@@ -606,8 +608,8 @@ if __name__ == '__main__':
         nprocs = args.processes
 
         collect_tests = []
-        # loop over prefixes
-        for qucspath in prefix:
+        # loop over prefixes (possibly just one)
+        for qucspath in prefixes:
 
             pool = multiprocessing.Pool(nprocs) # when np=None uses cpu_count() processes
             # prepare list of Test object to simulate
@@ -622,7 +624,7 @@ if __name__ == '__main__':
         print pb('############################################')
         print pb('#  Report simulation result comparison     #')
 
-        for indx, qucspath in enumerate (prefix):
+        for indx, qucspath in enumerate (prefixes):
             print pb('--> Simulator location: %s' %(qucspath))
 
             for test in collect_tests[indx]:
@@ -649,14 +651,14 @@ if __name__ == '__main__':
         if args.compare_qucsator:
             table_name = 'qucsator_comparison_' + timestamp() + '_sim_results.txt'
         else:
-            table_name = 'report_simulation'+'_'+ get_qucsator_version(prefix[0]).replace(' ','_')+'.txt'
+            table_name = 'report_simulation'+'_'+ get_qucsator_version(prefix).replace(' ','_')+'.txt'
 
-        if len (prefix) > 1:
+        if len (prefixes) > 1:
             footer  = 'Qucsator versions:   '
-            for qp in prefix:
+            for qp in prefixes:
                 footer += get_qucsator_version(qp) + ' : '
             footer += '\n\nBinary Locations:'
-            for qp in prefix:
+            for qp in prefixes:
                 footer += '\n' + qp
             footer += '\n'
         else:
@@ -690,13 +692,13 @@ if __name__ == '__main__':
             # create reference netlist.txt
             input_sch  = os.path.join(dest_dir, sch)
             output_net = os.path.join(dest_dir,"netlist.txt")
-            sch2net(input_sch, output_net, prefix[0])
+            sch2net(input_sch, output_net, prefix)
 
             # create reference .dat, log.txt
             print pb("Creating reference data and log files.")
             output_dataset = get_sch_dataset(input_sch)
             output_dataset = os.path.join(dest_dir, output_dataset)
-            cmd = [os.path.join(prefix[0],"qucsator"), "-i", output_net, "-o", output_dataset]
+            cmd = [os.path.join(prefix,"qucsator"), "-i", output_net, "-o", output_dataset]
             print 'Running [qucsator]: ', ' '.join(cmd)
 
             # call the solver in a subprocess, set the timeout
@@ -750,7 +752,7 @@ if __name__ == '__main__':
 
             # OVERWRITE reference .dat, log.txt
             print pb("Creating reference data and log files.")
-            cmd = [os.path.join(prefix[0],"qucsator"), "-i", output_net, "-o", output_dataset]
+            cmd = [os.path.join(prefix,"qucsator"), "-i", output_net, "-o", output_dataset]
             print 'Running [qucsator]: ', ' '.join(cmd)
 
             tic = time.time()
@@ -769,7 +771,7 @@ if __name__ == '__main__':
 
     # Print schematics contained in all (or selected) projects
     #
-    if args.p:
+    if args.qprint:
         print '\n'
         print py('********************************')
         print 'printing schematic: %s' %(testsuite)
@@ -811,7 +813,8 @@ if __name__ == '__main__':
             p = subprocess.Popen(cmd, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
             retval = p.wait()
 
-            if retval: print retval
+            if retval:
+               print 'WARNING: qucs exit code', retval
 
             # step out
             os.chdir(tests_dir)
