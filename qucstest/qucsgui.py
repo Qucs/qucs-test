@@ -16,7 +16,14 @@ def get_qucs_version(prefix):
     '''
     cmd = [prefix + "qucs", "-v"]
     p = subprocess.Popen(cmd, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
-    version = p.stdout.readlines()[0].strip()
+    p_out = p.stdout.readlines()
+    # need to look for a line starting with 'Qucs'
+    #   as there might be some GTK+ junk output before (?)
+    #   like "Gtk-WARNING **: Locale not supported by C library."
+    version = '(unknown)'
+    for line in p_out:
+        if line.startswith('Qucs'):
+            version = line.strip()
     return version
 
 
