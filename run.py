@@ -177,6 +177,8 @@ class Command(object):
             self.process.terminate()
             thread.join()
         self.retcode =  self.process.returncode
+        # NOTE: a negative returncode -N indicates that the child
+        #   was terminated by signal N (Unix only)
         if self.retcode:
             logger.warn( pr('Process return code: %i' %self.retcode) )
         else:
@@ -338,11 +340,13 @@ def run_simulation(test, qucspath, plot_interactive=False):
 
     return test
 
-def print_project(print_test, what):
+def print_project(print_test, qucspath, what):
     '''
     Print project content (.sch and/or .dpl files)
 
     :param print_test: print_test object containing the project
+    :param qucspath: path containing qucsator
+    :param what: type of files to print, 'sch', 'dpl' or 'all'
     '''
     for f in print_test.files     :
        # schematic/data display name, without suffix
@@ -353,7 +357,7 @@ def print_project(print_test, what):
        else: # 'dpl'
           out_print = os.path.join(print_test.path, f_basename+"_dpl.pdf")
        ext = '' if os.name != 'nt' else '.exe'
-       cmd = [os.path.join(prefix, "qucs"+ext), "-p", "-i", in_f, "-o", out_print]
+       cmd = [os.path.join(qucspath, "qucs"+ext), "-p", "-i", in_f, "-o", out_print]
        print 'Running : ', ' '.join(cmd)
        
        tic = time.time()
@@ -364,7 +368,7 @@ def print_project(print_test, what):
        
        # If return code, ignore time
        if command.retcode:
-          f.status = 'FAIL'
+          f.status = 'FAIL (%i)'% command.retcode
           f.message = 'FAIL CODE %i' % command.retcode
        elif command.timeout:
           f.status = 'TIME_FAIL'
@@ -372,6 +376,8 @@ def print_project(print_test, what):
        else:
           f.status = 'PASS'
           f.runtime = '%f' % runtime
+
+    return print_test
 
 
 def add_test_project(sch):
@@ -459,24 +465,25 @@ def parse_options():
                        help='run qucs and prints schematics and/or data displays to file',
                        dest='qprint') # as args.print will choke...
 
-    parser.add_argument('--add-test', type=str,
-                       help='add schematic to the testsuite')
+    parser.add_argument('--add-test', type=str, metavar='FILE',
+                       help='add schematic file to the testsuite')
 
-    parser.add_argument('--exclude', type=str,
+    parser.add_argument('--exclude', type=str, metavar='FILE',
                        help='file listing projects excluded from test')
 
-    parser.add_argument('--include', type=str,
-                       help='file of project selected for test')
+    parser.add_argument('--include', type=str, metavar='FILE',
+                       help='file listing projects selected for test')
 
     parser.add_argument('--project', type=str,
                        help='path to a test project')
 
-    parser.add_argument('--compare-qucsator', nargs='+', type=str,
+    parser.add_argument('--compare', nargs='+', type=str, metavar='PATH',
                        help='two full paths to directories containing '
-                             'qucsator binaries for comparison test')
+                             'qucs or qucsator binaries for comparison test')
 
-    parser.add_argument("-v", "--verbose", const=1, default=0, type=int, nargs="?",
-                    help="increase verbosity: 0 = only warnings, 1 = info, 2 = debug. No number means info. Default is no verbosity.")
+    parser.add_argument("-v", "--verbose", const=1, default=0,
+                        type=int, nargs="?", metavar='LEVEL',
+                        help="increase verbosity: 0 = only warnings, 1 = info, 2 = debug. No number means info. Default is no verbosity.")
 
     parser.add_argument('--reset',
                        action='store_true',
@@ -542,35 +549,40 @@ if __name__ == '__main__':
         # TODO add default paths, build location, system locations
         prefix = os.path.join('/usr/local/bin/')
 
-    if (args.qucs or args.qprint):
-        ext = '' if os.name != 'nt' else '.exe'
-        if os.path.isfile(os.path.join(prefix, 'qucs'+ext)):
-            print pb('Found Qucs in: %s' %(prefix))
+    if args.compare:
+        prefixes = args.compare        
+        if (args.qucsator):
+           logger.info( pb('Comparing the following qucsators:') )
+           for qp in prefixes:
+              ext = '' if os.name != 'nt' else '.exe'
+              if os.path.isfile(os.path.join(qp, 'qucsator'+ext)):
+                 print pb('%s' %(qp))
+              else:
+                 sys.exit(pr("No qucsator binary found in: %s" %(qp)))
         else:
-            sys.exit(pr('Oh dear, Qucs not found in: %s' %(prefix)))
-
-    if (args.qucsator or args.reset):
-        ext = '' if os.name != 'nt' else '.exe'
-        if os.path.isfile(os.path.join(prefix, 'qucsator'+ext)):
-            print pb('Found Qucsator in: %s' %(prefix))
-        else:
-            sys.exit(pr('Oh dear, Qucsator not found in: %s' %(prefix)))
-
-
-    if args.compare_qucsator:
-
-        prefixes = args.compare_qucsator
-
-        logger.info( pb('Comparing the following qucsators:') )
-
-        for qp in prefixes:
-            ext = '' if os.name != 'nt' else '.exe'
-            if os.path.isfile(os.path.join(qp, 'qucsator'+ext)):
-                print pb('%s' %(qp))
-            else:
-                sys.exit(pr("No qucsator binary found in: %s" %(qp)))
+           for qp in prefixes:
+              ext = '' if os.name != 'nt' else '.exe'
+              if os.path.isfile(os.path.join(qp, 'qucs'+ext)):
+                 print pb('%s' %(qp))
+              else:
+                 sys.exit(pr("No qucs binary found in: %s" %(qp)))
     else:
        prefixes = [prefix]
+
+       if (args.qucs or args.qprint):
+          ext = '' if os.name != 'nt' else '.exe'
+          if os.path.isfile(os.path.join(prefix, 'qucs'+ext)):
+             print pb('Found Qucs in: %s' %(prefix))
+          else:
+             sys.exit(pr('Oh dear, Qucs not found in: %s' %(prefix)))
+
+       if (args.qucsator or args.reset):
+          ext = '' if os.name != 'nt' else '.exe'
+          if os.path.isfile(os.path.join(prefix, 'qucsator'+ext)):
+             print pb('Found Qucsator in: %s' %(prefix))
+          else:
+             sys.exit(pr('Oh dear, Qucsator not found in: %s' %(prefix)))
+
 
     # get single project or list of test-projects
     if args.project:
@@ -678,7 +690,7 @@ if __name__ == '__main__':
     #
     # Run Qucs simulator
     #
-    if args.qucsator or args.compare_qucsator:
+    if args.qucsator:
         print '\n'
         print pb('********************************')
         print pb('** Test simulation and output **')
@@ -736,7 +748,7 @@ if __name__ == '__main__':
         print pg('* Qucsator test report *')
         print pg('************************')
 
-        if args.compare_qucsator:
+        if args.compare:
             table_name = 'qucsator_comparison_' + timestamp() + '_sim_results.txt'
         else:
             table_name = 'report_simulation'+'_'+ get_qucsator_version(prefix).replace(' ','_')+'.txt'
@@ -869,41 +881,56 @@ if __name__ == '__main__':
         else: # print all
            print 'printing schematic(s) and data display(s): %s' %(testsuite)
 
-        # for each on testsuite
-        # grab [].sch (so far only one per project)
-        # print to [].pdf
-
         # prepare list of Print_test object to print
 
         test_dir = os.getcwd()
         prj_dir = os.path.join(test_dir, 'testsuite')
-        allprint = [Print_test(project, prj_dir) for project in testsuite]
-        if (args.qprint == 'sch'):
-           for t in allprint:
-              t.add_all_files('sch')
-        elif(args.qprint == 'dpl'):
-           for t in allprint:
-              t.add_all_files('dpl')    
-        else: # print all
-           for t in allprint:
-              t.add_all_files('sch')
-              t.add_all_files('dpl')
-
+        nprocs = args.processes
         collect_tests = []
-        results = []
-        for ptest in allprint:
-           #ptest.debug()
-           print_project(ptest, args.qprint)
-           results.append(ptest)
-
-        collect_tests.append(results)
+        # loop over prefixes (possibly just one)
+        for qucspath in prefixes:
+            pool = multiprocessing.Pool(nprocs) # when np=None uses cpu_count() processes
+            # prepare list of Test object to simulate
+            allprint = [Print_test(project, prj_dir) for project in testsuite]
+            if (args.qprint == 'sch'):
+               for t in allprint:
+                  t.add_all_files('sch')
+            elif(args.qprint == 'dpl'):
+               for t in allprint:
+                  t.add_all_files('dpl')    
+            else: # print all
+               for t in allprint:
+                  t.add_all_files('sch')
+                  t.add_all_files('dpl')
+            testsp = [pool.apply_async(print_project, args=(t, qucspath, args.qprint)) for t in allprint]
+            pool.close() # this and the following line might not be needed...
+            pool.join() # wait for all simulations to finish
+            results = [p.get() for p in testsp] # get results
+            collect_tests.append(results)
+            
 
         print pg('*****************************')
         print pg('* Qucs printing test report *')
         print pg('*****************************')
 
-        table_name = 'table_name_bb'
-        footer = 'footer_bb'
+        if args.compare:
+            table_name = 'qucs_comparison_' + timestamp() + '_print_results.txt'
+        else:
+            table_name = 'report_printing'+'_'+ get_qucs_version(prefix).replace(' ','_')+'.txt'
+
+        if len (prefixes) > 1:
+            footer  = 'Qucs versions:   '
+            for qp in prefixes:
+                footer += get_qucs_version(qp) + ' : '
+            footer += '\n\nBinary Locations:'
+            for qp in prefixes:
+                footer += '\n' + qp
+            footer += '\n'
+        else:
+            footer  = 'Qucs version:   '  + get_qucs_version(qucspath) + ' '
+
+        footer += '\n'
+        footer += 'Report produced on: ' + timestamp("%Y-%m-%d %H:%M:%S") + '\n'
         # Print simulation report to stdout and save to table_name
         report_print_status(collect_tests, table_name, footer)
            

@@ -169,3 +169,76 @@ def report_coverage(collection, datafile, report_name=''):
             rep_file.write(cov_report)
 
     return cov_report
+
+
+def report_print_status(collection, savename='', footer=''):
+    '''
+    Print a table with printing test results. It can also write to file.
+
+    :param collection: data collected during printing tests.
+    :param savename: name used to save the table to a text file.
+    :param footer: custom footer appended to the table.
+    :return: None
+    '''
+    header = '%-30s | %-15s ' %('Project', 'Schem. Version')
+
+    for testrun in collection:
+        header += ' |   Print Runtime    '
+
+    line = '-'*len(header)
+
+    if savename:
+        f = open(savename, 'w')
+        f.write(line+'\n')
+        f.write(header+'\n')
+        f.write(line+'\n')
+
+    print line
+    print header
+    print line
+
+    names = []
+    versions = []
+    results = []
+
+    for test_idx, test in enumerate(collection[0]): # project names
+        if test.files: # project not empty
+            proj_stat = '%-30s | %-15s  | %-20s' %(test.name, '', '')
+            if (len(collection) > 1): # used --compare
+                proj_stat += '| %-20s' %('')
+            print proj_stat
+            for sch_idx, sch in enumerate(test.files):
+                proj_stat = '  %-28s | %-15s  ' %(sch.name, sch.version)
+                if 'NUM_FAIL' in sch.status:
+                    proj_stat += '| %-10s' %(str(sch.runtime))
+                    proj_stat += '%s' %('NUM_FAIL  ')
+                elif 'FAIL' in sch.status:
+                    proj_stat += '| %-20s' %(sch.status)
+                else:
+                    proj_stat += '| %-20s' %(str(sch.runtime))
+                if (len(collection) > 1): # used --compare
+                    sch = collection[1][test_idx].files[sch_idx]
+                    if 'NUM_FAIL' in sch.status:
+                        proj_stat += '| %-10s' %(str(sch.runtime))
+                        proj_stat += '%s' %('NUM_FAIL  ')
+                    elif 'FAIL' in sch.status:
+                        proj_stat += '| %-20s' %(sch.status)
+                    else:
+                        proj_stat += '| %-20s' %(str(sch.runtime))
+                # report line
+                print proj_stat
+
+                if savename:
+                    f.write(proj_stat+'\n')
+
+    if footer:
+        print line
+        f.write(line+'\n')
+        print footer
+        f.write(footer)
+
+    if savename:
+        print line
+        f.write(line+'\n')
+        f.close()
+        print pg("Saved simulation report: %s " %savename)

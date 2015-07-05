@@ -11,11 +11,10 @@ To skip failing projects use the `--skip` option with a list of projects to be i
 ## Options: `python run.py -h`
 
 ```
-usage: run.py [-h] [--prefix PREFIX] [--qucs] [--qucsator] [-p]
-              [--add-test ADD_TEST] [--exclude EXCLUDE] [--include INCLUDE]
-              [--project PROJECT]
-              [--compare-qucsator COMPARE_QUCSATOR [COMPARE_QUCSATOR ...]]
-              [-v [VERBOSE]] [--reset] [--timeout TIMEOUT] [--rtol RTOL]
+usage: run.py [-h] [--prefix PREFIX] [--qucs] [--qucsator]
+              [-p [{sch,dpl,all}]] [--add-test FILE] [--exclude FILE]
+              [--include FILE] [--project PROJECT] [--compare PATH [PATH ...]]
+              [-v [LEVEL]] [--reset] [--timeout TIMEOUT] [--rtol RTOL]
               [--atol ATOL] [--plot-interactive] [-mp [NUM]]
 
 Qucs testing script.
@@ -25,15 +24,17 @@ optional arguments:
   --prefix PREFIX       prefix of installed Qucs (default: /usr/local/bin/)
   --qucs                run qucs tests
   --qucsator            run qucsator tests
-  -p                    run qucs and prints the schematic to file
-  --add-test ADD_TEST   add schematic to the testsuite
-  --exclude EXCLUDE     file listing projects excluded from test
-  --include INCLUDE     file of project selected for test
+  -p [{sch,dpl,all}], --print [{sch,dpl,all}]
+                        run qucs and prints schematics and/or data displays to
+                        file
+  --add-test FILE       add schematic file to the testsuite
+  --exclude FILE        file listing projects excluded from test
+  --include FILE        file listing projects selected for test
   --project PROJECT     path to a test project
-  --compare-qucsator COMPARE_QUCSATOR [COMPARE_QUCSATOR ...]
-                        two full paths to directories containing qucsator
-                        binaries for comparison test
-  -v [VERBOSE], --verbose [VERBOSE]
+  --compare PATH [PATH ...]
+                        two full paths to directories containing qucs or
+                        qucsator binaries for comparison test
+  -v [LEVEL], --verbose [LEVEL]
                         increase verbosity: 0 = only warnings, 1 = info, 2 =
                         debug. No number means info. Default is no verbosity.
   --reset               Reset (overwrite) data and log files of test
@@ -72,20 +73,40 @@ The test can be run using several processes in parallel, which will shorthen the
 $python run.py --prefix /home/user/local/qucs-master/bin/ --exclude skip.txt --qucsator -mp
 ```
 
+Two different `qucsator` versions can be compared with the command:
+
+```
+$ python run.py --compare /home/user/bin1/ /home/user/bin2/ --qucsator -mp
+```
+
+where `/home/user/bin1/` and `/home/user/bin2/` are the two directories containing the `qucsator` binaries to be tested.
+
 ## Printing the schematic to PDF files (devel)
 
 See below examples of printing schematics to file (pdf):
 
  * printing all
- * skipking a list of projects
+ * printing all data display (`.dpl`) files only
+ * skipping a list of projects
  * a single project from the testsuite
 
 ```
-$python run.py --prefix /home/user/local/qucs-master/bin/ --p
-$python run.py --prefix /home/user/local/qucs-master/bin/ --exclude skip_print.txt -p
-$python run.py --prefix /home/user/local/qucs-master/bin/ --p --project AC_SW_resonance_prj
+$python run.py --prefix /home/user/local/qucs-master/bin/ --print
+$python run.py --prefix /home/user/local/qucs-master/bin/ --print dpl
+$python run.py --prefix /home/user/local/qucs-master/bin/ --exclude skip_print.txt -print
+$python run.py --prefix /home/user/local/qucs-master/bin/ --print --project AC_SW_resonance_prj
 ```
 
+As for the `qucsator` test, the `-mp` option can be added to run multiple (printing) processes in parallel.
+
+The script will generate a table showing, for every file, the time needed to print the schematics to file or the `qucs` error code in case the file generation was not succesful.
+
+Two different `qucs` versions can be used to generate the print files and the results for every binary will be shown in the report table, to allow for a quick comparison. Use a command like:
+
+```
+$ python run.py --compare /home/user/bin1/ /home/user/bin2/ --print -mp
+```
+where `/home/user/bin1/` and `/home/user/bin2/` are the two directories containing the `qucs` binaries to be tested.
 
 
 ## Running the Qucs equations tests
@@ -103,10 +124,24 @@ In short, it works as follows:
 - Run the netlist and read the simulator output.
 - Compare simulator output to the expected result.
 
-Run it with:
+
+### Options: `python run_equations.py -h`
+````
+usage: run_equations.py [-h] [--prefix PREFIX] [--operation OPERATION]
+
+Qucs testing script.
+
+optional arguments:
+  -h, --help            show this help message and exit
+  --prefix PREFIX       prefix of installed Qucs (default: /usr/local/bin/)
+  --operation OPERATION
+                        test one particular operation, ex. '+')
+````
+
+To run all the tests, use:
 
 ```
-$ python run_equations.py /home/user/git/qucs-clone/
+$ python run_equations.py --prefix /home/user/git/qucs-clone/
 ```
 
 
