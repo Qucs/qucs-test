@@ -14,7 +14,7 @@ def get_qucs_version(prefix):
     :param prefix: path to qucsator executable
     :return: the version tag of qucsator
     '''
-    cmd = [prefix + "qucs", "-v"]
+    cmd = [os.path.join(prefix,"qucs"), "-v"]
     p = subprocess.Popen(cmd, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
     p_out = p.stdout.readlines()
     # need to look for a line starting with 'Qucs'
