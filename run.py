@@ -93,6 +93,58 @@ class Test:
        return self.schematic
 
 
+class qucsfile:
+   '''
+   Hold commonly used data about a Qucs schematic or data display file
+   '''
+   def __init__(self, name):
+      # schematic name
+      self.name = name
+      # schematic type
+      self.type = ''
+      # schematic version
+      self.version = ''
+      # test status [PASS, FAIL]
+      self.status = ''
+      # time it took to print
+      self.runtime = ''
+      # message related to status
+      self.message = ''
+
+class Print_test:
+   '''
+   Object used to store information related to a GUI print test.
+   '''
+   def __init__(self, name, prj_dir):
+       # test name (the project directory name)
+       self.name = name
+       # full path to the project
+       self.path = os.path.join(prj_dir, name)
+       # project files (schematics and data displays)
+       self.files = []
+
+   def debug(self):
+       print 'name            :', self.name
+       print 'path            :', self.path
+       for sch in self.files:
+          print '  file          :', sch.name
+          print '  type          :', sch.type
+          print '  version       :', sch.version
+          print '  status        :', sch.status
+          print '  runtime       :', sch.runtime
+          print '  message       :', sch.message
+
+   def add_all_files(self, suffix):
+      all_sch = [qucsfile(f) for f in sorted(os.listdir(self.path))
+                 if f.endswith("."+suffix)
+                 if os.path.isfile(os.path.join(self.path, f))]
+      for sch in all_sch:
+         # get_sch_version() works for both .sch and .dpl
+         sch.version = get_sch_version(os.path.join(self.path, sch.name))
+         sch.type = suffix
+      self.files += all_sch
+      return all_sch
+
 
 #http://stackoverflow.com/questions/1191374/subprocess-with-timeout
 class Command(object):
@@ -286,6 +338,41 @@ def run_simulation(test, qucspath, plot_interactive=False):
 
     return test
 
+def print_project(print_test, what):
+    '''
+    Print project content (.sch and/or .dpl files)
+
+    :param print_test: print_test object containing the project
+    '''
+    for f in print_test.files     :
+       # schematic/data display name, without suffix
+       f_basename = os.path.splitext(os.path.basename(f.name))[0] 
+       in_f = os.path.join(print_test.path, f.name)
+       if (f.type == 'sch'):
+          out_print = os.path.join(print_test.path, f_basename+".pdf")
+       else: # 'dpl'
+          out_print = os.path.join(print_test.path, f_basename+"_dpl.pdf")
+       ext = '' if os.name != 'nt' else '.exe'
+       cmd = [os.path.join(prefix, "qucs"+ext), "-p", "-i", in_f, "-o", out_print]
+       print 'Running : ', ' '.join(cmd)
+       
+       tic = time.time()
+       command = Command(cmd)
+       command.run(timeout=maxTime)
+       toc = time.time()
+       runtime = toc - tic
+       
+       # If return code, ignore time
+       if command.retcode:
+          f.status = 'FAIL'
+          f.message = 'FAIL CODE %i' % command.retcode
+       elif command.timeout:
+          f.status = 'TIME_FAIL'
+          f.message = 'TIMEOUT'
+       else:
+          f.status = 'PASS'
+          f.runtime = '%f' % runtime
+
 
 def add_test_project(sch):
     '''
@@ -344,6 +431,7 @@ def add_test_project(sch):
 
     return dest_dir
 
+
 def parse_options():
     '''
     Helper to handle the command line option parsing.
@@ -364,9 +452,11 @@ def parse_options():
                        action='store_true',
                        help='run qucsator tests')
 
-    parser.add_argument('-p', '--print',
-                       action='store_true',
-                       help='run qucs and prints the schematic to file',
+    parser.add_argument('-p', '--print', type=str,
+                       choices=['sch', 'dpl', 'all'],
+                       nargs='?',
+                       const='all', 
+                       help='run qucs and prints schematics and/or data displays to file',
                        dest='qprint') # as args.print will choke...
 
     parser.add_argument('--add-test', type=str,
@@ -452,7 +542,6 @@ if __name__ == '__main__':
         # TODO add default paths, build location, system locations
         prefix = os.path.join('/usr/local/bin/')
 
-
     if (args.qucs or args.qprint):
         ext = '' if os.name != 'nt' else '.exe'
         if os.path.isfile(os.path.join(prefix, 'qucs'+ext)):
@@ -514,7 +603,6 @@ if __name__ == '__main__':
 
     # Toggle if any test fail
     returnStatus = 0
-
 
     if args.qucs or args.qucsator or args.project:
         print '\n'
@@ -774,50 +862,51 @@ if __name__ == '__main__':
     if args.qprint:
         print '\n'
         print py('********************************')
-        print 'printing schematic: %s' %(testsuite)
+        if (args.qprint == 'sch'):
+           print 'printing schematic(s): %s' %(testsuite)
+        elif(args.qprint == 'dpl'):
+           print 'printing data display(s): %s' %(testsuite)
+        else: # print all
+           print 'printing schematic(s) and data display(s): %s' %(testsuite)
 
         # for each on testsuite
         # grab [].sch (so far only one per project)
         # print to [].pdf
 
-        #project dir
-        for proj in testsuite:
-            name = proj.split(os.sep)[-1]
+        # prepare list of Print_test object to print
 
-            #print name
+        test_dir = os.getcwd()
+        prj_dir = os.path.join(test_dir, 'testsuite')
+        allprint = [Print_test(project, prj_dir) for project in testsuite]
+        if (args.qprint == 'sch'):
+           for t in allprint:
+              t.add_all_files('sch')
+        elif(args.qprint == 'dpl'):
+           for t in allprint:
+              t.add_all_files('dpl')    
+        else: # print all
+           for t in allprint:
+              t.add_all_files('sch')
+              t.add_all_files('dpl')
 
-            # FIXME fail if the project name has underscore
-            sim_types= ['DC_', 'AC_', 'TR_', 'SP_', 'SW_']
-            for sim in sim_types:
-                if sim in name:
-                    name=name[3:]
+        collect_tests = []
+        results = []
+        for ptest in allprint:
+           #ptest.debug()
+           print_project(ptest, args.qprint)
+           results.append(ptest)
 
-            name = name[:-4]
-            tests_dir = os.getcwd()
+        collect_tests.append(results)
 
-            proj_dir = os.path.join(tests_dir, 'testsuite', proj)
-            print '\nProject : ', proj_dir
+        print pg('*****************************')
+        print pg('* Qucs printing test report *')
+        print pg('*****************************')
 
-            # step into project
-            os.chdir(proj_dir)
-
-            input_sch = name+".sch"
-            out_print = name+".pdf"
-
-            print 'Input:  ', input_sch
-            print 'Output: ', out_print
-
-            cmd = [prefix + "qucs", "-p", "-i", input_sch, "-o", out_print]
-            print 'Running : ', ' '.join(cmd)
-
-            p = subprocess.Popen(cmd, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
-            retval = p.wait()
-
-            if retval:
-               print 'WARNING: qucs exit code', retval
-
-            # step out
-            os.chdir(tests_dir)
+        table_name = 'table_name_bb'
+        footer = 'footer_bb'
+        # Print simulation report to stdout and save to table_name
+        report_print_status(collect_tests, table_name, footer)
+           
 
     if returnStatus:
         status = 'FAIL'
