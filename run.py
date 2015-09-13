@@ -184,7 +184,7 @@ class Command(object):
         else:
             logger.info( pb('Process return code: %i' %self.retcode) )
 
-            
+
 def get_subdirs(dir):
     '''
     Return a list of names of subdirectories.
@@ -350,7 +350,7 @@ def print_project(print_test, qucspath, what):
     '''
     for f in print_test.files     :
        # schematic/data display name, without suffix
-       f_basename = os.path.splitext(os.path.basename(f.name))[0] 
+       f_basename = os.path.splitext(os.path.basename(f.name))[0]
        in_f = os.path.join(print_test.path, f.name)
        if (f.type == 'sch'):
           out_print = os.path.join(print_test.path, f_basename+".pdf")
@@ -359,13 +359,13 @@ def print_project(print_test, qucspath, what):
        ext = '' if os.name != 'nt' else '.exe'
        cmd = [os.path.join(qucspath, "qucs"+ext), "-p", "-i", in_f, "-o", out_print]
        print 'Running : ', ' '.join(cmd)
-       
+
        tic = time.time()
        command = Command(cmd)
        command.run(timeout=maxTime)
        toc = time.time()
        runtime = toc - tic
-       
+
        # If return code, ignore time
        if command.retcode:
           f.status = 'FAIL (%i)'% command.retcode
@@ -461,7 +461,7 @@ def parse_options():
     parser.add_argument('-p', '--print', type=str,
                        choices=['sch', 'dpl', 'all'],
                        nargs='?',
-                       const='all', 
+                       const='all',
                        help='run qucs and prints schematics and/or data displays to file',
                        dest='qprint') # as args.print will choke...
 
@@ -550,7 +550,7 @@ if __name__ == '__main__':
         prefix = os.path.join('/usr/local/bin/')
 
     if args.compare:
-        prefixes = args.compare        
+        prefixes = args.compare
         if (args.qucsator):
            logger.info( pb('Comparing the following qucsators:') )
            for qp in prefixes:
@@ -897,7 +897,7 @@ if __name__ == '__main__':
                   t.add_all_files('sch')
             elif(args.qprint == 'dpl'):
                for t in allprint:
-                  t.add_all_files('dpl')    
+                  t.add_all_files('dpl')
             else: # print all
                for t in allprint:
                   t.add_all_files('sch')
@@ -907,7 +907,7 @@ if __name__ == '__main__':
             pool.join() # wait for all simulations to finish
             results = [p.get() for p in testsp] # get results
             collect_tests.append(results)
-            
+
 
         print pg('*****************************')
         print pg('* Qucs printing test report *')
@@ -933,7 +933,7 @@ if __name__ == '__main__':
         footer += 'Report produced on: ' + timestamp("%Y-%m-%d %H:%M:%S") + '\n'
         # Print simulation report to stdout and save to table_name
         report_print_status(collect_tests, table_name, footer)
-           
+
 
     if returnStatus:
         status = 'FAIL'
