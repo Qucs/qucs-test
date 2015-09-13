@@ -622,7 +622,7 @@ if __name__ == '__main__':
                 myTest.write( net )
 
             testCount +=1
-            cmd = [prefix+"qucsator", "-i", inNet, "-o", outDat]
+            cmd = [os.path.join(prefix, "qucsator"), "-i", inNet, "-o", outDat]
             command = Command(cmd)
             command.run(timeout=1)
 
