@@ -542,12 +542,14 @@ if __name__ == '__main__':
 
 
     # TODO improve the discovery of qucs, qucator
+    prefix_given = False
     if args.prefix:
         #prefix = os.path.join(args.prefix, 'bin', os.sep)
         prefix = args.prefix
+        prefix_given = True
     else:
-        # TODO add default paths, build location, system locations
-        prefix = os.path.join('/usr/local/bin/')
+        # use default paths, build location, system locations
+        prefix = os.path.join('')
 
     if args.compare:
         prefixes = args.compare
@@ -566,6 +568,8 @@ if __name__ == '__main__':
                  print pb('%s' %(qp))
               else:
                  sys.exit(pr("No qucs binary found in: %s" %(qp)))
+    elif not prefix_given:
+        pass
     else:
        prefixes = [prefix]
 
@@ -945,3 +949,4 @@ if __name__ == '__main__':
 
     sys.exit(returnStatus)
 
+# vim:ts=8:sw=4:et
