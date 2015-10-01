@@ -213,7 +213,7 @@ def compare_datasets(ref_dataset, test_dataset, rtol=1e-5, atol=1e-8):
     if not os.path.isfile(ref_dataset):
         sys.exit('No reference dataset: %s' %ref_dataset)
     if not os.path.isfile(test_dataset):
-        sys.exit('No test dataset: %s' %rest_dataset)
+        sys.exit('No test dataset: %s' %test_dataset)
 
     # TODO failed also catches if the solver didn't run, output_dataset will be empty,
     # it will fail the comparison
