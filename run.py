@@ -66,6 +66,11 @@ class Test:
        self.message = ''
        # list of traces that resulted in NUM_FAIL
        self.failed_traces = []
+       # next variables are used for: abs(test - ref) <= (atol + rtol * abs(ref) )
+       # relative error
+       self.rtol = 0.0
+       # absolute error
+       self.atol = 0.0
 
    def debug(self):
        print 'name         :', self.name
@@ -79,6 +84,8 @@ class Test:
        print 'runtime      :', self.runtime
        print 'message      :', self.message
        print 'failed_traces:', self.failed_traces
+       print 'test rtol    :', self.rtol
+       print 'test atol    :', self.atol
 
    def getSchematic(self):
        if not self.schematic:
@@ -197,7 +204,7 @@ def get_subdirs(dir):
 
 
 
-def compare_datasets(ref_dataset, test_dataset, rtol=1e-5, atol=1e-8):
+def compare_datasets(ref_dataset, test_dataset, rtol, atol):
     '''
     Compare two datasets for numerical differences.
 
@@ -229,13 +236,13 @@ def compare_datasets(ref_dataset, test_dataset, rtol=1e-5, atol=1e-8):
     logger.info( pb('load data %s' %(test_dataset)) )
     test = QucsData(test_dataset)
 
-    logger.info( pb('Comparing dependent variables [rtol=%s, atol=%s]' %(rtol,atol)) )
+    logger.info( pb('Comparing dependent variables [rtol=%s, atol=%s]' %(rtol, atol)) )
 
     for name in ref.dependent.keys():
         ref_trace  = ref.data[name]
         test_trace = test.data[name]
 
-        # check: abs(test - ref) <= (atol + rtol * ref)
+        # check: abs(test - ref) <= (atol + rtol * abs(ref) )
         if not np.allclose(test_trace, ref_trace, rtol=rtol, atol=atol):
             logger.warning( pr('  Failed %s' %(name)) )
             failed.append(name)
@@ -325,7 +332,7 @@ def run_simulation(test, qucspath, plot_interactive=False):
     if (not command.timeout) and (command.retcode==0):
         ref_dataset = os.path.join(proj_dir, get_sch_dataset(schematic))
 
-        numerical_diff = compare_datasets(ref_dataset, output_dataset, rtol, atol)
+        numerical_diff = compare_datasets(ref_dataset, output_dataset, rtol=test.rtol, atol=test.atol)
         if numerical_diff:
             test.failed_traces = numerical_diff
             test.status = 'NUM_FAIL'
@@ -715,9 +722,14 @@ if __name__ == '__main__':
         # loop over prefixes (possibly just one)
         for qucspath in prefixes:
 
+
             pool = multiprocessing.Pool(nprocs) # when np=None uses cpu_count() processes
             # prepare list of Test object to simulate
             alltests = [Test(project) for project in testsuite]
+            # set default test tolerances
+            for t in alltests:
+                t.rtol = rtol
+                t.atol = atol
             testsp = [pool.apply_async(run_simulation, args=(t, qucspath, show_plot,)) for t in alltests]
             pool.close() # this and the following line might not be needed...
             pool.join() # wait for all simulations to finish
