@@ -511,9 +511,9 @@ def parse_options():
     parser.add_argument('--plot-interactive', action='store_true',
                        help='Plot and show error graphs interactively.\n'
                             'Hardcopy PNG saved by default.')
-
-    parser.add_argument('-mp', '--processes', nargs="?", default=1, type=int, metavar='NUM',
-                       help='Use %(metavar)s processes to run the simulations (default: number of CPU cores).') # if no value is specified the default 'None' will be used
+    if (os.name != 'nt'): # on windows multiprocessing is tricky to use
+        parser.add_argument('-mp', '--processes', nargs="?", default=1, type=int, metavar='NUM',
+                        help='Use %(metavar)s processes to run the simulations (default: number of CPU cores).') # if no value is specified the default 'None' will be used
 
     args = parser.parse_args()
     return args
@@ -716,24 +716,37 @@ if __name__ == '__main__':
         #fail = []
 
         show_plot = args.plot_interactive
-        nprocs = args.processes
 
         collect_tests = []
         # loop over prefixes (possibly just one)
         for qucspath in prefixes:
 
-
-            pool = multiprocessing.Pool(nprocs) # when np=None uses cpu_count() processes
-            # prepare list of Test object to simulate
-            alltests = [Test(project) for project in testsuite]
-            # set default test tolerances
-            for t in alltests:
-                t.rtol = rtol
-                t.atol = atol
-            testsp = [pool.apply_async(run_simulation, args=(t, qucspath, show_plot,)) for t in alltests]
-            pool.close() # this and the following line might not be needed...
-            pool.join() # wait for all simulations to finish
-            tests = [p.get() for p in testsp] # get results
+            if (os.name == 'nt'): # on windows multiprocessing is tricky to use
+                tests = []
+                # loop over testsuite
+                for project in testsuite:
+                    test = Test(project)
+                    test.rtol = rtol
+                    test.atol = atol
+                    test.timeout = maxTime
+                    test.logger = logger
+                    run_simulation(test, qucspath, show_plot)
+                    tests.append(test)
+            else: # on Linux multiprocessing works fine
+                nprocs = args.processes
+                pool = multiprocessing.Pool(nprocs) # when np=None uses cpu_count() processes
+                # prepare list of Test object to simulate
+                alltests = [Test(project) for project in testsuite]
+                # set default test tolerances
+                for t in alltests:
+                    t.rtol = rtol
+                    t.atol = atol
+                    t.timeout = maxTime
+                    t.logger = logger
+                testsp = [pool.apply_async(run_simulation, args=(t, qucspath, show_plot,)) for t in alltests]
+                pool.close() # this and the following line might not be needed...
+                pool.join() # wait for all simulations to finish
+                tests = [p.get() for p in testsp] # get results
             collect_tests.append(tests)
 
         print '\n'
