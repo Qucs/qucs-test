@@ -115,7 +115,7 @@ def report_coverage(collection, datafile, report_name=''):
         print pr('Problem finding: %s' %datafile)
         print pr('  Run "parse_models.py"')
         return
-    data = pickle.load( open( datafile, "rb" ) )
+    data = pickle.load( open( datafile, "r" ) )
 
     reg = [
     '  REGISTER_LUMPED',
