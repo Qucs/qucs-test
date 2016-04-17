@@ -728,8 +728,6 @@ if __name__ == '__main__':
                     test = Test(project)
                     test.rtol = rtol
                     test.atol = atol
-                    test.timeout = maxTime
-                    test.logger = logger
                     run_simulation(test, qucspath, show_plot)
                     tests.append(test)
             else: # on Linux multiprocessing works fine
@@ -741,8 +739,6 @@ if __name__ == '__main__':
                 for t in alltests:
                     t.rtol = rtol
                     t.atol = atol
-                    t.timeout = maxTime
-                    t.logger = logger
                 testsp = [pool.apply_async(run_simulation, args=(t, qucspath, show_plot,)) for t in alltests]
                 pool.close() # this and the following line might not be needed...
                 pool.join() # wait for all simulations to finish
