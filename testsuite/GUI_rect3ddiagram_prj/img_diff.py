@@ -22,7 +22,7 @@ blue_max=np.array([125,255,255])
 
 try:
   if sys.argv[1]:
-    print "WARNING testmode for PASS using tst_name=ref_name=%s" % ref_name
+    print("WARNING testmode for PASS using tst_name=ref_name=%s" % (ref_name))
     tst_name=ref_name
 except:
   pass
@@ -97,6 +97,6 @@ shw(img_ref-img_tst, title="ref-tst")
 shw(img_ref^img_tst, title="ref^tst") #, timeout=0)
 
 if check_pixel_is_set(img_tst-img_ref):
-  print "FAILED"
+  print("FAILED")
 else:
-  print "PASS"
+  print("PASS")
