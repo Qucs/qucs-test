@@ -18,7 +18,8 @@ import numpy as np
 import os
 import pprint
 import subprocess
-import multiprocessing
+if (os.name != 'nt'): # on windows multiprocessing is tricky to use
+    import multiprocessing
 import shutil
 import sys
 import threading
@@ -910,11 +911,9 @@ if __name__ == '__main__':
 
         test_dir = os.getcwd()
         prj_dir = os.path.join(test_dir, 'testsuite')
-        nprocs = args.processes
         collect_tests = []
         # loop over prefixes (possibly just one)
         for qucspath in prefixes:
-            pool = multiprocessing.Pool(nprocs) # when np=None uses cpu_count() processes
             # prepare list of Test object to simulate
             allprint = [Print_test(project, prj_dir) for project in testsuite]
             if (args.qprint == 'sch'):
@@ -927,10 +926,20 @@ if __name__ == '__main__':
                for t in allprint:
                   t.add_all_files('sch')
                   t.add_all_files('dpl')
-            testsp = [pool.apply_async(print_project, args=(t, qucspath, args.qprint)) for t in allprint]
-            pool.close() # this and the following line might not be needed...
-            pool.join() # wait for all simulations to finish
-            results = [p.get() for p in testsp] # get results
+            if (os.name == 'nt'): # on windows multiprocessing is tricky to use
+              results = []
+              for ptest in allprint:
+                 #ptest.debug()
+                 print_project(ptest, qucspath, args.qprint)
+                 results.append(ptest)
+            else: # on Linux multiprocessing works fine
+              nprocs = args.processes
+              pool = multiprocessing.Pool(nprocs) # when np=None uses cpu_count() processes
+              testsp = [pool.apply_async(print_project, args=(t, qucspath, args.qprint)) for t in allprint]
+              pool.close() # this and the following line might not be needed...
+              pool.join() # wait for all simulations to finish
+              results = [p.get() for p in testsp] # get results
+
             collect_tests.append(results)
 
 
