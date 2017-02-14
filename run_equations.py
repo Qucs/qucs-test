@@ -37,47 +37,9 @@ from qmat import qmat
 from random import randint
 
 import subprocess
-import threading
 
-from run import Command
 from qucstest.qucsdata import QucsData
 
-#http://stackoverflow.com/questions/1191374/subprocess-with-timeout
-# Strip down from run.py
-# TODO refactor
-class Command(object):
-    def __init__(self, cmd):
-        self.cmd = cmd
-        self.process = None
-        self.timeout = False
-        self.retcode = 0
-
-    def run(self, timeout):
-        def target():
-            #print( ('Thread started') )
-            self.process = subprocess.Popen(self.cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-            out, err = self.process.communicate()
-            # keep the stdout and stderr
-            self.out = out
-            self.err = err
-            #print( ('Thread finished') )
-
-        thread = threading.Thread(target=target)
-        thread.start()
-
-        thread.join(timeout)
-        if thread.is_alive():
-            self.timeout = True
-            print ('Terminating process, timed out %i s' %timeout)
-            self.process.terminate()
-            thread.join()
-        self.retcode =  self.process.returncode
-        if self.retcode:
-            #print ('  Return code: %i' %self.retcode)
-            pass
-        else:
-            #print( ('  Return code: %i' %self.retcode) )
-            pass
 
 def argTypeToMath(op, argc, argsTypes, prec='%.12f'):
     '''
@@ -579,6 +541,8 @@ if __name__ == '__main__':
 
         for app in applications[op]:
 
+            testCount +=1
+
             # unpack data
             retType = app[0]
             func = app[1]
@@ -621,24 +585,25 @@ if __name__ == '__main__':
             with open(inNet, 'w') as myTest:
                 myTest.write( net )
 
-            testCount +=1
             cmd = [os.path.join(prefix, "qucsator"), "-i", inNet, "-o", outDat]
-            command = Command(cmd)
-            command.run(timeout=1)
+            print 'Running [qucsator]: ', ' '.join(cmd)
+            retval = subprocess.call(cmd, stdout=open(os.devnull, "w"), stderr=subprocess.STDOUT)
 
             sim = 'PASS'
-            if command.retcode:
-                print "\n +++ Qucsator ERROR +++ \n"
+            if retval:
                 sim = 'FAIL'
+                print "\n +++ Qucsator ERROR +++ \n"
+                print 'Return code: ', retval
+                print 'netlist: ', inNet
+                sys.exit('Error on qucsator.')
 
 
             # Qucsator data parser (hacked to support matrix)
             #import parse_result as parse
             if os.path.exists(outDat):
-               print outDat
                test_data = QucsData(outDat)
             else:
-               print " +++  no result +++ "
+               print " \n\n +++  no result +++ \n\n:", outDat
 
             test =  test_data.data['check']
 

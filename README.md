@@ -49,7 +49,7 @@ optional arguments:
   -mp [NUM], --processes [NUM]
                         Use NUM processes to run the simulations (default:
                         number of CPU cores).
-                        This option is disabled on Windows.
+                        This option is disabled on Windows and macOS.
 ```
 
 ## Outputs
@@ -68,7 +68,7 @@ Example of running the test-suite for Qucsator while skipping a few test project
 $python run.py --prefix /home/user/local/qucs-master/bin/ --exclude skip.txt --qucsator
 ```
 
-The test can be run using several processes in parallel, which will shorthen the overall simulation time if the machine has a multi-core processor, using the `-mp` option; this option not supported  on Windows.
+The test can be run using several processes in parallel, which will shorthen the overall simulation time if the machine has a multi-core processor, using the `-mp` option; this option not supported  on Windows and macOS.
 
 ```
 $python run.py --prefix /home/user/local/qucs-master/bin/ --exclude skip.txt --qucsator -mp
@@ -98,7 +98,7 @@ $python run.py --prefix /home/user/local/qucs-master/bin/ --exclude skip_print.t
 $python run.py --prefix /home/user/local/qucs-master/bin/ --print --project AC_SW_resonance_prj
 ```
 
-As for the `qucsator` test, the `-mp` option can be added to run multiple (printing) processes in parallel (this option not supported  on Windows).
+As for the `qucsator` test, the `-mp` option can be added to run multiple (printing) processes in parallel (this option not supported on Windows and macOS).
 
 The script will generate a table showing, for every file, the time needed to print the schematics to file or the `qucs` error code in case the file generation was not succesful.
 
