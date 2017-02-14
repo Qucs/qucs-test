@@ -8,6 +8,3 @@ TR_supply_prj,          NUM_FAIL
 DC_SP_HICUM-fig10_prj,          non-GPL model removed
 DC_SW_bsim4v30nMOS_Ids_Vgs_prj, non-GPL model removed
 DC_SW_bsim4v30pMOS_Ids_Vgs_prj, non-GPL model removed
-DC_AC_SP_stab_prj, Error -11 (?) after PR #623
-DC_AC_bbv_prj, Error -11 (?) see PR #620
-DC_SW_preregulator_prj, Error -11 (?) see PR #620
