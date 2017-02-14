@@ -16,9 +16,10 @@ import logging
 import datetime
 import numpy as np
 import os
+import platform
 import pprint
 import subprocess
-if (os.name != 'nt'): # on windows multiprocessing is tricky to use
+if (os.name != 'nt') or (platform.system() != 'Darwin'): # multiprocessing is tricky to use
     import multiprocessing
 import shutil
 import sys
@@ -721,8 +722,7 @@ if __name__ == '__main__':
         collect_tests = []
         # loop over prefixes (possibly just one)
         for qucspath in prefixes:
-
-            if (os.name == 'nt'): # on windows multiprocessing is tricky to use
+            if (os.name == 'nt') or (platform.system() == 'Darwin'): # multiprocessing is tricky to use
                 tests = []
                 # loop over testsuite
                 for project in testsuite:
@@ -926,7 +926,7 @@ if __name__ == '__main__':
                for t in allprint:
                   t.add_all_files('sch')
                   t.add_all_files('dpl')
-            if (os.name == 'nt'): # on windows multiprocessing is tricky to use
+            if (os.name == 'nt') or (platform.system() == 'Darwin'): # multiprocessing is tricky to use
               results = []
               for ptest in allprint:
                  #ptest.debug()
