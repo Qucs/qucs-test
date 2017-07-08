@@ -1,0 +1,18 @@
+# Qucs 0.0.19  /home/andresmmera/.qucs/SP_INDQ_CAPQ_prj/LP_Elliptic1GHz.sch
+
+Pac:P1 _net0 gnd Num="2" Z="39.9 Ohm" P="0 dBm" f="1 GHz" Temp="26.85"
+Pac:P2 _net1 gnd Num="1" Z="50 Ohm" P="0 dBm" f="1 GHz" Temp="26.85"
+.SP:SP1 Type="lin" Start="0 Hz" Stop="2 GHz" Points="200" Noise="no" NoiseIP="1" NoiseOP="2" saveCVs="no" saveAll="no"
+Eqn:Eqn1 S21_dB="dB(S[2,1])" S22_dB="dB(S[2,2])" S11_dB="dB(S[1,1])" Export="yes"
+CAPQ:CAPQ1 _net1 _net2 C="2.21 pF" Q="Qc" f="100 MHz" Mode="Linear" Temp="26.85"
+CAPQ:CAPQ2 _net2 _net3 C="10.18 pF" Q="Qc" f="100 MHz" Mode="Linear" Temp="26.85"
+CAPQ:CAPQ3 _net3 _net4 C="6.07 pF" Q="Qc" f="100 MHz" Mode="Linear" Temp="26.85"
+CAPQ:CAPQ4 gnd _net4 C="3.55 pF" Q="Qc" f="100 MHz" Mode="Linear" Temp="26.85"
+CAPQ:CAPQ5 gnd _net3 C="1.96 pF" Q="Qc" f="100 MHz" Mode="Linear" Temp="26.85"
+CAPQ:CAPQ6 gnd _net2 C="2.73 pF" Q="Qc" f="100 MHz" Mode="Linear" Temp="26.85"
+CAPQ:CAPQ7 gnd _net1 C="2.73 pF" Q="Qc" f="100 MHz" Mode="Linear" Temp="26.85"
+INDQ:INDQ1 _net1 _net2 L="6.44 nH" Q="QL" f="100 MHz" Mode="Linear" Temp="26.85"
+INDQ:INDQ2 _net2 _net3 L="2.29 nH" Q="QL" f="100 MHz" Mode="Linear" Temp="26.85"
+INDQ:INDQ3 _net3 _net4 L="3.53 nH" Q="QL" f="100 MHz" Mode="Linear" Temp="26.85"
+INDQ:INDQ4 _net4 _net0 L="7.03 nH" Q="QL" f="100 MHz" Mode="Linear" Temp="26.85"
+Eqn:Eqn2 Qc="20" QL="10" Export="yes"

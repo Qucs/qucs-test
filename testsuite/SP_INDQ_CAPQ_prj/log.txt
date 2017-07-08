@@ -1,0 +1,66 @@
+Output:
+-------
+
+Starting new simulation on sáb 08. jul 2017 at 17:11:08:703
+
+creating netlist... done.
+Starting /usr/local/bin/qucsator
+
+project location: 
+modules to load: 0
+factorycreate.size() is 0
+factorycreate has registered:
+parsing netlist...
+checking netlist...
+checker notice, value of `Q' (variable `Qc') could be out of range `[0,0.' in `CAPQ:CAPQ1'
+checker notice, value of `Q' (variable `Qc') could be out of range `[0,0.' in `CAPQ:CAPQ2'
+checker notice, value of `Q' (variable `Qc') could be out of range `[0,0.' in `CAPQ:CAPQ3'
+checker notice, value of `Q' (variable `Qc') could be out of range `[0,0.' in `CAPQ:CAPQ4'
+checker notice, value of `Q' (variable `Qc') could be out of range `[0,0.' in `CAPQ:CAPQ5'
+checker notice, value of `Q' (variable `Qc') could be out of range `[0,0.' in `CAPQ:CAPQ6'
+checker notice, value of `Q' (variable `Qc') could be out of range `[0,0.' in `CAPQ:CAPQ7'
+checker notice, value of `Q' (variable `QL') could be out of range `[0,0.' in `INDQ:INDQ1'
+checker notice, value of `Q' (variable `QL') could be out of range `[0,0.' in `INDQ:INDQ2'
+checker notice, value of `Q' (variable `QL') could be out of range `[0,0.' in `INDQ:INDQ3'
+checker notice, value of `Q' (variable `QL') could be out of range `[0,0.' in `INDQ:INDQ4'
+checker notice, variable `S' in equation `S21_dB' not yet defined
+checker notice, variable `S' in equation `S22_dB' not yet defined
+checker notice, variable `S' in equation `S11_dB' not yet defined
+subcircuit root
+  Pac:P1 _net0 gnd Num="2" Z="39.9Ohm" P="0.001" f="1e+09Hz" Temp="26.85"
+  Pac:P2 _net1 gnd Num="1" Z="50Ohm" P="0.001" f="1e+09Hz" Temp="26.85"
+  SP:SP1 Type="lin" Start="0Hz" Stop="2e+09Hz" Points="200" Noise="no" NoiseIP="1" NoiseOP="2" saveCVs="no" saveAll="no"
+  CAPQ:CAPQ1 _net1 _net2 C="2.21e-12F" Q="Qc" f="1e+08Hz" Mode="Linear" Temp="26.85"
+  CAPQ:CAPQ2 _net2 _net3 C="1.018e-11F" Q="Qc" f="1e+08Hz" Mode="Linear" Temp="26.85"
+  CAPQ:CAPQ3 _net3 _net4 C="6.07e-12F" Q="Qc" f="1e+08Hz" Mode="Linear" Temp="26.85"
+  CAPQ:CAPQ4 gnd _net4 C="3.55e-12F" Q="Qc" f="1e+08Hz" Mode="Linear" Temp="26.85"
+  CAPQ:CAPQ5 gnd _net3 C="1.96e-12F" Q="Qc" f="1e+08Hz" Mode="Linear" Temp="26.85"
+  CAPQ:CAPQ6 gnd _net2 C="2.73e-12F" Q="Qc" f="1e+08Hz" Mode="Linear" Temp="26.85"
+  CAPQ:CAPQ7 gnd _net1 C="2.73e-12F" Q="Qc" f="1e+08Hz" Mode="Linear" Temp="26.85"
+  INDQ:INDQ1 _net1 _net2 L="6.44e-09H" Q="QL" f="1e+08Hz" Mode="Linear" Temp="26.85"
+  INDQ:INDQ2 _net2 _net3 L="2.29e-09H" Q="QL" f="1e+08Hz" Mode="Linear" Temp="26.85"
+  INDQ:INDQ3 _net3 _net4 L="3.53e-09H" Q="QL" f="1e+08Hz" Mode="Linear" Temp="26.85"
+  INDQ:INDQ4 _net4 _net0 L="7.03e-09H" Q="QL" f="1e+08Hz" Mode="Linear" Temp="26.85"
+netlist content
+      4 INDQ instances
+      2 Pac instances
+      7 CAPQ instances
+      1 SP instances
+creating netlist...
+checker notice, variable `S' in equation `S21_dB' not yet defined
+checker notice, variable `S' in equation `S22_dB' not yet defined
+checker notice, variable `S' in equation `S11_dB' not yet defined
+NOTIFY: SP1: preparing circuit for analysis
+NOTIFY: SP1: inserted 2 tees, 4 crosses, 0 opens and 6 grounds
+NOTIFY: SP1: creating sorted nodelist for SP analysis
+NOTIFY: SP1: solving SP netlist
+
+Simulation ended on sáb 08. jul 2017 at 17:11:08:858
+Ready.
+
+
+
+Errors and Warnings:
+--------------------
+
+
