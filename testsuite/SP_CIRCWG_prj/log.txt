@@ -1,0 +1,46 @@
+Output:
+-------
+
+Starting new simulation on dom 09. jul 2017 at 19:33:32:353
+
+creating netlist... done.
+Starting /usr/local/bin/qucsator
+
+project location: 
+modules to load: 0
+factorycreate.size() is 0
+factorycreate has registered:
+parsing netlist...
+checking netlist...
+checker notice, value of `a' (variable `Radius') could be out of range `]0,0.' in `CIRCLINE:Line1'
+checker notice, value of `er' (variable `Er') could be out of range `[1,100]' in `CIRCLINE:Line1'
+checker notice, value of `rho' (variable `RsCopper') could be out of range `[0,0.' in `CIRCLINE:Line1'
+checker notice, variable `S' in equation `S21_dB' not yet defined
+checker notice, variable `S' in equation `S11_dB' not yet defined
+checker notice, variable `S' in equation `A' not yet defined
+checker notice, variable `S' in equation `S11m' not yet defined
+checker notice, variable `S' in equation `S21m' not yet defined
+checker notice, variable `S' in equation `S11a' not yet defined
+checker notice, variable `S' in equation `S21a' not yet defined
+netlist content
+      1 CIRCLINE instances
+      2 Pac instances
+      1 SP instances
+creating netlist...
+checker notice, variable `S' in equation `S21_dB' not yet defined
+checker notice, variable `S' in equation `S11_dB' not yet defined
+checker notice, variable `S' in equation `A' not yet defined
+checker notice, variable `S' in equation `S11m' not yet defined
+checker notice, variable `S' in equation `S21m' not yet defined
+checker notice, variable `S' in equation `S11a' not yet defined
+checker notice, variable `S' in equation `S21a' not yet defined
+
+Simulation ended on dom 09. jul 2017 at 19:33:32:415
+Ready.
+
+
+
+Errors and Warnings:
+--------------------
+
+
