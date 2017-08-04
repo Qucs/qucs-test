@@ -1,0 +1,59 @@
+project location: 
+modules to load: 0
+factorycreate.size() is 0
+factorycreate has registered:
+parsing netlist...
+checking netlist...
+subcircuit root
+  IProbe:Pr1 _net0 gnd_TEMP_Pr1 Ri="0Ohm"
+  R:_R_gnd_TEMP_Pr1 gnd_TEMP_Pr1 gnd R="0Ohm" Temp="26.85" Tc1="0" Tc2="0" Tnom="26.85"
+  AC:AC1 Type="const" Values="50Hz" Noise="no"
+  R:R1 _net1 _net0 R="10Ohm" Temp="26.85" Tc1="0" Tc2="0" Tnom="26.85"
+  VProbe:Pr2 _net1 _net0 Ri="0Ohm"
+  Vac:V1 _net2_TEMP_V1 gnd U="10V" f="50Hz" Phase="0" Theta="0" Ri="0Ohm"
+  R:_R__net2_TEMP_V1 _net2_TEMP_V1 _net2 R="0Ohm" Temp="26.85" Tc1="0" Tc2="0" Tnom="26.85"
+  Iac:I1 _net3 _net2 I="10A" f="50Hz" Phase="0" Theta="0" Ri="10Ohm"
+  Iac:I2 _net0 _net1 I="10A" f="1e+12Ohm" Phase="0" Theta="0" Ri="0"
+  Vac:V2 _net1_TEMP_V2 gnd U="10V" f="50Hz" Phase="0" Theta="0" Ri="0Ohm"
+  R:_R__net1_TEMP_V2 _net1_TEMP_V2 _net1 R="0Ohm" Temp="26.85" Tc1="0" Tc2="0" Tnom="26.85"
+  IProbe:Pr3 _net3 gnd_TEMP_Pr3 Ri="0Ohm"
+  R:_R_gnd_TEMP_Pr3 gnd_TEMP_Pr3 gnd R="0Ohm" Temp="26.85" Tc1="0" Tc2="0" Tnom="26.85"
+  VProbe:Pr4 _net2 _net3 Ri="0Ohm"
+  R:R7 gnd _net4 R="1e+06Ohm" Temp="26.85" Tc1="0" Tc2="0" Tnom="26.85"
+  R:R6 _net5 _net4 R="1e+06Ohm" Temp="26.85" Tc1="0" Tc2="0" Tnom="26.85"
+  Vdc:V6 _net5_TEMP_V6 gnd U="10V" Ri="0Ohm"
+  R:_R__net5_TEMP_V6 _net5_TEMP_V6 _net5 R="0Ohm" Temp="26.85" Tc1="0" Tc2="0" Tnom="26.85"
+  R:R8 gnd _net6 R="1e+06Ohm" Temp="26.85" Tc1="0" Tc2="0" Tnom="26.85"
+  R:R9 _net7 _net6 R="1e+06Ohm" Temp="26.85" Tc1="0" Tc2="0" Tnom="26.85"
+  Vdc:V7 _net7_TEMP_V7 gnd U="10V" Ri="0Ohm"
+  R:_R__net7_TEMP_V7 _net7_TEMP_V7 _net7 R="0Ohm" Temp="26.85" Tc1="0" Tc2="0" Tnom="26.85"
+  Ohmmeter:Pr7 gnd _net8
+  Ohmmeter:Pr8 gnd _net9
+  IProbe:Pr12 gnd _net10_TEMP_Pr12 Ri="10Ohm"
+  R:_R__net10_TEMP_Pr12 _net10_TEMP_Pr12 _net10 R="10Ohm" Temp="26.85" Tc1="0" Tc2="0" Tnom="26.85"
+  WProbe:Pr20 gnd _net9_TEMP_Pr201 gnd _net8 Riv="5e+09Ohm" Rii="500Ohm"
+  R:_R__net9_TEMP_Pr201 _net9_TEMP_Pr201 _net9 R="500Ohm" Temp="26.85" Tc1="0" Tc2="0" Tnom="26.85"
+  Ohmmeter:Pr9 gnd _net10
+  IProbe:Pr10 _net11 gnd_TEMP_Pr10 Ri="0Ohm"
+  R:_R_gnd_TEMP_Pr10 gnd_TEMP_Pr10 gnd R="0Ohm" Temp="26.85" Tc1="0" Tc2="0" Tnom="26.85"
+  DC:DC1 Temp="26.85" reltol="0.001" abstol="1e-12A" vntol="1e-06V" saveOPs="no" MaxIter="150" saveAll="no" convHelper="none" Solver="CroutLU"
+  VProbe:Pr5 _net4 gnd Ri="1e+06Ohm"
+  VProbe:Pr6 _net6 gnd Ri="2e+06Ohm"
+  Vdc:V8 _net11_TEMP_V8 gnd U="10V" Ri="50Ohm"
+  R:_R__net11_TEMP_V8 _net11_TEMP_V8 _net11 R="50Ohm" Temp="26.85" Tc1="0" Tc2="0" Tnom="26.85"
+netlist content
+      2 Iac instances
+      4 IProbe instances
+      3 Ohmmeter instances
+      1 AC instances
+      1 DC instances
+      4 VProbe instances
+     15 R instances
+      1 WProbe instances
+      3 Vdc instances
+      2 Vac instances
+creating netlist...
+NOTIFY: DC1: creating node list for DC analysis
+NOTIFY: DC1: solving DC netlist
+NOTIFY: AC1: creating node list for AC analysis
+NOTIFY: AC1: solving AC netlist
