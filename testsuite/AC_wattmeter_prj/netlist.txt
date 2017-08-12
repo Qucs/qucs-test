@@ -1,0 +1,18 @@
+# Qucs 0.0.19  /home/gil/Desktop/test/AC_wattmeter_prj/wattmeter.sch
+
+Vac:V1 _net0_TEMP_V1 gnd U="150 V" f="1 GHz" Phase="0" Theta="0" Ri="0 Ohm"
+R:_R__net0_TEMP_V1 _net0_TEMP_V1 _net0 R="0 Ohm" Temp = "26.85" Tc1 = "0.0" Tc2 = "0.0" Tnom = "26.85"
+R:R1 gnd _net1 R="15 Ohm" Temp="26.85" Tc1="0.0" Tc2="0.0" Tnom="26.85"
+
+R:R2 _net2 _net1 R="6 Ohm" Temp="26.85" Tc1="0.0" Tc2="0.0" Tnom="26.85"
+
+R:R3 _net3 _net1 R="8 Ohm" Temp="26.85" Tc1="0.0" Tc2="0.0" Tnom="26.85"
+
+C:C1 gnd _net3 C="177 uF" V=""
+
+WProbe:PF _net0 _net1_TEMP_PF1 _net0 gnd Riv="0 Ohm" Rii="0 Ohm"
+R:_R__net1_TEMP_PF1 _net1_TEMP_PF1 _net1 R="0 Ohm" Temp = "26.85" Tc1 = "0.0" Tc2 = "0.0" Tnom = "26.85"
+.AC:AC1 Type="lin" Start="100 Hz" Stop="1000 Hz" Points="10" Noise="no"
+
+L:L1 gnd _net2 L="0.1 H" I=""
+

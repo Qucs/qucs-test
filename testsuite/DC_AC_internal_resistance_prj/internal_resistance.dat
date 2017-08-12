@@ -1,0 +1,272 @@
+<Qucs Dataset 0.0.19>
+<indep acfrequency 1>
+  +5.00000000000000000000e+01
+</indep>
+<dep Pr2.v acfrequency>
+  +1.00000000000000000000e+01
+</dep>
+<dep Pr4.v acfrequency>
+  +1.00000000000000000000e+01
+</dep>
+<dep Pr7.v acfrequency>
+  +5.00000000000000000000e+09
+</dep>
+<dep Pr8.v acfrequency>
+  +5.00000000000000000000e+02
+</dep>
+<dep Pr20.v acfrequency>
+  +5.00000000000000000000e+09
+</dep>
+<dep Pr9.v acfrequency>
+  +1.00000000000000000000e+01
+</dep>
+<dep Pr5.v acfrequency>
+  +0.00000000000000000000e+00
+</dep>
+<dep Pr6.v acfrequency>
+  +0.00000000000000000000e+00
+</dep>
+<dep Pr1.i acfrequency>
+  +1.10000000000000000000e+01
+</dep>
+<dep V1.i acfrequency>
+  -1.10000000000000000000e+01
+</dep>
+<dep V2.i acfrequency>
+  -1.10000000000000000000e+01
+</dep>
+<dep Pr3.i acfrequency>
+  +1.10000000000000000000e+01
+</dep>
+<dep V6.i acfrequency>
+  +0.00000000000000000000e+00
+</dep>
+<dep V7.i acfrequency>
+  +0.00000000000000000000e+00
+</dep>
+<dep Pr12.i acfrequency>
+  +1.00000000000000000000e+00
+</dep>
+<dep Pr20.i acfrequency>
+  +1.00000000000000000000e+00
+</dep>
+<dep Pr10.i acfrequency>
+  +0.00000000000000000000e+00
+</dep>
+<dep V8.i acfrequency>
+  +0.00000000000000000000e+00
+</dep>
+<dep _net11_TEMP_V8.v acfrequency>
+  +0.00000000000000000000e+00
+</dep>
+<dep _net11.v acfrequency>
+  +0.00000000000000000000e+00
+</dep>
+<dep _net6.v acfrequency>
+  +0.00000000000000000000e+00
+</dep>
+<dep _net4.v acfrequency>
+  +0.00000000000000000000e+00
+</dep>
+<dep gnd_TEMP_Pr10.v acfrequency>
+  +0.00000000000000000000e+00
+</dep>
+<dep _net10.v acfrequency>
+  -1.00000000000000000000e+01
+</dep>
+<dep _net9_TEMP_Pr201.v acfrequency>
+  -0.00000000000000000000e+00
+</dep>
+<dep _net9.v acfrequency>
+  -5.00000000000000000000e+02
+</dep>
+<dep _net8.v acfrequency>
+  -5.00000000000000000000e+09
+</dep>
+<dep _net10_TEMP_Pr12.v acfrequency>
+  +0.00000000000000000000e+00
+</dep>
+<dep _net7_TEMP_V7.v acfrequency>
+  +0.00000000000000000000e+00
+</dep>
+<dep _net7.v acfrequency>
+  -0.00000000000000000000e+00
+</dep>
+<dep _net5_TEMP_V6.v acfrequency>
+  +0.00000000000000000000e+00
+</dep>
+<dep _net5.v acfrequency>
+  -0.00000000000000000000e+00
+</dep>
+<dep _net2.v acfrequency>
+  +1.00000000000000000000e+01
+</dep>
+<dep _net3.v acfrequency>
+  +0.00000000000000000000e+00
+</dep>
+<dep gnd_TEMP_Pr3.v acfrequency>
+  +0.00000000000000000000e+00
+</dep>
+<dep _net1_TEMP_V2.v acfrequency>
+  +1.00000000000000000000e+01
+</dep>
+<dep _net1.v acfrequency>
+  +1.00000000000000000000e+01
+</dep>
+<dep _net0.v acfrequency>
+  +0.00000000000000000000e+00
+</dep>
+<dep _net2_TEMP_V1.v acfrequency>
+  +1.00000000000000000000e+01
+</dep>
+<dep gnd_TEMP_Pr1.v acfrequency>
+  +0.00000000000000000000e+00
+</dep>
+<indep Pr2.V 1>
+  +0.00000000000000000000e+00
+</indep>
+<indep Pr4.V 1>
+  +0.00000000000000000000e+00
+</indep>
+<indep Pr7.Ohm 2>
+  +5.00000000000000000000e+09
+  +5.00000000000000000000e+09
+</indep>
+<indep Pr7.V 1>
+  +5.00000000000000000000e+09
+</indep>
+<indep Pr8.Ohm 2>
+  +5.00000000000000000000e+02
+  +5.00000000000000000000e+02
+</indep>
+<indep Pr8.V 1>
+  +5.00000000000000000000e+02
+</indep>
+<indep Pr20.S 2>
+  +0.00000000000000000000e+00
+  +0.00000000000000000000e+00
+</indep>
+<indep Pr20.P 2>
+  +0.00000000000000000000e+00
+  +0.00000000000000000000e+00
+</indep>
+<indep Pr20.Q 2>
+  -0.00000000000000000000e+00
+  -0.00000000000000000000e+00
+</indep>
+<indep Pr20.PF 2>
+  -nan
+  -nan
+</indep>
+<indep Pr20.V 1>
+  +5.00000000000000000000e+09
+</indep>
+<indep Pr9.Ohm 2>
+  +1.00000000000000000000e+01
+  +1.00000000000000000000e+01
+</indep>
+<indep Pr9.V 1>
+  +1.00000000000000000000e+01
+</indep>
+<indep Pr5.V 1>
+  +3.33333333333333303727e+00
+</indep>
+<indep Pr6.V 1>
+  +4.00000000000000000000e+00
+</indep>
+<indep Pr1.I 1>
+  +0.00000000000000000000e+00
+</indep>
+<indep V1.I 1>
+  +0.00000000000000000000e+00
+</indep>
+<indep V2.I 1>
+  +0.00000000000000000000e+00
+</indep>
+<indep Pr3.I 1>
+  +0.00000000000000000000e+00
+</indep>
+<indep V6.I 1>
+  -6.66666666666666664733e-06
+</indep>
+<indep V7.I 1>
+  -5.99999999999999930497e-06
+</indep>
+<indep Pr12.I 1>
+  +1.00000000000000000000e+00
+</indep>
+<indep Pr20.I 1>
+  +1.00000000000000000000e+00
+</indep>
+<indep Pr10.I 1>
+  +2.00000000000000011102e-01
+</indep>
+<indep V8.I 1>
+  -2.00000000000000011102e-01
+</indep>
+<indep _net11_TEMP_V8.V 1>
+  +1.00000000000000000000e+01
+</indep>
+<indep _net11.V 1>
+  +0.00000000000000000000e+00
+</indep>
+<indep _net6.V 1>
+  +4.00000000000000000000e+00
+</indep>
+<indep _net4.V 1>
+  +3.33333333333333303727e+00
+</indep>
+<indep gnd_TEMP_Pr10.V 1>
+  +0.00000000000000000000e+00
+</indep>
+<indep _net10.V 1>
+  -1.00000000000000000000e+01
+</indep>
+<indep _net9_TEMP_Pr201.V 1>
+  +0.00000000000000000000e+00
+</indep>
+<indep _net9.V 1>
+  -5.00000000000000000000e+02
+</indep>
+<indep _net8.V 1>
+  -5.00000000000000000000e+09
+</indep>
+<indep _net10_TEMP_Pr12.V 1>
+  +0.00000000000000000000e+00
+</indep>
+<indep _net7_TEMP_V7.V 1>
+  +1.00000000000000000000e+01
+</indep>
+<indep _net7.V 1>
+  +1.00000000000000000000e+01
+</indep>
+<indep _net5_TEMP_V6.V 1>
+  +1.00000000000000000000e+01
+</indep>
+<indep _net5.V 1>
+  +1.00000000000000000000e+01
+</indep>
+<indep _net2.V 1>
+  +0.00000000000000000000e+00
+</indep>
+<indep _net3.V 1>
+  +0.00000000000000000000e+00
+</indep>
+<indep gnd_TEMP_Pr3.V 1>
+  +0.00000000000000000000e+00
+</indep>
+<indep _net1_TEMP_V2.V 1>
+  +0.00000000000000000000e+00
+</indep>
+<indep _net1.V 1>
+  +0.00000000000000000000e+00
+</indep>
+<indep _net0.V 1>
+  +0.00000000000000000000e+00
+</indep>
+<indep _net2_TEMP_V1.V 1>
+  +0.00000000000000000000e+00
+</indep>
+<indep gnd_TEMP_Pr1.V 1>
+  +0.00000000000000000000e+00
+</indep>
