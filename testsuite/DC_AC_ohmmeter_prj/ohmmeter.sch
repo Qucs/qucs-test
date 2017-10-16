@@ -4,7 +4,7 @@
   <Grid=10,10,1>
   <DataSet=ohmmeter.dat>
   <DataDisplay=ohmmeter.dpl>
-  <OpenDisplay=1>
+  <OpenDisplay=0>
   <Script=ohmmeter.m>
   <RunScript=0>
   <showFrame=0>
@@ -31,7 +31,7 @@
   <R R9 1 1040 353 -26 15 0 0 "50 Ohm" 1 "26.85" 0 "0.0" 0 "0.0" 0 "26.85" 0 "US" 0>
   <R R10 1 1040 433 -26 15 0 0 "50 Ohm" 1 "26.85" 0 "0.0" 0 "0.0" 0 "26.85" 0 "US" 0>
   <Ohmmeter Pr2 1 1210 403 -16 28 0 3>
-  <Vdc V1 1 940 393 18 -26 0 1 "1 V" 1 "0 Ohm" 0>
+  <Vdc V1 1 940 393 18 -26 0 1 "1 V" 1>
   <R R11 1 1009 268 -26 -61 0 2 "20 Ohm" 1 "26.85" 0 "0.0" 0 "0.0" 0 "26.85" 0 "US" 0>
   <GND * 1 940 470 0 0 0 0>
   <GND * 1 924 268 0 0 0 0>
