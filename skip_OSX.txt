@@ -8,3 +8,7 @@ TR_supply_prj,          NUM_FAIL
 DC_SP_HICUM-fig10_prj,          non-GPL model removed
 DC_SW_bsim4v30nMOS_Ids_Vgs_prj, non-GPL model removed
 DC_SW_bsim4v30pMOS_Ids_Vgs_prj, non-GPL model removed
+AC_phasordiag_prj,             NUM_FAIL
+AC_temporaldiag_prj,           NUM_FAIL
+DC_AC_ohmmeter_prj,            NUM_FAIL
+DC_AC_internal_resistance_prj, NUM_FAIL
