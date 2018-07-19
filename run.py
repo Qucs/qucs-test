@@ -689,6 +689,7 @@ if __name__ == '__main__':
             else:
                 print pr('Diff netlist    : FAIL')
                 net_report[test] = bad_lines
+                returnStatus = -1
 
         print '\n'
         print pb('############################################')
