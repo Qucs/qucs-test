@@ -1,0 +1,13 @@
+# Qucs 0.0.20  /home/andresmmera/.qucs/Examples/testsuite/DC circuits/General/DC_SW_Wheatstone_Bridge_prj/Wheatstone_Bridge.sch
+
+R:R2 _net0 _net1 R="500 Ohm" Temp="26.85" Tc1="0.0" Tc2="0.0" Tnom="26.85"
+R:R5 gnd _net0 R="Rmeasure" Temp="26.85" Tc1="0.0" Tc2="0.0" Tnom="26.85"
+.DC:DC1 Temp="26.85" reltol="0.001" abstol="1 pA" vntol="1 uV" saveOPs="no" MaxIter="150" saveAll="no" convHelper="none" Solver="CroutLU"
+.SW:SW1 Sim="DC1" Type="lin" Param="Rmeasure" Start="10 Ohm" Stop="1 kOhm" Points="100"
+.SW:SW2 Sim="SW1" Type="lin" Param="Rbranch" Start="200 Ohm" Stop="1 kOhm" Points="4"
+Eqn:Eqn1 Umeasure="500 * abs(Pr1.I)" Export="yes"
+IProbe:Pr1 _net2 _net3
+R:R1 _net2 _net1 R="Rbranch" Temp="26.85" Tc1="0.0" Tc2="0.0" Tnom="26.85"
+R:R4 gnd _net2 R="Rbranch" Temp="26.85" Tc1="0.0" Tc2="0.0" Tnom="26.85"
+Vdc:V1 _net1 gnd U="12 V"
+R:R3 _net3 _net0 R="47 Ohm" Temp="26.85" Tc1="0.0" Tc2="0.0" Tnom="26.85"
