@@ -1,4 +1,4 @@
-# Qucs 0.0.18  /Users/guilherme/git/qucs-test/testsuite/DC_AC_active_lp_prj/active_lp.sch
+# Qucs 0.0.20  /home/andresmmera/.qucs/Examples/testsuite/DC circuits/Operational amplifiers/Active Filters/DC_AC_active_lp_prj/active_lp.sch
 
 R:R2 _net0 _net1 R="10k" Temp="26.85" Tc1="0.0" Tc2="0.0" Tnom="26.85"
 R:R1 _net1 _net2 R="10k" Temp="26.85" Tc1="0.0" Tc2="0.0" Tnom="26.85"
@@ -16,6 +16,6 @@ R:R6 _net7 _net8 R="10k" Temp="26.85" Tc1="0.0" Tc2="0.0" Tnom="26.85"
 OpAmp:OP3 Output _net8 Output G="1e6" Umax="15 V"
 C:C6 gnd _net8 C="1n" V=""
 C:C3 _net7 Output C="256n" V=""
+.DC:DC1 Temp="26.85" reltol="0.001" abstol="1 pA" vntol="1 uV" saveOPs="no" MaxIter="150" saveAll="no" convHelper="none" Solver="CroutLU"
 .AC:AC1 Type="log" Start="1 Hz" Stop="10 kHz" Points="201" Noise="no"
 Eqn:Eqn1 Ampl="dB(Output.v)" Phase="phase(Output.v)" Export="yes"
-.DC:DC1 Temp="26.85" reltol="0.001" abstol="1 pA" vntol="1 uV" saveOPs="no" MaxIter="150" saveAll="no" convHelper="none" Solver="CroutLU"
