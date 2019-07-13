@@ -1,10 +1,10 @@
-<Qucs Schematic 0.0.19>
+<Qucs Schematic 0.0.20>
 <Properties>
-  <View=-34,-74,1000,729,0.977584,0,0>
+  <View=-34,-171,1559,1146,0.551821,0,0>
   <Grid=10,10,1>
   <DataSet=HF_BPF.dat>
   <DataDisplay=HF_BPF.dpl>
-  <OpenDisplay=1>
+  <OpenDisplay=0>
   <Script=HF_BPF.m>
   <RunScript=0>
   <showFrame=0>
@@ -19,20 +19,20 @@
   <INDQ INDQ1 1 550 90 -30 -122 0 0 "1.82uH" 1 "Ql" 1 "f0" 1 "SquareRoot" 1 "26.85" 0>
   <INDQ INDQ3 1 630 170 16 -52 0 1 "221.8nH" 1 "Ql" 1 "f0" 1 "SquareRoot" 1 "26.85" 0>
   <CAPQ CAPQ3 1 590 170 -108 -57 0 1 "560 pF" 1 "Qc" 1 "f0" 1 "Linear" 1 "26.85" 0>
-  <GND * 1 800 220 0 0 0 0>
+  <GND * 5 800 220 0 0 0 0>
   <Pac P1 1 800 170 18 -26 0 1 "2" 1 "50 Ohm" 1 "0 W" 0 "1 GHz" 0 "-273.15" 1>
   <INDQ INDQ2 1 310 170 15 -53 0 1 "221.8nH" 1 "Ql" 1 "f0" 1 "SquareRoot" 1 "26.85" 0>
   <CAPQ CAPQ1 1 410 90 -41 -124 0 0 "68 pF" 1 "Qc" 1 "f0" 1 "Linear" 1 "26.85" 0>
   <CAPQ CAPQ2 1 270 170 -108 -57 0 1 "560 pF" 1 "Qc" 1 "f0" 1 "Linear" 1 "26.85" 0>
-  <GND * 1 310 220 0 0 0 0>
-  <.DC DC1 1 20 310 0 43 0 0 "26.85" 0 "0.001" 0 "1 pA" 0 "1 uV" 0 "no" 0 "150" 0 "no" 0 "none" 0 "CroutLU" 0>
+  <GND * 5 310 220 0 0 0 0>
+  <.DC DC1 1 20 310 0 47 0 0 "26.85" 0 "0.001" 0 "1 pA" 0 "1 uV" 0 "no" 0 "150" 0 "no" 0 "none" 0 "CroutLU" 0>
   <Eqn Eqn2 1 450 320 -28 15 0 0 "S21_dB=dB(S[2,1])" 1 "S11_dB=dB(S[1,1])" 1 "yes" 0>
   <Eqn Eqn1 1 450 440 -31 17 0 0 "Ql=200" 1 "Qc=5000" 1 "f0=14e6" 1 "yes" 0>
-  <.SP SP1 1 230 310 0 72 0 0 "log" 1 "1.2 MHz" 1 "170 MHz" 1 "433" 1 "yes" 1 "1" 0 "2" 0 "no" 0 "no" 0>
-  <.AC AC1 1 20 410 0 43 0 0 "log" 1 "1.2 MHz" 1 "170 MHz" 1 "218" 1 "yes" 1>
-  <GND * 1 100 220 0 0 0 0>
+  <.SP SP1 1 230 310 0 80 0 0 "log" 1 "1.2 MHz" 1 "170 MHz" 1 "433" 1 "yes" 1 "1" 0 "2" 0 "no" 0 "no" 0>
+  <.AC AC1 1 20 410 0 47 0 0 "log" 1 "1.2 MHz" 1 "170 MHz" 1 "218" 1 "yes" 1>
+  <GND * 5 100 220 0 0 0 0>
   <Pac P2 1 100 150 -122 -26 1 1 "1" 1 "50 Ohm" 1 "0 dBm" 0 "1 GHz" 0 "-273.15" 1>
-  <GND * 1 630 290 0 0 0 0>
+  <GND * 5 630 290 0 0 0 0>
   <Vdc V1 1 630 250 -75 -22 1 1 "1.1 V" 1>
 </Components>
 <Wires>
@@ -57,6 +57,12 @@
   <800 90 800 90 "out" 830 60 0 "">
 </Wires>
 <Diagrams>
+  <Rect 970 398 520 378 3 #c0c0c0 1 00 0 0 5e+06 3e+07 0 -40 5 5 1 -1 0.2 1 315 0 225 "" "" "" "">
+	<"S21_dB" #ff0000 0 3 0 0 0>
+	  <Mkr 1.16193e+07 21 -448 3 0 0>
+	  <Mkr 1.77595e+07 331 -451 3 0 0>
+	<"S11_dB" #0000ff 0 3 0 0 0>
+  </Rect>
 </Diagrams>
 <Paintings>
   <Text 40 -40 12 #ff5500 0 "Chebyshev band-pass filter \n 12MHz...17MHz, pi-type, \n impedance matching 50 Ohm">
