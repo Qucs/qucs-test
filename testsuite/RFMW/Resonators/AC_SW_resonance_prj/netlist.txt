@@ -1,0 +1,9 @@
+# Qucs 0.0.20  /home/andresmmera/.qucs/Examples/testsuite/RFMW/Filters/AC_SW_resonance_prj/resonance.sch
+
+.AC:AC1 Type="lin" Start="0.9 GHz" Stop="1.1 GHz" Points="150" Noise="no"
+.SW:SW1 Sim="AC1" Type="log" Param="R_par" Start="1 Ohm" Stop="20 Ohm" Points="6"
+Eqn:SeriesResonatorEqs VL="Vi.v - VC.v" VR="VR.v - Vi.v" VL_phase="phase(VL)" VC_phase="phase(VC.v)" VR_phase="phase(VR)" Export="yes"
+Vac:V1 VR gnd U="1 V" f="1 GHz" Phase="0" Theta="0"
+R:R1 Vi VR R="R_par" Temp="26.85" Tc1="0.0" Tc2="0.0" Tnom="26.85"
+C:C1 gnd VC C="2 pF" V=""
+L:L1 VC Vi L="13 nH" I=""
