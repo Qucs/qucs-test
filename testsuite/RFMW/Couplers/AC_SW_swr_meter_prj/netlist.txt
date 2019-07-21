@@ -1,0 +1,13 @@
+# Qucs 0.0.20  /home/andresmmera/.qucs/Examples/testsuite/RFMW/General/AC_SW_swr_meter_prj/swr_meter.sch
+
+.SW:SW1 Sim="AC1" Type="lin" Param="R_load" Start="1 Ohm" Stop="5000 Ohm" Points="1000"
+Tr:Tr2 gnd reflected forward Output T="25"
+Tr:Tr1 reflected _net0 Output gnd T="25"
+R:Load gnd Output R="R_load" Temp="26.85" Tc1="0.0" Tc2="0.0" Tnom="26.85"
+.AC:AC1 Type="const" Values="[1 GHz]" Noise="no"
+Vac:V1 _net1 gnd U="Vpeak" f="1 GHz" Phase="0" Theta="0"
+R:R2 gnd forward R="Z0" Temp="26.85" Tc1="0.0" Tc2="0.0" Tnom="26.85"
+R:R1 gnd reflected R="Z0" Temp="26.85" Tc1="0.0" Tc2="0.0" Tnom="26.85"
+R:R4 _net1 _net0 R="Z0" Temp="26.85" Tc1="0.0" Tc2="0.0" Tnom="26.85"
+Eqn:Eqn1 r_calc="(R_load-Z0)/(R_load+Z0)" r_measure="PlotVs(-reflected.v / forward.v, R_load)" Export="yes"
+Eqn:Eqn2 Vpeak="1" Z0="50" Export="yes"
