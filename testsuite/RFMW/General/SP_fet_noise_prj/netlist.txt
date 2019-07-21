@@ -1,4 +1,4 @@
-# Qucs 0.0.18  /Users/guilherme/git/qucs-test/testsuite/SP_fet_noise_prj/fet_noise.sch
+# Qucs 0.0.20  /home/andresmmera/.qucs/Examples/testsuite/RFMW/General/SP_fet_noise_prj/fet_noise.sch
 
 .Def:fet _net9 _net8 _net10
 C:C3 _net0 _net1 C="234 fF" V=""
@@ -24,3 +24,5 @@ L:L2 gnd _net0 L="4.0 nH" I=""
 Pac:P1 _net2 gnd Num="1" Z="50 Ohm" P="0 dBm" f="1 GHz" Temp="26.85"
 Pac:P2 _net1 gnd Num="2" Z="50 Ohm" P="0 dBm" f="1 GHz" Temp="26.85"
 .SP:SP1 Type="lin" Start="1 GHz" Stop="20 GHz" Points="39" Noise="yes" NoiseIP="1" NoiseOP="2" saveCVs="no" saveAll="no"
+Eqn:Eqn1 S11_dB="dB(S[1,1])" S21_dB="dB(S[2,1])" S22_dB="dB(S[2,2])" Export="yes"
+Eqn:Eqn2 NF="10*log10(F)" Export="yes"
