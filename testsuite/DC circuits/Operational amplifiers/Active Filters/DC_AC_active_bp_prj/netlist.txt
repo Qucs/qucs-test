@@ -1,4 +1,4 @@
-# Qucs 0.0.20  /home/andresmmera/.qucs/Examples/testsuite/DC circuits/Operational amplifiers/Active Filters/DC_AC_active_bp_prj/active_bp.sch
+# Qucs 0.0.20  ./testsuite/DC circuits/Operational amplifiers/Active Filters/DC_AC_active_bp_prj/active_bp.sch
 
 OpAmp:OP1 gnd _net0 Output G="1e6" Umax="15 V"
 Vac:V1 _net1 gnd U="1 V" f="1 GHz" Phase="0" Theta="0"

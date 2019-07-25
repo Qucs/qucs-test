@@ -1,4 +1,4 @@
-# Qucs 0.0.20  /home/andresmmera/.qucs/Examples/testsuite/RFMW/Filters/SP_bpf_10Ghz_prj/bpf_10GHz.sch
+# Qucs 0.0.20  ./testsuite/RFMW/Filters/SP_bpf_10GHz_prj/bpf_10GHz.sch
 
 Pac:P2 _net0 gnd Num="2" Z="50 Ohm" P="0 dBm" f="10 GHz" Temp="26.85"
 Pac:P1 _net1 gnd Num="1" Z="50 Ohm" P="0 dBm" f="10 GHz" Temp="26.85"

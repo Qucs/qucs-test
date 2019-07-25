@@ -1,4 +1,4 @@
-# Qucs 0.0.20  /home/andresmmera/.qucs/Examples/testsuite/RFMW/Amplifiers/DC_AC_Broadband_RFIC_NE5205_prj/Broadband_RFIC_NE5205.sch
+# Qucs 0.0.20  ./testsuite/RFMW/Amplifiers/DC_AC_Broadband_RFIC_NE5205_prj/Broadband_RFIC_NE5205.sch
 
 R:R1 _net0 _net1 R="650" Temp="26.85" Tc1="0.0" Tc2="0.0" Tnom="26.85"
 L:L1 _net2 _net3 L="3 nH" I=""

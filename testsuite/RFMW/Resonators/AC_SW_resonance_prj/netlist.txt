@@ -1,4 +1,4 @@
-# Qucs 0.0.20  /home/andresmmera/.qucs/Examples/testsuite/RFMW/Filters/AC_SW_resonance_prj/resonance.sch
+# Qucs 0.0.20  ./testsuite/RFMW/Filters/AC_SW_resonance_prj/resonance.sch
 
 .AC:AC1 Type="lin" Start="0.9 GHz" Stop="1.1 GHz" Points="150" Noise="no"
 .SW:SW1 Sim="AC1" Type="log" Param="R_par" Start="1 Ohm" Stop="20 Ohm" Points="6"

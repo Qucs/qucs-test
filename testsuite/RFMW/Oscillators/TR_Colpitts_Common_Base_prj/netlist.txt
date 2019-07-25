@@ -1,4 +1,4 @@
-# Qucs 0.0.20  /home/andresmmera/.qucs/Examples/testsuite/RFMW/Oscillators/TR_Colpitts_Common_Base_prj/Colpitts_Common_Base.sch
+# Qucs 0.0.20  ./testsuite/RFMW/Oscillators/TR_Colpitts_Common_Base_prj/Colpitts_Common_Base.sch
 
 L:L1 _net0 _net1 L="L" I=""
 Vdc:Vp _net0 gnd U="5 V"

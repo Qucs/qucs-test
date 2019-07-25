@@ -1,4 +1,4 @@
-# Qucs 0.0.20  /home/andresmmera/.qucs/Examples/testsuite/DC circuits/Operational amplifiers/Active Filters/DC_AC_notch_prj/notch.sch
+# Qucs 0.0.20  ./testsuite/DC circuits/Operational amplifiers/Active Filters/DC_AC_notch_prj/notch.sch
 
 C:C1 _net0 _net1 C="1.01u" V=""
 R:R5 In Out R="10k" Temp="26.85" Tc1="0.0" Tc2="0.0" Tnom="26.85"

@@ -1,4 +1,4 @@
-# Qucs 0.0.20  /home/andresmmera/.qucs/Examples/testsuite/RFMW/General/DC_AC_SP_stab_prj/BiasStability.sch
+# Qucs 0.0.20  ./testsuite/RFMW/General/DC_AC_SP_stab_prj/BiasStability.sch
 
 Vdc:V1 _net0 gnd U="15 V"
 IProbe:Collector output _net1

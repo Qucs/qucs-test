@@ -1,4 +1,4 @@
-# Qucs 0.0.20  /home/andresmmera/.qucs/Examples/testsuite/DC circuits/Operational amplifiers/General/DC_SP_opamp_gyrator_prj/opamp_gyrator.sch
+# Qucs 0.0.20  ./testsuite/DC circuits/Operational amplifiers/General/DC_SP_opamp_gyrator_prj/opamp_gyrator.sch
 
 C:C1 _net0 _net1 C="1 uF" V=""
 Pac:P1 _net0 gnd Num="1" Z="50 Ohm" P="0 dBm" f="1 GHz" Temp="26.85"

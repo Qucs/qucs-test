@@ -1,4 +1,4 @@
-# Qucs 0.0.20  /home/andresmmera/.qucs/Examples/testsuite/DC circuits/General/TR_schmitt_prj/schmitt.sch
+# Qucs 0.0.20  ./testsuite/DC circuits/General/TR_schmitt_prj/schmitt.sch
 
 R:R1 _net0 _net1 R="4.7k" Temp="26.85" Tc1="0.0" Tc2="0.0" Tnom="26.85"
 R:R2 _net1 Output R="4.7k" Temp="26.85" Tc1="0.0" Tc2="0.0" Tnom="26.85"

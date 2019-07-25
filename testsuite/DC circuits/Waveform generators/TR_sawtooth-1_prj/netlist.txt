@@ -1,4 +1,4 @@
-# Qucs 0.0.20  /home/andresmmera/.qucs/Examples/testsuite/DC circuits/Waveform generators/TR_sawtooth-1_prj/sawtooth-1.sch
+# Qucs 0.0.20  ./testsuite/DC circuits/Waveform generators/TR_sawtooth-1_prj/sawtooth-1.sch
 
 .Def:Z_Diodes_1N4732A _net1 _net2
       Diode:D1 _net1 _net2 Is="87.7p" Rs="0.62" N="1.1" Cj0="214p" Vj="0.75" M="0.33" Tt="50.1n"

@@ -1,4 +1,4 @@
-# Qucs 0.0.20  /home/andresmmera/.qucs/Examples/testsuite/RFMW/Amplifiers/DC_AC_selective_amp_prj/selective_amp.sch
+# Qucs 0.0.20  ./testsuite/RFMW/Amplifiers/DC_AC_selective_amp_prj/selective_amp.sch
 
 .DC:DC1 Temp="26.85" reltol="0.001" abstol="1 pA" vntol="1 uV" saveOPs="no" MaxIter="150" saveAll="no" convHelper="none" Solver="CroutLU"
 .AC:AC1 Type="log" Start="300 kHz" Stop="800 kHz" Points="100" Noise="no"

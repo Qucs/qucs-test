@@ -1,4 +1,4 @@
-# Qucs 0.0.20  /home/andresmmera/.qucs/Examples/testsuite/RFMW/Filters/SP_chebyshev1_5th_prj/chebyshev1_5th.sch
+# Qucs 0.0.20  ./testsuite/RFMW/Filters/SP_chebyshev1_5th_prj/chebyshev1_5th.sch
 
 L:L1 _net0 _net1 L="86.83 nH" I=""
 C:C1 gnd _net0 C="67.96 pF" V=""

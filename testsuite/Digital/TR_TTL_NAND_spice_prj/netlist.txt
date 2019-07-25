@@ -1,4 +1,4 @@
-# Qucs 0.0.20  /home/andresmmera/.qucs/Examples/testsuite/Digital/TR_TTL_NAND_spice_prj/TTL_NAND_spice.sch
+# Qucs 0.0.20  ./testsuite/Digital/TR_TTL_NAND_spice_prj/TTL_NAND_spice.sch
 
 .Def:NAND_GATE_cir _netA _netVCC _netB _netY _ref
   .Def:NAND _ref _netA _netB _netY _netVCC

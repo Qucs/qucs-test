@@ -1,4 +1,4 @@
-# Qucs 0.0.20  /home/andresmmera/.qucs/Examples/testsuite/RFMW/Oscillators/TR_colpitts_prj/colpitts.sch
+# Qucs 0.0.20  ./testsuite/RFMW/Oscillators/TR_colpitts_prj/colpitts.sch
 
 C:C3 _net0 Output C="1 nF" V=""
 JFET:T1 _net1 _net2 _net0 Type="nfet" Vt0="-0.8 V" Beta="5e-3" Lambda="0.0" Rd="0.0" Rs="0.0" Is="1e-14" N="1.0" Isr="1e-14" Nr="2.0" Cgs="0.0" Cgd="0.0" Pb="1.0" Fc="0.5" M="0.5" Kf="0.0" Af="1.0" Ffe="1.0" Temp="26.85" Xti="3.0" Vt0tc="0.0" Betatce="0.0" Tnom="26.85" Area="1.0"

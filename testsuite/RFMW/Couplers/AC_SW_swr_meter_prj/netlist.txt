@@ -1,4 +1,4 @@
-# Qucs 0.0.20  /home/andresmmera/.qucs/Examples/testsuite/RFMW/General/AC_SW_swr_meter_prj/swr_meter.sch
+# Qucs 0.0.20  ./testsuite/RFMW/General/AC_SW_swr_meter_prj/swr_meter.sch
 
 .SW:SW1 Sim="AC1" Type="lin" Param="R_load" Start="1 Ohm" Stop="5000 Ohm" Points="1000"
 Tr:Tr2 gnd reflected forward Output T="25"
