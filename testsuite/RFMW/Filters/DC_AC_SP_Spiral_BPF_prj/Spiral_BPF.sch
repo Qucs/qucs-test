@@ -1,10 +1,10 @@
-<Qucs Schematic 0.0.19>
+<Qucs Schematic 0.0.20>
 <Properties>
-  <View=-24,-54,864,790,1.00128,0,60>
+  <View=-24,-114,1693,1019,0.827504,0,0>
   <Grid=10,10,1>
   <DataSet=Spiral_BPF.dat>
   <DataDisplay=Spiral_BPF.dpl>
-  <OpenDisplay=1>
+  <OpenDisplay=0>
   <Script=Spiral_BPF.m>
   <RunScript=0>
   <showFrame=0>
@@ -20,22 +20,22 @@
   <SPIRALIND SPIRALIND1 1 290 200 -39 -174 0 0 "Subst1" 1 "Circular" 1 "25 um" 1 "91 um" 1 "25 um" 1 "2" 1 "26.85" 0>
   <C C2 1 290 260 -43 14 0 0 "155 fF" 1 "" 0 "neutral" 0>
   <SUBST Subst1 1 60 30 -30 24 0 0 "4.5" 1 "0.8 mm" 1 "35 um" 1 "2e-4" 1 "0.022e-6" 1 "0.15e-6" 1>
-  <GND * 1 180 410 0 0 0 0>
-  <GND * 1 400 410 0 0 0 0>
-  <GND * 1 620 410 0 0 0 0>
-  <GND * 1 730 410 0 0 0 0>
+  <GND * 5 180 410 0 0 0 0>
+  <GND * 5 400 410 0 0 0 0>
+  <GND * 5 620 410 0 0 0 0>
+  <GND * 5 730 410 0 0 0 0>
   <C C3 1 400 340 17 -26 0 1 "320 fF" 1 "" 0 "neutral" 0>
   <C C5 1 620 340 17 -26 0 1 "82 fF" 1 "" 0 "neutral" 0>
   <CIRCULARLOOP CIRCULARLOOP1 1 510 200 -52 -118 0 0 "Subst1" 1 "25 um" 1 "195 um" 1 "26.85" 0>
   <C C4 1 510 260 -26 10 0 0 "600 fF" 1 "" 0 "neutral" 0>
-  <.SP SP1 1 40 500 0 71 0 0 "log" 1 "1 GHz" 1 "100 GHz" 1 "403" 1 "yes" 1 "1" 0 "2" 0 "no" 0 "no" 0>
-  <.AC AC1 1 220 500 0 43 0 0 "log" 1 "1 GHz" 1 "100 GHz" 1 "403" 1 "yes" 1>
-  <.DC DC1 1 410 500 0 42 0 0 "26.85" 0 "0.001" 0 "1 pA" 0 "1 uV" 0 "no" 0 "150" 0 "no" 0 "none" 0 "CroutLU" 0>
+  <.SP SP1 1 40 500 0 78 0 0 "log" 1 "1 GHz" 1 "100 GHz" 1 "403" 1 "yes" 1 "1" 0 "2" 0 "no" 0 "no" 0>
+  <.AC AC1 1 220 500 0 46 0 0 "log" 1 "1 GHz" 1 "100 GHz" 1 "403" 1 "yes" 1>
+  <.DC DC1 1 410 500 0 46 0 0 "26.85" 0 "0.001" 0 "1 pA" 0 "1 uV" 0 "no" 0 "150" 0 "no" 0 "none" 0 "CroutLU" 0>
   <Eqn Eqn1 1 440 590 -28 15 0 0 "S21_dB=dB(S[2,1])" 1 "S11_dB=dB(S[1,1])" 1 "yes" 0>
   <Pac P2 1 730 340 18 -26 0 1 "2" 1 "50 Ohm" 1 "0 W" 1 "1 GHz" 0 "-273.15" 1>
   <Pac P1 1 30 300 18 -26 0 1 "1" 1 "50 Ohm" 1 "0 dBm" 0 "1 GHz" 0 "-273.15" 1>
   <Vdc V1 1 30 380 18 -26 0 1 "1.1 V" 1>
-  <GND * 1 30 410 0 0 0 0>
+  <GND * 5 30 410 0 0 0 0>
 </Components>
 <Wires>
   <180 260 180 310 "" 0 0 0 "">
@@ -64,6 +64,11 @@
   <730 260 730 260 "out" 760 230 0 "">
 </Wires>
 <Diagrams>
+  <Rect 940 542 706 412 3 #c0c0c0 1 00 0 0 5e+09 3e+10 0 -55 5 5 1 -1 0.2 1 315 0 225 "" "" "" "">
+	<"S11_dB" #0000ff 0 3 0 0 0>
+	<"S21_dB" #ff0000 0 3 0 0 0>
+	  <Mkr 1e+10 283 -507 3 0 0>
+  </Rect>
 </Diagrams>
 <Paintings>
   <Text 610 500 12 #000000 0 "Cauer low-pass filter\n10GHz cutoff, PI-type,\nimpedance matching 50 Ohm">
