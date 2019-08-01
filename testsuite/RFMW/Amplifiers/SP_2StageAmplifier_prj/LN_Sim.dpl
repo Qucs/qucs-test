@@ -1,0 +1,38 @@
+<Qucs Schematic 0.0.6>
+<Properties>
+  <View=0,0,800,800,1,0,280>
+  <Grid=10,10,0>
+  <DataSet=LN_Sim.dat>
+  <DataDisplay=LN_Sim.sch>
+  <OpenDisplay=1>
+</Properties>
+<Symbol>
+</Symbol>
+<Components>
+</Components>
+<Wires>
+</Wires>
+<Diagrams>
+  <Smith 70 210 200 200 1 #c0c0c0 1 00 1 0 1 1 1 0 4 1 1 0 1 1 0 0 0 "" "" "">
+	<"S[1,1]" #0000ff 0 3 0 0 0>
+	<"S[2,2]" #ff0000 0 3 0 0 0>
+  </Smith>
+  <Polar 330 210 200 200 1 #c0c0c0 1 00 1 0 1 1 1 0 0.5 1 1 0 1 1 0 0 -2 "" "" "">
+	<"S[1,2]" #0000ff 0 3 0 0 0>
+  </Polar>
+  <Polar 330 430 200 200 1 #c0c0c0 1 00 1 0 1 1 1 0 0.5 1 1 0 1 1 19 137639176 0 "" "" "">
+	<"S[2,1]" #0000ff 0 3 0 0 0>
+  </Polar>
+  <Rect 60 420 240 160 1 #c0c0c0 1 00 1 0 0.2 1 1 0 0.5 1 1 0 0.5 1 0 137637712 1062728112 "" "" "">
+	<"NFmin" #0000ff 0 3 0 0 0>
+  </Rect>
+  <Rect 60 650 240 160 1 #c0c0c0 1 00 1 0 0.2 1 1 0 0.5 1 1 0 0.5 1 0 137463792 137662464 "" "" "">
+	<"dB_S21" #0000ff 0 3 0 0 0>
+	  <Mkr 1.2e+10 15 -50 5 0 0>
+  </Rect>
+  <Rect 350 650 240 160 1 #c0c0c0 1 00 1 0 0.2 1 1 0 0.5 1 1 0 0.5 1 0 0 0 "" "" "">
+	<"StabFact" #0000ff 0 3 0 0 0>
+  </Rect>
+</Diagrams>
+<Paintings>
+</Paintings>

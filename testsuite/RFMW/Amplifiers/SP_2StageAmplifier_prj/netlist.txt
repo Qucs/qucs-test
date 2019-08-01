@@ -1,0 +1,66 @@
+# Qucs 0.0.20  ./testsuite/RFMW/Amplifiers/SP_2StageAmplifier_prj/2StageAmplifier.sch
+
+.Def:HighGainFET _net0 _net3 _net7
+L:L1 _net0 _net1 L="6 pH" I=""
+L:L2 _net2 _net3 L="16.7 pH" I=""
+C:C1 _net4 _net2 C="0.031 pF" V=""
+C:C2 _net5 _net6 C="234 fF" V=""
+C:C3 _net4 _net1 C="5 fF" V=""
+L:L3 _net7 _net4 L="6.4 pH" I=""
+R:R1 _net1 _net6 R="0.9 Ohm" Temp="16.85" Tc1="0.0" Tc2="0.0" Tnom="26.85"
+R:R3 _net4 _net8 R="2.4 Ohm" Temp="16.85" Tc1="0.0" Tc2="0.0" Tnom="26.85"
+R:R6 _net9 _net2 R="2.5 Ohm" Temp="16.85" Tc1="0.0" Tc2="0.0" Tnom="26.85"
+C:C5 _net6 _net10 C="36 fF" V=""
+R:R2 _net8 _net5 R="0.23 Ohm" Temp="16.85" Tc1="0.0" Tc2="0.0" Tnom="26.85"
+R:R4 _net10 _net9 R="4.9 Ohm" Temp="16.85" Tc1="0.0" Tc2="0.0" Tnom="26.85"
+VCCS:SRC1 _net6 _net9 _net8 _net5 G="0.098 S" T="1.29 ps"
+R:R5 _net8 _net9 R="300 Ohm" Temp="7727" Tc1="0.0" Tc2="0.0" Tnom="26.85"
+C:C4 _net8 _net9 C="17 fF" V=""
+.Def:End
+
+.Def:HighGainFETMatch _net1 _net2 _net0
+Sub:SUB1 _net3 _net4 _net5 Type="HighGainFET"
+C:C1 _net6 _net4 C="2 pF" V=""
+R:R1 _net3 _net6 R="1098.812 Ohm" Temp="16.85" Tc1="0.0" Tc2="0.0" Tnom="26.85"
+C:C2 _net1 _net3 C="3.35 pF" V=""
+L:L3 _net0 _net3 L="0.6713 nH" I=""
+L:L1 _net0 _net5 L="177.5 pH" I=""
+L:L2 _net0 _net4 L="0.8238 nH" I=""
+C:C3 _net4 _net2 C="0.2088 pF" V=""
+.Def:End
+
+.Def:LowNoiseFET _net0 _net3 _net9
+L:L1 _net0 _net1 L="6 pH" I=""
+L:L2 _net2 _net3 L="16.7 pH" I=""
+C:C2 _net4 _net2 C="0.031 pF" V=""
+C:C3 _net5 _net6 C="234 fF" V=""
+C:C4 _net4 _net1 C="5 fF" V=""
+C:C5 _net7 _net8 C="0.014 pF" V=""
+L:L3 _net9 _net4 L="6.4 pH" I=""
+VCCS:SRC1 _net6 _net8 _net7 _net5 G="0.069 S" T="1.69 ps"
+R:R1 _net1 _net6 R="0.9 Ohm" Temp="16.85" Tc1="0.0" Tc2="0.0" Tnom="26.85"
+R:R2 _net7 _net5 R="1.9 Ohm" Temp="16.85" Tc1="0.0" Tc2="0.0" Tnom="26.85"
+R:R3 _net4 _net7 R="2.4 Ohm" Temp="16.85" Tc1="0.0" Tc2="0.0" Tnom="26.85"
+R:R4 _net10 _net8 R="3.6 Ohm" Temp="16.85" Tc1="0.0" Tc2="0.0" Tnom="26.85"
+R:R5 _net7 _net8 R="312 Ohm" Temp="1727" Tc1="0.0" Tc2="0.0" Tnom="26.85"
+R:R6 _net8 _net2 R="2.5 Ohm" Temp="16.85" Tc1="0.0" Tc2="0.0" Tnom="26.85"
+C:C1 _net6 _net10 C="0.039 pF" V=""
+.Def:End
+
+.Def:LowNoiseFETMatch _net5 _net6 _net3
+Sub:SUB1 _net0 _net1 _net2 Type="LowNoiseFET"
+R:R1 _net0 _net4 R="1088.271 Ohm" Temp="16.85" Tc1="0.0" Tc2="0.0" Tnom="26.85"
+C:C1 _net4 _net1 C="1.843 pF" V=""
+L:L1 _net3 _net2 L="114.8 pH" I=""
+C:C2 _net5 _net0 C="0.5004 pF" V=""
+L:L3 _net3 _net1 L="0.7810 nH" I=""
+C:C3 _net1 _net6 C="0.2719 pF" V=""
+L:L2 _net3 _net0 L="0.7227 nH" I=""
+.Def:End
+
+Pac:P2 _net0 gnd Num="1" Z="50 Ohm" P="0 dBm" f="1 GHz" Temp="26.85"
+.SP:SP1 Type="lin" Start="1 GHz" Stop="20 GHz" Points="191" Noise="yes" NoiseIP="1" NoiseOP="2" saveCVs="no" saveAll="no"
+Eqn:Eqn1 NFmin="10*log10(Fmin)" NF="10*log10(F)" StabFact="Rollet(S)" dB_S21="dB(S[2,1])" Export="yes"
+Pac:P1 _net1 gnd Num="2" Z="50 Ohm" P="0 dBm" f="1 GHz" Temp="26.85"
+Sub:SUB1 _net2 _net1 gnd Type="HighGainFETMatch"
+Sub:SUB2 _net0 _net2 gnd Type="LowNoiseFETMatch"
