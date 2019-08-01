@@ -3,3 +3,4 @@ TR_555_Fig9_prj, timeout if code in -O0 timed out 60 s
 DC_SP_HICUM-fig10_prj,          non-GPL model removed
 DC_SW_bsim4v30nMOS_Ids_Vgs_prj, non-GPL model removed
 DC_SW_bsim4v30pMOS_Ids_Vgs_prj, non-GPL model removed
+AC_SP_UHF_Amplifier_prj, The generated netlist puts the full path to the Qucs user folder, i.e. /home/username/.qucs in the Touchstone file component. This makes the test to crash because the S-parameter file is inside the project directory
