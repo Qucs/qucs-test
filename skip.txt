@@ -6,3 +6,4 @@ DC_SW_bsim4v30pMOS_Ids_Vgs_prj, non-GPL model removed
 AC_SP_UHF_Amplifier_prj, The generated netlist puts the full path to the Qucs user folder, i.e. /home/username/.qucs in the Touchstone file component. This makes the test to crash because the S-parameter file is inside the project directory
 BCD_prj, The digital simulation seems not to be working
 DigitalAdder_prj, The digital simulation seems not to be working
+flip_flops_models_tran_prj, There is no simulation block inside the schematics
