@@ -1,0 +1,1067 @@
+<Qucs Dataset 0.0.8>
+<indep dtime 11>
+  +0.00000000000e+00
+  +1.00000000000e-09
+  +2.00000000000e-09
+  +3.00000000000e-09
+  +4.00000000000e-09
+  +5.00000000000e-09
+  +6.00000000000e-09
+  +7.00000000000e-09
+  +8.00000000000e-09
+  +9.00000000000e-09
+  +1.00000000000e-08
+</indep>
+<dep fa1.archfulladder.ha1._net0.X dtime>
+  0
+  1
+  0
+  1
+  0
+  1
+  0
+  1
+  0
+  1
+  1
+</dep>
+<dep fa1.archfulladder.ha1._net1.X dtime>
+  0
+  1
+  0
+  1
+  0
+  1
+  0
+  1
+  0
+  1
+  1
+</dep>
+<dep fa1.archfulladder.ha1._net2.X dtime>
+  0
+  1
+  0
+  1
+  0
+  1
+  0
+  1
+  0
+  1
+  1
+</dep>
+<dep fa1.archfulladder.ha1._net3.X dtime>
+  0
+  1
+  0
+  1
+  0
+  1
+  0
+  1
+  0
+  1
+  1
+</dep>
+<dep fa1.archfulladder.ha2._net0.X dtime>
+  0
+  1
+  0
+  1
+  0
+  1
+  0
+  1
+  0
+  1
+  1
+</dep>
+<dep fa1.archfulladder.ha2._net1.X dtime>
+  0
+  1
+  0
+  1
+  0
+  1
+  0
+  1
+  0
+  1
+  1
+</dep>
+<dep fa1.archfulladder.ha2._net2.X dtime>
+  0
+  1
+  0
+  1
+  0
+  1
+  0
+  1
+  0
+  1
+  1
+</dep>
+<dep fa1.archfulladder.ha2._net3.X dtime>
+  0
+  1
+  0
+  1
+  0
+  1
+  0
+  1
+  0
+  1
+  1
+</dep>
+<dep fa1.archfulladder._net2.X dtime>
+  0
+  1
+  0
+  1
+  0
+  1
+  0
+  1
+  0
+  1
+  1
+</dep>
+<dep fa1.archfulladder._net3.X dtime>
+  0
+  1
+  0
+  1
+  0
+  1
+  0
+  1
+  0
+  1
+  1
+</dep>
+<dep fa1.archfulladder._net6.X dtime>
+  0
+  0
+  0
+  0
+  0
+  0
+  0
+  0
+  0
+  0
+  0
+</dep>
+<dep fa1._net0.X dtime>
+  0
+  1
+  0
+  1
+  0
+  1
+  0
+  1
+  0
+  1
+  1
+</dep>
+<dep fa1._net1.X dtime>
+  0
+  1
+  0
+  1
+  0
+  1
+  0
+  1
+  0
+  1
+  1
+</dep>
+<dep fa1._net4.X dtime>
+  0
+  1
+  0
+  1
+  0
+  1
+  0
+  1
+  0
+  1
+  1
+</dep>
+<dep fa1._net5.X dtime>
+  0
+  1
+  0
+  1
+  0
+  1
+  0
+  1
+  0
+  1
+  1
+</dep>
+<dep fa1._net7.X dtime>
+  0
+  1
+  0
+  1
+  0
+  1
+  0
+  1
+  0
+  1
+  1
+</dep>
+<dep fa2.archfulladder.ha1._net0.X dtime>
+  0
+  1
+  0
+  1
+  0
+  1
+  0
+  1
+  0
+  1
+  1
+</dep>
+<dep fa2.archfulladder.ha1._net1.X dtime>
+  0
+  1
+  0
+  1
+  0
+  1
+  0
+  1
+  0
+  1
+  1
+</dep>
+<dep fa2.archfulladder.ha1._net2.X dtime>
+  0
+  1
+  0
+  1
+  0
+  1
+  0
+  1
+  0
+  1
+  1
+</dep>
+<dep fa2.archfulladder.ha1._net3.X dtime>
+  0
+  1
+  0
+  1
+  0
+  1
+  0
+  1
+  0
+  1
+  1
+</dep>
+<dep fa2.archfulladder.ha2._net0.X dtime>
+  0
+  1
+  0
+  1
+  0
+  1
+  0
+  1
+  0
+  1
+  1
+</dep>
+<dep fa2.archfulladder.ha2._net1.X dtime>
+  0
+  1
+  0
+  1
+  0
+  1
+  0
+  1
+  0
+  1
+  1
+</dep>
+<dep fa2.archfulladder.ha2._net2.X dtime>
+  0
+  1
+  0
+  1
+  0
+  1
+  0
+  1
+  0
+  1
+  1
+</dep>
+<dep fa2.archfulladder.ha2._net3.X dtime>
+  0
+  1
+  0
+  1
+  0
+  1
+  0
+  1
+  0
+  1
+  1
+</dep>
+<dep fa2.archfulladder._net2.X dtime>
+  0
+  1
+  0
+  1
+  0
+  1
+  0
+  1
+  0
+  1
+  1
+</dep>
+<dep fa2.archfulladder._net3.X dtime>
+  0
+  1
+  0
+  1
+  0
+  1
+  0
+  1
+  0
+  1
+  1
+</dep>
+<dep fa2.archfulladder._net6.X dtime>
+  0
+  0
+  0
+  0
+  0
+  0
+  0
+  0
+  0
+  0
+  0
+</dep>
+<dep fa2._net0.X dtime>
+  0
+  1
+  0
+  1
+  0
+  1
+  0
+  1
+  0
+  1
+  1
+</dep>
+<dep fa2._net1.X dtime>
+  0
+  1
+  0
+  1
+  0
+  1
+  0
+  1
+  0
+  1
+  1
+</dep>
+<dep fa2._net4.X dtime>
+  0
+  1
+  0
+  1
+  0
+  1
+  0
+  1
+  0
+  1
+  1
+</dep>
+<dep fa2._net5.X dtime>
+  0
+  1
+  0
+  1
+  0
+  1
+  0
+  1
+  0
+  1
+  1
+</dep>
+<dep fa2._net7.X dtime>
+  0
+  1
+  0
+  1
+  0
+  1
+  0
+  1
+  0
+  1
+  1
+</dep>
+<dep fa3.archfulladder.ha1._net0.X dtime>
+  0
+  1
+  0
+  1
+  0
+  1
+  0
+  1
+  0
+  1
+  1
+</dep>
+<dep fa3.archfulladder.ha1._net1.X dtime>
+  0
+  1
+  0
+  1
+  0
+  1
+  0
+  1
+  0
+  1
+  1
+</dep>
+<dep fa3.archfulladder.ha1._net2.X dtime>
+  0
+  1
+  0
+  1
+  0
+  1
+  0
+  1
+  0
+  1
+  1
+</dep>
+<dep fa3.archfulladder.ha1._net3.X dtime>
+  0
+  1
+  0
+  1
+  0
+  1
+  0
+  1
+  0
+  1
+  1
+</dep>
+<dep fa3.archfulladder.ha2._net0.X dtime>
+  0
+  1
+  0
+  1
+  0
+  1
+  0
+  1
+  0
+  1
+  1
+</dep>
+<dep fa3.archfulladder.ha2._net1.X dtime>
+  0
+  1
+  0
+  1
+  0
+  1
+  0
+  1
+  0
+  1
+  1
+</dep>
+<dep fa3.archfulladder.ha2._net2.X dtime>
+  0
+  1
+  0
+  1
+  0
+  1
+  0
+  1
+  0
+  1
+  1
+</dep>
+<dep fa3.archfulladder.ha2._net3.X dtime>
+  0
+  1
+  0
+  1
+  0
+  1
+  0
+  1
+  0
+  1
+  1
+</dep>
+<dep fa3.archfulladder._net2.X dtime>
+  0
+  1
+  0
+  1
+  0
+  1
+  0
+  1
+  0
+  1
+  1
+</dep>
+<dep fa3.archfulladder._net3.X dtime>
+  0
+  1
+  0
+  1
+  0
+  1
+  0
+  1
+  0
+  1
+  1
+</dep>
+<dep fa3.archfulladder._net6.X dtime>
+  0
+  0
+  0
+  0
+  0
+  0
+  0
+  0
+  0
+  0
+  0
+</dep>
+<dep fa3._net0.X dtime>
+  0
+  1
+  0
+  1
+  0
+  1
+  0
+  1
+  0
+  1
+  1
+</dep>
+<dep fa3._net1.X dtime>
+  0
+  1
+  0
+  1
+  0
+  1
+  0
+  1
+  0
+  1
+  1
+</dep>
+<dep fa3._net4.X dtime>
+  0
+  1
+  0
+  1
+  0
+  1
+  0
+  1
+  0
+  1
+  1
+</dep>
+<dep fa3._net5.X dtime>
+  0
+  1
+  0
+  1
+  0
+  1
+  0
+  1
+  0
+  1
+  1
+</dep>
+<dep fa3._net7.X dtime>
+  0
+  1
+  0
+  1
+  0
+  1
+  0
+  1
+  0
+  1
+  1
+</dep>
+<dep fa4.archfulladder.ha1._net0.X dtime>
+  0
+  1
+  0
+  1
+  0
+  1
+  0
+  1
+  0
+  1
+  1
+</dep>
+<dep fa4.archfulladder.ha1._net1.X dtime>
+  0
+  1
+  0
+  1
+  0
+  1
+  0
+  1
+  0
+  1
+  1
+</dep>
+<dep fa4.archfulladder.ha1._net2.X dtime>
+  0
+  1
+  0
+  1
+  0
+  1
+  0
+  1
+  0
+  1
+  1
+</dep>
+<dep fa4.archfulladder.ha1._net3.X dtime>
+  0
+  1
+  0
+  1
+  0
+  1
+  0
+  1
+  0
+  1
+  1
+</dep>
+<dep fa4.archfulladder.ha2._net0.X dtime>
+  0
+  1
+  0
+  1
+  0
+  1
+  0
+  1
+  0
+  1
+  1
+</dep>
+<dep fa4.archfulladder.ha2._net1.X dtime>
+  0
+  1
+  0
+  1
+  0
+  1
+  0
+  1
+  0
+  1
+  1
+</dep>
+<dep fa4.archfulladder.ha2._net2.X dtime>
+  0
+  1
+  0
+  1
+  0
+  1
+  0
+  1
+  0
+  1
+  1
+</dep>
+<dep fa4.archfulladder.ha2._net3.X dtime>
+  0
+  1
+  0
+  1
+  0
+  1
+  0
+  1
+  0
+  1
+  1
+</dep>
+<dep fa4.archfulladder._net2.X dtime>
+  0
+  1
+  0
+  1
+  0
+  1
+  0
+  1
+  0
+  1
+  1
+</dep>
+<dep fa4.archfulladder._net3.X dtime>
+  0
+  1
+  0
+  1
+  0
+  1
+  0
+  1
+  0
+  1
+  1
+</dep>
+<dep fa4.archfulladder._net6.X dtime>
+  0
+  0
+  0
+  0
+  0
+  0
+  0
+  0
+  0
+  0
+  0
+</dep>
+<dep fa4._net0.X dtime>
+  0
+  1
+  0
+  1
+  0
+  1
+  0
+  1
+  0
+  1
+  1
+</dep>
+<dep fa4._net1.X dtime>
+  0
+  1
+  0
+  1
+  0
+  1
+  0
+  1
+  0
+  1
+  1
+</dep>
+<dep fa4._net4.X dtime>
+  0
+  1
+  0
+  1
+  0
+  1
+  0
+  1
+  0
+  1
+  1
+</dep>
+<dep fa4._net5.X dtime>
+  0
+  1
+  0
+  1
+  0
+  1
+  0
+  1
+  0
+  1
+  1
+</dep>
+<dep fa4._net7.X dtime>
+  0
+  1
+  0
+  1
+  0
+  1
+  0
+  1
+  0
+  1
+  1
+</dep>
+<dep co.X dtime>
+  0
+  1
+  0
+  1
+  0
+  1
+  0
+  1
+  0
+  1
+  1
+</dep>
+<dep gnd.X dtime>
+  0
+  0
+  0
+  0
+  0
+  0
+  0
+  0
+  0
+  0
+  0
+</dep>
+<dep in1_1.X dtime>
+  0
+  1
+  0
+  1
+  0
+  1
+  0
+  1
+  0
+  1
+  1
+</dep>
+<dep in1_2.X dtime>
+  0
+  1
+  0
+  1
+  0
+  1
+  0
+  1
+  0
+  1
+  1
+</dep>
+<dep in1_3.X dtime>
+  0
+  1
+  0
+  1
+  0
+  1
+  0
+  1
+  0
+  1
+  1
+</dep>
+<dep in1_4.X dtime>
+  0
+  1
+  0
+  1
+  0
+  1
+  0
+  1
+  0
+  1
+  1
+</dep>
+<dep in2_1.X dtime>
+  0
+  1
+  0
+  1
+  0
+  1
+  0
+  1
+  0
+  1
+  1
+</dep>
+<dep in2_2.X dtime>
+  0
+  1
+  0
+  1
+  0
+  1
+  0
+  1
+  0
+  1
+  1
+</dep>
+<dep in2_3.X dtime>
+  0
+  1
+  0
+  1
+  0
+  1
+  0
+  1
+  0
+  1
+  1
+</dep>
+<dep in2_4.X dtime>
+  0
+  1
+  0
+  1
+  0
+  1
+  0
+  1
+  0
+  1
+  1
+</dep>
+<dep _net0.X dtime>
+  0
+  1
+  0
+  1
+  0
+  1
+  0
+  1
+  0
+  1
+  1
+</dep>
+<dep _net1.X dtime>
+  0
+  1
+  0
+  1
+  0
+  1
+  0
+  1
+  0
+  1
+  1
+</dep>
+<dep _net2.X dtime>
+  0
+  1
+  0
+  1
+  0
+  1
+  0
+  1
+  0
+  1
+  1
+</dep>
+<dep out1.X dtime>
+  0
+  0
+  0
+  0
+  0
+  0
+  0
+  0
+  0
+  0
+  0
+</dep>
+<dep out2.X dtime>
+  0
+  1
+  0
+  1
+  0
+  1
+  0
+  1
+  0
+  1
+  1
+</dep>
+<dep out3.X dtime>
+  0
+  1
+  0
+  1
+  0
+  1
+  0
+  1
+  0
+  1
+  1
+</dep>
+<dep out4.X dtime>
+  0
+  1
+  0
+  1
+  0
+  1
+  0
+  1
+  0
+  1
+  1
+</dep>
