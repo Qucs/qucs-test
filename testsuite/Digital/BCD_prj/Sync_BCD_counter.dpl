@@ -1,0 +1,27 @@
+<Qucs Schematic 0.0.10>
+<Properties>
+  <View=-246,112,716,735,1,0,0>
+  <Grid=10,10,0>
+  <DataSet=Sync_BCD_counter.dat>
+  <DataDisplay=Sync_BCD_counter.sch>
+  <OpenDisplay=1>
+</Properties>
+<Symbol>
+</Symbol>
+<Components>
+</Components>
+<Wires>
+</Wires>
+<Diagrams>
+  <Time -210 351 856 221 3 #c0c0c0 1 00 1 0 1 20 1 0 1 1 1 0 1 1 315 0 225 "" "" "">
+	<"clear.X" #0000ff 0 3 0 0 0>
+	<"clock.X" #ff0000 0 3 0 0 0>
+	<"count.X" #ff00ff 0 3 0 0 0>
+	<"q0.X" #00ff00 0 3 0 0 0>
+	<"q1.X" #00ffff 0 3 0 0 0>
+	<"q2.X" #0055ff 0 3 0 0 0>
+	<"q3.X" #aa0000 0 3 0 0 0>
+  </Time>
+</Diagrams>
+<Paintings>
+</Paintings>
