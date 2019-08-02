@@ -1,0 +1,45 @@
+<Qucs Schematic 0.0.12>
+<Properties>
+  <View=-370,-330,787,664,0.528169,0,0>
+  <Grid=10,10,0>
+  <DataSet=radiometer.dat>
+  <DataDisplay=radiometer.sch>
+  <OpenDisplay=1>
+  <showFrame=0>
+  <FrameText0=Title>
+  <FrameText1=Drawn By:>
+  <FrameText2=Date:>
+  <FrameText3=Revision:>
+</Properties>
+<Symbol>
+</Symbol>
+<Components>
+</Components>
+<Wires>
+</Wires>
+<Diagrams>
+  <Rect -120 -2 279 258 3 #c0c0c0 1 00 1 3.5e+10 5e+09 5e+10 1 -0.0023257 0.005 0.0255828 1 -1 0.5 1 315 0 225 "frequency" "Output signal (V)" "">
+	<"outvolts_V" #0000ff 0 3 0 0 0>
+  </Rect>
+  <Tab 255 177 248 130 3 #c0c0c0 1 00 1 0 1 1 1 0 1 1 1 0 1 151 315 0 225 "" "" "">
+	<"outvolts_V" #0000ff 0 3 1 0 0>
+  </Tab>
+  <Rect 230 -8 297 252 3 #c0c0c0 1 00 1 3.5e+10 5e+09 5e+10 1 -107.802 20 -8.56466 1 -1 0.5 1 315 0 225 "frequency" "Output signal (10 log(V))" "">
+	<"outvolts_log" #0000ff 0 3 0 0 0>
+  </Rect>
+  <Tab -60 149 201 68 3 #c0c0c0 1 00 1 0 1 1 1 0 1 1 1 0 1 1 315 0 225 "" "" "">
+	<"outvolts_tot_V" #0000ff 0 3 1 0 0>
+  </Tab>
+  <Rect -160 492 715 252 3 #c0c0c0 1 00 1 3.5e+10 1e+09 5e+10 1 -1.23243e-09 5e-09 1.5e-08 1 -0.0023257 0.005 0.0255828 315 0 225 "" "" "">
+	<"in.vn" #0000ff 0 3 0 0 0>
+	<"fem_in.vn" #ff0000 0 3 0 0 0>
+	<"wg_in.vn" #ff00ff 0 3 0 0 0>
+	<"bem_in.vn" #00ff00 0 3 0 0 0>
+	<"outvolts_V" #00ffff 0 3 0 0 1>
+  </Rect>
+</Diagrams>
+<Paintings>
+  <Text 0 -290 12 #000000 0 "Bandshape, to export right-click on the curve, export to CSV">
+  <Text -80 60 12 #000000 0 "DC output integrated over the bandwidth\n">
+  <Text 90 210 12 #000000 0 "Bandshape along the radiometer">
+</Paintings>
