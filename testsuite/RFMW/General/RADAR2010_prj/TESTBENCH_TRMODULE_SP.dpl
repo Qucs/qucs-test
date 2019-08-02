@@ -1,0 +1,32 @@
+<Qucs Schematic 0.0.15>
+<Properties>
+  <View=0,0,920,800,1,0,0>
+  <Grid=10,10,0>
+  <DataSet=TESTBENCH_TRMODULE_SP.dat>
+  <DataDisplay=TESTBENCH_TRMODULE_SP.sch>
+  <OpenDisplay=1>
+  <showFrame=0>
+  <FrameText0=Title>
+  <FrameText1=Drawn By:>
+  <FrameText2=Date:>
+  <FrameText3=Revision:>
+</Properties>
+<Symbol>
+</Symbol>
+<Components>
+</Components>
+<Wires>
+</Wires>
+<Diagrams>
+  <Rect 340 190 240 160 3 #c0c0c0 1 00 1 0 1e+10 5e+10 0 -40 10 40 1 -1 1 1 315 0 225 "" "" "">
+	<"S11_dB" #0000ff 2 3 0 0 0>
+	<"S12_dB" #ff0000 2 3 0 0 0>
+	<"S21_dB" #ff00ff 2 3 0 0 0>
+	<"S22_dB" #00ff00 2 3 0 0 0>
+  </Rect>
+  <Rect 640 190 240 160 3 #c0c0c0 1 00 1 0 1e+10 5e+10 0 0 2 10 1 -1 1 1 315 0 225 "" "" "">
+	<"F" #000000 2 3 0 0 0>
+  </Rect>
+</Diagrams>
+<Paintings>
+</Paintings>

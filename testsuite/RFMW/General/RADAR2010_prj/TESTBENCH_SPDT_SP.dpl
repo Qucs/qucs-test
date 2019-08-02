@@ -1,0 +1,41 @@
+<Qucs Schematic 0.0.15>
+<Properties>
+  <View=0,80,870,800,1,0,80>
+  <Grid=10,10,0>
+  <DataSet=TESTBENCH_SPDT_SP.dat>
+  <DataDisplay=TESTBENCH_SPDT_SP.sch>
+  <OpenDisplay=1>
+  <showFrame=0>
+  <FrameText0=Title>
+  <FrameText1=Drawn By:>
+  <FrameText2=Date:>
+  <FrameText3=Revision:>
+</Properties>
+<Symbol>
+</Symbol>
+<Components>
+</Components>
+<Wires>
+</Wires>
+<Diagrams>
+  <Rect 240 360 240 160 3 #c0c0c0 1 00 1 0 2e+09 1e+10 0 -50 10 10 1 -1 1 1 315 0 225 "" "" "">
+	<"S21_dB" #ff0000 2 3 0 0 0>
+	<"S31_dB" #0000ff 2 3 0 0 0>
+  </Rect>
+  <Rect 590 360 240 160 3 #c0c0c0 1 00 1 0 2e+09 1e+10 0 -50 10 10 1 -1 1 1 315 0 225 "" "" "">
+	<"S11_dB" #ff0000 2 3 0 0 0>
+	<"S22_dB" #00ff00 2 3 0 0 0>
+	<"S33_dB" #0000ff 2 3 0 0 0>
+  </Rect>
+  <Rect 590 620 240 160 3 #c0c0c0 1 00 1 0 2e+09 1e+10 0 -50 10 10 1 -1 1 1 315 0 225 "" "" "">
+	<"S11_dB" #ff0000 2 3 0 0 0>
+	<"S22_dB" #00ff00 2 3 0 0 0>
+	<"S33_dB" #0000ff 2 3 0 0 0>
+  </Rect>
+  <Rect 240 620 240 160 3 #c0c0c0 1 00 1 0 2e+09 1e+10 0 -50 10 10 1 -1 1 1 315 0 225 "" "" "">
+	<"S21_Deg" #ff0000 2 3 0 0 0>
+	<"S31_Deg" #0000ff 2 3 0 0 0>
+  </Rect>
+</Diagrams>
+<Paintings>
+</Paintings>
