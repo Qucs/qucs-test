@@ -1,0 +1,55 @@
+<Qucs Schematic 0.0.20>
+<Properties>
+  <View=251,-20,1177,729,1,0,20>
+  <Grid=10,10,0>
+  <DataSet=2StageAmplifier.dat>
+  <DataDisplay=2StageAmplifier.sch>
+  <OpenDisplay=1>
+  <Script=2StageAmplifier.m>
+  <RunScript=0>
+  <showFrame=0>
+  <FrameText0=Title>
+  <FrameText1=Drawn By:>
+  <FrameText2=Date:>
+  <FrameText3=Revision:>
+</Properties>
+<Symbol>
+</Symbol>
+<Components>
+</Components>
+<Wires>
+</Wires>
+<Diagrams>
+  <Smith 350 220 200 200 1 #c0c0c0 1 00 1 0 1 1 1 0 4 1 1 0 1 1 0 0 -16777216 "" "" "" "">
+	<"S[1,1]" #0000ff 0 3 0 0 0>
+	  <Mkr 1.2e+10 130 -41 5 1 0 1>
+	<"S[2,2]" #ff0000 0 3 0 0 0>
+	  <Mkr 1.2e+10 19 -210 5 1 0 1>
+  </Smith>
+  <Polar 590 220 200 200 1 #c0c0c0 1 00 1 0 1 1 1 0 0 nan 1 0 1 1 -1 0 1070760480 "" "" "" "">
+	<"S[2,1]" #0000ff 0 3 0 0 0>
+	  <Mkr 1.2e+10 94 -191 5 1 0>
+  </Polar>
+  <Rect 330 420 240 160 1 #c0c0c0 1 00 1 -1 0.5 1 1 -1 1 1 1 -1 1 1 3539001 3276855 3473465 "" "" "" "">
+	<"dB_S21" #0000ff 0 3 0 0 0>
+	  <Mkr 1.2e+10 87 -84 5 0 0>
+  </Rect>
+  <Rect 620 420 240 160 1 #c0c0c0 1 00 1 0 5e+09 2e+10 0 0 0.5 3 1 0 0.5 1 0 0 -1 "" "" "" "">
+	<"StabFact" #0000ff 0 3 0 0 0>
+	  <Mkr 1.2e+10 76 -50 5 0 0>
+  </Rect>
+  <Rect 910 420 240 160 1 #c0c0c0 1 00 1 0 5e+09 2e+10 1 0 500 1000 1 0 0.5 1 17 137553192 137541680 "" "" "" "">
+	<"NF" #0000ff 0 3 0 0 0>
+	  <Mkr 1.2e+10 69 -136 5 0 0>
+  </Rect>
+  <Rect 910 190 240 160 1 #c0c0c0 1 00 1 0 0.2 1 1 0 0.5 1 1 0 0.5 1 -1 0 0 "" "" "" "">
+	<"NFmin" #0000ff 0 3 0 0 0>
+	  <Mkr 1.2e+10 22 -143 5 0 0>
+  </Rect>
+  <Rect 330 709 383 219 1 #c0c0c0 1 00 1 0 5e+09 2e+10 0 17 1 23 1 0 0.5 1 137739760 137812480 1070754656 "" "" "" "">
+	<"dB_S21" #0000ff 0 3 0 0 0>
+	  <Mkr 1.2e+10 236 -165 5 0 0>
+  </Rect>
+</Diagrams>
+<Paintings>
+</Paintings>

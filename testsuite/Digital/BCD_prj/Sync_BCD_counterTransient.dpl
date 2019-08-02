@@ -1,0 +1,39 @@
+<Qucs Schematic 0.0.10>
+<Properties>
+  <View=-246,112,763,863,1,0,0>
+  <Grid=10,10,0>
+  <DataSet=Sync_BCD_counterTransient.dat>
+  <DataDisplay=Sync_BCD_counterTransient.sch>
+  <OpenDisplay=1>
+</Properties>
+<Symbol>
+</Symbol>
+<Components>
+</Components>
+<Wires>
+</Wires>
+<Diagrams>
+  <Rect -170 201 862 41 3 #c0c0c0 1 00 1 0 0.2 1 1 -0.1 0.5 1.1 1 -0.1 0.5 1.1 315 0 225 "" "" "">
+	<"CLEAR.Vt" #0000ff 0 3 0 0 0>
+  </Rect>
+  <Rect -170 266 864 36 3 #c0c0c0 1 00 1 0 0.2 1 1 -0.1 0.5 1.1 1 -0.1 0.5 1.1 315 0 225 "" "" "">
+	<"CLOCK.Vt" #0000ff 0 3 0 0 0>
+  </Rect>
+  <Rect -170 344 870 34 3 #c0c0c0 1 00 1 0 0.2 1 1 -0.1 0.5 1.1 1 -0.1 0.5 1.1 315 0 225 "" "" "">
+	<"COUNT.Vt" #0000ff 0 3 0 0 0>
+  </Rect>
+  <Rect -170 445 877 55 3 #c0c0c0 1 00 1 0 0.2 1 1 -0.1 0.5 1.1 1 -0.1 0.5 1.1 315 0 225 "" "" "">
+	<"Q0.Vt" #0000ff 0 3 0 0 0>
+  </Rect>
+  <Rect -170 536 882 46 3 #c0c0c0 1 00 1 0 0.2 1 1 -0.1 0.5 1.1 1 -0.1 0.5 1.1 315 0 225 "" "" "">
+	<"Q1.Vt" #0000ff 0 3 0 0 0>
+  </Rect>
+  <Rect -170 635 882 55 3 #c0c0c0 1 00 1 0 0.2 1 1 -0.1 0.5 1.1 1 -0.1 0.5 1.1 315 0 225 "" "" "">
+	<"Q2.Vt" #0000ff 0 3 0 0 0>
+  </Rect>
+  <Rect -160 735 876 45 3 #c0c0c0 1 00 1 0 0.2 1 1 -0.1 0.5 1.1 1 -0.1 0.5 1.1 315 0 225 "" "" "">
+	<"Q3.Vt" #0000ff 0 3 0 0 0>
+  </Rect>
+</Diagrams>
+<Paintings>
+</Paintings>

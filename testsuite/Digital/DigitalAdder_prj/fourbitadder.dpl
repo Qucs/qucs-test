@@ -1,0 +1,32 @@
+<Qucs Schematic 0.0.8>
+<Properties>
+  <View=-45,0,800,800,1,45,0>
+  <Grid=10,10,0>
+  <DataSet=fourbitadder.dat>
+  <DataDisplay=fourbitadder.sch>
+  <OpenDisplay=1>
+</Properties>
+<Symbol>
+</Symbol>
+<Components>
+</Components>
+<Wires>
+</Wires>
+<Diagrams>
+  <Rect 110 196 296 166 3 #c0c0c0 1 00 1 0 2e-09 1e-08 1 -0.0998909 0.5 1.09989 1 -1 1 1 315 0 225 "" "" "">
+	<"OUT1.Vt" #0000ff 0 3 0 0 0>
+	<"OUT2.Vt" #ff0000 0 3 0 0 0>
+	<"OUT3.Vt" #ff00ff 0 3 0 0 0>
+	<"OUT4.Vt" #00ff00 0 3 0 0 0>
+	<"CO.Vt" #00ffff 0 3 0 0 0>
+  </Rect>
+  <Time 20 390 518 140 3 #c0c0c0 1 00 1 0 1 6 1 0 1 1 1 0 1 1 315 0 225 "" "" "">
+	<"out1.X" #0000ff 0 3 0 0 0>
+	<"out2.X" #ff0000 0 3 0 0 0>
+	<"out3.X" #ff00ff 0 3 0 0 0>
+	<"out4.X" #00ff00 0 3 0 0 0>
+	<"co.X" #00ffff 0 3 0 0 0>
+  </Time>
+</Diagrams>
+<Paintings>
+</Paintings>

@@ -1,0 +1,28 @@
+<Qucs Schematic 0.0.20>
+<Properties>
+  <View=0,-30,800,740,1,0,0>
+  <Grid=10,10,0>
+  <DataSet=TESTBENCH_MIXER.dat>
+  <DataDisplay=TESTBENCH_MIXER.sch>
+  <OpenDisplay=1>
+  <Script=TESTBENCH_MIXER.m>
+  <RunScript=0>
+  <showFrame=0>
+  <FrameText0=Title>
+  <FrameText1=Drawn By:>
+  <FrameText2=Date:>
+  <FrameText3=Revision:>
+</Properties>
+<Symbol>
+</Symbol>
+<Components>
+</Components>
+<Wires>
+</Wires>
+<Diagrams>
+  <Rect 240 270 240 160 3 #c0c0c0 1 00 1 0 5e-09 2e-08 1 -1 1 1 1 -1 1 1 315 0 225 "" "" "" "">
+	<"output.Vt" #0000ff 0 3 0 0 0>
+  </Rect>
+</Diagrams>
+<Paintings>
+</Paintings>

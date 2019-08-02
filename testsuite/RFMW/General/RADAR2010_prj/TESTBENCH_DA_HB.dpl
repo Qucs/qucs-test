@@ -1,0 +1,33 @@
+<Qucs Schematic 0.0.15>
+<Properties>
+  <View=88,-420,1190,431,1,0,19>
+  <Grid=10,10,0>
+  <DataSet=TESTBENCH_DA_HB.dat>
+  <DataDisplay=TESTBENCH_DA_HB.sch>
+  <OpenDisplay=1>
+  <showFrame=0>
+  <FrameText0=Title>
+  <FrameText1=Drawn By:>
+  <FrameText2=Date:>
+  <FrameText3=Revision:>
+</Properties>
+<Symbol>
+</Symbol>
+<Components>
+</Components>
+<Wires>
+</Wires>
+<Diagrams>
+  <Rect 740 -160 240 160 3 #c0c0c0 1 00 1 -1 0.5 1 1 -1 1 1 1 -1 1 1 315 0 225 "" "OUTPUT POWER [dBm]" "">
+	<"TESTBENCH_DA:P_OUT_dBm" #ff0000 0 3 0 0 0>
+  </Rect>
+  <Tab 160 391 668 448 3 #c0c0c0 1 00 1 0 1 1 1 0 1 1 1 0 1 99 315 0 225 "" "" "">
+	<"TESTBENCH_DA:P_IN_dBm" #0000ff 0 3 1 0 0>
+	<"TESTBENCH_DA:P_OUT_dBm" #0000ff 0 3 1 0 0>
+  </Tab>
+  <Rect 160 -110 493 270 3 #c0c0c0 1 10 1 0 1 0 1 -1 0.5 1 1 -1 0.5 1 315 0 225 "INPUT POWER [W]" "GAIN [dB]" "">
+	<"TESTBENCH_DA:G_dB" #ff0000 0 3 0 0 0>
+  </Rect>
+</Diagrams>
+<Paintings>
+</Paintings>

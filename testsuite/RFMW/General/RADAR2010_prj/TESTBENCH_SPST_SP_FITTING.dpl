@@ -1,0 +1,57 @@
+<Qucs Schematic 0.0.15>
+<Properties>
+  <View=-30,-20,1480,564,0.645695,0,0>
+  <Grid=10,10,0>
+  <DataSet=TESTBENCH_SPST_SP_FITTING.dat>
+  <DataDisplay=TESTBENCH_SPST_SP_FITTING.sch>
+  <OpenDisplay=1>
+  <showFrame=0>
+  <FrameText0=Title>
+  <FrameText1=Drawn By:>
+  <FrameText2=Date:>
+  <FrameText3=Revision:>
+</Properties>
+<Symbol>
+</Symbol>
+<Components>
+</Components>
+<Wires>
+</Wires>
+<Diagrams>
+  <Rect 440 200 240 160 3 #c0c0c0 1 00 1 0 0.2 1 1 -0.1 0.5 1.1 1 -0.1 0.5 1.1 315 0 225 "" "" "">
+	<"S21_dB" #0000ff 0 3 0 0 0>
+	<"S43_dB" #ff0000 0 3 0 0 0>
+  </Rect>
+  <Rect 100 200 240 160 3 #c0c0c0 1 00 1 0 0.2 1 1 -0.1 0.5 1.1 1 -0.1 0.5 1.1 315 0 225 "" "" "">
+	<"S11_dB" #0000ff 0 3 0 0 0>
+	<"S33_dB" #ff0000 0 3 0 0 0>
+  </Rect>
+  <Rect 100 440 240 160 3 #c0c0c0 1 00 1 0 0.2 1 1 -0.1 0.5 1.1 1 -0.1 0.5 1.1 315 0 225 "" "" "">
+	<"S11_Deg" #0000ff 0 3 0 0 0>
+	<"S33_Deg" #ff0000 0 3 0 0 0>
+  </Rect>
+  <Rect 440 440 240 160 3 #c0c0c0 1 00 1 0 0.2 1 1 -0.1 0.5 1.1 1 -0.1 0.5 1.1 315 0 225 "" "" "">
+	<"S21_Deg" #0000ff 0 3 0 0 0>
+	<"S43_Deg" #ff0000 0 3 0 0 0>
+  </Rect>
+  <Rect 820 200 240 160 3 #c0c0c0 1 00 1 0 5e+09 2e+10 1 -64.7609 20 0 1 -1 1 1 315 0 225 "" "" "">
+	<"S55_dB" #0000ff 0 3 0 0 0>
+	<"S77_dB" #ff0000 0 3 0 0 0>
+  </Rect>
+  <Rect 1160 200 240 160 3 #c0c0c0 1 00 1 0 5e+09 2e+10 1 -67.8801 20 5.59555 1 -1 1 1 315 0 225 "" "" "">
+	<"S65_dB" #0000ff 0 3 0 0 0>
+	<"S87_dB" #ff0000 0 3 0 0 0>
+  </Rect>
+  <Rect 820 440 240 160 3 #c0c0c0 1 00 1 0 5e+09 2e+10 1 -10000 5000 1486.53 1 -1 1 1 315 0 225 "" "" "">
+	<"S55_Deg" #0000ff 0 3 0 0 0>
+	<"S77_Deg" #ff0000 0 3 0 0 0>
+  </Rect>
+  <Rect 1160 440 240 160 3 #c0c0c0 1 00 1 0 5e+09 2e+10 1 -2857.96 5000 6557.76 1 -1 1 1 315 0 225 "" "" "">
+	<"S65_Deg" #0000ff 0 3 0 0 0>
+	<"S87_Deg" #ff0000 0 3 0 0 0>
+  </Rect>
+</Diagrams>
+<Paintings>
+  <Rectangle 10 20 710 500 #000000 0 1 #c0c0c0 1 0>
+  <Rectangle 730 20 710 500 #000000 0 1 #c0c0c0 1 0>
+</Paintings>

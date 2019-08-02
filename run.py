@@ -97,7 +97,10 @@ class Test:
            name = self.name
            for sim in sim_types:
                if sim in name:
-                   name=name[3:]
+                  index = 0
+                  if os.sep in name:
+                        index = name.index(os.sep) + 1
+                  name=name[index+3:]#Remove path, os.sep and the simulation mark
            self.schematic = name[:-4]+'.sch'
        return self.schematic
 
@@ -194,15 +197,23 @@ class Command(object):
             logger.info( pb('Process return code: %i' %self.retcode) )
 
 
-def get_subdirs(dir):
+def get_projects(dir):
     '''
     Return a list of names of subdirectories.
 
     :param dir: dir to look up for subdirs.
     :return: list of subdirec
     '''
-    return [name for name in sorted(os.listdir(dir))
-            if os.path.isdir(os.path.join(dir, name))]
+    projects = []
+    for root, dirs, files in os.walk(dir):
+        for name in dirs:
+            if name.endswith(("_prj")):
+                #It's a Qucs project
+                proj = root[2:] + os.sep + name
+                proj = proj.replace(os.sep+os.sep, os.sep) #Remove duplicated / or \
+                projects.append(proj)
+            
+    return projects
 
 
 
@@ -262,13 +273,10 @@ def run_simulation(test, qucspath, plot_interactive=False):
     :param qucspath: path containing qucsator
     :param plot_interactive: plot graphs as data is compared
     '''
-
     name = test.getSchematic()
 
-
-    test_dir = os.getcwd()
-
-    proj_dir = os.path.join(test_dir, 'testsuite', test.name)
+    test_dir = os.path.join(os.getcwd(), test.path)
+    proj_dir = os.path.join(test_dir, test.name)
     test.path = proj_dir
     print '\nProject : ', proj_dir
 
@@ -286,12 +294,10 @@ def run_simulation(test, qucspath, plot_interactive=False):
 
     # get the Qucs Schematic version from the schematic
     schematic = os.path.join(proj_dir, test.schematic)
-
     test.version = get_sch_version(schematic)
     test.dataset =  get_sch_dataset(schematic)
 
     output_dataset = os.path.join(proj_dir, "test_"+test.dataset)
-
     ext = '' if os.name != 'nt' else '.exe'
     cmd = [os.path.join(qucspath, "qucsator"+ext), "-i", input_net, "-o", output_dataset]
     print 'Running : ', ' '.join(cmd)
@@ -601,7 +607,8 @@ if __name__ == '__main__':
     if args.project:
         testsuite =  [os.path.join(args.project)]
     else:
-        testsuite = get_subdirs('./testsuite/')
+        #Find projects inside the testsuite file tree
+        testsuite = get_projects('./testsuite/')
 
     # TODO read list of: skip, testshort, testlong
 
@@ -610,9 +617,11 @@ if __name__ == '__main__':
         with open(skip) as fp:
             for line in fp:
                 skip_proj = line.split(',')[0]
-                if skip_proj in testsuite:
-                    print py('Skipping %s' %skip_proj)
-                    testsuite.remove(skip_proj)
+                #The following line searches for the project name, 'skip_proj', in 'testsuite' and returns it relative path
+                project = filter(lambda x: skip_proj in x, testsuite)
+                if project:
+                    print py('Skipping %s' %project)
+                    testsuite.remove(project[0])
 
     if args.include:
         add = args.include
@@ -650,9 +659,11 @@ if __name__ == '__main__':
         net_report = {}
         for test in testsuite:
 
-            dest_dir = os.path.join('testsuite', test)
+            dest_dir = test
 
-            projName = test.strip(os.sep)
+            index = test.rfind(os.path.sep)#Get index of the last separator (/ or  \)
+            path = test[:index+1]#path to the project
+            projName = test[index+1:]#Get project name
             # get schematic name from direcitory name
             # trim the simulation types
             sim_types= ['DC_', 'AC_', 'TR_', 'SP_', 'SW_']
@@ -735,8 +746,15 @@ if __name__ == '__main__':
             else: # on Linux multiprocessing works fine
                 nprocs = args.processes
                 pool = multiprocessing.Pool(nprocs) # when np=None uses cpu_count() processes
+        
                 # prepare list of Test object to simulate
-                alltests = [Test(project) for project in testsuite]
+                alltests = []
+                for project in testsuite:
+                    index = project.rfind(os.path.sep)
+                    t = Test(project[index+1:])
+                    t.path = project[:index]
+                    alltests += [t]
+                print 'TESTSUITE', testsuite
                 # set default test tolerances
                 for t in alltests:
                     t.rtol = rtol
@@ -746,6 +764,7 @@ if __name__ == '__main__':
                 pool.join() # wait for all simulations to finish
                 tests = [p.get() for p in testsp] # get results
             collect_tests.append(tests)
+            
 
         print '\n'
         print pb('############################################')
@@ -911,12 +930,11 @@ if __name__ == '__main__':
         # prepare list of Print_test object to print
 
         test_dir = os.getcwd()
-        prj_dir = os.path.join(test_dir, 'testsuite')
         collect_tests = []
         # loop over prefixes (possibly just one)
         for qucspath in prefixes:
             # prepare list of Test object to simulate
-            allprint = [Print_test(project, prj_dir) for project in testsuite]
+            allprint = [Print_test(project, test_dir) for project in testsuite]
             if (args.qprint == 'sch'):
                for t in allprint:
                   t.add_all_files('sch')

@@ -1,0 +1,33 @@
+<Qucs Schematic 0.0.15>
+<Properties>
+  <View=-69,-160,897,691,0.680376,0,0>
+  <Grid=10,10,0>
+  <DataSet=TESTBENCH_ATTENUATOR_HB.dat>
+  <DataDisplay=TESTBENCH_ATTENUATOR_HB.sch>
+  <OpenDisplay=1>
+  <showFrame=0>
+  <FrameText0=Title>
+  <FrameText1=Drawn By:>
+  <FrameText2=Date:>
+  <FrameText3=Revision:>
+</Properties>
+<Symbol>
+</Symbol>
+<Components>
+</Components>
+<Wires>
+</Wires>
+<Diagrams>
+  <Tab 30 651 668 448 3 #c0c0c0 1 00 1 0 1 1 1 0 1 1 1 0 1 45 315 0 225 "" "" "">
+	<"TESTBENCH_DA:P_IN_dBm" #0000ff 0 3 1 0 0>
+	<"P_OUT_dBm" #0000ff 0 3 1 0 0>
+  </Tab>
+  <Rect 30 150 493 270 3 #c0c0c0 1 10 1 1e-05 1 0.1 1 -40 10 0 1 -1 0.5 1 315 0 225 "INPUT POWER [W]" "GAIN [dB]" "">
+	<"G_dB" #000000 2 3 0 0 0>
+  </Rect>
+  <Rect 610 100 240 160 3 #c0c0c0 1 00 1 0 2e+10 8e+10 1 -40 20 11.5046 1 -1 1 1 315 0 225 "" "OUTPUT POWER [dBm]" "">
+	<"P_OUT_dBm" #000000 2 3 0 6 0>
+  </Rect>
+</Diagrams>
+<Paintings>
+</Paintings>

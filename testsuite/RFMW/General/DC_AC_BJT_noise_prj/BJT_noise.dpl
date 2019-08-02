@@ -1,0 +1,61 @@
+<Qucs Schematic 0.0.20>
+<Properties>
+  <View=-298,-110,956,765,0.683014,0,0>
+  <Grid=10,10,0>
+  <DataSet=BJT_noise.dat>
+  <DataDisplay=BJT_noise.sch>
+  <OpenDisplay=1>
+  <Script=BJT_noise.m>
+  <RunScript=0>
+  <showFrame=0>
+  <FrameText0=Title>
+  <FrameText1=Drawn By:>
+  <FrameText2=Date:>
+  <FrameText3=Revision:>
+</Properties>
+<Symbol>
+</Symbol>
+<Components>
+</Components>
+<Wires>
+</Wires>
+<Diagrams>
+  <Rect -166 618 707 474 3 #c0c0c0 1 11 1 1 1 1e+10 1 1e-09 1 3e-06 1 -1 0.2 1 315 0 225 "" "" "" "">
+	<"Vout.vn" #0000ff 2 3 0 0 0>
+	  <Mkr 302.833 259 -365 3 0 0>
+	  <Mkr 97155.8 363 -237 3 0 0>
+	<"Vb.vn" #ff0000 2 3 0 0 0>
+	  <Mkr 97155.8 373 -116 3 0 0>
+  </Rect>
+  <Tab -220 80 225 60 3 #c0c0c0 1 00 1 0 1 1 1 0 1 1 1 0 1 1 315 0 225 "" "" "" "">
+	<"gm" #0000ff 0 3 1 0 0>
+	<"Rpi" #0000ff 0 3 1 0 0>
+	<"Gv" #0000ff 0 3 1 0 0>
+  </Tab>
+  <Tab 24 75 892 63 3 #c0c0c0 1 00 1 0 1 1 1 0 1 1 1 0 1 1 315 0 225 "" "" "" "">
+	<"Inb_shotnoise" #0000ff 0 3 0 0 0>
+	<"Vnb_shotnoise" #0000ff 0 3 0 0 0>
+	<"Vnout_Ib_shotnoise" #0000ff 0 3 0 0 0>
+	<"Vnout_Ic_shotnoise" #0000ff 0 3 0 0 0>
+	<"Vnout_R2_thermal" #0000ff 0 3 0 0 0>
+	<"fc" #0000ff 0 3 0 0 0>
+  </Tab>
+</Diagrams>
+<Paintings>
+  <Ellipse 250 510 70 40 #ff0000 2 1 #c0c0c0 1 0>
+  <Ellipse 250 390 70 40 #0000ff 2 1 #c0c0c0 1 0>
+  <Ellipse 170 240 70 40 #ff55ff 2 1 #c0c0c0 1 0>
+  <Text 410 450 10 #000000 0 "|Gv| (voltage gain)">
+  <Arrow -60 140 -70 60 20 8 #55aa00 2 1 0>
+  <Text -120 120 10 #000000 0 "Note the 1/2 slope ( ~ sqrt(1/f)  in bi-log scale)">
+  <Text 550 200 10 #000000 0 "Note the perfect correspondence \nbetween the values synthetically \ncalculated (in the table above) and \nthe simulated one (in the graph\nat the right)\n">
+  <Text -220 -10 12 #000000 0 "BJT small signal parameters">
+  <Text 30 -10 12 #000000 0 "Noise Values (rms) synthetically evaluated ("paper & pen")\n">
+  <Arrow 400 580 0 -240 20 8 #55aa00 2 1 0>
+  <Arrow 400 340 0 240 20 8 #55aa00 2 1 0>
+  <Text 180 170 10 #000000 0 "Noise \nCorner \nFrequency">
+  <Text 800 70 10 #000000 0 "Noise \nCorner \nFrequency">
+  <Ellipse 790 30 70 40 #ff55ff 2 1 #c0c0c0 1 0>
+  <Ellipse 330 30 90 40 #0000ff 2 1 #c0c0c0 1 0>
+  <Ellipse 200 30 90 40 #ff0000 2 1 #c0c0c0 1 0>
+</Paintings>

@@ -1,0 +1,32 @@
+<Qucs Schematic 0.0.15>
+<Properties>
+  <View=-70,0,971,800,1,66,0>
+  <Grid=10,10,0>
+  <DataSet=TESTBENCH_REFLECTARRAY_BRICK.dat>
+  <DataDisplay=TESTBENCH_REFLECTARRAY_BRICK.sch>
+  <OpenDisplay=1>
+  <showFrame=0>
+  <FrameText0=Title>
+  <FrameText1=Drawn By:>
+  <FrameText2=Date:>
+  <FrameText3=Revision:>
+</Properties>
+<Symbol>
+</Symbol>
+<Components>
+</Components>
+<Wires>
+</Wires>
+<Diagrams>
+  <Smith 110 360 200 200 3 #c0c0c0 1 00 1 0 1 1 1 0 4 1 1 0 1 1 315 0 225 "" "" "">
+	<"S[1,1]" #000000 2 3 0 0 0>
+  </Smith>
+  <Rect 370 340 240 160 3 #c0c0c0 1 00 1 0 0.2 1 1 -0.1 0.5 1.1 1 -0.1 0.5 1.1 315 0 225 "" "" "">
+	<"S[1,1]" #000000 2 3 0 0 0>
+  </Rect>
+  <Rect 370 560 240 160 3 #c0c0c0 1 00 1 0 2e+09 1e+10 1 0 0.5 1 1 -1 1 1 315 0 225 "" "" "">
+	<"S11_Deg" #000000 2 3 0 0 0>
+  </Rect>
+</Diagrams>
+<Paintings>
+</Paintings>

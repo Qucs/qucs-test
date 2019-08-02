@@ -1,0 +1,35 @@
+<Qucs Schematic 0.0.12>
+<Properties>
+  <View=0,0,800,800,1,0,0>
+  <Grid=10,10,0>
+  <DataSet=test_curtice_5.dat>
+  <DataDisplay=test_curtice_5.sch>
+  <OpenDisplay=1>
+  <showFrame=0>
+  <FrameText0=Title>
+  <FrameText1=Drawn By:>
+  <FrameText2=Date:>
+  <FrameText3=Revision:>
+</Properties>
+<Symbol>
+</Symbol>
+<Components>
+</Components>
+<Wires>
+</Wires>
+<Diagrams>
+  <Smith 90 240 200 200 3 #c0c0c0 1 00 1 0 1 1 1 0 4 1 1 0 1 1 315 0 225 "" "" "">
+	<"S[1,1]" #0000ff 2 3 0 0 0>
+  </Smith>
+  <Smith 330 240 200 200 3 #c0c0c0 1 00 1 0 1 1 1 0 4 1 1 0 1 1 315 0 225 "" "" "">
+	<"S[2,2]" #0000ff 2 3 0 0 0>
+  </Smith>
+  <Polar 90 480 200 200 3 #c0c0c0 1 00 1 0 1 1 1 0 0.1 0.3 1 0 1 1 315 0 225 "" "" "">
+	<"S[1,2]" #0000ff 2 3 0 0 0>
+  </Polar>
+  <Polar 330 480 200 200 3 #c0c0c0 1 00 1 0 1 1 1 0 2 6 1 0 1 1 315 0 225 "" "" "">
+	<"S[2,1]" #0000ff 2 3 0 0 0>
+  </Polar>
+</Diagrams>
+<Paintings>
+</Paintings>

@@ -1,0 +1,85 @@
+QUCS
+----
+
+from QUCS_ homepage:
+
+Qucs is an integrated circuit simulator which means you are able to setup a circuit with a graphical user interface (GUI) and simulate the large-signal, small-signal and noise behaviour of the circuit. After that simulation has finished you can view the simulation results on a presentation page or window.
+
+      * Qucs, briefly for Quite Universal Circuit Simulator, is a circuit simulator with graphical user interface (GUI). The GUI is based on Qt® by Trolltech®. The software aims to support all kinds of circuit simulation types, e.g. DC, AC, S-parameter, Harmonic Balance analysis, noise analysis, etc.
+
+    * Qucsator, the simulation backend, is a command line circuit simulator. It takes a network list in a certain format as input and outputs a Qucs dataset. It has been programmed for usage in the Qucs project but may also be used by other applications.
+
+
+Radiometer Model Demo
+---------------------
+
+QUCS is being used at the `Physics Department of the Universita' degli Studi di Milano`_ for simulating the frequency response of the Low Frequency Instrument (LFI), an array of radiometers devoted to the measurement of the `Cosmic Microwave Background`_ Anisotropies onboard the `ESA Planck Mission`_.
+
+In particular QUCS is used to combine the **experimental** data coming from the performance tests of the single components to obtain an estimation of the complete radiometer frequency response to be compared to the measured response.
+
+In this simple demonstration model just a single radiometer channel is simulated using **completely fictitious data**.
+
+Implementation
+--------------
+
+It is important to notice that we are interested in measuring radiometer response to a thermal source, therefore the input signal is the noise voltage itself, and the only output considered is the voltage due to noise at the detector.
+
+The radiometer schematic is composed of:
+
+   Sky Load
+      Input thermal load modelled as a noisy resistor with a temperature that can be changed by the user
+   Feed Horn 
+      a single S-parameters component which loads data from a TouchstoneFile. 
+   LNA
+      This S-parameters component represents the first amplification stage usually based on `Low Noise Amplifiers`_, it is very important to add a noise contribution due to the electronics which impacts heavily on radiometer sensibility.
+      The Touchstone files specification includes the noise figure which can easily be computed from noise temperature measurements, which are more widespread when dealing with radiometers.
+   Waveguide
+      The waveguide, too, is modelled as a S-Parameters component using experimental data, but it would be very interesting to test a rectangular waveguide model implemented in the QUCS components database to take into account standing waves.
+   Second amplification stage and diode
+      This part is the most tricky to implement, and impossible if Stefan Jahn (QUCS developer) hadn't helped me, because this stage is based on a square law detector, therefore the component is non-linear and the output volts are proportional to a power input.
+      Gain data are available as a linear relationship between input power and output volts:
+
+        V_out = G * P_in or V_out = G * V_in^2/50 
+
+      The S parameters component is defined in terms of volt signal:
+
+        V_out = S21 * V_in
+
+      but taking the square root of the first equation (50 is the reference impedance):
+
+        sqrt(V_out) = sqrt(G) * V_in / sqrt(50) 
+        
+        sqrt(V_out) = sqrt(G/50) * V_in
+
+      Therefore renormalizing G as sqrt(G/50) and using it as S21 in a S-Parameters component gives the result sqrt(V_out) which can be squared to obtain the real output Voltage.
+
+Results
+-------
+
+Changing the input temperature in the schematic page it is possible to simulate the radiometer output and frequency response in different conditions.
+
+The QUCS display page shows the frequency response of the complete radiometer simulated by the model by computing multiple reflections.
+
+The frequency response in linear and logarithmic units can be exported to csv by clicking with the right mouse button on the plot lines; the last plot shows the bandshape at different points along the radiometer.
+
+The integrated Volt output is actually the only data available from the real instrument, because the diode integrates the RF signal into a DC output.
+
+The radiometer frequency response can be measured by inserting a monochromatic microwave signal into the feed horn which sweeps through the bandwidth and recording the Volt output as a function of the input frequency.
+
+If simulations and measurements show good agreement it means first of all a good quality of measurements at component and assembly level and that the interference between the components is negligible, i.e. the radiometer components do not change their behaviour when assembled in the radiometric chain due to interaction with other components.
+
+Download
+--------
+The schematic (.sch), display (.dpl), and input data files are available as a tgz archive (QUCS_radiometer_demo.tgz_), just unpack them and load the sch into QUCS by clicking on *File -> Open* or place the folder in your qucs folder, which under linux is .qucs in your home folder and open the project radiometer_demo from QUCS.
+ 
+Contact
+-------
+If you're interested and want to know something more feel free to contact `Andrea Zonca`_.
+
+.. _QUCS: http://qucs.sf.net
+.. _Physics Department of the Universita' degli Studi di Milano: http://pubblico.fisica.unimi.it
+.. _Cosmic Microwave Background: http://background.uchicago.edu/~whu/beginners/introduction.html
+.. _ESA Planck Mission: http://www.rssd.esa.int/PLANCK/
+.. _Low Noise Amplifiers: http://en.wikipedia.org/wiki/Low_noise_amplifier 
+.. _Andrea Zonca: http://staff.fisica.unimi.it/zonca
+.. _QUCS_radiometer_demo.tgz: QUCS_radiometer_demo.tgz

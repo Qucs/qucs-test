@@ -1,0 +1,12 @@
+# Qucs 0.0.20  ./testsuite/RFMW/General/DC_AC_BJT_noise_prj/BJT_noise.sch
+
+IProbe:Ib _net0 Vb
+R:R2 _net1 _net2 R="200 Ohm" Temp="26.85" Tc1="0.0" Tc2="0.0" Tnom="26.85"
+IProbe:Iout _net1 Vout
+Vdc:Va _net2 gnd U="5 V"
+.AC:AC1 Type="log" Start="1 Hz" Stop="10 GHz" Points="400" Noise="yes"
+.DC:DC1 Temp="26.85" reltol="0.001" abstol="1 pA" vntol="1 uV" saveOPs="yes" MaxIter="150" saveAll="yes" convHelper="none" Solver="CroutLU"
+Eqn:BTJ_Biasing gm="Q1.gm" Rpi="1 / Q1.gpi" Gv="gm * 200" Export="yes"
+Eqn:Noise Inb_shotnoise="sqrt(2*1.6e-19*Ib.I)" Vnb_shotnoise="Inb_shotnoise * Rpi" Vnout_Ic_shotnoise="sqrt(2 * 1.6e-19 * Iout.I )* 200" Vnout_Ib_shotnoise="Vnb_shotnoise * Gv" Vnout_R2_thermal="sqrt(4*kB*298*200)" fc="0.1e-15/(2*1.6e-19)" Export="yes"
+R:R1 _net0 _net2 R="47 k" Temp="25" Tc1="0.0" Tc2="0.0" Tnom="26.85"
+BJT:Q1 Vb Vout gnd Vout Type="npn" Is="1e-16" Nf="1" Nr="1" Ikf="0" Ikr="0" Vaf="0" Var="0" Ise="0" Ne="1.5" Isc="0" Nc="2" Bf="100" Br="1" Rbm="0" Irb="0" Rc="0" Re="0" Rb="0" Cje="0" Vje="0.75" Mje="0.33" Cjc="0" Vjc="0.75" Mjc="0.33" Xcjc="1.0" Cjs="0" Vjs="0.75" Mjs="0" Fc="0.5" Tf="0.0" Xtf="0.0" Vtf="0.0" Itf="0.0" Tr="0.0" Temp="100" Kf="0.1 f" Af="1.0" Ffe="1.0" Kb="0" Ab="2" Fb="10" Ptf="0.0" Xtb="0.0" Xti="3.0" Eg="1.11" Tnom="26.85" Area="1.0"
