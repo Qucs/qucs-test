@@ -11,3 +11,7 @@ curtice1_MESFET_prj, There are several schematics inside the project.
 TR_File_Based_Voltage_Source_prj, The generated netlist puts the full path to the Qucs user folder in the file path of the arbitrary voltage sources
 qucs-radiometer-model, The generated netlist puts the full path to the Qucs user folder in the file path of the S2P file
 RADAR2010_prj, Complete project. It contains several schematics. For now, it'll be skipped
+Flicker_noise_prj, The schematic does not contain any simulation block
+Shot_noise_prj, The schematic does not contain any simulation block
+Pentode_prj, The schematic does not contain any simulation block
+Triode_prj, The schematic does not contain any simulation block
