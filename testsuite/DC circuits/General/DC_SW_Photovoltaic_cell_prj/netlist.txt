@@ -1,0 +1,16 @@
+# Qucs 0.0.20  ./testsuite/DC circuits/General/Photovoltaic_cell_prj/Photovoltaic_cell.sch
+
+Eqn:Eqn2 Rs="A-(B/(C*D))" A="(Voc_smc/Isc_smc)" B="Pm_smc*((Voc_smc/0.0257)+1)" C="Isc_smc*Isc_smc" D="(Voc_smc/0.0257)-(ln((Voc_smc+0.0185)/0.0257))" Export="yes"
+Eqn:Eqn3 Isc_smc="3.27" Pm_smc="1.472" Voc_smc="0.6" alfa="3.18e-3" beta="-2.38e-3" Export="yes"
+Eqn:Eqn4 G="1000" Tc="25" Export="yes"
+Eqn:Eqn6 Ipv="((G/1000)*3.27)+(3.18e-3*(Tc-25))" Isat="Ipv/(exp((0.6+(-2.38e-3*(Tc-25)))/(0.0257))-1)" Export="yes"
+.DC:DC1 Temp="26.85" reltol="0.001" abstol="1 pA" vntol="1 uV" saveOPs="no" MaxIter="150" saveAll="no" convHelper="none" Solver="CroutLU"
+Eqn:Eqn5 P="Icell.I*Vcell.V" Intensidad="PlotVs(Icell.I,Vcell.V)" Export="yes"
+.SW:SW1 Sim="DC1" Type="lin" Param="Rl" Start="0.01" Stop="10" Points="1000"
+R:R1 _net0 gnd R="100k" Temp="26.85" Tc1="0.0" Tc2="0.0" Tnom="26.85"
+Idc:I1 _net0 gnd I="Ipv"
+Diode:D1 gnd _net0 Is="Isat" N="1" Cj0="0 F" M="0" Vj="0.0000000001 V" Fc="0.5" Cp="0.0 fF" Isr="0.0" Nr="2.0" Rs="0.0 Ohm" Tt="0.0 ps" Ikf="0" Kf="0.0" Af="1.0" Ffe="1.0" Bv="0" Ibv="1 mA" Temp="26.85" Xti="3.0" Eg="1.11" Tbv="0.0" Trs="0.0" Ttt1="0.0" Ttt2="0.0" Tm1="0.0" Tm2="0.0" Tnom="26.85" Area="1.0"
+R:R2 _net0 _net1 R="Rs" Temp="26.85" Tc1="0.0" Tc2="0.0" Tnom="26.85"
+IProbe:Icell _net1 _net2
+VProbe:Vcell _net2 gnd
+R:R3 gnd _net2 R="Rl" Temp="26.85" Tc1="0.0" Tc2="0.0" Tnom="26.85"
