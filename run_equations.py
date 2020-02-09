@@ -91,7 +91,7 @@ def argTypeToMath(op, argc, argsTypes, prec='%.12f'):
             value = np.random.rand()+1
 
             # inject constraint
-            if op in constr.keys():
+            if op in list(constr.keys()):
                 value = constr[op]['TAG_DOUBLE']
 
             Eqn.append(repr( float(prec % value) ));
@@ -106,7 +106,7 @@ def argTypeToMath(op, argc, argsTypes, prec='%.12f'):
             value = complex(a,b)
 
             # inject constraint
-            if op in constr.keys():
+            if op in list(constr.keys()):
                 value = constr[op][arg]
 
             formatComplex = '{0:.%s} {1} {2:.%s}j' %(prec[2:], prec[2:])
@@ -121,7 +121,7 @@ def argTypeToMath(op, argc, argsTypes, prec='%.12f'):
 
             value = np.linspace(1.,2.,3)
             # inject constraint
-            if op in constr.keys():
+            if op in list(constr.keys()):
                 value = constr[op][arg]
 
             # format qucs equation string
@@ -497,7 +497,7 @@ if __name__ == '__main__':
     if args.prefix:
         if os.path.isfile(os.path.join(args.prefix, 'qucsator')):
             prefix = args.prefix
-            print '\nFound Qucsator in: %s\n' %(prefix)
+            print('\nFound Qucsator in: %s\n' %(prefix))
         else:
             sys.exit('Oh dear, Qucsator not found in: %s' %(prefix))
     else:
@@ -508,8 +508,10 @@ if __name__ == '__main__':
 
     # Picke/unpickle data application.h data
     # operations, applications = parseApplications("/Users/guitorri/git/qucs/qucs-core/src/applications.h")
-    operations   = pickle.load( open( 'qucs_operations.p', "rb" ) )
-    applications = pickle.load( open( 'qucs_applications.p', "rb" ) )
+    with open( 'qucs_operations.p', "rb" ) as f1:
+        operations   = pickle.load( f1 )
+    with open( 'qucs_applications.p', "rb" ) as f2:
+        applications = pickle.load( f2 )
 
 
     if args.operation in operations:
@@ -535,7 +537,7 @@ if __name__ == '__main__':
         # cound skipped operations
         if op in skip:
             skipped = len(applications[op])
-            print ' >> SKIP [%s] %s tests' %(op, skipped)
+            print(' >> SKIP [%s] %s tests' %(op, skipped))
             skipCount +=  skipped
             continue
 
@@ -559,13 +561,13 @@ if __name__ == '__main__':
             try:
                 expression, pyExpression, pyResult = argTypeToMath(op, argc, argTypes, prec='%.12f')
             except:
-                print ' >> ISSUES with %s' %op
-                print expression, pyResult
+                print(' >> ISSUES with %s' %op)
+                print(expression, pyResult)
 
             # if pyResult is a string, report and move to next
             if isinstance(pyResult, str):
                 #print ' >> PYTHON ERROR    [ %s ] ==> [%s] = %s | PyCode  >> %s' %(op, retType, argTypes, pyExpression)
-                print ' >> PYTHON ERROR    [ %s ] ==> [%s] = %s' %(op, retType, argTypes)
+                print(' >> PYTHON ERROR    [ %s ] ==> [%s] = %s' %(op, retType, argTypes))
                 skipCount +=  1
                 continue
 
@@ -586,15 +588,15 @@ if __name__ == '__main__':
                 myTest.write( net )
 
             cmd = [os.path.join(prefix, "qucsator"), "-i", inNet, "-o", outDat]
-            print 'Running [qucsator]: ', ' '.join(cmd)
+            print('Running [qucsator]: ', ' '.join(cmd))
             retval = subprocess.call(cmd, stdout=open(os.devnull, "w"), stderr=subprocess.STDOUT)
 
             sim = 'PASS'
             if retval:
                 sim = 'FAIL'
-                print "\n +++ Qucsator ERROR +++ \n"
-                print 'Return code: ', retval
-                print 'netlist: ', inNet
+                print("\n +++ Qucsator ERROR +++ \n")
+                print('Return code: ', retval)
+                print('netlist: ', inNet)
                 sys.exit('Error on qucsator.')
 
 
@@ -603,7 +605,7 @@ if __name__ == '__main__':
             if os.path.exists(outDat):
                test_data = QucsData(outDat)
             else:
-               print " \n\n +++  no result +++ \n\n:", outDat
+               print(" \n\n +++  no result +++ \n\n:", outDat)
 
             test =  test_data.data['check']
 
@@ -615,7 +617,7 @@ if __name__ == '__main__':
             else:
                 stat = ' >FAIL'
 
-            print "[ %s ]  TEST %03i  [ %s ] ==> [%s] = %s" %(stat, testCount, op, retType, argTypes)
+            print("[ %s ]  TEST %03i  [ %s ] ==> [%s] = %s" %(stat, testCount, op, retType, argTypes))
 
             if stat != 'PASS' or sim =='FAIL':
 
@@ -623,37 +625,37 @@ if __name__ == '__main__':
                 returnStatus -1
 
                 failCount +=1
-                print '---'
-                print net
-                print "Expected:"
-                print pyExpression
-                print '   ', pyResult
-                print "Got:"
+                print('---')
+                print(net)
+                print("Expected:")
+                print(pyExpression)
+                print('   ', pyResult)
+                print("Got:")
                 with open(outDat, 'r') as myDat:
                     for line in myDat:
-                        print '   ', line,
-                print '---\n'
+                        print('   ', line, end=' ')
+                print('---\n')
 
     total = 0
     for key in operations:
         total += len(applications[key])
 
-    print ''
-    print '-'*15
-    print '-- PASS  = ', passCount
-    print '-- FAIL  = ', failCount
-    print '-- SKIP  = ', skipCount
-    print '='*15
-    print '-- TOTAL = ', total
-    print '-'*15
+    print('')
+    print('-'*15)
+    print('-- PASS  = ', passCount)
+    print('-- FAIL  = ', failCount)
+    print('-- SKIP  = ', skipCount)
+    print('='*15)
+    print('-- TOTAL = ', total)
+    print('-'*15)
 
     if returnStatus:
         status = 'FAIL'
     else:
         status = 'PASS'
 
-    print '\n'
-    print ('###############  Done. Return status: %s ###############' %status )
+    print('\n')
+    print(('###############  Done. Return status: %s ###############' %status ))
 
     sys.exit(returnStatus)
 

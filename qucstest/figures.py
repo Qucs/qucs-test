@@ -9,8 +9,8 @@ from matplotlib.ticker import OldScalarFormatter
 from mpl_toolkits.mplot3d.axes3d import Axes3D
 from matplotlib.ticker import EngFormatter
 
-from misc import timestamp
-from qucsdata import QucsData
+from .misc import timestamp
+from .qucsdata import QucsData
 
 
 def plot_error(reference, test, variables, save=True, show=False):
@@ -71,7 +71,7 @@ def plot_error(reference, test, variables, save=True, show=False):
             proj_dir = os.path.dirname(reference)
             figname = '%s_%s_%s.png' %(os.path.basename(proj_dir), platform.system(), label)
             figname = os.path.join(proj_dir, figname)
-            print 'saving', figname
+            print('saving', figname)
             plt.savefig(figname)
 
         plt.close()
@@ -98,7 +98,7 @@ def plot_variable(dataset, variable=''):
         return
 
     # plot all dependent variables
-    for n in d.dependent.keys():
+    for n in list(d.dependent.keys()):
       dep = len(d.dependent[n])
       if dep == 1:
           a =  d.dependent[n][0]
@@ -149,7 +149,7 @@ if __name__ == '__main__':
   from run import compare_datasets
 
   numerical_diff = compare_datasets(gold, test)
-  print numerical_diff
+  print(numerical_diff)
 
   plot_error(gold, test, numerical_diff)
 

@@ -45,7 +45,7 @@ def qmat(x, format='%.12f'):
 
     # vector of matrices ?? not yet supported
     if x.ndim > 2:
-        print "MATVEC? Issues with Qucs"
+        print("MATVEC? Issues with Qucs")
         d_to_loop = x.shape[2:]
         sls = [slice(None,None)]*2
         #s += "reshape([ " # matlab

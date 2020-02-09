@@ -75,19 +75,19 @@ class Test:
        self.atol = 0.0
 
    def debug(self):
-       print 'name         :', self.name
-       print 'schematic    :', self.schematic
-       print 'version      :', self.version
-       print 'dataset      :', self.dataset
-       print 'netlist      :', self.netlist
-       print 'comp_types   :', self.comp_types
-       print 'sim_types    :', self.sim_types
-       print 'status       :', self.status
-       print 'runtime      :', self.runtime
-       print 'message      :', self.message
-       print 'failed_traces:', self.failed_traces
-       print 'test rtol    :', self.rtol
-       print 'test atol    :', self.atol
+       print('name         :', self.name)
+       print('schematic    :', self.schematic)
+       print('version      :', self.version)
+       print('dataset      :', self.dataset)
+       print('netlist      :', self.netlist)
+       print('comp_types   :', self.comp_types)
+       print('sim_types    :', self.sim_types)
+       print('status       :', self.status)
+       print('runtime      :', self.runtime)
+       print('message      :', self.message)
+       print('failed_traces:', self.failed_traces)
+       print('test rtol    :', self.rtol)
+       print('test atol    :', self.atol)
 
    def getSchematic(self):
        if not self.schematic:
@@ -133,15 +133,15 @@ class Print_test:
        self.files = []
 
    def debug(self):
-       print 'name            :', self.name
-       print 'path            :', self.path
+       print('name            :', self.name)
+       print('path            :', self.path)
        for sch in self.files:
-          print '  file          :', sch.name
-          print '  type          :', sch.type
-          print '  version       :', sch.version
-          print '  status        :', sch.status
-          print '  runtime       :', sch.runtime
-          print '  message       :', sch.message
+          print('  file          :', sch.name)
+          print('  type          :', sch.type)
+          print('  version       :', sch.version)
+          print('  status        :', sch.status)
+          print('  runtime       :', sch.runtime)
+          print('  message       :', sch.message)
 
    def add_all_files(self, suffix):
       all_sch = [qucsfile(f) for f in sorted(os.listdir(self.path))
@@ -182,7 +182,7 @@ class Command(object):
         thread.join(timeout)
         if thread.is_alive():
             self.timeout = True
-            print pr('Terminating process, timed out %i s' %timeout)
+            print(pr('Terminating process, timed out %i s' %timeout))
             self.process.terminate()
             thread.join()
         self.retcode =  self.process.returncode
@@ -240,7 +240,7 @@ def compare_datasets(ref_dataset, test_dataset, rtol, atol):
 
     logger.info( pb('Comparing dependent variables [rtol=%s, atol=%s]' %(rtol, atol)) )
 
-    for name in ref.dependent.keys():
+    for name in list(ref.dependent.keys()):
         ref_trace  = ref.data[name]
         test_trace = test.data[name]
 
@@ -270,7 +270,7 @@ def run_simulation(test, qucspath, plot_interactive=False):
 
     proj_dir = os.path.join(test_dir, 'testsuite', test.name)
     test.path = proj_dir
-    print '\nProject : ', proj_dir
+    print('\nProject : ', proj_dir)
 
 
     input_net = os.path.join(proj_dir, "netlist.txt")
@@ -294,7 +294,7 @@ def run_simulation(test, qucspath, plot_interactive=False):
 
     ext = '' if os.name != 'nt' else '.exe'
     cmd = [os.path.join(qucspath, "qucsator"+ext), "-i", input_net, "-o", output_dataset]
-    print 'Running : ', ' '.join(cmd)
+    print('Running : ', ' '.join(cmd))
 
     # TODO run a few times, record average/best of 3
     # call the solver in a subprocess, set the timeout
@@ -320,15 +320,15 @@ def run_simulation(test, qucspath, plot_interactive=False):
     if (command.timeout):
 
         errout =  os.path.join(proj_dir, 'error_timeout.txt')
-        print pr('Failed with timeout, saving: \n   %s' % errout)
+        print(pr('Failed with timeout, saving: \n   %s' % errout))
         with open(errout, 'w') as myFile:
-            myFile.write(command.err)
+            myFile.write(command.err.decode("iso-8859-1"))
 
     if (command.retcode):
         errout = os.path.join(proj_dir, 'error_code.txt')
-        print pr('Failed with error code, saving: \n   %s' % errout)
+        print(pr('Failed with error code, saving: \n   %s' % errout))
         with open(errout, 'w') as myFile:
-            myFile.write(command.err)
+            myFile.write(command.err.decode("iso-8859-1"))
 
     # perform result comparison
     if (not command.timeout) and (command.retcode==0):
@@ -341,7 +341,7 @@ def run_simulation(test, qucspath, plot_interactive=False):
 
         # show all traces
         if plot_interactive:
-            plot_error(ref_dataset, output_dataset, QucsData(ref_dataset).dependent.keys(), show=plot_interactive)
+            plot_error(ref_dataset, output_dataset, list(QucsData(ref_dataset).dependent.keys()), show=plot_interactive)
 
         # quiet save of fail numerical check
         if numerical_diff:
@@ -367,7 +367,7 @@ def print_project(print_test, qucspath, what):
           out_print = os.path.join(print_test.path, f_basename+"_dpl.pdf")
        ext = '' if os.name != 'nt' else '.exe'
        cmd = [os.path.join(qucspath, "qucs"+ext), "-p", "-i", in_f, "-o", out_print]
-       print 'Running : ', ' '.join(cmd)
+       print('Running : ', ' '.join(cmd))
 
        tic = time.time()
        command = Command(cmd)
@@ -404,8 +404,8 @@ def add_test_project(sch):
     :return: destination directory
     '''
 
-    print pb('Adding new project to test-suite.')
-    print 'Adding schematic: %s' %(sch)
+    print(pb('Adding new project to test-suite.'))
+    print('Adding schematic: %s' %(sch))
 
     # get schematic basename
     sch_name = os.path.splitext(os.path.basename(sch))[0]
@@ -427,17 +427,17 @@ def add_test_project(sch):
 
     dest_dir = os.path.join(os.getcwd(),'testsuite', dest)
     if not os.path.exists(dest_dir):
-        print 'Creating directory:', dest_dir
+        print('Creating directory:', dest_dir)
         os.makedirs(dest_dir)
     else:
-        print 'Use existing directory:', dest_dir
+        print('Use existing directory:', dest_dir)
 
     # copy schematic
     shutil.copy2(sch, dest_dir)
 
     # copy listed subcircuit (recursive)
     for sub in sub_files:
-        print 'Copying sub-circuit', sub
+        print('Copying sub-circuit', sub)
         src = os.path.join(os.path.dirname(sch),sub)
         if os.path.isfile(src):
             shutil.copy2(src, dest_dir)
@@ -534,9 +534,9 @@ if __name__ == '__main__':
     atol = args.atol
 
 
-    print pb('Using Max. time: %s' %str(maxTime))
-    print pb('Using rtol: %s' %str(rtol))
-    print pb('Using atol: %s' %str(atol))
+    print(pb('Using Max. time: %s' %str(maxTime)))
+    print(pb('Using rtol: %s' %str(rtol)))
+    print(pb('Using atol: %s' %str(atol)))
 
 
     # setup logger
@@ -567,14 +567,14 @@ if __name__ == '__main__':
            for qp in prefixes:
               ext = '' if os.name != 'nt' else '.exe'
               if os.path.isfile(os.path.join(qp, 'qucsator'+ext)):
-                 print pb('%s' %(qp))
+                 print(pb('%s' %(qp)))
               else:
                  sys.exit(pr("No qucsator binary found in: %s" %(qp)))
         else:
            for qp in prefixes:
               ext = '' if os.name != 'nt' else '.exe'
               if os.path.isfile(os.path.join(qp, 'qucs'+ext)):
-                 print pb('%s' %(qp))
+                 print(pb('%s' %(qp)))
               else:
                  sys.exit(pr("No qucs binary found in: %s" %(qp)))
     elif not prefix_given:
@@ -585,14 +585,14 @@ if __name__ == '__main__':
        if (args.qucs or args.qprint):
           ext = '' if os.name != 'nt' else '.exe'
           if os.path.isfile(os.path.join(prefix, 'qucs'+ext)):
-             print pb('Found Qucs in: %s' %(prefix))
+             print(pb('Found Qucs in: %s' %(prefix)))
           else:
              sys.exit(pr('Oh dear, Qucs not found in: %s' %(prefix)))
 
        if (args.qucsator or args.reset):
           ext = '' if os.name != 'nt' else '.exe'
           if os.path.isfile(os.path.join(prefix, 'qucsator'+ext)):
-             print pb('Found Qucsator in: %s' %(prefix))
+             print(pb('Found Qucsator in: %s' %(prefix)))
           else:
              sys.exit(pr('Oh dear, Qucsator not found in: %s' %(prefix)))
 
@@ -611,7 +611,7 @@ if __name__ == '__main__':
             for line in fp:
                 skip_proj = line.split(',')[0]
                 if skip_proj in testsuite:
-                    print py('Skipping %s' %skip_proj)
+                    print(py('Skipping %s' %skip_proj))
                     testsuite.remove(skip_proj)
 
     if args.include:
@@ -621,7 +621,7 @@ if __name__ == '__main__':
             for line in fp:
                 proj = line.split(',')[0]
                 if proj in testsuite:
-                    print pg('Including %s' %proj)
+                    print(pg('Including %s' %proj))
                     include.append(proj)
         if include:
             testsuite = include
@@ -630,10 +630,10 @@ if __name__ == '__main__':
     returnStatus = 0
 
     if args.qucs or args.qucsator or args.project:
-        print '\n'
-        print pb('******************************************')
-        print pb('** Test suite - Selected Test Projects  **')
-        print pb('******************************************')
+        print('\n')
+        print(pb('******************************************'))
+        print(pb('** Test suite - Selected Test Projects  **'))
+        print(pb('******************************************'))
 
         # Print list of selected tests
         pprint.pprint(testsuite)
@@ -642,8 +642,8 @@ if __name__ == '__main__':
     # Run Qucs GUI
     #
     if args.qucs:
-        print '\n'
-        print pb('** Test schematic to netlist conversion **')
+        print('\n')
+        print(pb('** Test schematic to netlist conversion **'))
 
         # loop over testsuite
         # messages are added to the dict, project as key
@@ -666,12 +666,12 @@ if __name__ == '__main__':
 
             # skip future versions of schematic
             sch_version = get_sch_version(input_sch)
-            qucs_version = get_qucs_version(prefix).split(' ')[1]
+            qucs_version = get_qucs_version(prefix).decode().split(' ')[1]
 
             if LooseVersion(sch_version) > LooseVersion(qucs_version):
-                print pb("Warning: skipping future version of schematic")
-                print pb("  Using qucs %s with schematic version %s"
-                         %(qucs_version, sch_version))
+                print(pb("Warning: skipping future version of schematic"))
+                print(pb("  Using qucs %s with schematic version %s"
+                         %(qucs_version, sch_version)))
                 continue
 
             # go on to create a fresh test_netlist.txt
@@ -681,34 +681,34 @@ if __name__ == '__main__':
             ref_netlist = os.path.join(dest_dir, 'netlist.txt')
 
             # diff netlists: reference and test_
-            print 'Comparing : diff %s %s' %(ref_netlist, test_net)
+            print('Comparing : diff %s %s' %(ref_netlist, test_net))
             net_equal, bad_lines = check_netlist(ref_netlist, test_net)
 
             if net_equal:
-                print pg('Diff netlist    : PASS')
+                print(pg('Diff netlist    : PASS'))
             else:
-                print pr('Diff netlist    : FAIL')
+                print(pr('Diff netlist    : FAIL'))
                 net_report[test] = bad_lines
                 returnStatus = -1
 
-        print '\n'
-        print pb('############################################')
-        print pb('#  Report schematic to netlist conversion  #')
+        print('\n')
+        print(pb('############################################'))
+        print(pb('#  Report schematic to netlist conversion  #'))
 
-        if net_report.keys():
-            print pr('--> Found differences (!)')
+        if list(net_report.keys()):
+            print(pr('--> Found differences (!)'))
             pprint.pprint(net_report)
         else:
-            print pg('--> No differences found.')
+            print(pg('--> No differences found.'))
 
     #
     # Run Qucs simulator
     #
     if args.qucsator:
-        print '\n'
-        print pb('********************************')
-        print pb('** Test simulation and output **')
-        print pb('********************************')
+        print('\n')
+        print(pb('********************************'))
+        print(pb('** Test simulation and output **'))
+        print(pb('********************************'))
 
         # collect all reports, sim_collect will be a list of dicts,
         # one list for each qpath. Each dict contains the report output
@@ -747,12 +747,12 @@ if __name__ == '__main__':
                 tests = [p.get() for p in testsp] # get results
             collect_tests.append(tests)
 
-        print '\n'
-        print pb('############################################')
-        print pb('#  Report simulation result comparison     #')
+        print('\n')
+        print(pb('############################################'))
+        print(pb('#  Report simulation result comparison     #'))
 
         for indx, qucspath in enumerate (prefixes):
-            print pb('--> Simulator location: %s' %(qucspath))
+            print(pb('--> Simulator location: %s' %(qucspath)))
 
             for test in collect_tests[indx]:
                 if test.status == "NUM_FAIL":
@@ -765,31 +765,32 @@ if __name__ == '__main__':
 
 
         if not returnStatus:
-            print pg('--> No significant numerical differences found.')
+            print(pg('--> No significant numerical differences found.'))
 
-        print pb('#                                          #')
-        print pb('############################################')
+        print(pb('#                                          #'))
+        print(pb('############################################'))
 
 
-        print pg('************************')
-        print pg('* Qucsator test report *')
-        print pg('************************')
+        print(pg('************************'))
+        print(pg('* Qucsator test report *'))
+        print(pg('************************'))
 
         if args.compare:
             table_name = 'qucsator_comparison_' + timestamp() + '_sim_results.txt'
         else:
-            table_name = 'report_simulation'+'_'+ get_qucsator_version(prefix).replace(' ','_')+'.txt'
+            import string
+            table_name = 'report_simulation'+'_'+ get_qucsator_version(prefix).decode('iso-8859-1').replace(' ','_')+'.txt'
 
         if len (prefixes) > 1:
             footer  = 'Qucsator versions:   '
             for qp in prefixes:
-                footer += get_qucsator_version(qp) + ' : '
+                footer += get_qucsator_version(qp).decode('iso-8859-1') + ' : '
             footer += '\n\nBinary Locations:'
             for qp in prefixes:
                 footer += '\n' + qp
             footer += '\n'
         else:
-            footer  = 'Qucsator version:   '  + get_qucsator_version(qucspath) + ' '
+            footer  = 'Qucsator version:   '  + get_qucsator_version(qucspath).decode('iso-8859-1') + ' '
 
         footer += '\n'
         footer += 'Report produced on: ' + timestamp("%Y-%m-%d %H:%M:%S") + '\n'
@@ -822,11 +823,11 @@ if __name__ == '__main__':
             sch2net(input_sch, output_net, prefix)
 
             # create reference .dat, log.txt
-            print pb("Creating reference data and log files.")
+            print(pb("Creating reference data and log files."))
             output_dataset = get_sch_dataset(input_sch)
             output_dataset = os.path.join(dest_dir, output_dataset)
             cmd = [os.path.join(prefix,"qucsator"), "-i", output_net, "-o", output_dataset]
-            print 'Running [qucsator]: ', ' '.join(cmd)
+            print('Running [qucsator]: ', ' '.join(cmd))
 
             # call the solver in a subprocess, set the timeout
             tic = time.time()
@@ -878,9 +879,9 @@ if __name__ == '__main__':
             output_net = os.path.join(dest_dir, 'netlist.txt')
 
             # OVERWRITE reference .dat, log.txt
-            print pb("Creating reference data and log files.")
+            print(pb("Creating reference data and log files."))
             cmd = [os.path.join(prefix,"qucsator"), "-i", output_net, "-o", output_dataset]
-            print 'Running [qucsator]: ', ' '.join(cmd)
+            print('Running [qucsator]: ', ' '.join(cmd))
 
             tic = time.time()
             # call the solver in a subprocess, set the timeout
@@ -893,20 +894,20 @@ if __name__ == '__main__':
             # FIXME log reports different details if release/debug mode
             logout = os.path.join(dest_dir,'log.txt')
             #print pb('Initializing %s saving: \n   %s' %(sch, logout))
-            with open(logout, 'w') as myFile:
+            with open(logout, 'wb') as myFile:
                 myFile.write(command.out)
 
     # Print schematics contained in all (or selected) projects
     #
     if args.qprint:
-        print '\n'
-        print py('********************************')
+        print('\n')
+        print(py('********************************'))
         if (args.qprint == 'sch'):
-           print 'printing schematic(s): %s' %(testsuite)
+           print('printing schematic(s): %s' %(testsuite))
         elif(args.qprint == 'dpl'):
-           print 'printing data display(s): %s' %(testsuite)
+           print('printing data display(s): %s' %(testsuite))
         else: # print all
-           print 'printing schematic(s) and data display(s): %s' %(testsuite)
+           print('printing schematic(s) and data display(s): %s' %(testsuite))
 
         # prepare list of Print_test object to print
 
@@ -944,25 +945,25 @@ if __name__ == '__main__':
             collect_tests.append(results)
 
 
-        print pg('*****************************')
-        print pg('* Qucs printing test report *')
-        print pg('*****************************')
+        print(pg('*****************************'))
+        print(pg('* Qucs printing test report *'))
+        print(pg('*****************************'))
 
         if args.compare:
             table_name = 'qucs_comparison_' + timestamp() + '_print_results.txt'
         else:
-            table_name = 'report_printing'+'_'+ get_qucs_version(prefix).replace(' ','_')+'.txt'
+            table_name = 'report_printing'+'_'+ get_qucs_version(prefix).decode().replace(' ','_')+'.txt'
 
         if len (prefixes) > 1:
             footer  = 'Qucs versions:   '
             for qp in prefixes:
-                footer += get_qucs_version(qp) + ' : '
+                footer += get_qucs_version(qp).decode() + ' : '
             footer += '\n\nBinary Locations:'
             for qp in prefixes:
                 footer += '\n' + qp
             footer += '\n'
         else:
-            footer  = 'Qucs version:   '  + get_qucs_version(qucspath) + ' '
+            footer  = 'Qucs version:   '  + get_qucs_version(qucspath).decode() + ' '
 
         footer += '\n'
         footer += 'Report produced on: ' + timestamp("%Y-%m-%d %H:%M:%S") + '\n'
@@ -975,8 +976,8 @@ if __name__ == '__main__':
     else:
         status = 'PASS'
 
-    print '\n'
-    print pb('###############  Done. Return status: %s ###############' %status )
+    print('\n')
+    print(pb('###############  Done. Return status: %s ###############' %status ))
 
     sys.exit(returnStatus)
 

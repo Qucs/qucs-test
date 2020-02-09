@@ -8,7 +8,7 @@ def get_sch_version(schematic):
     '''
     :return: version of qucs that created the schematic.
     '''
-    with open(schematic) as fp:
+    with open(schematic, 'r', encoding='iso-8859-1') as fp:
         for line in fp:
             if 'Qucs Schematic' in line:
                 qucs_version = line.split(' ')[-1][:-2]
@@ -19,7 +19,7 @@ def get_sch_dataset(schematic):
     '''
     :return: DataSet fiel, name used to save the data file.
     '''
-    with open(schematic) as fp:
+    with open(schematic, 'r', encoding='iso-8859-1') as fp:
         for line in fp:
             if 'DataSet' in line:
                 ref_dataset = line.split('=')[-1][:-2]
@@ -58,7 +58,7 @@ def get_sch_subcircuits(sch):
 
     def crawl(sch):
         sub_files = []
-        print sch
+        print(sch)
         with open(sch) as fp:
             for line in fp:
                 # <Sub Curtice1 1 210 120 20 -46 0 0 "curtice_1.sch" [other params] >
