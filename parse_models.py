@@ -42,7 +42,7 @@ def scan_repo(repo):
     #     Diode    - Nonlinear
 
     mod = os.path.join(repo, 'qucs/qucs/module.cpp')
-    print 'Scan registred components: \t %s' %(mod)
+    print('Scan registred components: \t %s' %(mod))
 
     regs = [
     '  REGISTER_LUMPED',
@@ -81,7 +81,7 @@ def scan_repo(repo):
     comp_src = 'qucs/qucs/components/'
     comp_dir = os.path.join(repo, comp_src)
 
-    print 'Looking for components dir: \t %s%s' %(comp_dir, '*.cpp')
+    print('Looking for components dir: \t %s%s' %(comp_dir, '*.cpp'))
     if not os.path.isdir(comp_dir):
         sys.exit("Directory not found: <components>"+comp_src)
 
@@ -123,7 +123,7 @@ def scan_repo(repo):
                 continue # skip to next src
 
             if verbose:
-                print '\n%s' %src
+                print('\n%s' %src)
 
             for line in fp:
                 if not constr:
@@ -134,14 +134,14 @@ def scan_repo(repo):
                         regName = line.split('::')[0].strip()
 
                         if verbose:
-                            print 'register Name:', regName
+                            print('register Name:', regName)
 
                 if '  Model' in line:
                     # get stuff between " "
                     model = re.findall('"([^"]*)"', line)[0]
 
                     if verbose:
-                        print 'model Name:   ', model
+                        print('model Name:   ', model)
 
                     # simple bjt has no name, but netlist adds (T) for it
                     if model=='_BJT':
@@ -161,7 +161,7 @@ def scan_repo(repo):
 
                     if nam:
                         if verbose:
-                            print 'instance Name:', name
+                            print('instance Name:', name)
                         continue
 
                 if not nam:
@@ -170,7 +170,7 @@ def scan_repo(repo):
                             nam = True
                             name = re.findall('"([^"]*)"', line)[0]
                             if verbose:
-                                print 'instance Name:', name
+                                print('instance Name:', name)
                             continue
 
         report += '\n%-20s | %-20s | %-15s | %-10s' %(regName, model, name, base)
@@ -181,10 +181,10 @@ def scan_repo(repo):
         if regName in mod_reg:
             data[regName]=[model, name, base, mod_reg[regName]]
         else:
-            print '  Not registered class: ', regName
+            print('  Not registered class: ', regName)
 
     report += '\n%20s' %('-'*80)
-    report += '\nTotal: %i' %(len(data.keys()))
+    report += '\nTotal: %i' %(len(list(data.keys())))
     report += '\n%20s' %('-'*80)
 
     return report, data
@@ -194,15 +194,15 @@ if __name__ == "__main__":
 
 
     if len(sys.argv) != 2:
-        print '\nPlease provide full path to Qucs repo clone:'
-        print '$ python parse_mode.py /path/to/src/qucs'
+        print('\nPlease provide full path to Qucs repo clone:')
+        print('$ python parse_mode.py /path/to/src/qucs')
         sys.exit('Not enough arguments!')
 
     repo = str(sys.argv[1])
 
 
-    print ''
-    print 'Looking for repository: \t %s' %(repo)
+    print('')
+    print('Looking for repository: \t %s' %(repo))
     if not os.path.isdir(repo):
         sys.exit("Directory not found: <repo>"+repo)
 
@@ -211,15 +211,16 @@ if __name__ == "__main__":
 
     # Save table
     report_out = 'qucs_components.txt'
-    print 'Saving components table: \t', report_out
+    print('Saving components table: \t', report_out)
     with open(report_out, 'w') as myFile:
         myFile.write(report)
 
     # Save data, to be used on the test reports
     # Save a dictionary into a pickle file.
     datafile = 'qucs_components_data.p'
-    print 'Saving data (as Pickle): \t', datafile
-    pickle.dump( data, open( datafile, "wb" ) )
+    print('Saving data (as Pickle): \t', datafile)
+    with open( datafile, "wb" ) as handle:
+        pickle.dump( data, handle )
 
     # parse type from registered
 

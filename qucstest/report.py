@@ -2,7 +2,7 @@
 Module to handle reports.
 """
 
-from colors import *
+from .colors import *
 import os
 import pickle
 
@@ -29,9 +29,9 @@ def report_status(collection, savename='', footer=''):
         f.write(header+'\n')
         f.write(line+'\n')
 
-    print line
-    print header
-    print line
+    print(line)
+    print(header)
+    print(line)
 
     names = []
     versions = []
@@ -70,23 +70,23 @@ def report_status(collection, savename='', footer=''):
                 proj_stat += '| %-20s' %(str(time))
 
         # report line
-        print proj_stat
+        print(proj_stat)
 
         if savename:
             f.write(proj_stat+'\n')
 
 
     if footer:
-        print line
+        print(line)
         f.write(line+'\n')
-        print footer
+        print(footer)
         f.write(footer)
 
     if savename:
-        print line
+        print(line)
         f.write(line+'\n')
         f.close()
-        print pg("Saved simulation report: %s " %savename)
+        print(pg("Saved simulation report: %s " %savename))
 
 
 def report_coverage(collection, datafile, report_name=''):
@@ -112,10 +112,11 @@ def report_coverage(collection, datafile, report_name=''):
     # data from source files
     # Load the dictionary back from the pickle file.
     if not os.path.isfile(datafile):
-        print pr('Problem finding: %s' %datafile)
-        print pr('  Run "parse_models.py"')
+        print(pr('Problem finding: %s' %datafile))
+        print(pr('  Run "parse_models.py"'))
         return
-    data = pickle.load( open( datafile, "r" ) )
+    with open( datafile, "rb" ) as handle:
+        data = pickle.load( handle )
 
     reg = [
     '  REGISTER_LUMPED',
@@ -164,7 +165,7 @@ def report_coverage(collection, datafile, report_name=''):
 
     # save to file?
     if report_name:
-        print pg('Saved coverage report: %s' %(report_name) )
+        print(pg('Saved coverage report: %s' %(report_name) ))
         with open(report_name, 'w') as rep_file:
             rep_file.write(cov_report)
 
@@ -193,9 +194,9 @@ def report_print_status(collection, savename='', footer=''):
         f.write(header+'\n')
         f.write(line+'\n')
 
-    print line
-    print header
-    print line
+    print(line)
+    print(header)
+    print(line)
 
     names = []
     versions = []
@@ -206,7 +207,7 @@ def report_print_status(collection, savename='', footer=''):
             proj_stat = '%-30s | %-15s  | %-20s' %(test.name, '', '')
             if (len(collection) > 1): # used --compare
                 proj_stat += '| %-20s' %('')
-            print proj_stat
+            print(proj_stat)
             for sch_idx, sch in enumerate(test.files):
                 proj_stat = '  %-28s | %-15s  ' %(sch.name, sch.version)
                 if 'NUM_FAIL' in sch.status:
@@ -226,19 +227,19 @@ def report_print_status(collection, savename='', footer=''):
                     else:
                         proj_stat += '| %-20s' %(str(sch.runtime))
                 # report line
-                print proj_stat
+                print(proj_stat)
 
                 if savename:
                     f.write(proj_stat+'\n')
 
     if footer:
-        print line
+        print(line)
         f.write(line+'\n')
-        print footer
+        print(footer)
         f.write(footer)
 
     if savename:
-        print line
+        print(line)
         f.write(line+'\n')
         f.close()
-        print pg("Saved simulation report: %s " %savename)
+        print(pg("Saved simulation report: %s " %savename))

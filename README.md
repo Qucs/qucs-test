@@ -5,10 +5,10 @@ Objective: test the Qucs (GUI) and Qucsator (simulator).
 
 The test projects under the `testsuite` directory are all run by default.
 
-To skip failing projects use the `--skip` option with a list of projects to be ignored.
+To skip failing projects use the `--exclude` option with a list of projects to be ignored.
 
 
-## Options: `python run.py -h`
+## Options: `python3 run.py -h`
 
 ```
 usage: run.py [-h] [--prefix PREFIX] [--qucs] [--qucsator]
@@ -65,19 +65,19 @@ optional arguments:
 Example of running the test-suite for Qucsator while skipping a few test projects:
 
 ```
-$python run.py --prefix /home/user/local/qucs-master/bin/ --exclude skip.txt --qucsator
+$python3 run.py --prefix /home/user/local/qucs-master/bin/ --exclude skip.txt --qucsator
 ```
 
 The test can be run using several processes in parallel, which will shorthen the overall simulation time if the machine has a multi-core processor, using the `-mp` option; this option not supported  on Windows and macOS.
 
 ```
-$python run.py --prefix /home/user/local/qucs-master/bin/ --exclude skip.txt --qucsator -mp
+$python3 run.py --prefix /home/user/local/qucs-master/bin/ --exclude skip.txt --qucsator -mp
 ```
 
 Two different `qucsator` versions can be compared with the command:
 
 ```
-$ python run.py --compare /home/user/bin1/ /home/user/bin2/ --qucsator -mp
+$ python3 run.py --compare /home/user/bin1/ /home/user/bin2/ --qucsator -mp
 ```
 
 where `/home/user/bin1/` and `/home/user/bin2/` are the two directories containing the `qucsator` binaries to be tested.
@@ -92,10 +92,10 @@ See below examples of printing schematics to file (pdf):
  * a single project from the testsuite
 
 ```
-$python run.py --prefix /home/user/local/qucs-master/bin/ --print
-$python run.py --prefix /home/user/local/qucs-master/bin/ --print dpl
-$python run.py --prefix /home/user/local/qucs-master/bin/ --exclude skip_print.txt -print
-$python run.py --prefix /home/user/local/qucs-master/bin/ --print --project AC_SW_resonance_prj
+$python3 run.py --prefix /home/user/local/qucs-master/bin/ --print
+$python3 run.py --prefix /home/user/local/qucs-master/bin/ --print dpl
+$python3 run.py --prefix /home/user/local/qucs-master/bin/ --exclude skip_print.txt -print
+$python3 run.py --prefix /home/user/local/qucs-master/bin/ --print --project AC_SW_resonance_prj
 ```
 
 As for the `qucsator` test, the `-mp` option can be added to run multiple (printing) processes in parallel (this option not supported on Windows and macOS).
@@ -105,7 +105,7 @@ The script will generate a table showing, for every file, the time needed to pri
 Two different `qucs` versions can be used to generate the print files and the results for every binary will be shown in the report table, to allow for a quick comparison. Use a command like:
 
 ```
-$ python run.py --compare /home/user/bin1/ /home/user/bin2/ --print -mp
+$ python3 run.py --compare /home/user/bin1/ /home/user/bin2/ --print -mp
 ```
 where `/home/user/bin1/` and `/home/user/bin2/` are the two directories containing the `qucs` binaries to be tested.
 
@@ -148,9 +148,11 @@ $ python run_equations.py --prefix /home/user/git/qucs-clone/
 
 ## Tested with
 
-Mac OSX 10.8.5, Python 2.7.5, Numpy 1.7.1
+Centos 3.10.0-1062.4.1.el7.x86_64, Python 3.6.8, numpy 1.18.1
 
-Debian 6.0.7 (Squeeze), Python 2.6.6, Numpy 1.4.1
+Mac OSX not tested yet
+
+Windows not tested yet
 
 You might need to install `argparse` which is not included with Python 2.6. Something like:
 

@@ -68,7 +68,7 @@ def check_netlist(ref_netlist, output_netlist, skip=1, verbose=0):
 
     # show complete diff?
     if verbose:
-        print ' '.join(diff)
+        print(' '.join(diff))
 
     for line in diff:
         # look in diff for code [+ - ?]: unique to f, unique to g or not present in f or g
