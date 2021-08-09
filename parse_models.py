@@ -3,7 +3,7 @@
     Hacked parser to gather info about available components from Qucs C++ sources
 
     Note:
-    * there a few name classes mismatches or inexistent beween qucs / qucs-core
+    * there a few name classes mismatches or inexistent between qucs / qucs-core
       * Basic_BJT - ?
     * it skips some HDL based components
 
@@ -42,7 +42,7 @@ def scan_repo(repo):
     #     Diode    - Nonlinear
 
     mod = os.path.join(repo, 'qucs/qucs/module.cpp')
-    print('Scan registred components: \t %s' %(mod))
+    print('Scan registered components: \t %s' %(mod))
 
     regs = [
     '  REGISTER_LUMPED',

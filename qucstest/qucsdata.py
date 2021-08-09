@@ -8,7 +8,7 @@ import pprint as pp
 
 class QucsData:
     """
-    Read an store a result file writen by Qucsator.
+    Read an store a result file written by Qucsator.
     """
     def __init__(self, filename):
         # source dataset

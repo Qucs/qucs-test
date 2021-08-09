@@ -2,7 +2,7 @@
 '''
 This script is used to gather information about the Qucs equation systems.
 It reads the source code (srs/applications.h) to extract what
-operations are supported in different applications (combinations of inputs ouputs).
+operations are supported in different applications (combinations of inputs outputs).
 '''
 
 import re
