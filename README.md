@@ -100,7 +100,7 @@ $python3 run.py --prefix /home/user/local/qucs-master/bin/ --print --project AC_
 
 As for the `qucsator` test, the `-mp` option can be added to run multiple (printing) processes in parallel (this option not supported on Windows and macOS).
 
-The script will generate a table showing, for every file, the time needed to print the schematics to file or the `qucs` error code in case the file generation was not succesful.
+The script will generate a table showing, for every file, the time needed to print the schematics to file or the `qucs` error code in case the file generation was not successful.
 
 Two different `qucs` versions can be used to generate the print files and the results for every binary will be shown in the report table, to allow for a quick comparison. Use a command like:
 
@@ -292,7 +292,7 @@ compare:
 
 ## Compare netlist
 
-Simple diff, skip first line. Retun different lines.
+Simple diff, skip first line. Return different lines.
 
 ## Check netlist
 

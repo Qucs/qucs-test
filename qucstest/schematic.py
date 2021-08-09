@@ -17,7 +17,7 @@ def get_sch_version(schematic):
 
 def get_sch_dataset(schematic):
     '''
-    :return: DataSet fiel, name used to save the data file.
+    :return: DataSet file, name used to save the data file.
     '''
     with open(schematic, 'r', encoding='iso-8859-1') as fp:
         for line in fp:

@@ -4,7 +4,7 @@
   Notes:
   * it skips subcircut marker '.Def'
   * there is no indication that a Spice file is translated into the netlist.
-    The only hint is the '_cir' appended tot he definition .DEF, which is skiped
+    The only hint is the '_cir' appended tot he definition .DEF, which is skipped
 
   TODO
   * mark versions when comparing for NUM_FAIL
@@ -852,7 +852,7 @@ if __name__ == '__main__':
 
     #
     # Reset the netlist, data and log files of test projects
-    # acording version found on the given prefix.
+    # according version found on the given prefix.
     # FIXME this is similar to adding the test project again...
     # can we refactor the args.add_test?
     #

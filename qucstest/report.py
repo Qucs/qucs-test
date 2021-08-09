@@ -9,7 +9,7 @@ import pickle
 
 def report_status(collection, savename='', footer=''):
     '''
-    Print a table with test resuts. It can also write to file.
+    Print a table with test results. It can also write to file.
 
     :param collection: data collected during tests.
     :param savename: name used to save the table to a text file.

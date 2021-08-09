@@ -3,7 +3,7 @@
 
 '''
 This is a simple random constrained test generator for all functions in src/applications.h.
-The purpose is is to test (and collect coverage of) the Qucs equation system and everything below it.
+The purpose is to test (and collect coverage of) the Qucs equation system and everything below it.
 
 In short, it works as follows:
 - For each entry in src/application.h.
@@ -534,7 +534,7 @@ if __name__ == '__main__':
     # Process every operation
     for op in operations:
 
-        # cound skipped operations
+        # count skipped operations
         if op in skip:
             skipped = len(applications[op])
             print(' >> SKIP [%s] %s tests' %(op, skipped))
@@ -575,7 +575,7 @@ if __name__ == '__main__':
             # run, save  data /temp/qucstest/test###.dat, handle crash
             # read dat
             # compare with expected
-            # PASS, FAILL
+            # PASS, FAIL
             tmpDir = '/tmp/qucstest/'
             inNet  = tmpDir + 'test%03i.txt' %testCount
             outDat = tmpDir + 'test%03i.dat' %testCount
