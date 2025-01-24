@@ -4,7 +4,7 @@ Module to handle plots and figures.
 import os
 import platform
 import matplotlib.pyplot as plt
-from matplotlib.ticker import OldScalarFormatter
+from matplotlib.ticker import ScalarFormatter
 
 from mpl_toolkits.mplot3d.axes3d import Axes3D
 from matplotlib.ticker import EngFormatter
@@ -55,9 +55,9 @@ def plot_error(reference, test, variables, save=True, show=False):
             tl.set_color('r')
         for tl in ax3.get_yticklabels():
             tl.set_color('m')
-        ax1.yaxis.set_major_formatter(OldScalarFormatter())
-        ax2.yaxis.set_major_formatter(OldScalarFormatter())
-        ax3.yaxis.set_major_formatter(OldScalarFormatter())
+        ax1.yaxis.set_major_formatter(ScalarFormatter())
+        ax2.yaxis.set_major_formatter(ScalarFormatter())
+        ax3.yaxis.set_major_formatter(ScalarFormatter())
 
         h1, l1 = ax2.get_legend_handles_labels()
         h2, l2 = ax3.get_legend_handles_labels()

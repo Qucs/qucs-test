@@ -63,7 +63,7 @@ class QucsData:
                 if '<dep' in line:
                     # dependent variables
                     # one or more independent, y=f(v,w,...)
-                    r = re.findall('(\S+)', line.translate({ord(c):'' for c in "<>"}))
+                    r = re.findall(r'(\S+)', line.translate({ord(c):'' for c in "<>"}))
                     identifier = r[1]
                     self.dependent[identifier]= r[2:]
                     self.names.append(identifier)
