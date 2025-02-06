@@ -1,6 +1,6 @@
 ## Project dir, Comment: it parses to the left of ','
 # * These schematics older than 0.0.10 won't print from the command line
-# * If they are manualy loaded and saved (some componentes will be updated)
+# * If they are manually loaded and saved (some components will be updated)
 #   and will print to file from command line will work just fine.
 AC_SW_resonance_prj,
 AC_SW_swr_meter_prj,

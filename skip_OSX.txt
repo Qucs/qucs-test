@@ -1,4 +1,4 @@
-# projects currenlty failing on OSX
+# projects currently failing on OSX
 TR_555_Fig9_prj,        NUM_FAIL
 TR_colpitts_base_prj,   NUM_FAIL
 TR_lc_osc_prj,          NUM_FAIL
